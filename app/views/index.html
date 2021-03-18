@@ -10,9 +10,21 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
       <h1 class="govuk-heading-xl">
-        Compensation recovery unit service
-        <span class="govuk-caption-xl">Prototypes</span>
+        <span class="govuk-caption-xl">Compensation recovery unit</span>
+       Prototypes
       </h1>
+      {% from "govuk/components/notification-banner/macro.njk" import govukNotificationBanner %}
+
+{% set html %}
+  <p class="govuk-notification-banner__heading">
+    Here you will find our user research prototypes for CRU replacement
+  </p>
+  <p>These prototypes are a tool to test our hypothesis with users and validate that we are meeting their needs</p>
+{% endset %}
+
+{{ govukNotificationBanner({
+  html: html
+}) }}
     </div>
   </div>
 
