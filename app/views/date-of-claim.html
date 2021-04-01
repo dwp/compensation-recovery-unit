@@ -1,0 +1,70 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+About the claim and injuries - Please tell us the date of the accident or alleged clinical negligence
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <a href="javascript: history.go(-1)" class="govuk-back-link govuk-!-margin-bottom-5">Back</a>   
+        <form class="form" action="about-the-accident" method="post">
+      
+
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset" role="group" aria-describedby="claim-date-hint">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                <h1 class="govuk-fieldset__heading">
+                  <span class="govuk-caption-xl">About the claim and injuries</span>
+                  Please tell us the date of the accident or alleged clinical negligence
+                </h1>
+              </legend>
+              <div id="claim-date-hint" class="govuk-hint">
+                For example, 12 11 2007
+              </div>
+              <div class="govuk-date-input" id="claim-date">
+                <div class="govuk-date-input__item">
+                  <div class="govuk-form-group">
+                    <label class="govuk-label govuk-date-input__label" for="claim-date-day">
+                      Day
+                    </label>
+                    <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="claim-date-day" name="claim-date-day" type="text" pattern="[0-9]*" inputmode="numeric" value="{{data['claim-date-day']}}"></div>
+                </div>
+                <div class="govuk-date-input__item">
+                  <div class="govuk-form-group">
+                    <label class="govuk-label govuk-date-input__label" for="claim-date-month">
+                      Month
+                    </label>
+                    <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="claim-date-month" name="claim-date-month" type="text" pattern="[0-9]*" inputmode="numeric" value="{{data['claim-date-month']}}"></div>
+                </div>
+                <div class="govuk-date-input__item">
+                  <div class="govuk-form-group">
+                    <label class="govuk-label govuk-date-input__label" for="claim-date-year">
+                      Year
+                    </label>
+                    <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="claim-date-year" name="claim-date-year" type="text" pattern="[0-9]*" inputmode="numeric" value="{{data['claim-date-year']}}"></div>
+                </div>
+              </div>
+          
+            </fieldset>
+          </div>
+
+      <div class="govuk-radios__item govuk-visually-hidden">
+        <input class="govuk-radios__input" id="claim-details" name="claim-details" type="radio" value="started" checked>
+        <label class="govuk-label govuk-radios__label" for="claim-details">
+         hidden radio for logic
+        </label>
+      </div>
+
+      <button class="govuk-button" data-module="govuk-button">
+        Continue
+      </button>
+      
+    </form>
+
+    </div>
+  </div>
+
+{% endblock %}
