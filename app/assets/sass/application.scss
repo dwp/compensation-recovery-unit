@@ -17,4 +17,6 @@ $govuk-assets-path: '/govuk/assets/';
 // Add extra styles here, or re-organise the Sass files in whichever way makes most sense to you
 
 // custom pattern - card pattern currently is not in the govuk design system
-@import "patterns/card"
+@import "patterns/card";
+// custom pattern - subnavigation currently is not in the govuk design system
+@import "patterns/subnavigation"
