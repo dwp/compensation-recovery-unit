@@ -1,7 +1,7 @@
 
 {% extends "layout.html" %}
 
-{% set nav = "Personal details" %}
+{% set nav = "History" %}
 
 {% block pageTitle %}
   Personal details
@@ -21,6 +21,31 @@
     </div>
     <div class="govuk-grid-column-three-quarters">
      <h2 class="govuk-heading-l">History and notes</h2>
+
+     <div class="timeline">
+		  
+
+         <span class="line"></span>
+        <div class="timeline__event">
+          <h3 class="timeline__heading govuk-heading-s">Claim details sent to NHS</h3>
+          <p class="timeline_datetime">12 April 2021</p>
+        </div>
+
+        <span class="line"></span>
+        <div class="timeline__event">
+          <h3 class="timeline__heading govuk-heading-s">Attributable benefits identified </h3>
+          <p class="timeline_datetime">12 April 2021</p>
+        </div>
+        
+          <span class="line"></span>
+        <div class="timeline__event">
+          <h3 class="timeline__heading govuk-heading-s">Case recieved</h3>
+          <p class="timeline_datetime">12 April 2021</p>
+        </div>
+
+        <div style="clear:both"></div>
+
+      </div><!-- timeline -->
     </div>
   </div>
 

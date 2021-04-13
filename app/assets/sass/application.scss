@@ -19,4 +19,7 @@ $govuk-assets-path: '/govuk/assets/';
 // custom pattern - card pattern currently is not in the govuk design system
 @import "patterns/card";
 // custom pattern - subnavigation currently is not in the govuk design system
-@import "patterns/subnavigation"
+@import "patterns/subnavigation";
+
+// custom pattern - timeline currently is not in the govuk design system (This is a dwp pattern)
+@import "patterns/timeline"
