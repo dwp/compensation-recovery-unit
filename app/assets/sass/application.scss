@@ -22,4 +22,24 @@ $govuk-assets-path: '/govuk/assets/';
 @import "patterns/subnavigation";
 
 // custom pattern - timeline currently is not in the govuk design system (This is a dwp pattern)
-@import "patterns/timeline"
+@import "patterns/timeline";
+
+
+// custom pattern - subnavigation currently is not in the govuk design system (This is a home office pattern)
+@import "patterns/subnav";
+
+
+.govuk-inset-text{
+
+&.green {
+    background:rgba(0, 112, 60, 0.05);
+    border-left-color:$govuk-success-colour;
+}
+
+&.blue {
+    background:rgba(0, 112, 60, 0.05);
+    border-left-color:$govuk-brand-colour;
+}
+
+
+}

@@ -28,10 +28,10 @@ About the injured person -  Does the injured person have a national insurance nu
                 </div>
                 <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-ni">
                   <div class="govuk-form-group">
-                    <label class="govuk-label" for="ni-number">
+                    <label class="govuk-label" for="ni-number-pre-filled">
                       Enter the injured person's national insurance number
                     </label>
-                    <input class="govuk-input govuk-!-width-one-half" id="ni-by-text" name="ni-number" type="text" spellcheck="false" value="{{ data['ni-number']}}"></div>
+                    <input class="govuk-input govuk-!-width-one-half" id="ni-by-text" name="ni-number-pre-filled" type="text" spellcheck="false" value="{{ data['ni-number-pre-filled']}}"></div>
           
                 </div>
                 <div class="govuk-radios__item">
@@ -45,26 +45,20 @@ About the injured person -  Does the injured person have a national insurance nu
                     <fieldset class="govuk-fieldset">
                       <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
                         <label class="govuk-fieldset__heading">
-                          Why doesn't the injured person have a national insurance number
+                          Why not?
                         </label>
                       </legend>
                       <div class="govuk-radios">
                         <div class="govuk-radios__item">
-                          <input class="govuk-radios__input" id="no-ni-reason" name="no-ni-reason" type="radio" value="reason1" {{ checked("no-ni-reason", "reason1") }}>
+                          <input class="govuk-radios__input" id="no-ni-reason" name="no-ni-reason" type="radio" value="The injured person is foreign" {{ checked("no-ni-reason", "The injured person is foreign") }}>
                           <label class="govuk-label govuk-radios__label" for="no-ni-reason">
-                            Reason 1
+                            The injured person is a foreign national
                           </label>
                         </div>
                         <div class="govuk-radios__item">
-                          <input class="govuk-radios__input" id="no-ni-reason-2" name="no-ni-reason" type="radio" value="reason2" {{ checked("no-ni-reason", "reason2") }}>
+                          <input class="govuk-radios__input" id="no-ni-reason-2" name="no-ni-reason" type="radio" value="The injured person has refuge/immigrant status" {{ checked("no-ni-reason", "The injured person has refuge/immigrant status") }}>
                           <label class="govuk-label govuk-radios__label" for="no-ni-reason-2">
-                            Reason 2
-                          </label>
-                        </div>
-                        <div class="govuk-radios__item">
-                          <input class="govuk-radios__input" id="no-ni-reason-3" name="no-ni-reason" type="radio" value="reason3" {{ checked("no-ni-reason", "reason3") }}>
-                          <label class="govuk-label govuk-radios__label" for="no-ni-reason-3">
-                            Reason 3
+                            The injured person has refuge/immigrant status
                           </label>
                         </div>
                       </div>

@@ -1,0 +1,40 @@
+
+<nav id="nav">
+  <div class="navbar">
+    <ul class="navbar__list-items">
+      {% if nav  == 'case details' %}
+      <li class="active">
+        {% else %}
+        <li>
+          {% endif %}
+        <a  href="case-details-and-tasks">Case details and tasks</a>
+
+      {% if nav  == 'Personal details' %}
+      <li class="active">
+        {% else %}
+        <li>
+          {% endif %}
+        <a href="personal-details">Personal details</a>
+        
+      </li>
+    
+      {% if nav  == 'Compensator details' %}
+      <li class="active">
+        {% else %}
+        <li>
+          {% endif %}
+        <a href="compensator-details">Compensator details</a>
+        
+      </li>
+    
+      {% if nav  == 'Representative details' %}
+      <li class="active">
+        {% else %}
+        <li>
+          {% endif %}
+        <a href="representative-details">Representative details</a>
+        
+      </li>       
+    </ul>
+  </div>
+</nav>

@@ -11,27 +11,29 @@
     <div class="govuk-grid-column-two-thirds">
       <h1 class="govuk-heading-xl">
         <span class="govuk-caption-xl">Compensation Recovery Unit</span>
-       Prototypes
+      Design concepts
       </h1>
       {% from "govuk/components/notification-banner/macro.njk" import govukNotificationBanner %}
 
 {% set html %}
   <p class="govuk-notification-banner__heading">
-    Here you will find our user research prototypes for CRU replacement
+  Design concepts for the discovery phase of CRU replacement
   </p>
-  <p>These prototypes are a tool to test our hypothesis with users and validate that we are meeting their needs</p>
+  <p>These design concepts are not tested with users, they are a tool to enable us to visualise how we might begin to solve some of our users’ problems</p>
 {% endset %}
+
+
 
 {{ govukNotificationBanner({
   html: html
 }) }}
 
 <div class="card">
- <h2 class="govuk-heading-s">Register a claim</h2>
+ <h2 class="govuk-heading-s">Add a case</h2>
  <div class="card-inner-panel">
    <ul class="govuk-list">
-     <li><a href="registration/cru-landing">Register a claim</a></li>
-     <li><a href="registration/cru-landing-moj">Register a claim - MOJ data</a></li>
+     <li><a href="registration/cru-landing">Add a case</a></li>
+     <li><a href="registration/cru-landing-moj">Add a case - MOJ data</a></li>
    </ul>
  </div>
 </div>

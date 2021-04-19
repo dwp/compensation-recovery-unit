@@ -1,0 +1,62 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+About the claim and injuries - Please tell us the date of the accident or alleged clinical negligence
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <a href="javascript: history.go(-1)" class="govuk-back-link govuk-!-margin-bottom-5">Back</a>   
+        <form class="form" action="about-the-injury" method="post">
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                <h1 class="govuk-fieldset__heading">
+                  <span class="govuk-caption-xl">Injury, illness, or accident</span>
+                  Where is the injury
+                  </label>
+                </h1>
+              </legend>
+              <div class="govuk-radios">
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="where-is-the-injury" name="where-is-the-injury" type="radio" value="Neck">
+                  <label class="govuk-label govuk-radios__label" for="where-is-the-injury">
+                    Neck
+                  </label>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="where-is-the-injury-2" name="where-is-the-injury" type="radio" value="Shoulder">
+                  <label class="govuk-label govuk-radios__label" for="where-is-the-injury-2">
+                    Shoulder
+                  </label>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="where-is-the-injury-3" name="where-is-the-injury" type="radio" value="Back">
+                  <label class="govuk-label govuk-radios__label" for="where-is-the-injury-3">
+                    Back
+                  </label>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="where-is-the-injury-4" name="where-is-the-injury" type="radio" value="Forearm/Wrist/Hand/Finger(s)">
+                  <label class="govuk-label govuk-radios__label" for="where-is-the-injury-4">
+                    Forearm/Wrist/Hand/Finger(s)
+                  </label>
+                </div>
+              </div>
+          
+            </fieldset>
+          </div>
+
+      <button class="govuk-button" data-module="govuk-button">
+        Continue
+      </button>
+      
+    </form>
+
+    </div>
+  </div>
+
+{% endblock %}

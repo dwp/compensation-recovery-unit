@@ -17,7 +17,7 @@ Register a claim with the Compensation Recovery Unit
   
           <h1 class="govuk-heading-xl">Check your answers before registering the claim</h1>
   
-          <h2 class="govuk-heading-m">About the injured person</h2>
+          <h2 class="govuk-heading-m">The injured person</h2>
   
           <dl class="govuk-summary-list govuk-!-margin-bottom-9">
             <div class="govuk-summary-list__row">
@@ -74,12 +74,12 @@ Register a claim with the Compensation Recovery Unit
             </div>
           </dl>
   
-          <h2 class="govuk-heading-m">About the claim and injuries</h2>
+          <h2 class="govuk-heading-m">Injury, illness, or accident</h2>
   
           <dl class="govuk-summary-list govuk-!-margin-bottom-9">
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
-                Date of the accident or alleged clinical negligence
+                Date of injury
               </dt>
               <dd class="govuk-summary-list__value">
                 3 February 2021
@@ -92,27 +92,14 @@ Register a claim with the Compensation Recovery Unit
             </div>
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
-                About the accident or incident
+                Injury
               </dt>
               <dd class="govuk-summary-list__value">
-                Soft tissue injury to lower back
+                {{ data['type-of-injury']}} to {{ data['where-is-the-injury']}} 
               </dd>
               <dd class="govuk-summary-list__actions">
                 <a class="govuk-link" href="#">
                   Change<span class="govuk-visually-hidden"> About the accident or incident</span>
-                </a>
-              </dd>
-            </div>
-            <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key">
-               Name of the disease
-              </dt>
-              <dd class="govuk-summary-list__value">
-               Sore back
-              </dd>
-              <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="#">
-                  Change<span class="govuk-visually-hidden">name of disease</span>
                 </a>
               </dd>
             </div>
@@ -131,13 +118,13 @@ Register a claim with the Compensation Recovery Unit
             </div>
           </dl>
   
-          <h2 class="govuk-heading-m">About the compensator</h2>
+          <h2 class="govuk-heading-m">Insurance company</h2>
 
 
           <dl class="govuk-summary-list govuk-!-margin-bottom-9">
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
-                Name of compensator or compensator’s representative
+                Name 
               </dt>
               <dd class="govuk-summary-list__value">
                Direct insurance 
@@ -150,7 +137,7 @@ Register a claim with the Compensation Recovery Unit
             </div>
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
-                Your reference
+                Reference
               </dt>
               <dd class="govuk-summary-list__value">
                 DI345567Y
@@ -158,19 +145,6 @@ Register a claim with the Compensation Recovery Unit
               <dd class="govuk-summary-list__actions">
                 <a class="govuk-link" href="#">
                   Change<span class="govuk-visually-hidden"> About the accident or incident</span>
-                </a>
-              </dd>
-            </div>
-            <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key">
-                Name of insured or policy holder or car registration
-              </dt>
-              <dd class="govuk-summary-list__value">
-               TP55WSD
-              </dd>
-              <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="#">
-                  Change<span class="govuk-visually-hidden">Name of insured or policy holder or car registration</span>
                 </a>
               </dd>
             </div>
@@ -202,13 +176,13 @@ Register a claim with the Compensation Recovery Unit
             </div>
           </dl>
 
-          <h2 class="govuk-heading-m">About the injured person's representative</h2>
+          <h2 class="govuk-heading-m">Solicitor</h2>
 
 
           <dl class="govuk-summary-list govuk-!-margin-bottom-9">
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
-                Name of representative
+                Name
               </dt>
               <dd class="govuk-summary-list__value">
                Crowley solicitors
@@ -221,10 +195,10 @@ Register a claim with the Compensation Recovery Unit
             </div>
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
-                Your reference????
+                Reference
               </dt>
               <dd class="govuk-summary-list__value">
-                DI345567Y????
+                DI345567Y
               </dd>
               <dd class="govuk-summary-list__actions">
                 <a class="govuk-link" href="#">
@@ -261,7 +235,7 @@ Register a claim with the Compensation Recovery Unit
           </dl>
 
 
-          <h2 class="govuk-heading-m">About the hospital(s) attended because of the accident or incident</h2>
+          <h2 class="govuk-heading-m">Hospital or medical centre</h2>
 
 
           <dl class="govuk-summary-list govuk-!-margin-bottom-9">

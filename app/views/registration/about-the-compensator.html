@@ -12,25 +12,34 @@ About the injured person - Enter injured person's name and date of birth
         <a href="javascript: history.go(-1)" class="govuk-back-link govuk-!-margin-bottom-5">Back</a>   
         <form class="form" action="compensator-address" method="post">
       <h1 class="govuk-heading-xl">
-        <span class="govuk-caption-xl">About the compensator</span>
-       Add compensator's details
+        <span class="govuk-caption-xl">Insurance company
+        </span>
+        Who is the injured person’s insurance company?
+
       </h1>
 
       <div class="govuk-form-group">
         <label class="govuk-label govuk-label--s" for="compensator-name">
-            Name of compensator or compensator’s representative
+          Company name
           </label>
         <input class="govuk-input" id="compensator-name" name="compensator-name" type="text" value="{{data['compensator-name']}}">
       </div>
 
       <div class="govuk-form-group">
         <label class="govuk-label govuk-label--s" for="on-behalf-of-name">
-          On behalf of
+   Agent name
         </label>
-        <div id="on-behalf-of-name-hint" class="govuk-hint">
+        <!--<div id="on-behalf-of-name-hint" class="govuk-hint">
           Enter name of compensator if representative’s details given above
-        </div>
+        </div> -->
         <input class="govuk-input" id="on-behalf-of-name" name="on-behalf-of-name" type="text" value="{{data['on-behalf-of-name']}}">
+      </div>
+
+      <div class="govuk-form-group">
+        <label class="govuk-label govuk-label--s" for="compensator-phone-number">
+          Phone
+          </label>
+        <input class="govuk-input govuk-input--width-10" id="compensator-name" name="compensator-phone-number" type="text" value="{{data['compensator-phone-number']}}">
       </div>
 
       <div class="govuk-form-group">
@@ -38,20 +47,6 @@ About the injured person - Enter injured person's name and date of birth
            Your reference
           </label>
         <input class="govuk-input govuk-input--width-10" id="compensator-name" name="compensator-reference" type="text" value="{{data['compensator-reference']}}">
-      </div>
-
-      <div class="govuk-form-group">
-        <label class="govuk-label govuk-label--s" for="name-of-insured">
-          Name of insured or policy holder or car registration
-          </label>
-        <input class="govuk-input" id="compensator-name" name="name-of-insured" type="text" value="{{data['name-of-insured']}}">
-      </div>
-
-      <div class="govuk-form-group">
-        <label class="govuk-label govuk-label--s" for="compensator-phone-number">
-          Telephone number
-          </label>
-        <input class="govuk-input govuk-input--width-10" id="compensator-name" name="compensator-phone-number" type="text" value="{{data['compensator-phone-number']}}">
       </div>
 
       <div class="govuk-radios__item govuk-visually-hidden">
