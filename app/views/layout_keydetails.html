@@ -57,11 +57,34 @@
     </p>
   </div>
   </div>
-
+  <div class="govuk-width-container">
+  <section class="key-details-bar" role="contentinfo" aria-label="Key details">
+    <dl class="key-details-bar__key-details">
+      <div class="key-details-bar__top-block">
+        <dt class="govuk-visually-hidden">Name:</dt>
+        <dd class="key-details-bar__name">Sarah Henderson</dd>
+  
+        <dt class="govuk-visually-hidden">National Insurance number:</dt>
+        <dd class="key-details-bar__nino">QQ 12 34 56 X</dd>
+  
+        <dt class="govuk-visually-hidden">Interests</dt>
+        <dd class="key-details-bar__status">UC - PIP - NHS</dd>
+        
+      </div>
+  
+      <div class="key-details-bar__bottom-block">
+        <dt>Cru reference:</dt>
+        <dd>12345</dd>
+        <dt>Sla:</dt>
+        <dd>27 days remaining</dd>
+      </div>
+    </dl>
+  </section>
+  </div>
   
 {% endblock %}
 
-{% set mainClasses = mainClasses | default("govuk-main-wrapper--auto-spacing") %}
+{% set mainClasses = mainClasses | default("govuk-main-wrapper--auto-spacing govuk-!-padding-top-0") %}
 
 {% if useAutoStoreData %}
   {% block footer %}

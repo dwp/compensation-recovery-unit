@@ -25,8 +25,12 @@ $govuk-assets-path: '/govuk/assets/';
 @import "patterns/timeline";
 
 
-// custom pattern - subnavigation currently is not in the govuk design system (This is a home office pattern)
+// custom pattern - subnavigation currently is not in the govuk design system (This is a dwp pattern)
 @import "patterns/subnav";
+
+// custom pattern - subnavigation currently is not in the govuk design system (This is a dwp pattern)
+@import "patterns/keydetails";
+
 
 
 .govuk-inset-text{

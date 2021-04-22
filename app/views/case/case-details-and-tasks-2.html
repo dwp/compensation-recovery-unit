@@ -1,5 +1,5 @@
 
-{% extends "layout.html" %}
+{% extends "layout_keydetails.html" %}
 
 {% block pageTitle %}
   GOV.UK Prototype Kit
@@ -13,7 +13,7 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
-      {% include "./_keydetails.html" %} 
+      
 
    
       {% include "./_subnav-horizontal.html" %} 
@@ -23,7 +23,7 @@
   </div>
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
-      <h2 class="govuk-heading-l">Case status and tasks</h2>
+      <h1 class="govuk-heading-l">Case detail and tasks <span class="govuk-visually-hidden">for Sarah Henderson</span></h1>
       <div class="card-container">
 
             
@@ -81,7 +81,7 @@
                 <td class="govuk-table__cell">30 October 2021</td>
               </tr>
               <tr class="govuk-table__row">
-                <th scope="row" class="govuk-table__header">Compensator</th>
+                <th scope="row" class="govuk-table__header">Insurance company</th>
                 <td class="govuk-table__cell">Insure Co Ltd</td>
               </tr>
             </tbody>
@@ -93,7 +93,8 @@
           <h2 class="govuk-heading-s">
      Timeline</h2>
      <div class="card-inner-panel">
-          <a href="" class="govuk-button govuk-button--secondary">Settle a case</a>
+      {% include "./_timeline.html" %} 
+          <!-- <a href="" class="govuk-button govuk-button--secondary">View all history</a> -->
      </div>     
           </div>
     
