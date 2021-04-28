@@ -32,7 +32,7 @@
 {% from "govuk/components/warning-text/macro.njk"        import govukWarningText %}
 
 {% block head %}
-{% include  folder+ "/includes/head.html" %}
+  {% include "includes/head.html" %}
 {% endblock %}
 
 {% block pageTitle %}
@@ -42,9 +42,9 @@
 {% block header %}
   {# Set serviceName in config.js. #}
   {{ govukHeader({
-    homepageUrl: "/base/",
+    homepageUrl: "/",
     serviceName: serviceName,
-    serviceUrl: "/" + folder + "/",
+    serviceUrl: "/",
     containerClasses: "govuk-width-container"
   }) }}
   <div class="govuk-width-container">
@@ -56,15 +56,35 @@
       <span>This is not production ready code</span>
     </p>
   </div>
-  {% block keydetails %}
-  {% endblock %}
+  </div>
+  <div class="govuk-width-container">
+  <section class="key-details-bar" role="contentinfo" aria-label="Key details">
+    <dl class="key-details-bar__key-details">
+      <div class="key-details-bar__top-block">
+        <dt class="govuk-visually-hidden">Name:</dt>
+        <dd class="key-details-bar__name">Sarah Henderson</dd>
+  
+        <dt class="govuk-visually-hidden">National Insurance number:</dt>
+        <dd class="key-details-bar__nino">QQ 12 34 56 X</dd>
+  
+        <dt class="govuk-visually-hidden">Interests</dt>
+        <dd class="key-details-bar__status">UC - PIP - NHS</dd>
+        
+      </div>
+  
+      <div class="key-details-bar__bottom-block">
+        <dt>Cru reference:</dt>
+        <dd>12345</dd>
+        <dt>Sla:</dt>
+        <dd>27 days remaining</dd>
+      </div>
+    </dl>
+  </section>
   </div>
   
 {% endblock %}
 
-
-
-{% set mainClasses = mainClasses | default("govuk-main-wrapper--auto-spacing") %}
+{% set mainClasses = mainClasses | default("govuk-main-wrapper--auto-spacing govuk-!-padding-top-0") %}
 
 {% if useAutoStoreData %}
   {% block footer %}
@@ -87,7 +107,7 @@
 
 {% block bodyEnd %}
   {% block scripts %}
-    {% include folder+ "/includes/scripts.html" %}
+    {% include "includes/scripts.html" %}
     {% block pageScripts %}{% endblock %}
   {% endblock %}
   <!-- GOV.UK Prototype Kit {{releaseVersion}} -->

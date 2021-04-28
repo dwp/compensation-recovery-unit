@@ -1,0 +1,59 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+About the injured person -  Does the injured person have a national insurance number
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <a href="javascript: history.go(-1)" class="govuk-back-link govuk-!-margin-bottom-5">Back</a>   
+        <form class="form" action="injured-person-address" method="post">
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset" aria-describedby="ni-hint">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                <h1 class="govuk-fieldset__heading">
+                  <span class="govuk-caption-xl">About the injured person</span>
+                  Do they have a National Insurance number?
+                </h1>
+              </legend>
+              <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="ni" name="ni" type="radio" value="yes" data-aria-controls="conditional-ni" {{ checked("ni", "yes") }}>
+                  <label class="govuk-label govuk-radios__label" for="ni">
+                   Yes
+                  </label>
+                </div>
+                <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-ni">
+                  <div class="govuk-form-group">
+                    <label class="govuk-label" for="ni-number">
+                     National Insurance number
+                    </label>
+                    <input class="govuk-input govuk-!-width-one-half" id="ni-by-text" name="ni-number" type="text" spellcheck="false" value="{{ data['ni-number']}}"></div>
+          
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="ni-2" name="ni" type="radio" value="no~ni-guard-no" {{ checked("ni", "no") }}>
+                  <label class="govuk-label govuk-radios__label" for="ni-2">
+                  No
+                  </label>
+                </div>
+
+            </fieldset>
+          </div>
+
+  
+
+
+      <button class="govuk-button" data-module="govuk-button">
+        Continue
+      </button>
+      
+    </form>
+
+    </div>
+  </div>
+
+{% endblock %}
