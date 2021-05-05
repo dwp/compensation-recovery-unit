@@ -1,0 +1,104 @@
+
+{% extends "layout.html" %}
+
+{% set nav = "case details" %}
+
+{% block pageTitle %}
+  Case details
+{% endblock %}
+
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      {% include "./_keydetails.html" %} 
+      
+    </div>
+  </div>
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-quarter">
+      {% include "./_subnav.html" %} 
+    </div>
+    <div class="govuk-grid-column-three-quarters">
+     <h2 class="govuk-heading-l">Case details and tasks</h2>
+
+
+     <div class="card-container">
+
+      <div class="card half">
+        <h2 class="govuk-heading-s">
+   Status and tasks</h2>
+   <div class="card-inner-panel">
+    <div class="govuk-inset-text green govuk-!-margin-top-0 govuk-!-margin-bottom-4">
+      <h3 class="govuk-heading-s govuk-!-margin-bottom-1">Certificate issued</h3>
+  <p>Valid until 30 September 2021</p>
+    </div>
+    <table class="govuk-table">
+      <caption class="govuk-table__caption govuk-table__caption--s">Money owed</caption>
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th scope="col" class="govuk-table__header">To</th>
+          <th scope="col" class="govuk-table__header">Amount</th>
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">DWP</th>
+          <td class="govuk-table__cell">£2556.00</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">NHS</th>
+          <td class="govuk-table__cell">£1109.80</td>
+        </tr>
+      </tbody>
+    </table>
+    <a href="" class="govuk-button govuk-button--secondary">View or recalulate</a>
+   </div>     
+        </div>
+
+
+      <div class="card half">
+        <h2 class="govuk-heading-s">
+          About the case</h2>
+       <div class="card-inner-panel">
+      <table class="govuk-table">  
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Liability</th>
+            <td class="govuk-table__cell">Motor</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Type</th>
+            <td class="govuk-table__cell">Injury</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Injury</th>
+            <td class="govuk-table__cell">Sprain or strain to Back</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Date of injury</th>
+            <td class="govuk-table__cell">30 October 2020</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Insurance company</th>
+            <td class="govuk-table__cell">Insure Co Ltd</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Solicitor</th>
+            <td class="govuk-table__cell">Crowley Solicitors</td>
+          </tr>
+        </tbody>
+      </table> 
+      </div>
+     </div>
+
+
+
+
+  </div>
+
+    </div>
+  </div>
+
+{% endblock %}

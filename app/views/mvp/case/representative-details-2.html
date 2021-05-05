@@ -1,0 +1,25 @@
+
+{% extends "layout_keydetails.html" %}
+
+{% set nav = "Representative details" %}
+
+{% block pageTitle %}
+  Case details
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      {% include "./_subnav-horizontal.html" %} 
+      
+    </div>
+  </div>
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-three-quarters">
+      {% include "./_representative-details.html" %} 
+
+    </div>
+  </div>
+
+{% endblock %}

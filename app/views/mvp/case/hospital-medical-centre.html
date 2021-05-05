@@ -1,0 +1,24 @@
+
+{% extends "layout.html" %}
+
+{% set nav = "Hospital" %}
+
+{% block pageTitle %}
+  Hospital or medical centre
+{% endblock %}
+
+{% block keydetails %}
+{% include "./_keydetails.html" %}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-quarter">
+      {% include "./_subnav.html" %} 
+    </div>
+    <div class="govuk-grid-column-three-quarters">
+     {% include "./_hospital-medical-centre.html" %} 
+    </div>
+  </div>
+
+{% endblock %}

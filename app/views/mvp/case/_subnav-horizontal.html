@@ -1,0 +1,39 @@
+
+
+<nav class="navigation-secondary govuk-!-margin-bottom-4">
+  <ul>
+    {% if nav  == 'case details' %}
+    <li class="active">
+      {% else %}
+      <li>
+        {% endif %}
+      <a  href="case-details-and-tasks-2">Case details and tasks</a>
+
+    {% if nav  == 'Personal details' %}
+    <li class="active">
+      {% else %}
+      <li>
+        {% endif %}
+      <a href="personal-details-2">Personal details</a>
+      
+    </li>
+  
+    {% if nav  == 'Compensator details' %}
+    <li class="active">
+      {% else %}
+      <li>
+        {% endif %}
+      <a href="compensator-details-2">Insurance company</a>
+      
+    </li>
+  
+    {% if nav  == 'Representative details' %}
+    <li class="active">
+      {% else %}
+      <li>
+        {% endif %}
+      <a href="representative-details-2">Solicitor</a>
+      
+    </li>     
+  </ul>
+</nav>
