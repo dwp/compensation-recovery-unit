@@ -31,9 +31,7 @@ $govuk-assets-path: '/govuk/assets/';
 // custom pattern - subnavigation currently is not in the govuk design system (This is a dwp pattern)
 @import "patterns/keydetails";
 
-body{
-    border:20px solid red;
-}
+
 
 .govuk-inset-text{
 
