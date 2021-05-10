@@ -75,7 +75,7 @@ var NotifyClient = require('notifications-node-client').NotifyClient,
 Make a page with a form to collect the user’s email address. For
 example:
 ```
-{% extends "layout.html" %}
+{% extends folder+ "/layout.html" %}
 
 {% block content %}
 

@@ -1,8 +1,8 @@
 
-{% extends "layout.html" %}
+{% extends folder+ "/layout.html" %}
 
 {% block pageTitle %}
-About the injured person - Enter injured person's name and date of birth
+Insurance company -  Who is the insurance company paying the compensation?
 {% endblock %}
 
 {% block content %}
@@ -19,15 +19,15 @@ About the injured person - Enter injured person's name and date of birth
       </h1>
 
       <div class="govuk-form-group">
-        <label class="govuk-label govuk-label--s" for="compensator-name">
+        <label class="govuk-label " for="compensator-name">
           Company name
           </label>
         <input class="govuk-input" id="compensator-name" name="compensator-name" type="text" value="{{data['compensator-name']}}">
       </div>
 
       <div class="govuk-form-group">
-        <label class="govuk-label govuk-label--s" for="on-behalf-of-name">
-   Agent name
+        <label class="govuk-label" for="on-behalf-of-name">
+   Agent name ??????
         </label>
         <!--<div id="on-behalf-of-name-hint" class="govuk-hint">
           Enter name of compensator if representative’s details given above
@@ -36,14 +36,24 @@ About the injured person - Enter injured person's name and date of birth
       </div>
 
       <div class="govuk-form-group">
-        <label class="govuk-label govuk-label--s" for="compensator-phone-number">
+        <label class="govuk-label" for="email">
+          Email address
+        </label>
+        <div id="email-hint" class="govuk-hint">
+          We’ll only use this to send you a receipt
+        </div>
+        <input class="govuk-input" id="email" name="email" type="email" spellcheck="false" aria-describedby="email-hint" autocomplete="email">
+      </div>
+
+      <div class="govuk-form-group">
+        <label class="govuk-label" for="compensator-phone-number">
           Phone
           </label>
         <input class="govuk-input govuk-input--width-10" id="compensator-name" name="compensator-phone-number" type="text" value="{{data['compensator-phone-number']}}">
       </div>
 
       <div class="govuk-form-group">
-        <label class="govuk-label govuk-label--s" for="compensator-reference">
+        <label class="govuk-label" for="compensator-reference">
            Your reference
           </label>
         <input class="govuk-input govuk-input--width-10" id="compensator-name" name="compensator-reference" type="text" value="{{data['compensator-reference']}}">

@@ -1,5 +1,5 @@
 
-{% extends "layout.html" %}
+{% extends folder+ "/layout.html" %}
 
 {% block pageTitle %}
 About the claim and injuries - Please tell us the date of the accident or alleged clinical negligence
@@ -49,6 +49,14 @@ About the claim and injuries - Please tell us the date of the accident or allege
           
             </fieldset>
           </div>
+
+
+      <div class="govuk-radios__item govuk-visually-hidden">
+        <input class="govuk-radios__input" id="claim-details" name="claim-details" type="radio" value="completed" checked>
+        <label class="govuk-label govuk-radios__label" for="claim-details">
+         hidden radio for logic
+        </label>
+      </div>
 
       <button class="govuk-button" data-module="govuk-button">
         Continue

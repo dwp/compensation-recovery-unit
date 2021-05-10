@@ -1,5 +1,5 @@
 
-{% extends "layout.html" %}
+{% extends folder+ "/layout.html" %}
 
 {% block pageTitle %}
 Register a claim with the Compensation Recovery Unit
@@ -14,7 +14,7 @@ Register a claim with the Compensation Recovery Unit
       </h1>
 
       <h2 class="govuk-heading-s govuk-!-margin-bottom-2">Application incomplete</h2>
-      <p class="govuk-body govuk-!-margin-bottom-7">You have completed 0 of 8 sections.</p>
+      <p class="govuk-body govuk-!-margin-bottom-7">You have completed 0 of 5 sections.</p>
 
       <ol class="app-task-list">
         <li>
@@ -70,7 +70,7 @@ Register a claim with the Compensation Recovery Unit
           <ul class="app-task-list__items">
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
-                <a href="about-the-compensator" aria-describedby="list-convictions-status">
+                <a href="compensator-guard" aria-describedby="list-convictions-status">
                   Add the insurance company
                 </a>
               </span>
@@ -87,7 +87,7 @@ Register a claim with the Compensation Recovery Unit
 
         <li>
           <h2 class="app-task-list__section">
-            <span class="app-task-list__section-number">4. </span> Solicitor
+            <span class="app-task-list__section-number">4. </span> Injured persons solicitor
           </h2>
           <ul class="app-task-list__items">
             <li class="app-task-list__item">
@@ -108,16 +108,34 @@ Register a claim with the Compensation Recovery Unit
         </li>
         <li>
           <h2 class="app-task-list__section">
-            <span class="app-task-list__section-number">6. </span> Submit your case  
+            <span class="app-task-list__section-number">5. </span> Submit your case  
           </h2>
           <ul class="app-task-list__items">
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
-             
+                {% if 
+                checked('injured-persons-details','completed') and  
+                checked('claim-details','completed') and  
+                checked('compensator-details','completed') and  
+                checked('representative-details','completed') %}
+                <a href="check-answers">Submit</a>
+                {% else %}
                 Submit 
+                {% endif %}
              
               </span>
-              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="financial-evidence-status">Cannot start yet</strong>
+              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="financial-evidence-status">
+                {% if 
+                  checked('injured-persons-details','completed') and  
+                  checked('claim-details','completed') and  
+                  checked('compensator-details','completed') and  
+                  checked('representative-details','completed') %}
+                  Not started yet
+                  {% else %}
+                  Cannot start yet
+                  {% endif %}
+                
+                </strong>
             </li>
           </ul>
         </li>

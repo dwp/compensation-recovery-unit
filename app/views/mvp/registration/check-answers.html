@@ -1,5 +1,5 @@
 
-{% extends "layout.html" %}
+{% extends folder+ "/layout.html" %}
 
 {% block pageTitle %}
 Register a claim with the Compensation Recovery Unit
@@ -13,7 +13,7 @@ Register a claim with the Compensation Recovery Unit
   
     <main class="govuk-main-wrapper " id="main-content" role="main">
       <div class="govuk-grid-row">
-        <div class="govuk-grid-column-two-thirds-from-desktop">
+        <div class="govuk-grid-column-three-quarters-from-desktop">
   
           <h1 class="govuk-heading-xl">Check your answers before registering the claim</h1>
   
@@ -48,19 +48,6 @@ Register a claim with the Compensation Recovery Unit
             </div>
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
-                Address
-              </dt>
-              <dd class="govuk-summary-list__value">
-                72 Guild Street<br>London<br>SE23 6FH
-              </dd>
-              <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="#">
-                  Change<span class="govuk-visually-hidden"> address</span>
-                </a>
-              </dd>
-            </div>
-            <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key">
                 National insurance number
               </dt>
               <dd class="govuk-summary-list__value">
@@ -72,9 +59,22 @@ Register a claim with the Compensation Recovery Unit
                 </a>
               </dd>
             </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Address
+              </dt>
+              <dd class="govuk-summary-list__value">
+                72 Guild Street<br>London<br>SE23 6FH
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="#">
+                  Change<span class="govuk-visually-hidden"> address</span>
+                </a>
+              </dd>
+            </div>
           </dl>
   
-          <h2 class="govuk-heading-m">Injury, illness, or accident</h2>
+          <h2 class="govuk-heading-m">Injury</h2>
   
           <dl class="govuk-summary-list govuk-!-margin-bottom-9">
             <div class="govuk-summary-list__row">
@@ -103,22 +103,9 @@ Register a claim with the Compensation Recovery Unit
                 </a>
               </dd>
             </div>
-            <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key">
-                Type of liability
-              </dt>
-              <dd class="govuk-summary-list__value">
-                Motor
-              </dd>
-              <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="#">
-                  Change<span class="govuk-visually-hidden"> type of liabiliy</span>
-                </a>
-              </dd>
-            </div>
           </dl>
   
-          <h2 class="govuk-heading-m">Insurance company</h2>
+          <h2 class="govuk-heading-m">Insurance company paying the compensation</h2>
 
 
           <dl class="govuk-summary-list govuk-!-margin-bottom-9">
@@ -135,6 +122,19 @@ Register a claim with the Compensation Recovery Unit
                 </a>
               </dd>
             </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Email address 
+                </dt>
+                <dd class="govuk-summary-list__value">
+                ddd@sssss
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link" href="#">
+                    Change<span class="govuk-visually-hidden">email address</span>
+                  </a>
+                </dd>
+              </div>
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
                 Reference
@@ -189,7 +189,20 @@ Register a claim with the Compensation Recovery Unit
               </dd>
               <dd class="govuk-summary-list__actions">
                 <a class="govuk-link" href="#">
-                  Change<span class="govuk-visually-hidden"> date</span>
+                  Change<span class="govuk-visually-hidden">Solictor name</span>
+                </a>
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Email address 
+              </dt>
+              <dd class="govuk-summary-list__value">
+              ddd@sssss
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="#">
+                  Change<span class="govuk-visually-hidden">email address</span>
                 </a>
               </dd>
             </div>
@@ -229,26 +242,6 @@ Register a claim with the Compensation Recovery Unit
               <dd class="govuk-summary-list__actions">
                 <a class="govuk-link" href="#">
                   Change<span class="govuk-visually-hidden"> address</span>
-                </a>
-              </dd>
-            </div>
-          </dl>
-
-
-          <h2 class="govuk-heading-m">Hospital or medical centre</h2>
-
-
-          <dl class="govuk-summary-list govuk-!-margin-bottom-9">
-            <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key">
-                Did the injured person receive NHS treatment because of the incident
-              </dt>
-              <dd class="govuk-summary-list__value">
-               No
-              </dd>
-              <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="#">
-                  Change<span class="govuk-visually-hidden"> date</span>
                 </a>
               </dd>
             </div>
