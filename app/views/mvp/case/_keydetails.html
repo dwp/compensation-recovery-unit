@@ -1,9 +1,13 @@
-<div class="keydetails"><h1 class="govuk-heading-l govuk-!-margin-bottom-0">
-  {{case.name | default('Sarah Henderson') }}
-  <span class="govuk-caption-m">
-    National insurance number: DD 11 22 33 D
+<div class="keydetails">
+  <a href="javascript: history.go(-1)" class="govuk-back-link govuk-!-margin-bottom-5">Back</a> 
+  <h1 class="govuk-heading-l govuk-!-margin-bottom-0">
+  {{case.firstname | default('Sarah') }} {{case.lastname | default('Sarah') }}
+  <span class="govuk-visually-hidden">
+    National insurance number
   </span>
-  <!-- paste this on the end of th e browser to see a name from case data (?reference=EPPPinkuu0qGi)-->
+  <span class="govuk-caption-m">
+  {{case.nino | default('FD223344D') }}
+  </span>
    </h1>
 
    <style>
@@ -24,19 +28,19 @@
      }
    </style>
 </div>
-<div class="govuk-inset-text blue govuk-!-margin-top-5 govuk-!-margin-bottom-0">
-  <h3 class="govuk-heading-m govuk-!-margin-bottom-1">Case overview</h3>
+<div class="govuk-inset-text blue govuk-!-margin-top-5 govuk-!-margin-bottom-5">
+  <h3 class="govuk-heading-m govuk-!-margin-bottom-4">Status: {{case.status}}</h3>
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-one-third">
       <ul class="govuk-list">
-        <li>Interests: UC, PIP and NHS</li>
-        <li>Reference: 123456</li>
+        <li>Interests: UC</li>
+        <li>Reference: {{case.reference | default('CRU123') }}</li>
         <li>Due: <span class="">27</span> Days</li>
         </ul>
     </div>
     <div class="govuk-grid-column-one-third">
       <ul class="govuk-list">
-        <li>Case type: Injury </li>
+        <li>Type: Injury </li>
         <li>Injury: Whiplash</li>
         <li>Injury date: 20 december 2020</li>
       </ul>
