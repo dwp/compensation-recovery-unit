@@ -57,14 +57,35 @@
           <button class="govuk-button govuk-!-margin-bottom-0">Find case</button>
         </div>
       </form>
+   
+      {% if case.reference == data['find-case'] or case.nino == data['find-case'] %}
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+      <p class="govuk-body">Showing:  
+        <span class="govuk-!-font-weight-bold"> 1 result </span>
+      
+      </p>
+      {% else %}
+      {% endif %}
+     
+
       <ul class="govuk-list">
-         
       {% for case in cases %} 
       {% if case.reference == data['find-case'] or case.nino == data['find-case'] %}
       <li>
         <div class="card full">
           <h2 class="govuk-heading-s">
-            Total  <span class="govuk-!-font-size-48 govuk-!-display-block">{{totcases}}</span></h2>
+            <a href="../case/case-details-and-tasks-accordion?reference={{case.reference}}" class="govuk-body govuk-link  govuk-!-display-block govuk-!-margin-bottom-0">{{case.firstname}} {{case.lastname}}</a>
+          </h2>
+          <div class="card-inner-panel">
+            <ul class="govuk-list govuk-!-margin-bottom-0 govuk-!-margin-top-0">
+              <li>Reference: {{case.reference}}</li>
+              <li>National insurance number: {{case.nino}}</li>
+              <li>Date of birth: {{case.dob}}</li>
+              <li>First line of address: {{case.address}} </li>
+              <li>Postcode: {{case.postcode}} </li>
+            </ul>
+          </div>
       </li>
       {% endif %}
         {% endfor %}

@@ -1,34 +1,63 @@
-<div class="keydetails">
-  <a href="javascript: history.go(-1)" class="govuk-back-link govuk-!-margin-bottom-5">Back</a> 
-  <h1 class="govuk-heading-l govuk-!-margin-bottom-0">
-  {{case.firstname | default('Sarah') }} {{case.lastname | default('Sarah') }}
-  <span class="govuk-visually-hidden">
-    National insurance number
-  </span>
-  <span class="govuk-caption-m">
-  {{case.nino | default('FD223344D') }}
-  </span>
-   </h1>
+<a href="javascript: history.go(-1)" class="govuk-back-link govuk-!-margin-bottom-5">Back</a> 
+<section class="key-details-bar" role="contentinfo" aria-label="Key details">
+  <dl class="key-details-bar__key-details">
+    <div class="key-details-bar__top-block">
+      <dt class="govuk-visually-hidden">Name:</dt>
+      <dd class="key-details-bar__name">{{case.firstname | default('Sarah') }} {{case.lastname | default('Sarah') }}</dd>
 
-   <style>
-     .keydetails{
-       padding:15px 0 ;
-       margin-bottom:0px;
-       border-bottom:1px solid #b1b4b6;
-     }
+      <dt class="govuk-visually-hidden">National Insurance number:</dt>
+      <dd class="key-details-bar__nino">  {{case.nino | default('FD 22 33 44 D') }}</dd>
 
-     .keydetails ul{
-       margin-bottom:0;
-       padding-top:15px;
-     }
+      <dt class="govuk-visually-hidden">Case status:</dt>
+      <dd class="key-details-bar__status govuk-!-margin-right-0"><span class="govuk-tag">{{case.status | default('Certificate issued') }}</span></dd>
+    </div>
 
-     .keydetails li{
-       display:inline-block;
-       padding-right:30px
-     }
-   </style>
+    <div class="key-details-bar__bottom-block">
+      <dt>Date of birth:</dt>
+      <dd>4 June 1972</dd>
+
+      <dt>Postcode:</dt>
+      <dd>{{case.postcode | default('SW11 1JU') }}</dd>
+
+      <dt>Interests:</dt>
+      <dd>UC</dd>
+      <dt>Reference:</dt>
+      <dd>CU1234</dd>
+    </div>
+  </dl>
+</section>
+
+<div class="govuk-inset-text">
+  {% if case.status == 'Certificate requested'%}
+  <h2 class="govuk-heading-m">Task</h2>
+  <p class="">
+    Miss match of information, check if any benefit has been paid because of the injury
+    <a class="govuk-notification-banner__link" href="#">Update case</a>.
+  </p>
+  {% else %}
+  <h2 class="govuk-heading-m">Certificate issued</h2>
+  <p><span class="govuk-!-font-size-27 govuk-!-font-weight-bold">£0 </span> benefits to recover <a href="">view certificate</a></p>
+  {% endif %}
 </div>
-<div class="govuk-inset-text blue govuk-!-margin-top-5 govuk-!-margin-bottom-5">
+
+
+
+
+<!--<div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+  <div class="govuk-notification-banner__header">
+    <h2 class="govuk-notification-banner__title " id="govuk-notification-banner-title">
+      Task to do
+    </h2>
+  </div>
+  <div class="govuk-notification-banner__content">
+    <p class="">
+      Check if any benefit has been paid because of the injury
+      <a class="govuk-notification-banner__link" href="#">Update case</a>.
+    </p>
+    
+  </div>
+</div> -->
+<!--<div class="govuk-inset-text blue govuk-!-margin-top-5 govuk-!-margin-bottom-5">
   <h3 class="govuk-heading-m govuk-!-margin-bottom-4">Status: {{case.status}}</h3>
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-one-third">
@@ -50,4 +79,4 @@
       <li>Solicitor: Crowleys</li>
     </ul></div>
   </div>
-</div>
+</div> -->
