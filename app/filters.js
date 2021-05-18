@@ -1,4 +1,8 @@
+
+var moment = require('moment')
+
 module.exports = function (env) {
+
   /**
    * Instantiate object used to store the methods registered as a
    * 'filter' (of the same name) within nunjucks. You can override
@@ -41,5 +45,32 @@ module.exports = function (env) {
   /* ------------------------------------------------------------------
     keep the following line to return your filters to the app
   ------------------------------------------------------------------ */
+
+
+  filters.baseDate = function(format,num) {
+    var num = Math.ceil(num);
+    var d = moment().subtract(num,"days").format(format)
+    if (d !== 'Invalid date') return d
+    else return ''
+}
+
+  filters.baseDateAdd = function(format,num) {
+    var num = Math.ceil(num);
+    var d = moment().add(num,"days").format(format)
+    if (d !== 'Invalid date') return d
+    else return ''
+}
+
+  filters.toMonth = function(x){ 
+    months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];   
+    if (x > 0){ return months[x - 1]; // returns date as per month      
+    } else {
+            return x ;      
+    }}     
+    filters.toMoney = function(x){  return("£" + x );
+    //TO ADD - case to handle nothing being there 
+    }
+
+
   return filters
 }
