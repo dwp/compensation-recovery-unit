@@ -95,7 +95,7 @@ Register a claim with the Compensation Recovery Unit
                 Injury
               </dt>
               <dd class="govuk-summary-list__value">
-                {{ data['type-of-injury']}} to {{ data['where-is-the-injury']}} 
+                {{ data['type-of-injury'] | default('Sprain or strain')}} to {{ data['where-is-the-injury']| default('back')}} 
               </dd>
               <dd class="govuk-summary-list__actions">
                 <a class="govuk-link" href="#">

@@ -6,7 +6,7 @@ const router = express.Router()
 const radioButtonRedirect = require('radio-button-redirect')
 router.use(radioButtonRedirect)
 
-var crucases = require('./views/data/cru-cases.json')
+
 
 
 
@@ -24,22 +24,9 @@ router.use('/', (req, res, next) => {
     next();
   });
 
- 
-  router.get('/*', function (req, res, next) {
-    let findCase = {}
 
-    for (let i = 0; i < crucases.length; i++ ) {
-    if(crucases[i].reference === req.query.reference){
-      findCase = crucases[i];
-    }
-
-    }
-
-    res.locals.case = findCase
-    res.locals.cases = crucases
-     next()
-      })
 
   router.use('/current', require('./views/current/_routes'));
+  router.use('/mvp', require('./views/mvp/_routes'));
 
 module.exports = router
