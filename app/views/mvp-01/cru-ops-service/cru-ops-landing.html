@@ -1,0 +1,73 @@
+
+{% extends folder+ "/layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% set nav = "Cases" %}
+
+{% block content %}
+
+
+{% set totcases = 0 %}
+{% set nilcases = 0 %}
+{% set intcases = 0 %}
+{% set intcasestasks = 0 %}
+
+
+
+	{% for case in cases %}
+
+<!-- BASE VALUES -->
+
+
+  {% if case %}
+   {% set totcases = totcases + 1 %}
+   {% endif %}
+
+    {% if case.interest === "no"  %}
+     {% set nilcases = nilcases + 1 %}
+    {% endif %}
+
+  {% if case.interest === "yes" %}
+     {% set intcases = intcases + 1 %}
+    {% endif %}
+
+    {% if case.task === "yes" %}
+    {% set intcasestasks = intcasestasks + 1 %}
+   {% endif %}
+
+{% endfor %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      {% include "./_globalnav.html" %} 
+   
+      <h1 class="govuk-heading-xl">
+      Cases
+      </h1>
+    </div>
+  </div>
+
+
+      <div class="card-container">
+        <div class="card">
+          <h2 class="govuk-heading-s">
+            Total  <span class="govuk-!-font-size-48 govuk-!-display-block">{{totcases}}</span></h2>
+       </div> 
+   
+        <div class="card">
+          <h2 class="govuk-heading-s">
+            Nil certifcates issued  <span class="govuk-!-font-size-48 govuk-!-display-block">{{nilcases}}</span></h2>
+       </div> 
+     
+        <div class="card">
+          <h2 class="govuk-heading-s">
+            Benefits to recover  <span class="govuk-!-font-size-48 govuk-!-display-block">{{intcases}}</span></h2>
+       </div> 
+       </div>
+
+     
+
+{% endblock %}

@@ -1,0 +1,36 @@
+
+{% extends folder+ "/layout.html" %}
+
+{% block pageTitle %}
+About the injured person -  Does the injured person have a national insurance number
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <a href="javascript: history.go(-1)" class="govuk-back-link govuk-!-margin-bottom-5">Back</a>   
+        <form class="form" action="injured-person-address" method="post">
+         
+          <div class="govuk-form-group">
+            <h1 class="govuk-label-wrapper"><label class="govuk-label govuk-label--l" for="ni-number">
+              <span class="govuk-caption-l">The injured person</span>
+              National Insurance number
+            </label>
+          </h1>
+            <input class="govuk-input govuk-!-width-one-half" id="ni-by-text" name="ni-number" type="text" spellcheck="false" value="{{ data['ni-number']}}">
+          </div>
+  
+  
+
+
+      <button class="govuk-button" data-module="govuk-button">
+        Continue
+      </button>
+      
+    </form>
+
+    </div>
+  </div>
+
+{% endblock %}

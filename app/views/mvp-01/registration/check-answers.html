@@ -1,0 +1,267 @@
+
+{% extends folder+ "/layout.html" %}
+
+{% block pageTitle %}
+Register a claim with the Compensation Recovery Unit
+{% endblock %}
+
+{% block content %}
+
+
+  <div class="govuk-width-container">
+    <a href="#" class="govuk-back-link">Back</a>
+  
+    <main class="govuk-main-wrapper " id="main-content" role="main">
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-three-quarters-from-desktop">
+  
+          <h1 class="govuk-heading-xl">Check your answers before registering the claim</h1>
+  
+          <h2 class="govuk-heading-m">The injured person</h2>
+  
+          <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Name
+              </dt>
+              <dd class="govuk-summary-list__value">
+                Sarah Philips
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="#">
+                  Change<span class="govuk-visually-hidden"> name</span>
+                </a>
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Date of birth
+              </dt>
+              <dd class="govuk-summary-list__value">
+                5 January 1978
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="#">
+                  Change<span class="govuk-visually-hidden"> date of birth</span>
+                </a>
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                National insurance number
+              </dt>
+              <dd class="govuk-summary-list__value">
+                <p class="govuk-body">AA 11 22 33 B </p>
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="#">
+                  Change<span class="govuk-visually-hidden"> National insurance number</span>
+                </a>
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Address
+              </dt>
+              <dd class="govuk-summary-list__value">
+                72 Guild Street<br>London<br>SE23 6FH
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="#">
+                  Change<span class="govuk-visually-hidden"> address</span>
+                </a>
+              </dd>
+            </div>
+          </dl>
+  
+          <h2 class="govuk-heading-m">Injury</h2>
+  
+          <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Date of injury
+              </dt>
+              <dd class="govuk-summary-list__value">
+                3 February 2021
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="#">
+                  Change<span class="govuk-visually-hidden"> date</span>
+                </a>
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Injury
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ data['type-of-injury'] | default('Sprain or strain')}} to {{ data['where-is-the-injury']| default('back')}} 
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="#">
+                  Change<span class="govuk-visually-hidden"> About the accident or incident</span>
+                </a>
+              </dd>
+            </div>
+          </dl>
+  
+          <h2 class="govuk-heading-m">Insurance company paying the compensation</h2>
+
+
+          <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Name 
+              </dt>
+              <dd class="govuk-summary-list__value">
+               Direct insurance 
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="#">
+                  Change<span class="govuk-visually-hidden"> date</span>
+                </a>
+              </dd>
+            </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Email address 
+                </dt>
+                <dd class="govuk-summary-list__value">
+                paul.husdoon@directinsurance.co.uk
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link" href="#">
+                    Change<span class="govuk-visually-hidden">email address</span>
+                  </a>
+                </dd>
+              </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Reference
+              </dt>
+              <dd class="govuk-summary-list__value">
+                DI345567Y
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="#">
+                  Change<span class="govuk-visually-hidden"> About the accident or incident</span>
+                </a>
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Telephone
+              </dt>
+              <dd class="govuk-summary-list__value">
+                0800 897 654
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="#">
+                  Change<span class="govuk-visually-hidden">telephone number</span>
+                </a>
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Address
+              </dt>
+              <dd class="govuk-summary-list__value">
+                12 Harrington Street<br>Manchester<br>M1 2HY
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="#">
+                  Change<span class="govuk-visually-hidden"> address</span>
+                </a>
+              </dd>
+            </div>
+          </dl>
+
+          <h2 class="govuk-heading-m">Solicitor</h2>
+
+
+          <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Name
+              </dt>
+              <dd class="govuk-summary-list__value">
+               Crowley solicitors
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="#">
+                  Change<span class="govuk-visually-hidden">Solictor name</span>
+                </a>
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Email address 
+              </dt>
+              <dd class="govuk-summary-list__value">
+              sally.brown@crowleycolicitors.co.uk
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="#">
+                  Change<span class="govuk-visually-hidden">email address</span>
+                </a>
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Reference
+              </dt>
+              <dd class="govuk-summary-list__value">
+                Cr1234567
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="#">
+                  Change<span class="govuk-visually-hidden"> About the accident or incident</span>
+                </a>
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Telephone
+              </dt>
+              <dd class="govuk-summary-list__value">
+                0161 452 456
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="#">
+                  Change<span class="govuk-visually-hidden">telephone</span>
+                </a>
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Address
+              </dt>
+              <dd class="govuk-summary-list__value">
+                35 Grove Road<br>London<br>SW11 2HJ
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="#">
+                  Change<span class="govuk-visually-hidden"> address</span>
+                </a>
+              </dd>
+            </div>
+          </dl>
+  
+          <p class="govuk-body">By submitting this notification you are confirming that, to the best of your knowledge, the details you are providing are correct.</p>
+  
+          <form action="tech-page" method="post" novalidate>
+  
+            <input type="hidden" name="answers-checked" value="true">
+  
+            <button class="govuk-button" data-module="govuk-button">
+              Accept and submit
+            </button>
+  
+          </form>
+  
+        </div>
+      </div>
+    </main>
+  </div>
+
+{% endblock %}

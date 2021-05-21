@@ -1,0 +1,26 @@
+
+{% extends "layout_keydetails.html" %}
+
+{% set nav = "Personal details" %}
+
+{% block pageTitle %}
+  Personal details
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+    
+      {% include "./_subnav-horizontal.html" %} 
+    </div>
+  </div>
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-quarter">
+    </div>
+    <div class="govuk-grid-column-three-quarters">
+      {% include "./_personal-details.html" %} 
+    </div>
+  </div>
+
+{% endblock %}

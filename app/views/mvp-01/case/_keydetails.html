@@ -29,6 +29,18 @@
   </dl>
 </section>
 
+<div class="govuk-inset-text">
+  {% if case.status == 'Certificate requested'%}
+  <h2 class="govuk-heading-m">Task</h2>
+  <p class="">
+    Benefit interest identified, add to old cru
+  </p>
+  <a class="govuk-button govuk-button--secondary" href="#">Update case</a>
+  {% else %}
+  <h2 class="govuk-heading-m">Certificate issued</h2>
+  <p><span class="govuk-!-font-size-27 govuk-!-font-weight-bold">£0 </span> benefits to recover, <a href="">view certificate</a></p>
+  {% endif %}
+</div>
 
 
 

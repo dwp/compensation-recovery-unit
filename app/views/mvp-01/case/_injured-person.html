@@ -1,0 +1,56 @@
+
+  
+<dl class="govuk-summary-list govuk-!-margin-bottom-0">
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Name
+    </dt>
+    <dd class="govuk-summary-list__value">
+      {{case.firstname | default('Sarah') }} {{case.lastname | default('Philips') }}
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a class="govuk-link" href="#">
+        Change<span class="govuk-visually-hidden"> name</span>
+      </a>
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Date of birth
+    </dt>
+    <dd class="govuk-summary-list__value">
+      {{case.dob | default('09 September 1978') }}
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a class="govuk-link" href="#">
+        Change<span class="govuk-visually-hidden"> date of birth</span>
+      </a>
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      National insurance number
+    </dt>
+    <dd class="govuk-summary-list__value">
+      <p class="govuk-body">{{case.nino | default('FD 22 33 44 D') }}</p>
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a class="govuk-link" href="#">
+        Change<span class="govuk-visually-hidden"> National insurance number</span>
+      </a>
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key no-border">
+      Address
+    </dt>
+    <dd class="govuk-summary-list__value no-border">
+      {{case.address | default('2 monmouth drive') }}<br>London<br>{{case.postcode | default('SW1 2DF') }}
+    </dd>
+    <dd class="govuk-summary-list__actions no-border">
+      <a class="govuk-link" href="#">
+        Change<span class="govuk-visually-hidden"> address</span>
+      </a>
+    </dd>
+  </div>
+</dl>
