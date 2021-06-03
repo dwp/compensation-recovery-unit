@@ -16,7 +16,7 @@
 
 {% block content %}
   <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
+    <div class="govuk-grid-column-full">
       <div class="govuk-inset-text">
         {% if case.status == 'Certificate requested'%}
         <h2 class="govuk-heading-m">Task</h2>
@@ -87,5 +87,42 @@
       {% include  folder+ "/includes/timeline.html" %}
       </div>
   </div>
+
+
+  {% from "govuk/components/tabs/macro.njk" import govukTabs %}
+
+
+{% set caseInformationHtml %}
+<h2 class="govuk-heading-l">Case information</h2>
+
+{% endset -%}
+
+{% set timelineHtml %}
+{% include  folder+ "/includes/timeline.html" %}
+{% endset -%}
+
+
+
+
+
+{{ govukTabs({
+  items: [
+    {
+      label: "Case information",
+      id: "case-information",
+      panel: {
+        html: caseInformationHtml
+      }
+    },
+    {
+      label: "Timeline",
+      id: "timwline",
+      panel: {
+        html: timelineHtml
+      }
+    }
+    
+  ]
+}) }}
 
 {% endblock %}
