@@ -12,30 +12,32 @@ Case -  task
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-         <form class="form" action="task-list" method="post">
+
+      <a href="javascript: history.go(-1)" class="govuk-back-link govuk-!-margin-bottom-9">Back</a> 
+         <form class="form" action="case-details-and-tasks-tabs" method="post">
           <div class="govuk-form-group">
-            <fieldset class="govuk-fieldset" aria-describedby="liability-hint">
-              <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-                <h1 class="govuk-fieldset__heading govuk-!-margin-top-5">
+            <fieldset class="govuk-fieldset" aria-describedby="taskcompleted-hint">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+                <h1 class="govuk-fieldset__heading">
                   What do you want to do with this case?
                 </h1>
               </legend>
               <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
                 <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="liability" name="liability" type="radio" value="Yes~/compensator-trust-guard" {{ checked("liability", "Yes") }}>
-                  <label class="govuk-label govuk-radios__label" for="liability">
-                   Close it
+                  <input class="govuk-radios__input" id="taskcompleted" name="taskcompleted" type="radio" value="Close case on new cru~task-confirm?reference={{case.reference}}" {{ checked("taskcompleted", "Close case on new cru") }}>
+                  <label class="govuk-label govuk-radios__label" for="taskcompleted">
+                   Close case on new cru
                   </label>
                 </div>
                 <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="liability" name="liability" type="radio" value="No" {{ checked("liability", "No") }}>
-                  <label class="govuk-label govuk-radios__label" for="liability">
-                  Issue nil certificate
+                  <input class="govuk-radios__input" id="taskcompleted" name="taskcompleted" type="radio" value="Issue certificate~task-confirm?reference={{case.reference}}" {{ checked("taskcompleted", "Issue certificate") }}>
+                  <label class="govuk-label govuk-radios__label" for="taskcompleted">
+                  Issue certificate
                   </label>
                 </div>
                <!-- <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="liability" name="liability" type="radio" value="Not yet Known" {{ checked("liability", "Not yet Known") }}>
-                  <label class="govuk-label govuk-radios__label" for="liability">
+                  <input class="govuk-radios__input" id="taskcompleted" name="taskcompleted" type="radio" value="Not yet Known" {{ checked("taskcompleted", "Not yet Known") }}>
+                  <label class="govuk-label govuk-radios__label" for="taskcompleted">
                    Not yet known
                   </label>
                 </div> -->

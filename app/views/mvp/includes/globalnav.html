@@ -5,24 +5,24 @@
         {% else %}
         <li>
           {% endif %}
-        <a  href="cru-ops-landing.html">Home</a>
+        <a  href="/cru-ops-service/cru-ops-landing.html">Home</a>
         </li>
     
       {% if nav  == 'Tasks' %}
-      <li class="active">
+      <li class="./cru-ops-service/active">
         {% else %}
         <li>
           {% endif %}
-        <a href="tasks">Tasks ({{intcasestasks}})</a>
+        <a href="/cru-ops-service/tasks">Tasks</a>
         
       </li>
   
       {% if nav  == 'Find' %}
-      <li class="active">
+      <li class="/cru-ops-service/active">
         {% else %}
         <li>
           {% endif %}
-        <a href="find-case">Find case</a>
+        <a href="../cru-ops-service/find-case">Find case</a>
         
       </li>
     </ul>

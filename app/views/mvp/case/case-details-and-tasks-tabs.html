@@ -1,10 +1,14 @@
 
 {% extends folder+ "/layout.html" %}
 
-{% set nav = "case details" %}
+{% set nav = "Find" %}  
 
 {% block pageTitle %}
   Case details
+{% endblock %}
+
+{% block globalnav %}
+{% include  folder+ "/includes/globalnav.html" %}
 {% endblock %}
 
 {% block keydetails %}
@@ -12,81 +16,58 @@
 {% endblock %}
 
 
-      
+
 
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
-      <div class="govuk-inset-text">
-        {% if case.status == 'Certificate requested'%}
-        <h2 class="govuk-heading-m">Task</h2>
-        <p class="">
-          {% include  folder+ "/includes/task_type_playback.html" %}
-        </p>
-        <a class="govuk-button govuk-button--secondary" href="task?reference={{case.reference}}">Update case</a>
-        {% else %}
-        <h2 class="govuk-heading-m">Certificate issued</h2>
-        <p><span class="govuk-!-font-size-27 govuk-!-font-weight-bold">£0 </span> benefits to recover, <a href="">view certificate</a></p>
-        {% endif %}
-      </div>
-      <h2 class="govuk-heading-m">Case information</h2>
-<div class="govuk-accordion" data-module="govuk-accordion" id="accordion-default">
-  <div class="govuk-accordion__section ">
-    <div class="govuk-accordion__section-header">
-      <h2 class="govuk-accordion__section-heading">
-        <span class="govuk-accordion__section-button" id="accordion-default-heading-1">
-          Injured person
-        </span>
+  {% if case.task == 'yes'%}
+  <div class="govuk-notification-banner govuk-!-margin-bottom-7" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+    <div class="govuk-notification-banner__header">
+      <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+        Task
       </h2>
     </div>
-    <div id="accordion-default-content-1" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-1">
-      {% include  folder+ "/includes/injured-person.html" %}
+    <div class="govuk-notification-banner__content">
+      <p class="govuk-notification-banner__heading">
+        {% include  folder+ "/includes/task_type_playback.html" %}
+        <a class="govuk-notification-banner__link" href="task?reference={{case.reference}}">update case</a>.
+      </p>
     </div>
   </div>
-  <div class="govuk-accordion__section ">
-    <div class="govuk-accordion__section-header">
-      <h2 class="govuk-accordion__section-heading">
-        <span class="govuk-accordion__section-button" id="accordion-default-heading-2">
-          Injury
-        </span>
-      </h2>
-    </div>
-    <div id="accordion-default-content-2" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-2">
-      {% include  folder+ "/includes/injury.html" %}
-    </div>
-  </div>
-  <div class="govuk-accordion__section ">
-    <div class="govuk-accordion__section-header">
-      <h2 class="govuk-accordion__section-heading">
-        <span class="govuk-accordion__section-button" id="accordion-default-heading-3">
-          Insurance company (Compensator)
-        </span>
-      </h2>
-    </div>
-    <div id="accordion-default-content-3" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-3">
-      {% include  folder+ "/includes/compensator-details.html" %}
-    </div>
-  </div>
-  <div class="govuk-accordion__section ">
-    <div class="govuk-accordion__section-header">
-      <h2 class="govuk-accordion__section-heading">
-        <span class="govuk-accordion__section-button" id="accordion-default-heading-4">
-          Injured person's solicitor
-        </span>
-      </h2>
-    </div>
-    <div id="accordion-default-content-4" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-4">
-      {% include  folder+ "/includes/solicitor-details.html" %}
-    </div>
-  </div>
-</div>
+  {% elif case.task == 'completed-closed' %}
 
-
+  <div class="govuk-notification-banner govuk-notification-banner--success govuk-!-margin-bottom-7" role="alert" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+    <div class="govuk-notification-banner__header">
+      <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+        Task completed
+      </h2>
     </div>
-    <div class="govuk-grid-column-one-third">
-      {% include  folder+ "/includes/timeline.html" %}
-      </div>
+    <div class="govuk-notification-banner__content">
+      <h3 class="govuk-notification-banner__heading">
+        Case closed on new cru
+      </h3>
+      <!--<p class="govuk-body">Contact <a class="govuk-notification-banner__link" href="#">example@department.gov.uk</a> if you think there's a problem.</p>-->
+    </div>
   </div>
+
+  {% elif case.task == 'completed-open' %}
+
+  <div class="govuk-notification-banner govuk-notification-banner--success govuk-!-margin-bottom-7" role="alert" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+    <div class="govuk-notification-banner__header">
+      <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+        Task completed
+      </h2>
+    </div>
+    <div class="govuk-notification-banner__content">
+      <h3 class="govuk-notification-banner__heading">
+        Nil certificate issued <a href=""> view certificate</a>
+      </h3>
+      <!--<p class="govuk-body">Contact <a class="govuk-notification-banner__link" href="#">example@department.gov.uk</a> if you think there's a problem.</p>-->
+    </div>
+  </div>
+
+  {% endif %}
 
 
   {% from "govuk/components/tabs/macro.njk" import govukTabs %}
@@ -94,6 +75,14 @@
 
 {% set caseInformationHtml %}
 <h2 class="govuk-heading-l">Case information</h2>
+<h3 class="govuk-heading-m">Injured person</h3>
+{% include  folder+ "/includes/injured-person.html" %}
+<h3 class="govuk-heading-m">Injury</h3>
+{% include  folder+ "/includes/injury.html" %}
+<h3 class="govuk-heading-m">Compensator</h3>
+{% include  folder+ "/includes/compensator-details.html" %}
+<h3 class="govuk-heading-m">Representative</h3>
+{% include  folder+ "/includes/solicitor-details.html" %}
 
 {% endset -%}
 

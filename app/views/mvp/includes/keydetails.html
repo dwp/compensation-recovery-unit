@@ -1,5 +1,5 @@
-<a href="javascript: history.go(-1)" class="govuk-back-link govuk-!-margin-bottom-5">Back</a> 
-<section class="key-details-bar" role="contentinfo" aria-label="Key details">
+
+<section class="key-details-bar govuk-!-margin-bottom-5" role="contentinfo" aria-label="Key details">
   <dl class="key-details-bar__key-details">
     <div class="key-details-bar__top-block">
       <dt class="govuk-visually-hidden">Name:</dt>
@@ -9,7 +9,16 @@
       <dd class="key-details-bar__nino">  {{case.nino | default('FD 22 33 44 D') }}</dd>
 
       <dt class="govuk-visually-hidden">Case status:</dt>
-      <dd class="key-details-bar__status govuk-!-margin-right-0"><span class="govuk-tag">{{case.status | default('Certificate issued') }}</span></dd>
+      <dd class="key-details-bar__status govuk-!-margin-right-0"><span class="govuk-tag">
+        {% if case.task == 'completed-closed' %}
+        Closed
+        {% elif case.task == 'completed-open' %}
+        Certificate issued
+        {% else %}
+        {{case.status | default('Certificate issued') }}
+        {% endif %}
+      
+      </span></dd>
     </div>
 
     <div class="key-details-bar__bottom-block">

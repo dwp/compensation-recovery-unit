@@ -47,6 +47,7 @@
     serviceUrl: "/" + folder + "/",
     containerClasses: "govuk-width-container"
   }) }}
+
   <div class="govuk-width-container">  
   <div class="govuk-phase-banner">
     <p class="govuk-phase-banner__content">
@@ -56,6 +57,9 @@
       <span>This is not production ready code</span>
     </p>
   </div>
+
+  {% block globalnav %}
+  {% endblock %}
   {% block keydetails %}
   {% endblock %}
   </div>
@@ -78,6 +82,10 @@
           {
             href: "/prototype-admin/clear-data",
             text: "Clear data"
+          },
+          {
+            href: "reset-tasks",
+            text: "Reset tasks"
           }
         ]
       }

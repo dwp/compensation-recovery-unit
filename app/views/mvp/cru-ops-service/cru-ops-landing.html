@@ -30,7 +30,7 @@
      {% set nilcases = nilcases + 1 %}
     {% endif %}
 
-  {% if case.interest === "yes" %}
+  {% if case.interest === "yes" and case.task !=='yes' %}
      {% set intcases = intcases + 1 %}
     {% endif %}
 
@@ -49,23 +49,25 @@
       </h1>
     </div>
   </div>
-<h2 class="govuk-heading-l">Cases</h2>
+<h2 class="govuk-heading-l">Cases {{totcases}}</h2>
 
       <div class="card-container">
+    
         <div class="card">
           <h2 class="govuk-heading-s">
-            Total  <span class="govuk-!-font-size-48 govuk-!-display-block">{{totcases}}</span></h2>
-       </div> 
-   
-        <div class="card">
-          <h2 class="govuk-heading-s">
-            Nil certifcates issued  <span class="govuk-!-font-size-48 govuk-!-display-block">{{nilcases}}</span></h2>
+            <span class="govuk-!-font-size-48 govuk-!-display-block">{{nilcases}}</span>Nil certifcates issued </h2>
        </div> 
      
         <div class="card">
-          <h2 class="govuk-heading-s">
-            Benefits to recover  <span class="govuk-!-font-size-48 govuk-!-display-block">{{intcases}}</span></h2>
-       </div> 
+        <h2 class="govuk-heading-s">
+          <span class="govuk-!-font-size-48 govuk-!-display-block">{{intcasestasks}}</span><a href="">Tasks that need attention</a></h2>
+       </div>
+
+       <div class="card">
+        <h2 class="govuk-heading-s">
+          <span class="govuk-!-font-size-48 govuk-!-display-block">{{intcases}}</span>Tasks completed </h2>
+     </div> 
+ 
        </div>
 
      

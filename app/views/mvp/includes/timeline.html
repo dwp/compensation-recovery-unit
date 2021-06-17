@@ -2,25 +2,40 @@
      <h2 class="govuk-heading-m">Timeline</h2>
      <div class="timeline">
 
+      {% if case.task == 'completed-closed' %}
+      <span class="line"></span>
+      <div class="timeline__event">
+        <h3 class="timeline__heading govuk-heading-s">Case closed</h3>
+        <p class="timeline_datetime"> {{ 'Do MMMM YYYY' | baseDate(0) }}</p>
+      </div>
+      {% elif case.task == 'completed-open'  %}    
+      <span class="line"></span>
+      <div class="timeline__event">
+        <h3 class="timeline__heading govuk-heading-s">Certificate issued</h3>
+        <p class="govuk-body"><a href="">View certificate</a></p>
+        <p class="timeline_datetime"> {{ 'Do MMMM YYYY' | baseDate(0) }}</p>
+      </div>
+      {% endif %}
+
       {% if case.status == 'Certificate issued'%}
       <span class="line"></span>
       <div class="timeline__event">
         <h3 class="timeline__heading govuk-heading-s">Certificate issued</h3>
         <p class="govuk-body"><a href="">View certificate</a></p>
-        <p class="timeline_datetime"> {{ 'Do MMMM YYYY' | baseDate(-1) }}</p>
+        <p class="timeline_datetime"> {{ 'Do MMMM YYYY' | baseDate(1) }}</p>
       </div>
       {% endif %}
 
       <span class="line"></span>
       <div class="timeline__event">
         <h3 class="timeline__heading govuk-heading-s">Certificate requested</h3>
-        <p class="timeline_datetime">{{ 'Do MMMM YYYY' | baseDate(-1) }}</p>
+        <p class="timeline_datetime">{{ 'Do MMMM YYYY' | baseDate(1) }}</p>
       </div>
 
          <span class="line"></span>
        <div class="timeline__event">
          <h3 class="timeline__heading govuk-heading-s">Case created</h3>
-         <p class="timeline_datetime">{{ 'Do MMMM YYYY' | baseDate(-1) }}</p>
+         <p class="timeline_datetime">{{ 'Do MMMM YYYY' | baseDate(1) }}</p>
        </div>
 
        <div style="clear:both"></div>
