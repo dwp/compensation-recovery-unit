@@ -5,78 +5,71 @@
   GOV.UK Prototype Kit
 {% endblock %}
 
+{% set nav = "Home" %}
+
 {% block content %}
+
+
+{% set totcases = 0 %}
+{% set nilcases = 0 %}
+{% set intcases = 0 %}
+{% set intcasestasks = 0 %}
+
+
+
+	{% for case in cases %}
+
+<!-- BASE VALUES -->
+
+
+  {% if case %}
+   {% set totcases = totcases + 1 %}
+   {% endif %}
+
+    {% if case.interest === "no"  %}
+     {% set nilcases = nilcases + 1 %}
+    {% endif %}
+
+  {% if case.interest === "yes" and case.task !=='yes' %}
+     {% set intcases = intcases + 1 %}
+    {% endif %}
+
+    {% if case.task === "yes" %}
+    {% set intcasestasks = intcasestasks + 1 %}
+   {% endif %}
+
+{% endfor %}
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
+      {% include "./_globalnav.html" %} 
+   
       <h1 class="govuk-heading-xl">
-       Compensation Recovery Unit
+     Home
       </h1>
-      <div class="card-container">
+    </div>
+  </div>
+<h2 class="govuk-heading-l">Cases {{totcases}}</h2>
 
+      <div class="card-container">
+    
         <div class="card">
           <h2 class="govuk-heading-s">
-            Assessment</h2>
-         <div class="card-inner-panel">
-           <p class="govuk-body">Tasks</p>
-           <ul class="govuk-list">
-             <li><a href="task-list" >Calculate benefit attribution (76)</a></li>
-          </ul>
-        </div> 
+            <span class="govuk-!-font-size-48 govuk-!-display-block">{{nilcases}}</span>Nil certifcates issued </h2>
+       </div> 
+     
+        <div class="card">
+        <h2 class="govuk-heading-s">
+          <span class="govuk-!-font-size-48 govuk-!-display-block">{{intcasestasks}}</span><a href="">Tasks that need attention</a></h2>
        </div>
 
        <div class="card">
         <h2 class="govuk-heading-s">
-          Diseases</h2>
-       <div class="card-inner-panel">
-         <p class="govuk-body">Tasks</p>
-         <ul class="govuk-list">
-           <li><a href="task-list" >Calculate Benefit attribution (40)</a></li>
-        </ul>
-      </div> 
-     </div>
+          <span class="govuk-!-font-size-48 govuk-!-display-block">{{intcases}}</span>Tasks completed </h2>
+     </div> 
+ 
+       </div>
 
-     <div class="card">
-      <h2 class="govuk-heading-s">
-        Clinical negligence</h2>
-     <div class="card-inner-panel">
-       <p class="govuk-body">Tasks</p>
-       <ul class="govuk-list">
-         <li><a href="task-list" >Calculate Benefit attribution (23)</a></li>
-      </ul>
-    </div> 
-   </div>
-    
-
-     <div class="card">
-      <h2 class="govuk-heading-s">
-       NHS</h2>
-     <div class="card-inner-panel">
-       <p class="govuk-body">Tasks</p>
-       <ul class="govuk-list">
-         <li><a href="task-list" >Calculate NHS attribution (100)</a></li>
-      </ul>
-    </div> 
-   </div>
-
-
-     <div class="card">
-      <h2 class="govuk-heading-s">
-       Payments</h2>
-     <div class="card-inner-panel">
-       <p class="govuk-body">Tasks</p>
-       <ul class="govuk-list">
-         <li><a href="task-list" >Reconcile payment (150)</a></li>
-      </ul>
-    </div> 
-   </div>
-
-    
-
-
-
-
-    </div>
-  </div>
+     
 
 {% endblock %}

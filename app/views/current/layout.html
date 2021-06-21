@@ -47,15 +47,19 @@
     serviceUrl: "/" + folder + "/",
     containerClasses: "govuk-width-container"
   }) }}
-  <div class="govuk-width-container">
+
+  <div class="govuk-width-container">  
   <div class="govuk-phase-banner">
     <p class="govuk-phase-banner__content">
-      <strong class="govuk-tag govuk-tag--red govuk-phase-banner__content__tag">
-      Discovery: Current
+      <strong class="govuk-tag govuk-tag--blue govuk-phase-banner__content__tag">
+      Alpha: Current
       </strong>
       <span>This is not production ready code</span>
     </p>
   </div>
+
+  {% block globalnav %}
+  {% endblock %}
   {% block keydetails %}
   {% endblock %}
   </div>
@@ -64,7 +68,7 @@
 
 
 
-{% set mainClasses = mainClasses | default("govuk-main-wrapper--auto-spacing") %}
+{% set mainClasses = mainClasses | default("govuk-main-wrapper--auto-spacing govuk-!-padding-top-0") %}
 
 {% if useAutoStoreData %}
   {% block footer %}
@@ -78,6 +82,10 @@
           {
             href: "/prototype-admin/clear-data",
             text: "Clear data"
+          },
+          {
+            href: "reset-tasks",
+            text: "Reset tasks"
           }
         ]
       }

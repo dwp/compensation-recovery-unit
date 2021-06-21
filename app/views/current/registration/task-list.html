@@ -7,14 +7,15 @@ Register a claim with the Compensation Recovery Unit
 
 {% block content %}
 
+
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <h1 class="govuk-heading-xl">
+      <h1 class="govuk-heading-xl govuk-!-margin-top-5">
         Add a new case 
       </h1>
 
       <h2 class="govuk-heading-s govuk-!-margin-bottom-2">Application incomplete</h2>
-      <p class="govuk-body govuk-!-margin-bottom-7">You have completed 0 of 8 sections.</p>
+      <p class="govuk-body govuk-!-margin-bottom-7">You have completed <span class="numcompleted"></span> of 5 sections.</p>
 
       <ol class="app-task-list">
         <li>
@@ -29,7 +30,7 @@ Register a claim with the Compensation Recovery Unit
                 </a>
               </span>
               {% if checked('injured-persons-details','completed') %}
-              <strong class="govuk-tag app-task-list__tag" id="">Completed</strong>
+              <strong class="govuk-tag app-task-list__tag countcompleted" id="">Completed</strong>
               {% elif checked('injured-persons-details','started') %}
               <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="contact-details-status">In progress</strong>
               {% else %}
@@ -41,17 +42,17 @@ Register a claim with the Compensation Recovery Unit
 
         <li>
           <h2 class="app-task-list__section">
-            <span class="app-task-list__section-number">2. </span> Injury, illness, or accident
+            <span class="app-task-list__section-number">2. </span> Injury
           </h2>
           <ul class="app-task-list__items">
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
-                <a href="claim-guard" aria-describedby="">
-                  Add the injury, illness, or accident
+                <a href="date-of-claim" aria-describedby="">
+                  Add the injury
                 </a>
               </span>
               {% if checked('claim-details','completed') %}
-              <strong class="govuk-tag app-task-list__tag" id="">Completed</strong>
+              <strong class="govuk-tag app-task-list__tag countcompleted" id="">Completed</strong>
               {% elif checked('claim-details','started') %}
               <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="contact-details-status">In progress</strong>
               {% else %}
@@ -65,17 +66,17 @@ Register a claim with the Compensation Recovery Unit
 
         <li>
           <h2 class="app-task-list__section">
-            <span class="app-task-list__section-number">3. </span> Insurance company  
+            <span class="app-task-list__section-number">3. </span> Insurance company paying the compensation 
           </h2>
           <ul class="app-task-list__items">
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
-                <a href="about-the-compensator" aria-describedby="list-convictions-status">
+                <a href="compensator-guard" aria-describedby="list-convictions-status">
                   Add the insurance company
                 </a>
               </span>
               {% if checked('compensator-details','completed') %}
-              <strong class="govuk-tag app-task-list__tag" id="">Completed</strong>
+              <strong class="govuk-tag app-task-list__tag countcompleted" id="">Completed</strong>
               {% elif checked('compensator-details','started') %}
               <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="contact-details-status">In progress</strong>
               {% else %}
@@ -87,7 +88,7 @@ Register a claim with the Compensation Recovery Unit
 
         <li>
           <h2 class="app-task-list__section">
-            <span class="app-task-list__section-number">4. </span> Solicitor
+            <span class="app-task-list__section-number">4. </span> Injured persons solicitor
           </h2>
           <ul class="app-task-list__items">
             <li class="app-task-list__item">
@@ -97,7 +98,7 @@ Register a claim with the Compensation Recovery Unit
                 </a>
               </span>
               {% if checked('representative-details','completed') %}
-              <strong class="govuk-tag app-task-list__tag" id="">Completed</strong>
+              <strong class="govuk-tag app-task-list__tag countcompleted" id="">Completed</strong>
               {% elif checked('representative-details','started') %}
               <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="contact-details-status">In progress</strong>
               {% else %}
@@ -106,46 +107,63 @@ Register a claim with the Compensation Recovery Unit
             </li>
           </ul>
         </li>
-
         <li>
           <h2 class="app-task-list__section">
-            <span class="app-task-list__section-number">5. </span> Hospital or medical centre 
+            <span class="app-task-list__section-number">5. </span> Submit your case  
           </h2>
           <ul class="app-task-list__items">
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
-                <a href="nhs-guard" aria-describedby="list-convictions-status">
-                Add hospital or medical centre
-                </a>
-              </span>
-              {% if checked('nhs-details','completed') %}
-              <strong class="govuk-tag app-task-list__tag" id="">Completed</strong>
-              {% elif checked('nhs-details','started') %}
-              <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="contact-details-status">In progress</strong>
-              {% else %}
-              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="financial-evidence-status">Not started yet</strong>
-              {% endif %}
-            </li>
-          </ul>
-        </li>
-
-        <li>
-          <h2 class="app-task-list__section">
-            <span class="app-task-list__section-number">6. </span> Submit your case  
-          </h2>
-          <ul class="app-task-list__items">
-            <li class="app-task-list__item">
-              <span class="app-task-list__task-name">
-             
+                {% if 
+                checked('injured-persons-details','completed') and  
+                checked('claim-details','completed') and  
+                checked('compensator-details','completed') and  
+                checked('representative-details','completed') %}
+                <a href="check-answers">Submit</a>
+                {% else %}
                 Submit 
+                {% endif %}
              
               </span>
-              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="financial-evidence-status">Cannot start yet</strong>
+              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="financial-evidence-status">
+                {% if 
+                  checked('injured-persons-details','completed') and  
+                  checked('claim-details','completed') and  
+                  checked('compensator-details','completed') and  
+                  checked('representative-details','completed') %}
+                  Not started yet
+                  {% else %}
+                  Cannot start yet
+                  {% endif %}
+                
+                </strong>
             </li>
           </ul>
         </li>
       </ol>
     </div>
   </div>
+<!-- code for demo only-->
+  <style>
+    a.timemachine{
+      position:absolute;
+      top:0px;
+      right:0px;
+      background:black;
+      padding:0.8em;
+      color:white;
+      }
+  </style>
+
+<script>
+
+  jQuery(document).ready(function() {
+      alert( jQuery(".countcompleted").length );
+  });
+
+</script>
+
+
+  <a href ='task-list-completed' class="timemachine">Forward</a>
 
 {% endblock %}

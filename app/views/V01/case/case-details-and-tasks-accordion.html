@@ -1,0 +1,72 @@
+
+{% extends folder+ "/layout.html" %}
+
+{% set nav = "case details" %}
+
+{% block pageTitle %}
+  Case details
+{% endblock %}
+
+{% block keydetails %}
+{% include "./_keydetails.html" %}
+{% endblock %}
+
+
+      
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      {% from "govuk/components/accordion/macro.njk" import govukAccordion %}
+
+{{ govukAccordion({
+  id: "accordion-default",
+  items: [
+    {
+      heading: {
+        text: "Your tasks"
+      },
+      content: {
+        html: ".."
+      }
+    },
+    {
+      heading: {
+        text: "The injured person"
+      },
+      content: {
+        html: "<p class='govuk-body'>This is the content for Writing well for the web.</p>"
+      }
+    },
+
+    {
+      heading: {
+        text: "Injury, illness, or accident "
+      },
+      content: {
+        html: "<p class='govuk-body'>This is the content for Writing well for specialists.</p>"
+      }
+    }, 
+
+      {
+      heading: {
+        text: "Insurance company"
+      },
+      content: {
+        html: "<p class='govuk-body'>This is the content for Know your audience.</p>"
+      }
+    },
+      {
+      heading: {
+        text: "Hospital or medical centre "
+      },
+      content: {
+        html: "<p class='govuk-body'>This is the content for How people read.</p>"
+      }
+    }
+  ]
+}) }}
+    </div>
+  </div>
+
+{% endblock %}

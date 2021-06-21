@@ -8,3 +8,7 @@ if (window.console && window.console.info) {
 $(document).ready(function () {
   window.GOVUKFrontend.initAll()
 })
+
+
+var numItems = $('.countcompleted').length
+$( "span.numcompleted" ).text( numItems );
