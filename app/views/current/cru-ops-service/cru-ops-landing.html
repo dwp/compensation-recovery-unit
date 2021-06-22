@@ -44,11 +44,27 @@
     <div class="govuk-grid-column-full">
       {% include "./_globalnav.html" %} 
    
-      <h1 class="govuk-heading-xl">
+      <h1 class="govuk-visually-hidden">
      Home
       </h1>
+
+      <form class="form" action="../registration/task-list" method="post">
+      <h2 class="govuk-visually-hidden">Add a case</h2>
+      <button class="govuk-button govuk-!-margin-bottom-3">Add a case</button>  
+      <div class="govuk-radios__item govuk-visually-hidden">
+        <input class="govuk-radios__input" id="setuser" name="setuser" type="radio" value="staff" checked>
+        <label class="govuk-label govuk-radios__label" for="setuser">
+         hidden radio for logic
+        </label>
+      </div>
+
+
+      </form>
+<hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
     </div>
   </div>
+
+
 <h2 class="govuk-heading-l">Cases {{totcases}}</h2>
 
       <div class="card-container">

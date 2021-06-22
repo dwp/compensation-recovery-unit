@@ -25,7 +25,7 @@ Register a claim with the Compensation Recovery Unit
                 Name
               </dt>
               <dd class="govuk-summary-list__value">
-                Sarah Philips
+                {{ data['first-name'] | default('Sarah Philips') }}  {{ data['last-name'] | default('Philips') }}
               </dd>
               <dd class="govuk-summary-list__actions">
                 <a class="govuk-link" href="#">
@@ -38,7 +38,7 @@ Register a claim with the Compensation Recovery Unit
                 Date of birth
               </dt>
               <dd class="govuk-summary-list__value">
-                5 January 1978
+                {{ data['date-of-birth-day'] | default("28") }} {{ data['date-of-birth-month'] | default("02") | toMonth }} {{ data['date-of-birth-year'] | default("1978") }}
               </dd>
               <dd class="govuk-summary-list__actions">
                 <a class="govuk-link" href="#">
@@ -51,7 +51,7 @@ Register a claim with the Compensation Recovery Unit
                 National insurance number
               </dt>
               <dd class="govuk-summary-list__value">
-                <p class="govuk-body">AA 11 22 33 B </p>
+                <p class="govuk-body"> {{ data['ni-number'] | default('AA 11 22 33 B ') }}</p>
               </dd>
               <dd class="govuk-summary-list__actions">
                 <a class="govuk-link" href="#">
@@ -64,7 +64,7 @@ Register a claim with the Compensation Recovery Unit
                 Address
               </dt>
               <dd class="govuk-summary-list__value">
-                72 Guild Street<br>London<br>SE23 6FH
+                {{ data['choose-ip-address'] | default('72 Guild Street') }}<br>London<br>{{ data['addresspostcode'] | default('SW11 4DY') }}
               </dd>
               <dd class="govuk-summary-list__actions">
                 <a class="govuk-link" href="#">
@@ -82,7 +82,7 @@ Register a claim with the Compensation Recovery Unit
                 Date of injury
               </dt>
               <dd class="govuk-summary-list__value">
-                3 February 2021
+                {{ data['claim-date-day'] | default("3") }} {{ data['claim-date-month'] | default("03") | toMonth }} {{ data['claim-date-year'] | default("2020") }} 
               </dd>
               <dd class="govuk-summary-list__actions">
                 <a class="govuk-link" href="#">
@@ -249,7 +249,8 @@ Register a claim with the Compensation Recovery Unit
   
           <p class="govuk-body">By submitting this notification you are confirming that, to the best of your knowledge, the details you are providing are correct.</p>
   
-          <form action="tech-page" method="post" novalidate>
+        
+          <form action="confirmation" method="post" novalidate>
   
             <input type="hidden" name="answers-checked" value="true">
   

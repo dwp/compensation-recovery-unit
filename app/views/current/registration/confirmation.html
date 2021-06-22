@@ -11,7 +11,8 @@ Register a claim with the Compensation Recovery Unit
  
       <div class="govuk-grid-row">
         <div class="govuk-grid-column-two-thirds-from-desktop">
-  
+          {% if data['setuser'] =='staff' %}
+          {% else %}
           <div class="govuk-panel govuk-panel--confirmation govuk-!-margin-top-5">
             <h1 class="govuk-panel__title ">
               Registration complete
@@ -30,6 +31,7 @@ Register a claim with the Compensation Recovery Unit
               </p>
             <a href="" class="govuk-button govuk-button--secondary">View and print certificate</a>
           </div>
+          {% endif %}
   
         </div>
       </div>

@@ -20,7 +20,17 @@
           <h2 class="govuk-heading-s">
             Add a case</h2>
          <div class="card-inner-panel">
-          <a href="task-list" class="govuk-button govuk-button--secondary">Add a new case</a>
+      <form class="form" action="task-list" method="post">
+        <button class="govuk-button govuk-button--secondary">Add a new case</button>  
+        <div class="govuk-radios__item govuk-visually-hidden">
+          <input class="govuk-radios__input" id="setuser" name="setuser" type="radio" value="compensator" checked>
+          <label class="govuk-label govuk-radios__label" for="setuser">
+           hidden radio for logic
+          </label>
+        </div>
+  
+  
+        </form>
         </div> 
        </div>
     
