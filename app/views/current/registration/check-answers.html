@@ -95,11 +95,108 @@ Register a claim with the Compensation Recovery Unit
                 Injury
               </dt>
               <dd class="govuk-summary-list__value">
-                {{ data['type-of-injury'] | default('Sprain or strain')}} to {{ data['where-is-the-injury']| default('back')}} 
+              <!-- start Neck-->
+
+{% if checked('where-is-the-injury','Neck') %}
+<p>
+{{ data['neck']}} {{ data['more-detail-neck']}} to <strong>neck</strong>
+</p>
+{% endif %}
+
+<!-- End Neck-->
+<!-- start Back-->
+{% if checked('where-is-the-injury','Back') %}
+<p>
+  {{ data['back']}} {{ data['more-detail-back']}} to <strong>back</strong>
+  </p>
+{% endif %}
+       
+ <!-- End Back-->  
+ <!-- start Shoulder or collarbone-->  
+ {% if checked('where-is-the-injury','Shoulder or collarbone') %}
+ <p>
+  {{ data['shoulder-collarbone']}} {{ data['more-detail-shoulder-collarbone']}} to <strong>shoulder or collarbone</strong>
+  </p>
+ {% endif %}
+  <!-- end Shoulder or collarbone-->  
+
+   <!-- start Shoulder or Head -->  
+   {% if checked('where-is-the-injury','Head') %}
+   <p>
+    {{ data['head']}} {{ data['more-detail-head']}} to <strong>head</strong>
+    </p>
+   {% endif %}
+       
+          
+ <!-- End Head -->  
+
+  <!-- start Chest or torso -->  
+  {% if checked('where-is-the-injury','Chest or torso') %}
+  <p>
+    {{ data['chest-torso']}} {{ data['more-detail-chest-torso']}} to <strong>chest or torso</strong>
+    </p>
+  {% endif %}
+ <!-- end Chest or torso -->  
+
+  <!-- start Arm, wrist, hand or finger -->  
+  {% if checked('where-is-the-injury','Arm, wrist, hand or finger') %}
+  <p>
+    {{ data['arm']}} {{ data['more-detail-arm']}} to <strong>arm, wrist, hand or finger</strong>
+    </p>
+  {% endif %}
+ <!-- end Arm, wrist, hand or finger -->  
+
+  <!-- start Leg, knee, ankle or foot -->  
+  {% if checked('where-is-the-injury','Leg, knee, ankle or foot') %}
+  <p>
+    {{ data['leg']}} {{ data['more-detail-leg']}} to <strong>leg, knee, ankle or foot</strong>
+  </p>
+  {% endif %}
+  <!-- end Leg, knee, ankle or foot -->  
+
+    <!-- start Hip or pelvis -->  
+    {% if checked('where-is-the-injury','Hip or pelvis') %}
+    <p>
+      {{ data['hip-pelvis']}} {{ data['more-detail-hip-pelvis']}} to <strong>hip or pelvis</strong>
+    </p>
+    {% endif %}
+    <!-- end or pelvis -->  
+
+    <!-- start Jaw or teeth -->  
+    {% if checked('where-is-the-injury','Jaw or teeth') %}
+    <p>
+      {{ data['jaw-teeth']}} {{ data['more-detail-jaw-teeth']}} to <strong>jaw or teeth</strong>
+    </p>
+    {% endif %}
+    <!-- End or teeth --> 
+    
+    <!-- start Ears, eyes, mouth or nose -->  
+    {% if checked('where-is-the-injury','Ears, eyes, mouth or nose') %}
+    <p>
+      {{ data['ears']}} {{ data['more-detail-ears']}} to <strong>ears, eyes, mouth or nose</strong>
+    </p> 
+    {% endif %}
+    <!-- end, eyes, mouth or nose -->  
+
+    <!-- start Mental or emotional symptoms -->  
+    {% if checked('where-is-the-injury','Mental or emotional symptoms') %}
+    <p>
+      {{ data['mental']}} {{ data['more-detail-mental']}} to <strong>mental or emotional symptoms</strong>
+    </p>    
+    {% endif %}
+    <!-- end Mental or emotional symptoms -->  
+
+      <!-- start Brain or nervous system symptoms -->  
+      {% if checked('where-is-the-injury','Brain or nervous system symptoms') %}
+      <p>
+        {{ data['brain']}} {{ data['more-detail-brain']}} to <strong>brain or nervous system symptoms</strong>
+      </p>    
+      {% endif %}
+      <!-- end Brain or nervous system symptoms -->  
               </dd>
               <dd class="govuk-summary-list__actions">
                 <a class="govuk-link" href="#">
-                  Change<span class="govuk-visually-hidden"> About the accident or incident</span>
+                  Change<span class="govuk-visually-hidden"> About the injury</span>
                 </a>
               </dd>
             </div>
