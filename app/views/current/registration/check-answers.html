@@ -10,15 +10,15 @@ Register a claim with the Compensation Recovery Unit
 
   <div class="govuk-width-container">
     <a href="#" class="govuk-back-link">Back</a>
-  
+
     <main class="govuk-main-wrapper " id="main-content" role="main">
       <div class="govuk-grid-row">
         <div class="govuk-grid-column-three-quarters-from-desktop">
-  
+
           <h1 class="govuk-heading-xl">Check your answers before registering the claim</h1>
-  
+
           <h2 class="govuk-heading-m">The injured person</h2>
-  
+
           <dl class="govuk-summary-list govuk-!-margin-bottom-9">
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
@@ -48,7 +48,7 @@ Register a claim with the Compensation Recovery Unit
             </div>
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
-                National insurance number
+                National Insurance number
               </dt>
               <dd class="govuk-summary-list__value">
                 <p class="govuk-body"> {{ data['ni-number'] | default('AA 11 22 33 B ') }}</p>
@@ -73,16 +73,16 @@ Register a claim with the Compensation Recovery Unit
               </dd>
             </div>
           </dl>
-  
-          <h2 class="govuk-heading-m">Injury</h2>
-  
+
+          <h2 class="govuk-heading-m">Injury details</h2>
+
           <dl class="govuk-summary-list govuk-!-margin-bottom-9">
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
                 Date of injury
               </dt>
               <dd class="govuk-summary-list__value">
-                {{ data['claim-date-day'] | default("3") }} {{ data['claim-date-month'] | default("03") | toMonth }} {{ data['claim-date-year'] | default("2020") }} 
+                {{ data['claim-date-day'] | default("3") }} {{ data['claim-date-month'] | default("03") | toMonth }} {{ data['claim-date-year'] | default("2020") }}
               </dd>
               <dd class="govuk-summary-list__actions">
                 <a class="govuk-link" href="#">
@@ -95,7 +95,7 @@ Register a claim with the Compensation Recovery Unit
                 Injury
               </dt>
               <dd class="govuk-summary-list__value">
-                {{ data['type-of-injury'] | default('Sprain or strain')}} to {{ data['where-is-the-injury']| default('back')}} 
+                {{ data['type-of-injury'] | default('Sprain or strain')}} to {{ data['where-is-the-injury']| default('back')}}
               </dd>
               <dd class="govuk-summary-list__actions">
                 <a class="govuk-link" href="#">
@@ -104,17 +104,17 @@ Register a claim with the Compensation Recovery Unit
               </dd>
             </div>
           </dl>
-  
-          <h2 class="govuk-heading-m">Insurance company paying the compensation</h2>
+
+          <h2 class="govuk-heading-m">Compensator or insurance company</h2>
 
 
           <dl class="govuk-summary-list govuk-!-margin-bottom-9">
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
-                Name 
+                Company name
               </dt>
               <dd class="govuk-summary-list__value">
-               Direct insurance 
+               Direct insurance
               </dd>
               <dd class="govuk-summary-list__actions">
                 <a class="govuk-link" href="#">
@@ -124,7 +124,7 @@ Register a claim with the Compensation Recovery Unit
             </div>
               <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">
-                  Email address 
+                  Email address
                 </dt>
                 <dd class="govuk-summary-list__value">
                 paul.husdoon@directinsurance.co.uk
@@ -137,7 +137,7 @@ Register a claim with the Compensation Recovery Unit
               </div>
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
-                Reference
+                Reference number
               </dt>
               <dd class="govuk-summary-list__value">
                 DI345567Y
@@ -150,7 +150,7 @@ Register a claim with the Compensation Recovery Unit
             </div>
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
-                Telephone
+                Telephone number
               </dt>
               <dd class="govuk-summary-list__value">
                 0800 897 654
@@ -182,7 +182,7 @@ Register a claim with the Compensation Recovery Unit
           <dl class="govuk-summary-list govuk-!-margin-bottom-9">
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
-                Name
+                Company name
               </dt>
               <dd class="govuk-summary-list__value">
                Crowley solicitors
@@ -195,7 +195,7 @@ Register a claim with the Compensation Recovery Unit
             </div>
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
-                Email address 
+                Email address
               </dt>
               <dd class="govuk-summary-list__value">
               sally.brown@crowleycolicitors.co.uk
@@ -208,7 +208,7 @@ Register a claim with the Compensation Recovery Unit
             </div>
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
-                Reference
+                Reference number
               </dt>
               <dd class="govuk-summary-list__value">
                 Cr1234567
@@ -221,7 +221,7 @@ Register a claim with the Compensation Recovery Unit
             </div>
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
-                Telephone
+                Telephone number
               </dt>
               <dd class="govuk-summary-list__value">
                 0161 452 456
@@ -246,20 +246,20 @@ Register a claim with the Compensation Recovery Unit
               </dd>
             </div>
           </dl>
-  
-          <p class="govuk-body">By submitting this notification you are confirming that, to the best of your knowledge, the details you are providing are correct.</p>
-  
-        
+
+          <p class="govuk-body">By submitting this claim you are confirming that, to the best of your knowledge, the details you are providing are correct.</p>
+
+
           <form action="confirmation" method="post" novalidate>
-  
+
             <input type="hidden" name="answers-checked" value="true">
-  
+
             <button class="govuk-button" data-module="govuk-button">
               Accept and submit
             </button>
-  
+
           </form>
-  
+
         </div>
       </div>
     </main>

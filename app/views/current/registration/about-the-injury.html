@@ -9,18 +9,18 @@ About the claim and injuries - Please tell us the date of the accident or allege
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-        <a href="javascript: history.go(-1)" class="govuk-back-link govuk-!-margin-bottom-5">Back</a>   
+        <a href="javascript: history.go(-1)" class="govuk-back-link govuk-!-margin-bottom-5">Back</a>
         <form class="form" action="task-list" method="post">
 
           <h1 class="govuk-heading-l">
-            <span class="govuk-caption-xl">Injury</span>
+            <span class="govuk-caption-xl">Injury details</span>
             Add the type of injury sustained
              </h1>
 
              {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
 
              {% if checked('where-is-the-injury','Head') %}
-              
+
              {{ govukCheckboxes({
               classes: "govuk-checkboxes--small",
               idPrefix: "head",
@@ -51,7 +51,7 @@ About the claim and injuries - Please tell us the date of the accident or allege
                 }
               ]
             }) }}
-        
+
              {% endif %}
 
              {% if checked('where-is-the-injury','Neck') %}
@@ -121,9 +121,9 @@ About the claim and injuries - Please tell us the date of the accident or allege
               ]
             }) }}
              {% endif %}
-     
-       
-       
+
+
+
 
 <!--<div class="govuk-form-group">
   <label class="govuk-label" for="more-detail">
@@ -144,7 +144,7 @@ About the claim and injuries - Please tell us the date of the accident or allege
       <button class="govuk-button" data-module="govuk-button">
         Continue
       </button>
-      
+
     </form>
 
     </div>

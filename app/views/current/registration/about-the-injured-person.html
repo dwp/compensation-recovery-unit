@@ -9,7 +9,7 @@ About the injured person - Enter injured person's name and date of birth
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-        <a href="javascript: history.go(-1)" class="govuk-back-link govuk-!-margin-bottom-5">Back</a>   
+        <a href="javascript: history.go(-1)" class="govuk-back-link govuk-!-margin-bottom-5">Back</a>
         <form class="form" action="injured-person-address" method="post">
       <h1 class="govuk-heading-xl">
         <span class="govuk-caption-xl">The injured person</span>
@@ -30,12 +30,15 @@ About the injured person - Enter injured person's name and date of birth
         <input class="govuk-input" id="last-name" name="last-name" type="text" value="{{data['last-name']}}">
       </div>
 
-        
+
       <div class="govuk-form-group">
         <label class="govuk-label govuk-label--s" for="ni-number">
           National Insurance number
         </label>
-        <input class="govuk-input govuk-!-width-one-half" id="ni-by-text" name="ni-number" type="text" spellcheck="false" value="{{ data['ni-number']}}">
+        <div id="national-insurance-hint" class="govuk-hint">
+          This must be in the correct format. For example, ‘QQ 12 34 56 C’.
+        </div>
+          <input class="govuk-input govuk-!-width-one-half" id="ni-by-text" name="ni-number" type="text" spellcheck="false" value="{{ data['ni-number']}}">
       </div>
 
 
@@ -72,7 +75,7 @@ About the injured person - Enter injured person's name and date of birth
                 <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="date-of-birth-year" name="date-of-birth-year" type="text" pattern="[0-9]*" inputmode="numeric" value="{{data['date-of-birth-year']}}"></div>
             </div>
           </div>
-      
+
         </fieldset>
       </div>
 
@@ -86,7 +89,7 @@ About the injured person - Enter injured person's name and date of birth
       <button class="govuk-button" data-module="govuk-button">
         Continue
       </button>
-      
+
     </form>
 
     </div>
