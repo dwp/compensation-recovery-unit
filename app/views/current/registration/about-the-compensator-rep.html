@@ -1,0 +1,73 @@
+
+{% extends folder+ "/layout.html" %}
+
+{% block pageTitle %}
+Insurance company -  Who is the insurance company paying the compensation?
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <a href="javascript: history.go(-1)" class="govuk-back-link govuk-!-margin-bottom-5">Back</a>
+      <form class="form" action="compensator-address" method="post">
+      <h1 class="govuk-heading-xl">
+        <span class="govuk-caption-xl">Compensator or insurance company
+        </span>
+        {% if checked('rep-compensator','No') %}
+        Add compensator details
+        {% else %}
+        Add representative details
+        {% endif %}
+      </h1>
+      {% if checked('rep-compensator','No') %}
+      {% else %}
+      <div class="govuk-form-group">
+        <label class="govuk-label " for="compensator-rep-name">
+          Company name
+          </label>
+        <input class="govuk-input" id="compensator-rep-name" name="compensator-rep-name" type="text" value="{{data['compensator-rep-name']}}">
+      </div>
+      {% endif %}
+      <div class="govuk-form-group">
+        <label class="govuk-label" for="email">
+          Email address
+        </label>
+        <div id="email-hint" class="govuk-hint">
+          We’ll only use this to send you a receipt
+        </div>
+        <input class="govuk-input" id="email" name="compensator-rep-email" type="email" spellcheck="false" aria-describedby="email-hint" autocomplete="email">
+      </div>
+
+      <div class="govuk-form-group">
+        <label class="govuk-label" for="compensator-rep-phone-number">
+          Telephone number
+          </label>
+        <input class="govuk-input govuk-input--width-10" id="compensator-rep-phone" name="compensator-rep-phone-number" type="text" value="{{data['compensator-rep-phone-number']}}">
+      </div>
+
+      <div class="govuk-form-group">
+        <label class="govuk-label" for="compensator-rep-reference">
+           Your reference
+          </label>
+        <input class="govuk-input govuk-input--width-10" id="compensator-rep-ref" name="compensator-rep-reference" type="text" value="{{data['compensator-rep-reference']}}">
+      </div>
+     
+
+      <div class="govuk-radios__item govuk-visually-hidden">
+        <input class="govuk-radios__input" id="injured-persons-details" name="compensator-rep-details" type="radio" value="started" checked>
+        <label class="govuk-label govuk-radios__label" for="injured-persons-details">
+         hidden radio for logic
+        </label>
+      </div>
+
+      <button class="govuk-button" data-module="govuk-button">
+        Continue
+      </button>
+
+    </form>
+
+    </div>
+  </div>
+
+{% endblock %}

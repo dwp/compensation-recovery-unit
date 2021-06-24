@@ -20,8 +20,12 @@ About the injured person -  Does the injured person have a national insurance nu
 
 
              <h1 class="govuk-heading-xl">
-              <span class="govuk-caption-xl">Compensator</span>
-              What’s their address?
+              <span class="govuk-caption-xl">Compensator or insurance company</span>
+              {% if checked('rep-compensator','Yes')%} 
+              What’s the representatives address?
+              {% else %}
+              What’s the Compensators address?
+              {% endif %}
              </h1>
 
         <div class="govuk-form-group">

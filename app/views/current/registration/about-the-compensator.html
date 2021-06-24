@@ -10,45 +10,20 @@ Insurance company -  Who is the insurance company paying the compensation?
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
         <a href="javascript: history.go(-1)" class="govuk-back-link govuk-!-margin-bottom-5">Back</a>
-        <form class="form" action="compensator-address" method="post">
-      <h1 class="govuk-heading-xl">
-        <span class="govuk-caption-xl">Compensator
-        </span>
-        Who is the insurance company paying the compensation?
+        
+        <form class="form" action="compensator-guard" method="post">
+          <div class="govuk-form-group">
+            <h1 class="govuk-label-wrapper"><label class="govuk-label govuk-label--l" for="compensator-name">
+              <span class="govuk-caption-xl">Compensator or insurance company
+              </span>
+                What is the compensator name?
+              </label>
+            </h1>
+            <input class="govuk-input" id="compensator-name" name="compensator-name" type="text">
+          </div>
 
-      </h1>
 
-      <div class="govuk-form-group">
-        <label class="govuk-label " for="compensator-name">
-          Company name
-          </label>
-        <input class="govuk-input" id="compensator-name" name="compensator-name" type="text" value="{{data['compensator-name']}}">
-      </div>
-
-      <div class="govuk-form-group">
-        <label class="govuk-label" for="email">
-          Email address
-        </label>
-        <div id="email-hint" class="govuk-hint">
-          We’ll only use this to send you a receipt
-        </div>
-        <input class="govuk-input" id="email" name="email" type="email" spellcheck="false" aria-describedby="email-hint" autocomplete="email">
-      </div>
-
-      <div class="govuk-form-group">
-        <label class="govuk-label" for="compensator-phone-number">
-          Telephone number
-          </label>
-        <input class="govuk-input govuk-input--width-10" id="compensator-name" name="compensator-phone-number" type="text" value="{{data['compensator-phone-number']}}">
-      </div>
-
-      <div class="govuk-form-group">
-        <label class="govuk-label" for="compensator-reference">
-           Your reference
-          </label>
-        <input class="govuk-input govuk-input--width-10" id="compensator-name" name="compensator-reference" type="text" value="{{data['compensator-reference']}}">
-      </div>
-
+      
       <div class="govuk-radios__item govuk-visually-hidden">
         <input class="govuk-radios__input" id="injured-persons-details" name="compensator-details" type="radio" value="started" checked>
         <label class="govuk-label govuk-radios__label" for="injured-persons-details">

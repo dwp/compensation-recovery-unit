@@ -20,8 +20,12 @@ About the injured person -  Does the injured person have a national insurance nu
 
 
              <h1 class="govuk-heading-xl">
-              <span class="govuk-caption-xl">Insurance company</span>
-              What’s their address?
+              <span class="govuk-caption-xl">Compensator or insurance company</span>
+              {% if checked('rep-compensator','Yes')%} 
+              Choose the representatives address?
+              {% else %}
+              Choose the Compensators?
+              {% endif %}
              </h1>
        
    
@@ -32,11 +36,11 @@ About the injured person -  Does the injured person have a national insurance nu
      <label class="govuk-label" for="sort">
        Choose address
      </label>
-     <select class="govuk-select" id="sort" name="sort">
+     <select class="govuk-select" id="sort" name="comp-address">
        <option value="published">3 addresses found</option>
-       <option value="44 Crawford Street">12 Harrington Street, Manchester, {{ data['compensatorpostcode']}}</option>
-       <option value="47 Crawford Street">12 Harrington Street, Manchester, {{ data['compensatorpostcode']}}</option>
-       <option value="49 Crawford Street">12 Harrington Street, Manchester, {{ data['compensatorpostcode']}}</option>
+       <option value="44 Crawford Street">44 Harrington Street, Manchester, {{ data['compensatorpostcode']}}</option>
+       <option value="47 Crawford Street">47 Harrington Street, Manchester, {{ data['compensatorpostcode']}}</option>
+       <option value="49 Crawford Street">49 Harrington Street, Manchester, {{ data['compensatorpostcode']}}</option>
      </select>
    </div>
    
