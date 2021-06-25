@@ -16,11 +16,14 @@ Compensator or insurance company -  are you representing the compensator or insu
                 <fieldset class="govuk-fieldset" aria-describedby="rep-compensator-hint">
                   <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
                     <h1 class="govuk-fieldset__heading">
-                      <span class="govuk-caption-xl">Compensator or insurance company
+                      <span class="govuk-caption-xl">Compensator
                       </span>
-                      Is their a representative?
+                      Is someone else handling the claim on behalf of the compensator?
                     </h1>
                   </legend>
+                  <div id="representative-hint" class="govuk-hint">
+                      For example, a solicitor or other representative
+                    </div>
                   <div class="govuk-radios" data-module="govuk-radios">
                     <div class="govuk-radios__item">
                       <input class="govuk-radios__input" id="rep-compensator" name="rep-compensator" type="radio" value="Yes" {{ checked("rep-compensator", "Yes") }}>
@@ -34,7 +37,7 @@ Compensator or insurance company -  are you representing the compensator or insu
                        No
                       </label>
                     </div>
-  
+
                   </div>
 
                 </fieldset>

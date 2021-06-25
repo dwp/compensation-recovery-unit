@@ -10,20 +10,23 @@ Insurance company -  Who is the insurance company paying the compensation?
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
         <a href="javascript: history.go(-1)" class="govuk-back-link govuk-!-margin-bottom-5">Back</a>
-        
+
         <form class="form" action="compensator-guard" method="post">
           <div class="govuk-form-group">
             <h1 class="govuk-label-wrapper"><label class="govuk-label govuk-label--l" for="compensator-name">
-              <span class="govuk-caption-xl">Compensator or insurance company
+              <span class="govuk-caption-xl">Compensator
               </span>
-                What is the compensator name?
+                What is the name of the compensator?
               </label>
             </h1>
+            <div id="compensator-hint" class="govuk-hint">
+                This is usually the insurance company responsible for the claim
+              </div>
             <input class="govuk-input" id="compensator-name" name="compensator-name" type="text">
           </div>
 
 
-      
+
       <div class="govuk-radios__item govuk-visually-hidden">
         <input class="govuk-radios__input" id="injured-persons-details" name="compensator-details" type="radio" value="started" checked>
         <label class="govuk-label govuk-radios__label" for="injured-persons-details">

@@ -12,7 +12,7 @@ Insurance company -  Who is the insurance company paying the compensation?
         <a href="javascript: history.go(-1)" class="govuk-back-link govuk-!-margin-bottom-5">Back</a>
       <form class="form" action="compensator-address" method="post">
       <h1 class="govuk-heading-xl">
-        <span class="govuk-caption-xl">Compensator or insurance company
+        <span class="govuk-caption-xl">Compensator
         </span>
         {% if checked('rep-compensator','No') %}
         Add compensator details
@@ -34,7 +34,7 @@ Insurance company -  Who is the insurance company paying the compensation?
           Email address
         </label>
         <div id="email-hint" class="govuk-hint">
-          We’ll only use this to send you a receipt
+          We’ll use this to send information about the claim
         </div>
         <input class="govuk-input" id="email" name="compensator-rep-email" type="email" spellcheck="false" aria-describedby="email-hint" autocomplete="email">
       </div>
@@ -52,7 +52,7 @@ Insurance company -  Who is the insurance company paying the compensation?
           </label>
         <input class="govuk-input govuk-input--width-10" id="compensator-rep-ref" name="compensator-rep-reference" type="text" value="{{data['compensator-rep-reference']}}">
       </div>
-     
+
 
       <div class="govuk-radios__item govuk-visually-hidden">
         <input class="govuk-radios__input" id="injured-persons-details" name="compensator-rep-details" type="radio" value="started" checked>

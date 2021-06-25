@@ -100,7 +100,7 @@ Register a claim with the Compensation Recovery Unit
 {% if checked('where-is-the-injury','Neck') %}
 <h3 class="govuk-heading-s govuk-!-margin-bottom-0">Neck</h3>
 <p>
-{{ data['neck']}} {{ data['more-detail-neck']}} 
+{{ data['neck']}} {{ data['more-detail-neck']}}
 </p>
 {% endif %}
 
@@ -117,98 +117,98 @@ Register a claim with the Compensation Recovery Unit
   Whiplash
   </p>
 {% endif %}
-       
- <!-- End Back-->  
- <!-- start Shoulder or collarbone-->  
+
+ <!-- End Back-->
+ <!-- start Shoulder or collarbone-->
  {% if checked('where-is-the-injury','Shoulder or collarbone') %}
  <p>
   {{ data['shoulder-collarbone']}} {{ data['more-detail-shoulder-collarbone']}} to <strong>shoulder or collarbone</strong>
   </p>
  {% endif %}
-  <!-- end Shoulder or collarbone-->  
+  <!-- end Shoulder or collarbone-->
 
-   <!-- start Shoulder or Head -->  
+   <!-- start Shoulder or Head -->
    {% if checked('where-is-the-injury','Head') %}
    <h3 class="govuk-heading-s govuk-!-margin-bottom-0">Head</h3>
    <p>
     {{ data['head']}} {{ data['more-detail-head']}}
     </p>
    {% endif %}
-       
-          
- <!-- End Head -->  
 
-  <!-- start Chest or torso -->  
+
+ <!-- End Head -->
+
+  <!-- start Chest or torso -->
   {% if checked('where-is-the-injury','Chest or torso') %}
   <h3 class="govuk-heading-s govuk-!-margin-bottom-0">Chest or torso</h3>
   <p>
     {{ data['chest-torso']}} {{ data['more-detail-chest-torso']}}
     </p>
   {% endif %}
- <!-- end Chest or torso -->  
+ <!-- end Chest or torso -->
 
-  <!-- start Arm, wrist, hand or finger -->  
+  <!-- start Arm, wrist, hand or finger -->
   {% if checked('where-is-the-injury','Arm, wrist, hand or finger') %}
   <h3 class="govuk-heading-s govuk-!-margin-bottom-0">Arm, wrist, hand or finger</h3>
   <p>
     {{ data['arm']}} {{ data['more-detail-arm']}}
     </p>
   {% endif %}
- <!-- end Arm, wrist, hand or finger -->  
+ <!-- end Arm, wrist, hand or finger -->
 
-  <!-- start Leg, knee, ankle or foot -->  
+  <!-- start Leg, knee, ankle or foot -->
   {% if checked('where-is-the-injury','Leg, knee, ankle or foot') %}
   <h3 class="govuk-heading-s govuk-!-margin-bottom-0">Leg, knee, ankle or foot</h3>
   <p>
     {{ data['leg']}} {{ data['more-detail-leg']}}
   </p>
   {% endif %}
-  <!-- end Leg, knee, ankle or foot -->  
+  <!-- end Leg, knee, ankle or foot -->
 
-    <!-- start Hip or pelvis -->  
+    <!-- start Hip or pelvis -->
     {% if checked('where-is-the-injury','Hip or pelvis') %}
     <h3 class="govuk-heading-s govuk-!-margin-bottom-0">Hip or pelvis</h3>
     <p>
       {{ data['hip-pelvis']}} {{ data['more-detail-hip-pelvis']}}
     </p>
     {% endif %}
-    <!-- end or pelvis -->  
+    <!-- end or pelvis -->
 
-    <!-- start Jaw or teeth -->  
+    <!-- start Jaw or teeth -->
     {% if checked('where-is-the-injury','Jaw or teeth') %}
     <h3 class="govuk-heading-s govuk-!-margin-bottom-0">Jaw or teeth</h3>
     <p>
       {{ data['jaw-teeth']}} {{ data['more-detail-jaw-teeth']}}
     </p>
     {% endif %}
-    <!-- End or teeth --> 
-    
-    <!-- start Ears, eyes, mouth or nose -->  
+    <!-- End or teeth -->
+
+    <!-- start Ears, eyes, mouth or nose -->
     {% if checked('where-is-the-injury','Ears, eyes, mouth or nose') %}
     <h3 class="govuk-heading-s govuk-!-margin-bottom-0">Ears, eyes, mouth or nose</h3>
     <p>
       {{ data['ears']}} {{ data['more-detail-ears']}}
-    </p> 
+    </p>
     {% endif %}
-    <!-- end, eyes, mouth or nose -->  
+    <!-- end, eyes, mouth or nose -->
 
-    <!-- start Mental or emotional symptoms -->  
+    <!-- start Mental or emotional symptoms -->
     {% if checked('where-is-the-injury','Mental or emotional symptoms') %}
-    <h3 class="govuk-heading-s govuk-!-margin-bottom-0">Mental or emotional symptoms</h3>
+    <h3 class="govuk-heading-s govuk-!-margin-bottom-0">Anxiety or emotional stress</h3>
     <p>
       {{ data['mental']}} {{ data['more-detail-mental']}}
-    </p>    
+    </p>
     {% endif %}
-    <!-- end Mental or emotional symptoms -->  
+    <!-- end Mental or emotional symptoms -->
 
-      <!-- start Brain or nervous system symptoms -->  
+      <!-- start Brain or nervous system symptoms -->
       {% if checked('where-is-the-injury','Brain or nervous system symptoms') %}
-      <h3 class="govuk-heading-s govuk-!-margin-bottom-0">Brain or nervous system symptoms</h3>
+      <h3 class="govuk-heading-s govuk-!-margin-bottom-0">Nervous system (neurological injury)</h3>
       <p>
         {{ data['brain']}} {{ data['more-detail-brain']}}
-      </p>    
+      </p>
       {% endif %}
-      <!-- end Brain or nervous system symptoms -->  
+      <!-- end Brain or nervous system symptoms -->
               </dd>
               <dd class="govuk-summary-list__actions">
                 <a class="govuk-link" href="#">
@@ -218,7 +218,7 @@ Register a claim with the Compensation Recovery Unit
             </div>
           </dl>
 
-          <h2 class="govuk-heading-m">Compensator or insurance company</h2>
+          <h2 class="govuk-heading-m">Compensator</h2>
           <dl class="govuk-summary-list govuk-!-margin-bottom-9">
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
@@ -235,7 +235,7 @@ Register a claim with the Compensation Recovery Unit
             </div>
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
-                Has representative
+                Is there a representative?
               </dt>
               <dd class="govuk-summary-list__value">
                 {{ data['rep-compensator'] | default('No') }}
@@ -246,9 +246,9 @@ Register a claim with the Compensation Recovery Unit
                 </a>
               </dd>
             </div>
-            {% if checked('rep-compensator','Yes')%} 
+            {% if checked('rep-compensator','Yes')%}
           </dl>
-          <h2 class="govuk-heading-m">Compensator representative</h2>
+          <h2 class="govuk-heading-m">Compensator's representative</h2>
           <dl class="govuk-summary-list govuk-!-margin-bottom-9">
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
@@ -367,7 +367,7 @@ Register a claim with the Compensation Recovery Unit
               </dt>
               <dd class="govuk-summary-list__value">
                 {{ data['represesntative-phone-number'] | default('0161 452 456') }}
-                
+
               </dd>
               <dd class="govuk-summary-list__actions">
                 <a class="govuk-link" href="#">
