@@ -92,7 +92,7 @@ Register a claim with the Compensation Recovery Unit
             </div>
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
-                Injury
+                Injuries
               </dt>
               <dd class="govuk-summary-list__value">
               <!-- start Neck-->
@@ -121,8 +121,9 @@ Register a claim with the Compensation Recovery Unit
  <!-- End Back-->
  <!-- start Shoulder or collarbone-->
  {% if checked('where-is-the-injury','Shoulder or collarbone') %}
+ <h3 class="govuk-heading-s govuk-!-margin-bottom-0">Shoulder or collarbone</h3>
  <p>
-  {{ data['shoulder-collarbone']}} {{ data['more-detail-shoulder-collarbone']}} to <strong>shoulder or collarbone</strong>
+  {{ data['shoulder-collarbone']}} {{ data['more-detail-shoulder-collarbone']}}
   </p>
  {% endif %}
   <!-- end Shoulder or collarbone-->
