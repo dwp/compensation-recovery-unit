@@ -27,6 +27,7 @@ router.use('/', (req, res, next) => {
 
 
   router.use('/current', require('./views/current/_routes'));
+  router.use('/v1-staff', require('./views/v1-staff/_routes'));
   router.use('/mvp', require('./views/mvp/_routes'));
   router.use('/mvp-01', require('./views/mvp-01/_routes'));
 

@@ -19,109 +19,129 @@
 
       <div class="card-container">
     
-        <div class="card">
-          <h2 class="govuk-heading-s">
-          Add a case </h2>
-          <div class="card-inner-panel">
-            <ul class="govuk-list">
-              <li><a href="/current/registration/cru-landing">Add a case</a></li>
-            </ul>
+
+     <div class="card full">
+      <h2 class="govuk-heading-m">
+      <span class="govuk-caption-l">Version:Current</span>
+      Working version
+      </h2>
+       <div class="card-inner-panel">
+                       <p>
+  <strong class="govuk-tag govuk-tag--red">
+  Not Tested
+</strong> We are currently working on this version of the prototpye and it is likley to change
+</strong></p>
+        <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-one-third">
+            <h3 class="govuk-heading-s">
+              Compensator views </h3>
+                <ul class="govuk-list">
+                  <li><a href="/current/registration/cru-landing">Add a claim</a></li>
+                </ul>
           </div>
-       </div> 
-     
-        <div class="card">
-        <h2 class="govuk-heading-s">
-         Cru staff views</h2>
-         <div class="card-inner-panel">
-         <ul class="govuk-list">
-          <li><a href="/current/cru-ops-service/cru-ops-landing">Home</a></li>
-          <li><a href="/current/cru-ops-service/tasks">Tasks </a></li>
-          <li><a href="/current/cru-ops-service/find-case">Find case</a></li>
-        </ul>
-        </div>
-       </div>
-
-       <div class="card">
-        <h2 class="govuk-heading-s">
-          Case view</h2>
-          <div class="card-inner-panel">
-            <ul class="govuk-list">
-              <li><a href="/current/case/case-details-and-tasks-tabs">Case view</a></li>
-
-           </ul>
-           </div>
-     </div> 
- 
-       </div>
-
-
-  {% from "govuk/components/accordion/macro.njk" import govukAccordion %}
-
-{{ govukAccordion({
-  id: "accordion-with-summary-sections",
-  items: [
-
-
-
-                {
-      heading: {
-        text: "Discovery"
-      },
-      summary: {
-        text: "These design concepts are not tested with users, they are a tool to enable us to visualise how we might begin to solve some of our users’ problems"
-      },
-      content: {
-        html:
-        '      <div class="card-container">
-    
-          <div class="card">
-            <h2 class="govuk-heading-s">
-            Add a case </h2>
-            <div class="card-inner-panel">
-              <ul class="govuk-list">
-                <li><a href="/mvp/registration/cru-landing">Add a case (MVP)</a></li>
-                <li><a href="/v0/registration/cru-landing">Add a case (v0)</a></li>
-                <li><a href="/v0/registration/cru-landing-moj">Add a case (v0) - MOJ data</a></li>
-              </ul>
-            </div>
-         </div> 
-       
-          <div class="card">
-          <h2 class="govuk-heading-s">
-           Cru staff views</h2>
-           <div class="card-inner-panel">
+          <div class="govuk-grid-column-one-third">    <h3 class="govuk-heading-s">
+           Cru staff views</h3>
            <ul class="govuk-list">
-            <li><a href="/mvp/cru-ops-service/cru-ops-landing">Home (MVP)</a></li>
-            <li><a href="/mvp/cru-ops-service/tasks">Tasks (MVP)</a></li>
-            <li><a href="/mvp/cru-ops-service/find-case">Find case (MVP)</a></li>
-            <li><a href="/mvp-01/cru-ops-service/tasks">Tasks (MVP0)</a></li>
-            <li><a href="/v0/cru-ops-service/cru-ops-landing">Home (v0)</a></li>
+            <li><a href="/current/cru-ops-service/cru-ops-landing">Home(Add a claim)</a></li>
+            <li><a href="/current/cru-ops-service/tasks">Tasks </a></li>
+            <li><a href="/current/cru-ops-service/find-case">Find case</a></li>
           </ul>
           </div>
-         </div>
-  
-         <div class="card">
-          <h2 class="govuk-heading-s">
-            Case view</h2>
-            <div class="card-inner-panel">
+          <div class="govuk-grid-column-one-third">
+            <h3 class="govuk-heading-s">
+              Case view</h3>
               <ul class="govuk-list">
-                <li><a href="/mvp/case/case-details-and-tasks-tabs">Case view (mvp) tabs</a></li>
-                <li><a href="/mvp/case/case-details-and-tasks-accordion">Case view (mvp) accordion</a></li>
-                <li><a href="/mvp/case/case-details-and-tasks-2">Case view (mvp) Horrizintal nav</a></li>
-               <li><a href="/mvp/case/case-details-and-tasks-1">Case view (mvp) Alternate view</a></li>
-               <li><a href="/mvp/case/case-details-and-tasks">Case view (mvp)</a></li>
-               <li><a href="/mvp-01/case/case-details-and-tasks">Case view (mvp0)</a></li>
-               <li><a href="/v01/case/case-details-and-tasks">Case view (v01)</a></li>
-               <li><a href="/v0/case/case-details-and-tasks">Case view (v0)</a></li>
+                <li><a href="/current/case/case-details-and-tasks-tabs">Case view</a></li>
+  
              </ul>
-             </div>
-       </div> 
-   
-         </div>'
+          </div>
+        </div>
+      </div>
+      </div>
+ 
       
-      }
-    }
-  ]
-}) }}
+
+
+     <div class="card full">
+      <h2 class="govuk-heading-m">
+      <span class="govuk-caption-l">Version:1 - Cru staff</span>
+     Registration </h2>
+       <div class="card-inner-panel">
+                       <p>
+  <strong class="govuk-tag govuk-tag--green">
+  Tested
+</strong> with <strong>Cru Staff on 24, 28, 29  June 2021</strong>
+</strong></p>
+        <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+        <p class="govuk-body">Scenarios tested:</p>
+       <ul class="govuk-list govuk-list--bullet">
+        <li>
+       Register a clerical CRU 1 form on the new system
+        </li>
+        </ul>
+      <a href="/v1-staff/cru-ops-service/cru-ops-landing" class="govuk-button govuk-button--secondary">Start scenarios</a>
+      </div>
+      </div>
+
+
+      
+</div>
+
+      <h2 class="govuk-heading-l govuk-!-margin-top-9">Discovery</h2>
+      <div class="card-container">
+      <div class="card full">
+        <h2 class="govuk-heading-m">
+        Discovery design concepts
+        </h2>
+         <div class="card-inner-panel">
+                         <p>
+    <strong class="govuk-tag govuk-tag--red">
+    Not Tested
+  </strong> These design concepts are not tested with users, they are a tool to enable us to visualise how we might begin to solve some of our users’ problems
+  </strong></p>
+          <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+  
+          <div class="govuk-grid-row">
+            <div class="govuk-grid-column-one-third">
+              <h3 class="govuk-heading-s">
+                Compensator views </h3>
+                <ul class="govuk-list">
+                  <li><a href="/mvp/registration/cru-landing">Add a case (MVP)</a></li>
+                  <li><a href="/v0/registration/cru-landing">Add a case (v0)</a></li>
+                  <li><a href="/v0/registration/cru-landing-moj">Add a case (v0) - MOJ data</a></li>
+                </ul>
+            </div>
+            <div class="govuk-grid-column-one-third">    <h3 class="govuk-heading-s">
+             Cru staff views</h3>
+             <ul class="govuk-list">
+              <li><a href="/mvp/cru-ops-service/cru-ops-landing">Home (MVP)</a></li>
+              <li><a href="/mvp/cru-ops-service/tasks">Tasks (MVP)</a></li>
+              <li><a href="/mvp/cru-ops-service/find-case">Find case (MVP)</a></li>
+              <li><a href="/mvp-01/cru-ops-service/tasks">Tasks (MVP0)</a></li>
+              <li><a href="/v0/cru-ops-service/cru-ops-landing">Home (v0)</a></li>
+            </ul>
+            </div>
+            <div class="govuk-grid-column-one-third">
+              <h3 class="govuk-heading-s">
+                Case view</h3>
+                <ul class="govuk-list">
+                  <li><a href="/mvp/case/case-details-and-tasks-tabs">Case view (mvp) tabs</a></li>
+                  <li><a href="/mvp/case/case-details-and-tasks-accordion">Case view (mvp) accordion</a></li>
+                  <li><a href="/mvp/case/case-details-and-tasks-2">Case view (mvp) Horrizintal nav</a></li>
+                 <li><a href="/mvp/case/case-details-and-tasks-1">Case view (mvp) Alternate view</a></li>
+                 <li><a href="/mvp/case/case-details-and-tasks">Case view (mvp)</a></li>
+                 <li><a href="/mvp-01/case/case-details-and-tasks">Case view (mvp0)</a></li>
+                 <li><a href="/v01/case/case-details-and-tasks">Case view (v01)</a></li>
+                 <li><a href="/v0/case/case-details-and-tasks">Case view (v0)</a></li>
+               </ul>
+            </div>
+          </div>
+        </div>
+        </div>
+        </div>
+</div>
 
 {% endblock %}

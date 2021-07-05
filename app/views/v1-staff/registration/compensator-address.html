@@ -1,0 +1,51 @@
+
+{% extends folder+ "/layout.html" %}
+
+{% block pageTitle %}
+About the injured person -  Does the injured person have a national insurance number
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <a href="javascript: history.go(-1)" class="govuk-back-link govuk-!-margin-bottom-5">Back</a>
+
+
+
+
+
+        <form class="form" action="compensator-address-choice" method="post">
+
+
+
+             <h1 class="govuk-heading-xl">
+              <span class="govuk-caption-xl">Compensator</span>
+              {% if checked('rep-compensator','Yes')%}
+              What’s the representative's address?
+              {% else %}
+              What’s the compensator's address?
+              {% endif %}
+             </h1>
+
+        <div class="govuk-form-group">
+
+           <label class="govuk-label govuk-!-font-weight-bold" for="compensatorpostcode">
+             Postcode
+           </label>
+              <input class="govuk-input govuk-input--width-10" id="compensatorpostcode" name="compensatorpostcode" type="text" value="{{ data['compensatorpostcode']}}">
+         </div>
+
+
+       <button class="govuk-button" data-module="govuk-button">
+         Find address
+       </button>
+       <p class="govuk-body"><a href="address-manual">Enter address manually</a></p>
+
+
+    </form>
+
+    </div>
+  </div>
+
+{% endblock %}

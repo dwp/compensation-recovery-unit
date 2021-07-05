@@ -1,0 +1,98 @@
+
+{% extends folder+ "/layout.html" %}
+
+{% block pageTitle %}
+About the injured person - Enter injured person's name and date of birth
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <a href="javascript: history.go(-1)" class="govuk-back-link govuk-!-margin-bottom-5">Back</a>
+        <form class="form" action="injured-person-address" method="post">
+      <h1 class="govuk-heading-xl">
+        <span class="govuk-caption-xl">The injured person</span>
+        Who was injured?
+      </h1>
+
+      <div class="govuk-form-group">
+        <label class="govuk-label govuk-label--s" for="first-name">
+            First name
+          </label>
+        <input class="govuk-input" id="first-name" name="first-name" type="text" value="{{data['first-name']}}">
+      </div>
+
+      <div class="govuk-form-group">
+        <label class="govuk-label govuk-label--s" for="last-name">
+           Last name
+        </label>
+        <input class="govuk-input" id="last-name" name="last-name" type="text" value="{{data['last-name']}}">
+      </div>
+
+
+      <div class="govuk-form-group">
+        <label class="govuk-label govuk-label--s" for="ni-number">
+          National Insurance number
+        </label>
+        <div id="national-insurance-hint" class="govuk-hint">
+          This must be in the correct format. For example, ‘QQ 12 34 56 C’.
+        </div>
+          <input class="govuk-input govuk-!-width-one-half" id="ni-by-text" name="ni-number" type="text" spellcheck="false" value="{{ data['ni-number']}}">
+      </div>
+
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" role="group" aria-describedby="date-of-birth-hint">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+            <label class="govuk-fieldset__heading">
+              Date of birth
+            </label>
+          </legend>
+          <div id="date-of-birth-hint" class="govuk-hint">
+            For example, 12 11  1990
+          </div>
+          <div class="govuk-date-input" id="date-of-birth">
+            <div class="govuk-date-input__item">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="date-of-birth-day">
+                  Day
+                </label>
+                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="date-of-birth-day" name="date-of-birth-day" type="text" pattern="[0-9]*" inputmode="numeric" value="{{data['date-of-birth-day']}}"></div>
+            </div>
+            <div class="govuk-date-input__item">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="date-of-birth-month">
+                  Month
+                </label>
+                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="date-of-birth-month" name="date-of-birth-month" type="text" pattern="[0-9]*" inputmode="numeric" value="{{data['date-of-birth-month']}}"></div>
+            </div>
+            <div class="govuk-date-input__item">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="date-of-birth-year">
+                  Year
+                </label>
+                <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="date-of-birth-year" name="date-of-birth-year" type="text" pattern="[0-9]*" inputmode="numeric" value="{{data['date-of-birth-year']}}"></div>
+            </div>
+          </div>
+
+        </fieldset>
+      </div>
+
+      <div class="govuk-radios__item govuk-visually-hidden">
+        <input class="govuk-radios__input" id="injured-persons-details" name="injured-persons-details" type="radio" value="started" checked>
+        <label class="govuk-label govuk-radios__label" for="injured-persons-details">
+         hidden radio for logic
+        </label>
+      </div>
+
+      <button class="govuk-button" data-module="govuk-button">
+        Continue
+      </button>
+
+    </form>
+
+    </div>
+  </div>
+
+{% endblock %}

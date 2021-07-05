@@ -1,0 +1,117 @@
+
+{% extends folder+ "/layout.html" %}
+
+{% set nav = "Find" %}  
+
+{% block pageTitle %}
+  Case details
+{% endblock %}
+
+{% block globalnav %}
+{% include  folder+ "/includes/globalnav.html" %}
+{% endblock %}
+
+{% block keydetails %}
+{% include  folder+ "/includes/keydetails.html" %}
+{% endblock %}
+
+
+
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+  {% if case.task == 'yes'%}
+  <div class="govuk-notification-banner govuk-!-margin-bottom-7" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+    <div class="govuk-notification-banner__header">
+      <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+        Task
+      </h2>
+    </div>
+    <div class="govuk-notification-banner__content">
+      <p class="govuk-notification-banner__heading">
+        {% include  folder+ "/includes/task_type_playback.html" %}
+        <a class="govuk-notification-banner__link" href="task?reference={{case.reference}}">update case</a>.
+      </p>
+    </div>
+  </div>
+  {% elif case.task == 'completed-closed' %}
+
+  <div class="govuk-notification-banner govuk-notification-banner--success govuk-!-margin-bottom-7" role="alert" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+    <div class="govuk-notification-banner__header">
+      <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+        Task completed
+      </h2>
+    </div>
+    <div class="govuk-notification-banner__content">
+      <h3 class="govuk-notification-banner__heading">
+        Case closed on new cru
+      </h3>
+      <!--<p class="govuk-body">Contact <a class="govuk-notification-banner__link" href="#">example@department.gov.uk</a> if you think there's a problem.</p>-->
+    </div>
+  </div>
+
+  {% elif case.task == 'completed-open' %}
+
+  <div class="govuk-notification-banner govuk-notification-banner--success govuk-!-margin-bottom-7" role="alert" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+    <div class="govuk-notification-banner__header">
+      <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+        Task completed
+      </h2>
+    </div>
+    <div class="govuk-notification-banner__content">
+      <h3 class="govuk-notification-banner__heading">
+        Nil certificate issued <a href=""> view certificate</a>
+      </h3>
+      <!--<p class="govuk-body">Contact <a class="govuk-notification-banner__link" href="#">example@department.gov.uk</a> if you think there's a problem.</p>-->
+    </div>
+  </div>
+
+  {% endif %}
+
+
+  {% from "govuk/components/tabs/macro.njk" import govukTabs %}
+
+
+{% set caseInformationHtml %}
+<h2 class="govuk-heading-l">Case information</h2>
+<h3 class="govuk-heading-m">Injured person</h3>
+{% include  folder+ "/includes/injured-person.html" %}
+<h3 class="govuk-heading-m">Injury</h3>
+{% include  folder+ "/includes/injury.html" %}
+<h3 class="govuk-heading-m">Compensator</h3>
+{% include  folder+ "/includes/compensator-details.html" %}
+<h3 class="govuk-heading-m">Representative</h3>
+{% include  folder+ "/includes/solicitor-details.html" %}
+
+{% endset -%}
+
+{% set timelineHtml %}
+{% include  folder+ "/includes/timeline.html" %}
+{% endset -%}
+
+
+
+
+
+{{ govukTabs({
+  items: [
+    {
+      label: "Case information",
+      id: "case-information",
+      panel: {
+        html: caseInformationHtml
+      }
+    },
+    {
+      label: "Timeline",
+      id: "timwline",
+      panel: {
+        html: timelineHtml
+      }
+    }
+    
+  ]
+}) }}
+
+{% endblock %}

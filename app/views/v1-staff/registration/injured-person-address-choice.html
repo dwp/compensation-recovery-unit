@@ -1,0 +1,61 @@
+
+{% extends folder+ "/layout.html" %}
+
+{% block pageTitle %}
+About the injured person -  Does the injured person have a national insurance number
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <a href="javascript: history.go(-1)" class="govuk-back-link govuk-!-margin-bottom-5">Back</a>
+
+
+
+
+
+        <form class="form" action="task-list" method="post">
+
+
+
+             <h1 class="govuk-heading-xl">
+              <span class="govuk-caption-xl">The injured person</span>
+              Choose their address
+             </h1>
+
+
+         <h2 class="govuk-heading-m">Postcode</h2>
+         <p class="govuk-body">{{ data['addresspostcode']}} <a href="injured-person-address.html">Change postcode</a></p>
+
+   <div class="govuk-form-group">
+     <label class="govuk-label" for="choose-ip-address">
+       Choose address
+     </label>
+     <select class="govuk-select" id="choose-ip-address" name="choose-ip-address">
+       <option value="published">3 addresses found</option>
+       <option value="163 Green Drift">163 Green Drift, Royston, Herfordshire, {{ data['addresspostcode'] | default('SG8 5BL')}}</option>
+       <option value="165 Green Drift">165 Green Drift, Royston, Herfordshire,  {{ data['addresspostcode'] | default('SG8 5BL')}}</option>
+       <option value="167 Green Drift">167 Green Drift, Royston, Herfordshire, {{ data['addresspostcode'] | default('SG8 5BL')}}</option>
+     </select>
+   </div>
+
+   <div class="govuk-radios__item govuk-visually-hidden">
+    <input class="govuk-radios__input" id="injured-persons-details" name="injured-persons-details" type="radio" value="completed" checked>
+    <label class="govuk-label govuk-radios__label" for="injured-persons-details">
+     hidden radio for logic
+    </label>
+  </div>
+
+   <button class="govuk-button" data-module="govuk-button">
+    Continue
+   </button>
+   <p class="govuk-body"><a href="#">Enter address manually</a></p>
+
+
+    </form>
+
+    </div>
+  </div>
+
+{% endblock %}
