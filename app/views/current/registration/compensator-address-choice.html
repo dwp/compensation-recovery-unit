@@ -37,16 +37,16 @@ About the injured person -  Does the injured person have a national insurance nu
        Choose address
      </label>
      <select class="govuk-select" id="sort" name="comp-address">
-       <option value="published">3 addresses found</option>
        {% if checked("choose-participent", "3") %}
-       <option value="Enbrook Park">Enbrook Park, Folkestone, Kent{{ data['compensatorpostcode']}}</option>
-       <option value="2 Enbrook Park">Enbrook Park, Folkestone, Kent {{ data['compensatorpostcode']}}</option>
-       <option value="4 Enbrook Park">Enbrook Park, Folkestone, Kent {{ data['compensatorpostcode']}}</option>
-       {% elif checked("choose-participent", "2")%}
+       <option value="published">3 addresses found</option>
        <option value="Sabre House, 150 South Street">Sabre House, 150 South Street, Dorking, Surrey {{ data['compensatorpostcode']}}</option>
        <option value="152 South Street">152 South Street, Dorking, Surrey , {{ data['compensatorpostcode']}}</option>
        <option value="154 South Street">154 South Street, Dorking, Surrey, {{ data['compensatorpostcode']}}</option>
+       {% elif checked("choose-participent", "2")%}
+       <option value="published">1 address found</option>
+       <option value="Enbrook Park">Enbrook Park, Sandgate, Folkestone, Kent, {{ data['compensatorpostcode']}}</option>
        {% else %}
+       <option value="published">3 addresses found</option>
        <option value="100 Petty France">100 Petty France, London, {{ data['compensatorpostcode']}}</option>
        <option value="102 Petty France">102 Petty France, London, {{ data['compensatorpostcode']}}</option>
        <option value="104 Petty France">104 Petty France, London, {{ data['compensatorpostcode']}}</option>

@@ -310,9 +310,9 @@ Register a claim with the Compensation Recovery Unit
               </dt>
               <dd class="govuk-summary-list__value">
                 {% if checked("choose-participent", "3") %}
-                {{ data['comp-address'] | default('Enbrook Park') }}<br>Folkestone<br>Kent<br>{{ data['compensatorpostcode'] | default('CT20 3S') }}
-                {% elif checked("choose-participent", "2")%}
                 {{ data['comp-address'] | default('Sabre House, 150 South Street,') }}<br>Dorking<br>Surrey<br>{{ data['compensatorpostcode'] | default('SW1H 9AJ') }}
+                {% elif checked("choose-participent", "2")%}
+                {{ data['comp-address'] | default('Enbrook Park') }}<br> Sandgate <br>Folkestone<br>Kent<br>{{ data['compensatorpostcode'] | default('CT20 3S') }}
                 {% else %}
                 {{ data['comp-address'] | default('104 Petty France') }}<br>London<br>{{ data['compensatorpostcode'] | default('SW1H 9AJ') }}
                 {% endif %}
