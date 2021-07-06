@@ -17,51 +17,6 @@ About the claim and injuries - Please tell us the date of the accident or allege
             What type of injury was suffered?
              </h1>
 
- <!---           {% macro checkbox(name, value) %}
-  <div class="govuk-checkboxes__item" >
-    <input class="govuk-checkboxes__input" id="{{value}}" name="{{name}}" type="checkbox" value="{{value}}" {{ checked('neck','{{value}}') }}>
-    <label class="govuk-label govuk-checkboxes__label" for="waste-2">
-      {{value}}
-    </label>
-  </div>
-{% endmacro %}
-
-
-
-
-<div class="govuk-form-group">
-  <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
-    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-      <h1 class="govuk-fieldset__heading">
-        Which types of waste do you transport?
-      </h1>
-    </legend>
-    <div id="waste-hint" class="govuk-hint">
-      Select all that apply.
-    </div>
-    <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
-    {{ checkbox("neck", "Whiplash") }}
-    {{ checkbox("neck", "Whiplash") }}
-    {{ checkbox("neck", "Whiplash") }}
-    <div class="govuk-checkboxes__item">
-      <input class="govuk-checkboxes__input" id="neck-7" name="neck" type="checkbox" value=" " aria-controls="conditional-neck-7" aria-expanded="false">
-      <label class="govuk-label govuk-checkboxes__label" for="neck-7">
-    Other injury details
-  </label>  
-    </div>
-    <div class="govuk-checkboxes__conditional" id="conditional-neck-7">
-      <div class="govuk-form-group">
-        <label class="govuk-label" for="more-detail-neck">
-          Can you provide more detail?
-        </label>
-        <textarea class="govuk-textarea" id="more-detail-neck" name="more-detail-neck" rows="5"></textarea>
-      </div>
-      </div>  
-    </div>
-
-  </fieldset>
-</div> -->
-
 
 
 
@@ -73,13 +28,14 @@ About the claim and injuries - Please tell us the date of the accident or allege
 {% if checked('where-is-the-injury','Neck') %}
 {% from "govuk/components/input/macro.njk" import govukInput %}
      {% set injuryHtml %}
-     {{ govukTextarea({
-       name: "more-detail-neck",
-       id: "more-detail-neck",
-       label: {
-         text: "Can you provide more detail?"
-       }
-     }) }}
+    {{ govukTextarea({
+      name: "more-detail-neck",
+      id: "more-detail-neck",
+      value:data['more-detail-neck'],
+      label: {
+        text: "Can you provide more detail?"
+      }
+    }) }}
        {% endset -%}
 
 {{ govukCheckboxes({
@@ -96,34 +52,42 @@ About the claim and injuries - Please tell us the date of the accident or allege
  items: [
     {
       value: "Whiplash",
-      text:" Whiplash"
-
+      text:" Whiplash",
+      checked: checked("neck", "Whiplash")
       
      
     },
     {
       value: "Soft tissue injury (for example, bruise, strain or tear)",
-      text: " Soft tissue injury (for example, bruise, strain or tear)"
+      text: " Soft tissue injury (for example, bruise, strain or tear)",
+      checked: checked("neck", "Soft tissue injury (for example, bruise, strain or tear)")
     },
     {
       value: "Pain or discomfort",
-      text: "Pain or discomfort"
+      text: "Pain or discomfort",
+      checked: checked("neck", "Pain or discomfor")
     },
     {
       value: "Cuts or scarring",
-      text: "Cuts or scarring"
+      text: "Cuts or scarring",
+      checked: checked("neck", "Cuts or scarring")
     },
    {
      value: "Fracture",
-     text: " Fracture"
+     text: " Fracture",
+     checked: checked("neck", "Fracture")
    },
    {
      value: "Burns",
-     text: "Burns"
+     text: "Burns",
+     checked: checked("neck", "Burns")
    },
    {
      value: " ",
      text: "Other injury details",
+     checked: checked("neck", " "),
+     
+
      conditional: {
        html: injuryHtml
      }
@@ -138,13 +102,14 @@ About the claim and injuries - Please tell us the date of the accident or allege
 {% if checked('where-is-the-injury','Back') %}
 {% from "govuk/components/input/macro.njk" import govukInput %}
      {% set injuryHtml %}
-     {{ govukTextarea({
-       name: "more-detail-back",
-       id: "more-detail-back",
-       label: {
-         text: "Can you provide more detail?"
-       }
-     }) }}
+    {{ govukTextarea({
+      name: "more-detail-back",
+      id: "more-detail-back",
+      value:data['more-detail-back'],
+      label: {
+        text: "Can you provide more detail?"
+      }
+    }) }}
        {% endset -%}
 
 {{ govukCheckboxes({
@@ -161,31 +126,38 @@ About the claim and injuries - Please tell us the date of the accident or allege
  items: [
     {
       value: "Whiplash",
-      text: " Whiplash"
+      text: " Whiplash",
+      checked: checked("back", "Whiplash")
     },
     {
       value: "Soft tissue injury (for example, bruise, strain or tear)",
-      text: " Soft tissue injury (for example, bruise, strain or tear)"
+      text: " Soft tissue injury (for example, bruise, strain or tear)",
+      checked: checked("back", "Soft tissue injury (for example, bruise, strain or tear)")
     },
     {
       value: "Pain or discomfort",
-      text: "Pain or discomfort"
+      text: "Pain or discomfort",
+      checked: checked("back", "Pain or discomfort")
     },
     {
       value: "Cuts or scarring",
-      text: "Cuts or scarring"
+      text: "Cuts or scarring",
+      checked: checked("back", "Cuts or scarring")
     },
    {
      value: "Fracture",
-     text: " Fracture"
+     text: " Fracture",
+     checked: checked("back", "Fracture")
    },
    {
      value: "Burns",
-     text: "Burns"
+     text: "Burns",
+     checked: checked("back", "Burns")
    },
    {
      value: " ",
      text: "Other injury details",
+     checked: checked("back", " "),
      conditional: {
        html: injuryHtml
      }
@@ -203,6 +175,7 @@ About the claim and injuries - Please tell us the date of the accident or allege
       {{ govukTextarea({
         name: "more-detail-shoulder-collarbone",
         id: "more-detail-shoulder-collarbone",
+        value:data['more-detail-shoulder-collarbone'],
         label: {
           text: "Can you provide more detail?"
         }
@@ -223,31 +196,38 @@ About the claim and injuries - Please tell us the date of the accident or allege
   items: [
     {
       value: "Whiplash",
-      text: " Whiplash"
+      text: " Whiplash",
+      checked: checked("shoulder-collarbone", "Whiplash")
     },
     {
       value: "Soft tissue injury (for example, bruise, strain or tear)",
-      text: " Soft tissue injury (for example, bruise, strain or tear)"
+      text: " Soft tissue injury (for example, bruise, strain or tear)",
+      checked: checked("shoulder-collarbone", "Soft tissue injury (for example, bruise, strain or tear)")
     },
     {
       value: "Pain or discomfort",
-      text: "Pain or discomfort"
+      text: "Pain or discomfort",
+      checked: checked("shoulder-collarbone", "Pain or discomfort")
     },
     {
       value: "Cuts or scarring",
-      text: "Cuts or scarring"
+      text: "Cuts or scarring",
+      checked: checked("shoulder-collarbone", "Cuts or scarring")
     },
    {
      value: "Fracture",
-     text: " Fracture"
+     text: " Fracture",
+     checked: checked("shoulder-collarbone", "Frature")
    },
    {
      value: "Burns",
-     text: "Burns"
+     text: "Burns",
+     checked: checked("shoulder-collarbone", "Burns")
    },
    {
-     value: "",
+     value: " ",
      text: "Other injury details",
+     checked: checked("shoulder-collarbone", " "),
      conditional: {
        html: injuryHtml
      }
@@ -265,6 +245,7 @@ About the claim and injuries - Please tell us the date of the accident or allege
         {{ govukTextarea({
           name: "more-detail-head",
           id: "more-detail-head",
+          value:data['more-detail-head'],
           label: {
             text: "Can you provide more detail?"
           }
@@ -285,39 +266,48 @@ About the claim and injuries - Please tell us the date of the accident or allege
     items: [
     {
       value: "Soft tissue injury (for example, bruise, strain or tear)",
-      text: " Soft tissue injury (for example, bruise, strain or tear)"
+      text: " Soft tissue injury (for example, bruise, strain or tear)",
+      checked: checked("head", "Soft tissue injury (for example, bruise, strain or tear)")
     },
     {
       value: "Pain or discomfort",
-      text: "Pain or discomfort"
+      text: "Pain or discomfort",
+      checked: checked("head", "Pain or discomfort")
     },
     {
       value: "Cuts or scarring",
-      text: "Cuts or scarring"
+      text: "Cuts or scarring",
+      checked: checked("head", "Cuts or scarring")
     },
    {
      value: "Fracture",
-     text: " Fracture"
+     text: " Fracture",
+     checked: checked("head", "Fracture")
    },
    {
      value: "Burns",
-     text: "Burns"
+     text: "Burns",
+     checked: checked("head", "Burns")
    },
    {
     value: "Concussion",
-    text: "Concussion"
+    text: "Concussion",
+    checked: checked("head", "Concussion")
   },
   {
     value: "Headache",
-    text: "Headache"
+    text: "Headache",
+    checked: checked("head", "Headache")
   },
   {
     value: "Bleed on the brain",
-    text: "Bleed on the brain"
+    text: "Bleed on the brain",
+    checked: checked("head", "Bleed on the brain")
   },
    {
-     value: "",
+     value: " ",
      text: "Other injury details",
+     checked: checked("head", " "),
      conditional: {
        html: injuryHtml
      }
@@ -334,13 +324,14 @@ About the claim and injuries - Please tell us the date of the accident or allege
   {% if checked('where-is-the-injury','Chest or torso') %}
   {% from "govuk/components/input/macro.njk" import govukInput %}
        {% set injuryHtml %}
-       {{ govukTextarea({
-         name: "more-detail-chest-torso",
-         id: "more-detail-chest-torso",
-         label: {
-           text: "Can you provide more detail?"
-         }
-       }) }}
+      {{ govukTextarea({
+        name: "more-detail-chest-torso",
+        id: "more-detail-chest-torso",
+        value:data['more-detail-chest-torso'],
+        label: {
+          text: "Can you provide more detail?"
+        }
+      }) }}
          {% endset -%}
 
   {{ govukCheckboxes({
@@ -357,31 +348,38 @@ About the claim and injuries - Please tell us the date of the accident or allege
    items: [
    {
      value: "Soft tissue injury (for example, bruise, strain or tear)",
-     text: " Soft tissue injury (for example, bruise, strain or tear)"
+     text: " Soft tissue injury (for example, bruise, strain or tear)",
+     checked: checked("chest-torso", "Soft tissue injury (for example, bruise, strain or tear)")
    },
    {
      value: "Pain or discomfort",
-     text: "Pain or discomfort"
+     text: "Pain or discomfort",
+     checked: checked("chest-torso", "Pain or discomfort")
    },
    {
      value: "Cuts or scarring",
-     text: "Cuts or scarring"
+     text: "Cuts or scarring",
+     checked: checked("chest-torso", "Cuts or scarring")
    },
   {
     value: "Fracture",
-    text: " Fracture"
+    text: " Fracture",
+    checked: checked("chest-torso", "Fracture")
   },
   {
     value: "Burns",
-    text: "Burns"
+    text: "Burns",
+    checked: checked("chest-torso", "Burns")
   },
   {
     value: "Breathing problems",
-    text: "Breathing problems"
+    text: "Breathing problems",
+    checked: checked("chest-torso", "Breathing problems")
   },
   {
-    value: "",
+    value: " ",
     text: "Other injury details",
+    checked: checked("chest-torso", " "),
     conditional: {
       html: injuryHtml
     }
@@ -396,13 +394,14 @@ About the claim and injuries - Please tell us the date of the accident or allege
   {% if checked('where-is-the-injury','Arm, wrist, hand or finger') %}
   {% from "govuk/components/input/macro.njk" import govukInput %}
        {% set injuryHtml %}
-       {{ govukTextarea({
-         name: "more-detail-arm",
-         id: "more-detail-arm",
-         label: {
-           text: "Can you provide more detail?"
-         }
-       }) }}
+      {{ govukTextarea({
+        name: "more-detail-arm",
+        id: "more-detail-arm",
+        value:data['more-detail-arm'],
+        label: {
+          text: "Can you provide more detail?"
+        }
+      }) }}
          {% endset -%}
 
   {{ govukCheckboxes({
@@ -419,27 +418,33 @@ About the claim and injuries - Please tell us the date of the accident or allege
    items: [
    {
      value: "Soft tissue injury (for example, bruise, strain or tear)",
-     text: " Soft tissue injury (for example, bruise, strain or tear)"
+     text: " Soft tissue injury (for example, bruise, strain or tear)",
+     checked: checked("arm", "Soft tissue injury (for example, bruise, strain or tear)")
    },
    {
      value: "Pain or discomfort",
-     text: "Pain or discomfort"
+     text: "Pain or discomfort",
+     checked: checked("arm", "Pain or discomfort")
    },
    {
      value: "Cuts or scarring",
-     text: "Cuts or scarring"
+     text: "Cuts or scarring",
+     checked: checked("arm", "Cuts or scarring")
    },
   {
     value: "Fracture",
-    text: " Fracture"
+    text: " Fracture",
+    checked: checked("arm", "Fracture")
   },
   {
     value: "Burns",
-    text: "Burns"
+    text: "Burns",
+    checked: checked("arm", "Burns")
   },
   {
-    value: "",
+    value: " ",
     text: "Other injury details",
+    checked: checked("arm", " "),
     conditional: {
       html: injuryHtml
     }
@@ -454,13 +459,14 @@ About the claim and injuries - Please tell us the date of the accident or allege
   {% if checked('where-is-the-injury','Leg, knee, ankle or foot') %}
   {% from "govuk/components/input/macro.njk" import govukInput %}
        {% set injuryHtml %}
-       {{ govukTextarea({
-         name: "more-detail-leg",
-         id: "more-detail-leg",
-         label: {
-           text: "Can you provide more detail?"
-         }
-       }) }}
+      {{ govukTextarea({
+        name: "more-detail-leg",
+        id: "more-detail-leg",
+        value:data['more-detail-leg'],
+        label: {
+          text: "Can you provide more detail?"
+        }
+      }) }}
          {% endset -%}
 
   {{ govukCheckboxes({
@@ -477,27 +483,33 @@ About the claim and injuries - Please tell us the date of the accident or allege
    items: [
     {
       value: "Soft tissue injury (for example, bruise, strain or tear)",
-      text: " Soft tissue injury (for example, bruise, strain or tear)"
+      text: " Soft tissue injury (for example, bruise, strain or tear)",
+      checked: checked("leg", "Soft tissue injury (for example, bruise, strain or tear)")
     },
     {
       value: "Pain or discomfort",
-      text: "Pain or discomfort"
+      text: "Pain or discomfort",
+      checked: checked("leg", "Pain or discomfort")
     },
     {
       value: "Cuts or scarring",
-      text: "Cuts or scarring"
+      text: "Cuts or scarring",
+      checked: checked("leg", "Cuts or scarring")
     },
    {
      value: "Fracture",
-     text: " Fracture"
+     text: " Fracture",
+     checked: checked("leg", "Fracture")
    },
    {
      value: "Burns",
-     text: "Burns"
+     text: "Burns",
+     checked: checked("leg", "Burns")
    },
    {
-     value: "",
+     value: " ",
      text: "Other injury details",
+     checked: checked("leg", " "),
      conditional: {
        html: injuryHtml
      }
@@ -512,13 +524,14 @@ About the claim and injuries - Please tell us the date of the accident or allege
     {% if checked('where-is-the-injury','Hip or pelvis') %}
     {% from "govuk/components/input/macro.njk" import govukInput %}
          {% set injuryHtml %}
-         {{ govukTextarea({
-           name: "more-detail-hip-pelvis",
-           id: "more-detail-hip-pelvis",
-           label: {
-             text: "Can you provide more detail?"
-           }
-         }) }}
+        {{ govukTextarea({
+          name: "more-detail-hip-pelvis",
+          id: "more-detail-hip-pelvis",
+          value:data['more-detail-hip-pelvis'],
+          label: {
+            text: "Can you provide more detail?"
+          }
+        }) }}
            {% endset -%}
 
     {{ govukCheckboxes({
@@ -535,27 +548,33 @@ About the claim and injuries - Please tell us the date of the accident or allege
      items: [
     {
       value: "Soft tissue injury (for example, bruise, strain or tear)",
-      text: " Soft tissue injury (for example, bruise, strain or tear)"
+      text: " Soft tissue injury (for example, bruise, strain or tear)",
+      checked: checked("hip-pelvis", "Soft tissue injury (for example, bruise, strain or tear)")
     },
     {
       value: "Pain or discomfort",
-      text: "Pain or discomfort"
+      text: "Pain or discomfort",
+      checked: checked("hip-pelvis","Pain or discomfort")
     },
     {
       value: "Cuts or scarring",
-      text: "Cuts or scarring"
+      text: "Cuts or scarring",
+      checked: checked("hip-pelvis", "Cuts or scarring")
     },
    {
      value: "Fracture",
-     text: " Fracture"
+     text: " Fracture",
+     checked: checked("hip-pelvis", "Fracture")
    },
    {
      value: "Burns",
-     text: "Burns"
+     text: "Burns",
+     checked: checked("hip-pelvis", "Burns")
    },
    {
-     value: "",
+     value: " ",
      text: "Other injury details",
+     checked: checked("hip-pelvis", " "),
      conditional: {
        html: injuryHtml
      }
@@ -570,13 +589,14 @@ About the claim and injuries - Please tell us the date of the accident or allege
     {% if checked('where-is-the-injury','Jaw or teeth') %}
     {% from "govuk/components/input/macro.njk" import govukInput %}
          {% set injuryHtml %}
-         {{ govukTextarea({
-           name: "more-detail-jaw-teeth",
-           id: "more-detail-jaw-teeth",
-           label: {
-             text: "Can you provide more detail?"
-           }
-         }) }}
+        {{ govukTextarea({
+          name: "more-detail-jaw-teeth",
+          id: "more-detail-jaw-teeth",
+          value:data['more-detail-jaw-teeth'],
+          label: {
+            text: "Can you provide more detail?"
+          }
+        }) }}
            {% endset -%}
 
     {{ govukCheckboxes({
@@ -593,31 +613,38 @@ About the claim and injuries - Please tell us the date of the accident or allege
      items: [
     {
       value: "Soft tissue injury (for example, bruise, strain or tear)",
-      text: " Soft tissue injury (for example, bruise, strain or tear)"
+      text: " Soft tissue injury (for example, bruise, strain or tear)",
+      checked: checked("jaw-teeth", "Soft tissue injury (for example, bruise, strain or tear)")
     },
     {
       value: "Pain or discomfort",
-      text: "Pain or discomfort"
+      text: "Pain or discomfort",
+      checked: checked("jaw-teeth", "Pain or discomfort")
     },
     {
       value: "Cuts or scarring",
-      text: "Cuts or scarring"
+      text: "Cuts or scarring",
+      checked: checked("jaw-teeth", "Cuts or scarring")
     },
    {
      value: "Fracture",
-     text: " Fracture"
+     text: " Fracture",
+     checked: checked("jaw-teeth", "Fracture")
    },
    {
      value: "Burns",
-     text: "Burns"
+     text: "Burns",
+     checked: checked("jaw-teeth", "Fracture")
    },
    {
     value: "Tooth loss",
-    text: "Tooth loss"
+    text: "Tooth loss",
+    checked: checked("jaw-teeth", "Tooth loss")
   },
    {
-     value: "",
+     value: " ",
      text: "Other injury details",
+     checked: checked("jaw-teeth", " "),
      conditional: {
        html: injuryHtml
      }
@@ -632,13 +659,14 @@ About the claim and injuries - Please tell us the date of the accident or allege
     {% if checked('where-is-the-injury','Ears, eyes, mouth or nose') %}
     {% from "govuk/components/input/macro.njk" import govukInput %}
          {% set injuryHtml %}
-         {{ govukTextarea({
-           name: "more-detail-ears",
-           id: "more-detail-ears",
-           label: {
-             text: "Can you provide more detail?"
-           }
-         }) }}
+        {{ govukTextarea({
+          name: "more-detail-ears",
+          id: "more-detail-ears",
+          value:data['more-detail-ears'],
+          label: {
+            text: "Can you provide more detail?"
+          }
+        }) }}
            {% endset -%}
 
     {{ govukCheckboxes({
@@ -655,43 +683,53 @@ About the claim and injuries - Please tell us the date of the accident or allege
      items: [
     {
       value: "Soft tissue injury (for example, bruise, strain or tear)",
-      text: " Soft tissue injury (for example, bruise, strain or tear)"
+      text: " Soft tissue injury (for example, bruise, strain or tear)",
+      checked: checked("ears", "Soft tissue injury (for example, bruise, strain or tear)")
     },
     {
       value: "Pain or discomfort",
-      text: "Pain or discomfort"
+      text: "Pain or discomfort",
+      checked: checked("ears", "Pain or discomfort")
     },
     {
       value: "Cuts or scarring",
-      text: "Cuts or scarring"
+      text: "Cuts or scarring",
+      checked: checked("ears", "Cuts or scarring")
     },
    {
      value: "Fracture",
-     text: " Fracture"
+     text: " Fracture",
+     checked: checked("ears", "Fracture")
    },
    {
      value: "Burns",
-     text: "Burns"
+     text: "Burns",
+     checked: checked("ears", "Burns")
    },
    {
     value: "Broken nose",
-    text: "Broken nose"
+    text: "Broken nose",
+    checked: checked("ears", "Broken nose")
   },
   {
     value: "Nose bleed",
-    text: "Nose bleed"
+    text: "Nose bleed",
+    checked: checked("ears", "Nose bleed")
   },
   {
     value: "Ringing in ears",
-    text: "Ringing in ears"
+    text: "Ringing in ears",
+    checked: checked("ears", "Ringing in ears")
   },
   {
     value: "Full or partial loss of sight",
-    text: "Full or partial loss of sight"
+    text: "Full or partial loss of sight",
+    checked: checked("ears", "Full or partial loss of sight")
   },
    {
-     value: "",
+     value: " ",
      text: "Other injury details",
+     checked: checked("ears", " "),
      conditional: {
        html: injuryHtml
      }
@@ -706,13 +744,14 @@ About the claim and injuries - Please tell us the date of the accident or allege
     {% if checked('where-is-the-injury','Mental or emotional symptoms') %}
     {% from "govuk/components/input/macro.njk" import govukInput %}
          {% set injuryHtml %}
-         {{ govukTextarea({
-           name: "more-detail-mental",
-           id: "more-detail-mental",
-           label: {
-             text: "Can you provide more detail?"
-           }
-         }) }}
+        {{ govukTextarea({
+          name: "more-detail-mental",
+          id: "more-detail-mental",
+          value:data['more-detail-mental'],
+          label: {
+            text: "Can you provide more detail?"
+          }
+        }) }}
            {% endset -%}
 
     {{ govukCheckboxes({
@@ -729,19 +768,23 @@ About the claim and injuries - Please tell us the date of the accident or allege
      items: [
      {
        value: "Fear or anxiety",
-       text: "Fear or anxiety"
+       text: "Fear or anxiety",
+       checked: checked("mental", "Fear or anxiety")
      },
      {
        value: "Sleep loss",
-       text: "Sleep loss"
+       text: "Sleep loss",
+       checked: checked("mental", "Sleep loss")
      },
      {
        value: "Breathing problems",
-       text: "Breathing problems"
+       text: "Breathing problems",
+       checked: checked("mental", "Breathing problems")
      },
     {
-      value: "",
+      value: " ",
       text: "Other injury details",
+      checked: checked("mental", " "),
       conditional: {
         html: injuryHtml
       }
@@ -756,13 +799,14 @@ About the claim and injuries - Please tell us the date of the accident or allege
       {% if checked('where-is-the-injury','Brain or nervous system symptoms') %}
       {% from "govuk/components/input/macro.njk" import govukInput %}
            {% set injuryHtml %}
-           {{ govukTextarea({
-             name: "more-detail-brain",
-             id: "more-detail-brain",
-             label: {
-               text: "Can you provide more detail?"
-             }
-           }) }}
+          {{ govukTextarea({
+            name: "more-detail-brain",
+            id: "more-detail-brain",
+            value:data['more-detail-brain'],
+            label: {
+              text: "Can you provide more detail?"
+            }
+          }) }}
              {% endset -%}
 
       {{ govukCheckboxes({
@@ -779,27 +823,33 @@ About the claim and injuries - Please tell us the date of the accident or allege
        items: [
        {
          value: "Tingling or numbness",
-         text: "Tingling or numbness"
+         text: "Tingling or numbness",
+         checked: checked("brain", "Tingling or numbness")
        },
        {
          value: "Shock",
-         text: "Shock"
+         text: "Shock",
+         checked: checked("brain", "Shock")
        },
        {
          value: "Nausea",
-         text: "Nausea"
+         text: "Nausea",
+         checked: checked("brain", "Nausea")
        },
        {
         value: "Balance loss",
-        text: "Balance loss"
+        text: "Balance loss",
+        checked: checked("brain", "Balance loss")
       },
       {
         value: "Memory loss",
-        text: "Memory loss"
+        text: "Memory loss",
+        checked: checked("brain", "Memory loss")
       },
       {
-        value: "",
+        value: " ",
         text: "Other injury details",
+        checked: checked("brain", " "),
         conditional: {
           html: injuryHtml
         }
