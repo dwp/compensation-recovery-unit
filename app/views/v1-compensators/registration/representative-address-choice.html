@@ -1,0 +1,61 @@
+
+{% extends folder+ "/layout.html" %}
+
+{% block pageTitle %}
+About the injured person -  Does the injured person have a national insurance number
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <a href="javascript: history.go(-1)" class="govuk-back-link govuk-!-margin-bottom-5">Back</a>
+
+
+
+
+
+        <form class="form" action="task-list" method="post">
+
+
+
+             <h1 class="govuk-heading-xl">
+              <span class="govuk-caption-xl">Solicitor</span>
+              Choose the solicitor's address
+             </h1>
+
+
+         <h2 class="govuk-heading-m">Postcode</h2>
+         <p class="govuk-body">{{ data['representativepostcode']}} <a href="representative-address.html">Change postcode</a></p>
+
+   <div class="govuk-form-group">
+     <label class="govuk-label" for="solicitor-address">
+       Choose address
+     </label>
+     <select class="govuk-select" id="solicitor-address" name="solicitor-address">
+       <option value="published">3 addresses found</option>
+       <option value="Ivy House, Ivy Lane">Ivy House, Ivy Lane, Warehorne, {{ data['representativepostcode'] | default('MK9 2AH') }}</option>
+       <option value="14 Ivy Lane">14 Ivy Lane, Warehorne, {{ data['representativepostcode'] | default('MK9 2AH') }}</option>
+       <option value="16 Ivy House">16 Ivy Lane, Warehorne, {{ data['representativepostcode'] | default('MK9 2AH') }}</option>
+     </select>
+   </div>
+
+   <div class="govuk-radios__item govuk-visually-hidden">
+    <input class="govuk-radios__input" id="injured-persons-details" name="representative-details" type="radio" value="completed" checked>
+    <label class="govuk-label govuk-radios__label" for="injured-persons-details">
+     hidden radio for logic
+    </label>
+  </div>
+
+   <button class="govuk-button" data-module="govuk-button">
+    Continue
+   </button>
+   <p class="govuk-body"><a href="#">Enter address manually</a></p>
+
+
+    </form>
+
+    </div>
+  </div>
+
+{% endblock %}

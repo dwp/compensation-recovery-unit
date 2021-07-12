@@ -1,0 +1,63 @@
+
+{% extends folder+ "/layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      {% include "./_globalnav.html" %} 
+      <h1 class="govuk-heading-l">
+      Reset Tasks 
+      </h1>
+     
+
+      <form class="form" action="reset-tasks-confirm" method="post">
+      <div class="govuk-grid-row">
+   
+        <div class="govuk-grid-column-full">
+          <ul class="govuk-list border-bottom">
+
+            {% for case in cases %}
+          
+            {% if case.task === "completed-closed" or case.task === "completed-open" %}
+            <li>
+            {{case.firstname}} {{case.lastname}} 
+            </li>
+              {% endif %}
+             {% endfor %} 
+          </ul>
+
+          <div class="govuk-radios__item govuk-visually-hidden">
+            <input class="govuk-radios__input" id="reset-task" name="reset-task" type="radio" value="yes" checked>
+            <label class="govuk-label govuk-radios__label" for="reset-task">
+             hidden radio for logic
+            </label>
+          </div>
+          </form>
+         
+        
+         <button class="govuk-button">Reset tasks</button>
+      </div>
+      </div>
+      
+ 
+
+
+    
+
+  
+
+
+    
+
+
+
+
+    </div>
+  </div>
+
+{% endblock %}

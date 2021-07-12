@@ -1,0 +1,29 @@
+<nav class="navigation-secondary govuk-!-margin-bottom-6">
+    <ul>
+      {% if nav  == 'Home' %}
+      <li class="active">
+        {% else %}
+        <li>
+          {% endif %}
+        <a  href="cru-ops-landing.html">Home</a>
+        </li>
+    
+      {% if nav  == 'Tasks' %}
+      <li class="active">
+        {% else %}
+        <li>
+          {% endif %}
+        <a href="tasks">Tasks ({{intcasestasks}})</a>
+        
+      </li>
+  
+      {% if nav  == 'Find' %}
+      <li class="active">
+        {% else %}
+        <li>
+          {% endif %}
+        <a href="find-case">Find case</a>
+        
+      </li>
+    </ul>
+  </nav>

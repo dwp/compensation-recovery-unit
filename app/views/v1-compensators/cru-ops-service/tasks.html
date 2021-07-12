@@ -1,0 +1,115 @@
+
+{% extends folder+ "/layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% set nav = "Tasks" %}
+
+{% block content %}
+
+
+{% set totcases = 0 %}
+{% set nilcases = 0 %}
+{% set intcases = 0 %}
+{% set intcasestasks = 0 %}
+
+
+
+	{% for case in cases %}
+
+<!-- BASE VALUES -->
+
+
+  {% if case %}
+   {% set totcases = totcases + 1 %}
+   {% endif %}
+
+    {% if case.interest === "no"  %}
+     {% set nilcases = nilcases + 1 %}
+    {% endif %}
+
+  {% if case.interest === "yes" %}
+     {% set intcases = intcases + 1 %}
+    {% endif %}
+
+    {% if case.task === "yes" %}
+    {% set intcasestasks = intcasestasks + 1 %}
+   {% endif %}
+
+{% endfor %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      {% include "./_globalnav.html" %} 
+      <h1 class="govuk-heading-l">
+      Tasks ({{intcasestasks}})
+      </h1>
+     
+
+      <form class="form" action="" method="post">
+      <div class="govuk-grid-row">
+   
+        <div class="govuk-grid-column-full">
+          <ul class="govuk-list border-bottom">
+
+              {% for case in cases|sort(attribute='due') %}
+              {% if case.task === "yes" %}
+            
+
+              <div class="govuk-radios__item  govuk-visually-hidden">
+                <input class="govuk-radios__input" id="case-links" name="case-link" type="radio" value="hide~../case/case-details-and-tasks-accordion?reference={{case.reference}}" checked>
+                <label class="govuk-label govuk-radios__label" for="case-links">
+                  selected radio for logic
+                </label>
+              </div>
+
+              <li>
+              <div class="govuk-grid-row">
+                <div class="govuk-grid-column-two-thirds">
+                  <div class="govuk-grid-row">
+                    <div class="govuk-grid-column-one-half">
+                  <a href="../case/case-details-and-tasks-tabs?reference={{case.reference}}" class="govuk-body govuk-link  govuk-!-display-block govuk-!-margin-bottom-0">{{case.firstname}} {{case.lastname}}</a>
+                  </div>
+                  <div class="govuk-grid-column-one-half">
+                  <p class="govuk-!-margin-bottom-0">{% include  folder+ "/includes/task_type_playback.html" %}</p>
+                  </div>
+                  </div>
+                </div>
+                <div class="govuk-grid-column-one-thirds"><p class="govuk-body govuk-!-margin-bottom-0 govuk-table__cell--numeric  govuk-!-margin-right-4">Due: <strong>{{case.due}}</strong></p></div>
+              </div>
+             
+              </li>
+
+              {% endif %}
+             {% endfor %} 
+          </ul>
+      </div>
+      </div>
+
+    
+<script>
+
+  </script>
+
+      </form>
+     
+    
+
+
+
+    
+
+  
+
+
+    
+
+
+
+
+    </div>
+  </div>
+
+{% endblock %}

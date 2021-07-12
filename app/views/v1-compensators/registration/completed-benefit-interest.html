@@ -1,0 +1,50 @@
+
+{% extends folder+ "/layout.html" %}
+
+{% block pageTitle %}
+Register a claim with the Compensation Recovery Unit
+{% endblock %}
+
+{% block content %}
+
+
+ 
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds-from-desktop">
+  
+          <div class="govuk-panel govuk-panel--confirmation govuk-!-margin-top-5">
+            <h1 class="govuk-panel__title ">
+              Registration complete
+            </h1>
+            <div class="govuk-panel__body">
+              Your claim reference number<br><strong>CRU12345</strong>
+            </div>
+          </div>
+
+          <div class="govuk-inset-text">
+            <h2 class="govuk-heading-s">The injured person has been paid benefit due to the injury</h2>
+          
+              <p class="govuk-body">
+                We'll inform you how much benefit has been paid due to the injury within the next 28 days.
+              </p>
+          </div>
+  
+        </div>
+      </div>
+
+      <!-- code for demo only-->
+  <style>
+    a.timemachine{
+      position:absolute;
+      top:0px;
+      right:0px;
+      background:black;
+      padding:0.8em;
+      color:white;
+      }
+  </style>
+
+  <a href ='/mvp/cru-ops-service/tasks' class="timemachine">Forward</a>
+  
+
+{% endblock %}

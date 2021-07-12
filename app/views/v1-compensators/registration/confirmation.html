@@ -1,0 +1,74 @@
+
+{% extends folder+ "/layout.html" %}
+
+{% block pageTitle %}
+Register a claim with the Compensation Recovery Unit
+{% endblock %}
+
+{% block content %}
+
+
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds-from-desktop">
+          {% if data['setuser'] =='staff' %}
+          <div class="govuk-panel govuk-panel--confirmation govuk-!-margin-top-5">
+            <h1 class="govuk-panel__title ">
+              Registration complete
+            </h1>
+            <div class="govuk-panel__body">
+              Claim reference number<br><strong>CRU12345</strong>
+            </div>
+          </div>
+
+          <div class="govuk-inset-text">
+            <h2 class="govuk-heading-s">Amount to be paid</h2>
+
+              <p class="govuk-body">
+                <span  class="govuk-body govuk-!-font-size-48 govuk-!-font-weight-bold govuk-!-display-block">£0.00</span>
+                The injured person has not been paid any benefit due to the injury. The certificate has been issued to the compensator.
+              </p>
+
+              <a href="">Return to home</a>
+
+          </div>
+          {% else %}
+          <div class="govuk-panel govuk-panel--confirmation govuk-!-margin-top-5">
+            <h1 class="govuk-panel__title ">
+              Registration complete
+            </h1>
+            <div class="govuk-panel__body">
+              Your claim reference number<br><strong>CRU12345</strong>
+            </div>
+          </div>
+
+          <div class="govuk-inset-text">
+            <h2 class="govuk-heading-s">Amount to be paid</h2>
+
+              <p class="govuk-body">
+                <span  class="govuk-body govuk-!-font-size-48 govuk-!-font-weight-bold govuk-!-display-block">£0.00</span>
+                The injured person has not been paid any benefit due to the injury.
+              </p>
+            <a href="" class="govuk-button govuk-button--secondary">View and print certificate</a>
+          </div>
+          {% endif %}
+
+        </div>
+      </div>
+
+      <!-- code for demo only-->
+  <style>
+    a.timemachine{
+      position:absolute;
+      top:0px;
+      right:0px;
+      background:black;
+      padding:0.8em;
+      color:white;
+      }
+  </style>
+
+  <a href ='completed-benefit-interest' class="timemachine">Forward</a>
+
+
+{% endblock %}
