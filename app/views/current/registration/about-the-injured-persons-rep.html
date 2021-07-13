@@ -12,13 +12,13 @@ About the injured person - Enter injured person's name and date of birth
         <a href="javascript: history.go(-1)" class="govuk-back-link govuk-!-margin-bottom-5">Back</a>
         <form class="form" action="representative-address" method="post">
       <h1 class="govuk-heading-xl">
-        <span class="govuk-caption-xl">Solicitor</span>
-        Who is the injured person’s solicitor?
+        <span class="govuk-caption-xl">Injured person's representative</span>
+        Who is the injured person’s representative?
       </h1>
 
       <div class="govuk-form-group">
         <label class="govuk-label" for="represesntative-name">
-            Name of company
+            Name of company or person
           </label>
         <input class="govuk-input" id="represesntative-name" name="represesntative-name" type="text" value="{{data['represesntative-name']}}">
       </div>
@@ -42,7 +42,7 @@ About the injured person - Enter injured person's name and date of birth
 
       <div class="govuk-form-group">
         <label class="govuk-label" for="represesntative-reference">
-          Reference number
+          Reference number (optional)
           </label>
         <input class="govuk-input govuk-input--width-10" id="represesntative-name" name="represesntative-reference" type="text" value="{{data['represesntative-reference']}}">
       </div>

@@ -15,9 +15,9 @@ Insurance company -  Who is the insurance company paying the compensation?
         <span class="govuk-caption-xl">Compensator
         </span>
         {% if checked('rep-compensator','No') %}
-        Add compensator details
+        Add compensator's details
         {% else %}
-        Add representative details
+        Add representative's details
         {% endif %}
       </h1>
       {% if checked('rep-compensator','No') %}
@@ -48,7 +48,7 @@ Insurance company -  Who is the insurance company paying the compensation?
 
       <div class="govuk-form-group">
         <label class="govuk-label" for="compensator-rep-reference">
-           Reference number
+           Reference number (optional)
           </label>
         <input class="govuk-input govuk-input--width-10" id="compensator-rep-ref" name="compensator-rep-reference" type="text" value="{{data['compensator-rep-reference']}}">
       </div>
