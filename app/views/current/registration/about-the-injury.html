@@ -54,8 +54,8 @@ About the claim and injuries - Please tell us the date of the accident or allege
       value: "Whiplash",
       text:" Whiplash",
       checked: checked("neck", "Whiplash")
-      
-     
+
+
     },
     {
       value: "Soft tissue injury (for example, bruise, strain or tear)",
@@ -86,7 +86,7 @@ About the claim and injuries - Please tell us the date of the accident or allege
      value: " ",
      text: "Other injury details",
      checked: checked("neck", " "),
-     
+
 
      conditional: {
        html: injuryHtml
@@ -760,7 +760,7 @@ About the claim and injuries - Please tell us the date of the accident or allege
      name: "mental",
      fieldset: {
        legend: {
-         text: "Select anxiety or emotional stress symptoms",
+         text: "Select psychological injuries",
          isPageHeading: false,
          classes: "govuk-fieldset__legend--m"
        }
@@ -768,19 +768,20 @@ About the claim and injuries - Please tell us the date of the accident or allege
      items: [
      {
        value: "Fear or anxiety",
-       text: "Fear or anxiety",
+       text: "Travel anxiety",
+       checked: checked("mental", "Fear or anxiety")
+     },
+     {
+       value: "Breathing problems",
+       text: "Post traumatic stress disorder (PTSD)",
        checked: checked("mental", "Fear or anxiety")
      },
      {
        value: "Sleep loss",
-       text: "Sleep loss",
+       text: "Sleep problems",
        checked: checked("mental", "Sleep loss")
      },
-     {
-       value: "Breathing problems",
-       text: "Breathing problems",
-       checked: checked("mental", "Breathing problems")
-     },
+
     {
       value: " ",
       text: "Other injury details",
