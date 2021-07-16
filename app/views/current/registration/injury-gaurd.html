@@ -10,65 +10,55 @@ About the injured person -  Does the injured person have a national insurance nu
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
         <a href="javascript: history.go(-1)" class="govuk-back-link govuk-!-margin-bottom-5">Back</a>
-        <form class="form" action="task-list" method="post">
-          <h1 class="govuk-heading-xl">   <span class="govuk-caption-xl">Injury details
-          </span>Tell us about the injury</h1>
-          <div class="govuk-form-group">
-            <fieldset class="govuk-fieldset" aria-describedby="whiplash-hint">
-              <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-                <label class="govuk-fieldset__heading">
-                  Did the person suffer whiplash?
+        
+        <form action="/current/registration/injury-answer" method="post" class="form">
+       
 
-                </label>
-              </legend>
-              <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
-                <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="whiplash" name="whiplash" type="radio" value="Yes"  {{ checked("whiplash", "Yes") }}>
-                  <label class="govuk-label govuk-radios__label" for="whiplash">
-                  Yes
-                  </label>
-                </div>
-                <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="whiplash-2" name="whiplash" type="radio" value="No"  {{ checked("whiplash", "No") }}>
-                  <label class="govuk-label govuk-radios__label" for="whiplash-2">
-                  No
-                  </label>
-                </div>
+          {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
 
+  
 
-            </fieldset>
-          </div>
-
-
-          <div class="govuk-form-group">
-            <fieldset class="govuk-fieldset" aria-describedby="injury-hint">
-              <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-                <label class="govuk-fieldset__heading">
-                  Did the person suffer any other physical or psychological injury?
-
-                </label>
-              </legend>
-              <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
-                <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="injury" name="injury" type="radio" value="Yes~where-is-the-injury"  {{ checked("injury", "Yes") }}>
-                  <label class="govuk-label govuk-radios__label" for="injury">
-                  Yes
-                  </label>
-                </div>
-                <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="injury-2" name="injury" type="radio" value="No"  {{ checked("injury", "No") }}>
-                  <label class="govuk-label govuk-radios__label" for="injury-2">
-                  No
-                  </label>
-                </div>
-
-
-            </fieldset>
-          </div>
-
-
-
-
+          {{ govukCheckboxes({
+            idPrefix: "injury",
+            name: "injury",
+            fieldset: {
+              legend: {
+                text: "What injury did the person suffer?",
+                isPageHeading: true,
+                classes: "govuk-fieldset__legend--l"
+              }
+            },
+            hint: {
+              text: "Select all options that are relevant to the injury."
+            },
+            items: [
+            {
+              value: "Whiplash",
+              text: "Whiplash"
+            },
+              {
+                value: "Physical",
+                text: "Physical",
+                hint: {
+                  text: "including fractures, cuts, burns and soft tissue injuries"
+                }
+              },
+              {
+                value: "Phychological",
+                text: "Phychological",
+                hint: {
+                  text: "including travel anxiety, post traumatic stress disorder(PTSD) and other phychological injuries"
+                }
+              },
+              {
+                value: "Neurological",
+                text: "Neurological",
+                hint: {
+                  text: "including tingling or numbness, shock, memory loss and other neurological injuries"
+                }
+              }
+            ]
+          }) }}
       <button class="govuk-button" data-module="govuk-button">
         Continue
       </button>

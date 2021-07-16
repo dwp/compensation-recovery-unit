@@ -97,21 +97,16 @@ Register a claim with the Compensation Recovery Unit
               <dd class="govuk-summary-list__value">
               <!-- start Neck-->
 
-{% if checked('where-is-the-injury','Neck') or checked('whiplash','Yes') %}
-<h3 class="govuk-heading-s govuk-!-margin-bottom-0">Neck</h3>
-<p>{% if checked('whiplash','Yes') %}
-Whiplash
-{% endif %}
-{% if checked('where-is-the-injury','Neck') and checked('whiplash','Yes') %},
-{% endif %}
-{% if checked('where-is-the-injury','Neck') %}
-{{ data['neck']}} {{ data['more-detail-neck']}}
-{% endif %}</p>
-{% else %}
-<h3 class="govuk-heading-s govuk-!-margin-bottom-0">Neck</h3>
+
+              {% if checked('whiplash','Yes') %}
+              <h3 class="govuk-heading-s govuk-!-margin-bottom-5">Whiplash</h3>
+              {% endif %}           
+
+{% if checked('where-is-the-injury','Neck')%}
+<!--<h3 class="govuk-heading-s govuk-!-margin-bottom-0">Neck</h3> -->
 <p>
-Whiplash
-</p>
+{{ data['neck']}} {{ data['more-detail-neck']}}</p>
+
 {% endif %}
 
 

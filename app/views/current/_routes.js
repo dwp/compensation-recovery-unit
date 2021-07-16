@@ -74,6 +74,39 @@ router.get('/*', function (req, res, next) {
           res.locals.case = findCase
           next()
            })  
+
+
+
+    
+           // Branching
+  router.post('/registration/injury-answer', function (req, res) {
+  // Get the answer from session data
+  // The name between the quotes is the same as the 'name' attribute on the input elements
+  // However in JavaScript we can't use hyphens in variable names
+
+  const injury = req.session.data['injury']
+
+ if (injury == 'Physical') {
+    res.redirect('./where-is-the-injury')
+  }
+  else if (injury == 'Phychological') {
+    res.redirect('./psychological')
+  }
+  else if (injury == 'Neurological') {
+    res.redirect('./neurological')
+  }
+
+  if (injury == 'Whiplash') {
+    res.redirect('./task-list')
+  }
+  else if (injury == 'Phychological' + 'Neurological') {
+    res.redirect('./docs/examples/branching/Neuro/Phychological')
+  }
+
+  else if (injury == 'Physical','Whiplash') {
+    res.redirect('/docs/examples/branching/Physical/Whiplash')
+  }
+})
          
          
   
