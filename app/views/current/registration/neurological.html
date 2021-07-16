@@ -12,7 +12,7 @@ About the claim and injuries - Please tell us the date of the accident or allege
         <a href="javascript: history.go(-1)" class="govuk-back-link govuk-!-margin-bottom-5">Back</a>
         <form class="form" action="task-list" method="post">
 
- 
+
 
 
 
@@ -31,14 +31,14 @@ About the claim and injuries - Please tell us the date of the accident or allege
               }
             }) }}
                {% endset -%}
-  
+
         {{ govukCheckboxes({
          classes: "govuk-checkboxes--small",
          idPrefix: "brain",
          name: "brain",
          fieldset: {
            legend: {
-             text: "What neurological injuries were suffered?",
+             text: "What was the neurological injury?",
              isPageHeading: true,
              classes: "govuk-fieldset__legend--l"
            }
@@ -71,7 +71,7 @@ About the claim and injuries - Please tell us the date of the accident or allege
         },
         {
           value: " ",
-          text: "Other injury details",
+          text: "Other neurological injury",
           checked: checked("brain", " "),
           conditional: {
             html: injuryHtml
@@ -79,11 +79,11 @@ About the claim and injuries - Please tell us the date of the accident or allege
         }
       ]
        }) }}
-  
 
 
 
-  
+
+
 
 
 

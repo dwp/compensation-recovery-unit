@@ -10,26 +10,26 @@ About the injured person -  Does the injured person have a national insurance nu
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
         <a href="javascript: history.go(-1)" class="govuk-back-link govuk-!-margin-bottom-5">Back</a>
-        
+
         <form action="/current/registration/injury-answer" method="post" class="form">
-       
+
 
           {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
 
-  
+
 
           {{ govukCheckboxes({
             idPrefix: "injury",
             name: "injury",
             fieldset: {
               legend: {
-                text: "What injury did the person suffer?",
+                text: "What type of injury did the person suffer?",
                 isPageHeading: true,
                 classes: "govuk-fieldset__legend--l"
               }
             },
             hint: {
-              text: "Select all options that are relevant to the injury."
+              text: "Select all that apply"
             },
             items: [
             {
@@ -38,23 +38,23 @@ About the injured person -  Does the injured person have a national insurance nu
             },
               {
                 value: "Physical",
-                text: "Physical",
+                text: "Physical injury other than whiplash",
                 hint: {
-                  text: "including fractures, cuts, burns and soft tissue injuries"
+                  text: "For example, soft tissue injury or fracture"
                 }
               },
               {
                 value: "Phychological",
-                text: "Phychological",
+                text: "Psychological",
                 hint: {
-                  text: "including travel anxiety, post traumatic stress disorder(PTSD) and other phychological injuries"
+                  text: "For example, travel anxiety"
                 }
               },
               {
                 value: "Neurological",
                 text: "Neurological",
                 hint: {
-                  text: "including tingling or numbness, shock, memory loss and other neurological injuries"
+                  text: "For example, tingling or numbness"
                 }
               }
             ]

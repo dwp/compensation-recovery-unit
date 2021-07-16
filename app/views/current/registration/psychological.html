@@ -12,7 +12,7 @@ About the claim and injuries - Please tell us the date of the accident or allege
         <a href="javascript: history.go(-1)" class="govuk-back-link govuk-!-margin-bottom-5">Back</a>
         <form class="form" action="task-list" method="post">
 
- 
+
 
 
 
@@ -38,7 +38,7 @@ About the claim and injuries - Please tell us the date of the accident or allege
      name: "mental",
      fieldset: {
        legend: {
-         text:"What psychological injuries were suffered?",
+         text:"What was the psychological injury?",
          isPageHeading: true,
          classes: "govuk-fieldset__legend--l"
        }
@@ -51,7 +51,7 @@ About the claim and injuries - Please tell us the date of the accident or allege
      },
      {
        value: "Breathing problems",
-       text: "Post traumatic stress disorder (PTSD)",
+       text: "Post-traumatic stress disorder (PTSD)",
        checked: checked("mental", "Fear or anxiety")
      },
      {
@@ -62,7 +62,7 @@ About the claim and injuries - Please tell us the date of the accident or allege
 
     {
       value: " ",
-      text: "Other injury details",
+      text: "Other psychological injury",
       checked: checked("mental", " "),
       conditional: {
         html: injuryHtml
@@ -71,10 +71,10 @@ About the claim and injuries - Please tell us the date of the accident or allege
   ]
    }) }}
 
-  
+
     <!-- end Mental or emotional symptoms -->
 
-  
+
 
 
 
