@@ -90,36 +90,60 @@ Register a claim with the Compensation Recovery Unit
                 </a>
               </dd>
             </div>
+     {% if checked('injury','Physical injury other than whiplash')%}       
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
-                Injuries
+                Physical injury other than whiplash
               </dt>
               <dd class="govuk-summary-list__value">
-              <!-- start Neck-->
+  
 
 
-              {% if checked('whiplash','Yes') %}
-              <h3 class="govuk-heading-s govuk-!-margin-bottom-5">Whiplash</h3>
-              {% endif %}           
 
-{% if checked('where-is-the-injury','Neck')%}
-<!--<h3 class="govuk-heading-s govuk-!-margin-bottom-0">Neck</h3> -->
+   <!-- start Shoulder or Head -->
+   {% if checked('where-is-the-injury','Head') %}
+   <h3 class="govuk-heading-s govuk-!-margin-bottom-0">Head</h3>
+   <p>
+    {{ data['head']}} {{ data['more-detail-head']}}
+    </p>
+   {% endif %}
+ <!-- End Head -->     
+ 
+    <!-- start Face -->
+    {% if checked('where-is-the-injury','Face') %}
+    <h3 class="govuk-heading-s govuk-!-margin-bottom-0">Face</h3>
+    <p>
+     {{ data['face']}} {{ data['more-detail-face']}}
+     </p>
+    {% endif %}
+  <!-- End face-->   
+  
+     <!-- start ear -->
+     {% if checked('where-is-the-injury','Ear') %}
+     <h3 class="govuk-heading-s govuk-!-margin-bottom-0">Ear</h3>
+     <p>
+      {{ data['ear']}} {{ data['more-detail-ear']}}
+      </p>
+     {% endif %}
+   <!-- End ear--> 
+   
+       <!-- start Jaw or teeth -->
+       {% if checked('where-is-the-injury','Jaw or teeth') %}
+       <h3 class="govuk-heading-s govuk-!-margin-bottom-0">Jaw or teeth</h3>
+       <p>
+         {{ data['jaw-teeth']}} {{ data['more-detail-jaw-teeth']}}
+       </p>
+       {% endif %}
+       <!-- End or teeth -->
+   
+
+{% if checked('where-is-the-injury','Neck or throat')%}
+<h3 class="govuk-heading-s govuk-!-margin-bottom-0">Neck or throat</h3>
 <p>
 {{ data['neck']}} {{ data['more-detail-neck']}}</p>
 
 {% endif %}
-
-
 <!-- End Neck-->
-<!-- start Back-->
-{% if checked('where-is-the-injury','Back') %}
-<h3 class="govuk-heading-s govuk-!-margin-bottom-0">Back</h3>
-<p>
-  {{ data['back']}} {{ data['more-detail-back']}}
-  </p>
-{% endif %}
-
- <!-- End Back-->
  <!-- start Shoulder or collarbone-->
  {% if checked('where-is-the-injury','Shoulder or collarbone') %}
  <h3 class="govuk-heading-s govuk-!-margin-bottom-0">Shoulder or collarbone</h3>
@@ -129,25 +153,52 @@ Register a claim with the Compensation Recovery Unit
  {% endif %}
   <!-- end Shoulder or collarbone-->
 
-   <!-- start Shoulder or Head -->
-   {% if checked('where-is-the-injury','Head') %}
-   <h3 class="govuk-heading-s govuk-!-margin-bottom-0">Head</h3>
+   <!-- start Shoulder or arm -->
+   {% if checked('where-is-the-injury','Arm or wrist') %}
+   <h3 class="govuk-heading-s govuk-!-margin-bottom-0">Arm or wrist</h3>
    <p>
-    {{ data['head']}} {{ data['more-detail-head']}}
+    {{ data['arm']}} {{ data['more-detail-arm']}}
     </p>
    {% endif %}
+ <!-- End arm -->
 
+    <!-- start Shoulder or hand -->
+    {% if checked('where-is-the-injury','Hand or finger') %}
+    <h3 class="govuk-heading-s govuk-!-margin-bottom-0">Hand or finger</h3>
+    <p>
+     {{ data['hand']}} {{ data['more-detail-hand']}}
+     </p>
+    {% endif %}
+  <!-- End hand -->
 
- <!-- End Head -->
-
-  <!-- start Chest or torso -->
-  {% if checked('where-is-the-injury','Chest or torso') %}
-  <h3 class="govuk-heading-s govuk-!-margin-bottom-0">Chest or torso</h3>
+  <!-- start Chest -->
+  {% if checked('where-is-the-injury','Chest') %}
+  <h3 class="govuk-heading-s govuk-!-margin-bottom-0">Chest</h3>
   <p>
     {{ data['chest-torso']}} {{ data['more-detail-chest-torso']}}
     </p>
   {% endif %}
- <!-- end Chest or torso -->
+ <!-- end Chest -->
+
+ <!-- start Back-->
+{% if checked('where-is-the-injury','Back or spine') %}
+<h3 class="govuk-heading-s govuk-!-margin-bottom-0">Back or spine</h3>
+<p>
+  {{ data['back']}} {{ data['more-detail-back']}}
+  </p>
+{% endif %}
+
+ <!-- End Back-->
+
+  <!-- start Abdomen-->
+{% if checked('where-is-the-injury','Abdomen') %}
+<h3 class="govuk-heading-s govuk-!-margin-bottom-0">Abdomen</h3>
+<p>
+  {{ data['abdomen']}} {{ data['more-detail-abdomen']}}
+  </p>
+{% endif %}
+
+ <!-- End Back-->
 
   <!-- start Arm, wrist, hand or finger -->
   {% if checked('where-is-the-injury','Arm, wrist, hand or finger') %}
@@ -158,14 +209,6 @@ Register a claim with the Compensation Recovery Unit
   {% endif %}
  <!-- end Arm, wrist, hand or finger -->
 
-  <!-- start Leg, knee, ankle or foot -->
-  {% if checked('where-is-the-injury','Leg, knee, ankle or foot') %}
-  <h3 class="govuk-heading-s govuk-!-margin-bottom-0">Leg, knee, ankle or foot</h3>
-  <p>
-    {{ data['leg']}} {{ data['more-detail-leg']}}
-  </p>
-  {% endif %}
-  <!-- end Leg, knee, ankle or foot -->
 
     <!-- start Hip or pelvis -->
     {% if checked('where-is-the-injury','Hip or pelvis') %}
@@ -176,41 +219,25 @@ Register a claim with the Compensation Recovery Unit
     {% endif %}
     <!-- end or pelvis -->
 
-    <!-- start Jaw or teeth -->
-    {% if checked('where-is-the-injury','Jaw or teeth') %}
-    <h3 class="govuk-heading-s govuk-!-margin-bottom-0">Jaw or teeth</h3>
+      <!-- start Leg, knee or ankle -->
+  {% if checked('where-is-the-injury','Leg, knee or ankle') %}
+  <h3 class="govuk-heading-s govuk-!-margin-bottom-0">Leg, knee or ankle</h3>
+  <p>
+    {{ data['leg']}} {{ data['more-detail-leg']}}
+  </p>
+  {% endif %}
+  <!-- end Leg, knee, ankle or foot -->
+
+    <!-- start Foot or toe -->
+    {% if checked('where-is-the-injury','Foot or toe') %}
+    <h3 class="govuk-heading-s govuk-!-margin-bottom-0">Foot or toe</h3>
     <p>
-      {{ data['jaw-teeth']}} {{ data['more-detail-jaw-teeth']}}
+      {{ data['foot']}} {{ data['more-detail-foot']}}
     </p>
     {% endif %}
-    <!-- End or teeth -->
+    <!-- end Foot or toe-->
 
-    <!-- start Ears, eyes, mouth or nose -->
-    {% if checked('where-is-the-injury','Ears, eyes, mouth or nose') %}
-    <h3 class="govuk-heading-s govuk-!-margin-bottom-0">Ears, eyes, mouth or nose</h3>
-    <p>
-      {{ data['ears']}} {{ data['more-detail-ears']}}
-    </p>
-    {% endif %}
-    <!-- end, eyes, mouth or nose -->
 
-    <!-- start Mental or emotional symptoms -->
-    {% if checked('where-is-the-injury','Mental or emotional symptoms') %}
-    <h3 class="govuk-heading-s govuk-!-margin-bottom-0">Anxiety or emotional stress</h3>
-    <p>
-      {{ data['mental']}} {{ data['more-detail-mental']}}
-    </p>
-    {% endif %}
-    <!-- end Mental or emotional symptoms -->
-
-      <!-- start Brain or nervous system symptoms -->
-      {% if checked('where-is-the-injury','Brain or nervous system symptoms') %}
-      <h3 class="govuk-heading-s govuk-!-margin-bottom-0">Nervous system (neurological injury)</h3>
-      <p>
-        {{ data['brain']}} {{ data['more-detail-brain']}}
-      </p>
-      {% endif %}
-      <!-- end Brain or nervous system symptoms -->
               </dd>
               <dd class="govuk-summary-list__actions">
                 <a class="govuk-link" href="#">
@@ -218,6 +245,7 @@ Register a claim with the Compensation Recovery Unit
                 </a>
               </dd>
             </div>
+            {% endif %}
           </dl>
 
           <h2 class="govuk-heading-m">Compensator</h2>

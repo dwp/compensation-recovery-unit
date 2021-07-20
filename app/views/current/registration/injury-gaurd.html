@@ -10,8 +10,12 @@ About the injured person -  Does the injured person have a national insurance nu
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
         <a href="javascript: history.go(-1)" class="govuk-back-link govuk-!-margin-bottom-5">Back</a>
+       
+       
+       
+        <form action="injury-answer" method="post" class="form"> 
 
-        <form action="/current/registration/injury-answer" method="post" class="form">
+        
 
 
           {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
@@ -34,18 +38,18 @@ About the injured person -  Does the injured person have a national insurance nu
             items: [
             {
               value: "Whiplash",
-              text: "Whiplash"
+              text: "Whiplash",
+              checked: checked("injury", "Whiplash")
             },
-              {
-                value: "Physical",
+            {
+                value: "Physical injury other than whiplash",
                 text: "Physical injury other than whiplash",
-                hint: {
-                  text: "For example, soft tissue injury or fracture"
-                }
+                checked: checked("injury","Physical injury other than whiplash")
               },
               {
                 value: "Phychological",
-                text: "Psychological",
+                text: "Phychological",
+                checked: checked("injury","Phychological"),
                 hint: {
                   text: "For example, travel anxiety"
                 }
@@ -53,15 +57,23 @@ About the injured person -  Does the injured person have a national insurance nu
               {
                 value: "Neurological",
                 text: "Neurological",
+                checked: checked("injury","Neurological"),
                 hint: {
                   text: "For example, tingling or numbness"
                 }
               }
             ]
           }) }}
+
+
+        
+
       <button class="govuk-button" data-module="govuk-button">
         Continue
       </button>
+
+ 
+
 
     </form>
 

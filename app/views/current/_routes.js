@@ -99,12 +99,10 @@ router.get('/*', function (req, res, next) {
   if (injury == 'Whiplash') {
     res.redirect('./task-list')
   }
-  else if (injury == 'Phychological' + 'Neurological') {
-    res.redirect('./docs/examples/branching/Neuro/Phychological')
-  }
+
 
   else if (injury == 'Physical','Whiplash') {
-    res.redirect('/docs/examples/branching/Physical/Whiplash')
+    res.redirect('./where-is-the-injury')
   }
 })
          

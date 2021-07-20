@@ -12,3 +12,8 @@ $(document).ready(function () {
 
 var numItems = $('.countcompleted').length
 $( "span.numcompleted" ).text( numItems );
+
+$(document).ready(function(){
+  $('#reloadpage').click();
+});
+
