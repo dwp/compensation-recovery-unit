@@ -199,9 +199,9 @@ checked: checked("face", "Full or partial loss of sight")
     {% from "govuk/components/input/macro.njk" import govukInput %}
          {% set injuryHtml %}
         {{ govukTextarea({
-          name: "more-detail-ears",
-          id: "more-detail-ears",
-          value:data['more-detail-ears'],
+          name: "more-detail-ear",
+          id: "more-detail-ear",
+          value:data['more-detail-ear'],
           label: {
             text: "Can you provide more detail?"
           }
@@ -210,8 +210,8 @@ checked: checked("face", "Full or partial loss of sight")
 
     {{ govukCheckboxes({
      classes: "govuk-checkboxes--small",
-     idPrefix: "ears",
-     name: "ears",
+     idPrefix: "ear",
+     name: "ear",
      fieldset: {
        legend: {
          text: "Select ear injuries",

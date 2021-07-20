@@ -23,9 +23,9 @@ About the claim and injuries - Please tell us the date of the accident or allege
              {% from "govuk/components/input/macro.njk" import govukInput %}
              {% set injuryHtml %}
             {{ govukTextarea({
-              name: "more-detail-brain",
-              id: "more-detail-brain",
-              value:data['more-detail-brain'],
+              name: "more-detail-neurological",
+              id: "more-detail-neurological",
+              value:data['more-detail-neurological'],
               label: {
                 text: "Can you provide more detail?"
               }
@@ -34,8 +34,8 @@ About the claim and injuries - Please tell us the date of the accident or allege
 
         {{ govukCheckboxes({
          classes: "govuk-checkboxes--small",
-         idPrefix: "brain",
-         name: "brain",
+         idPrefix: "neurological",
+         name: "neurological",
          fieldset: {
            legend: {
              text: "What was the neurological injury?",
@@ -47,32 +47,32 @@ About the claim and injuries - Please tell us the date of the accident or allege
          {
            value: "Tingling or numbness",
            text: "Tingling or numbness",
-           checked: checked("brain", "Tingling or numbness")
+           checked: checked("neurological", "Tingling or numbness")
          },
          {
            value: "Shock",
            text: "Shock",
-           checked: checked("brain", "Shock")
+           checked: checked("neurological", "Shock")
          },
          {
            value: "Nausea",
            text: "Nausea",
-           checked: checked("brain", "Nausea")
+           checked: checked("neurological", "Nausea")
          },
          {
           value: "Balance loss",
           text: "Balance loss",
-          checked: checked("brain", "Balance loss")
+          checked: checked("neurological", "Balance loss")
         },
         {
           value: "Memory loss",
           text: "Memory loss",
-          checked: checked("brain", "Memory loss")
+          checked: checked("neurological", "Memory loss")
         },
         {
           value: " ",
           text: "Other neurological injury",
-          checked: checked("brain", " "),
+          checked: checked("neurological", " "),
           conditional: {
             html: injuryHtml
           }

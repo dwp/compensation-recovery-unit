@@ -90,6 +90,39 @@ Register a claim with the Compensation Recovery Unit
                 </a>
               </dd>
             </div>
+
+
+            
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                What type of injury did the person suffer?
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ data['injury'] | default("wHIPLASH") }} 
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="#">
+                  Change<span class="govuk-visually-hidden"> date</span>
+                </a>
+              </dd>
+            </div>
+            {% if checked('injury','Whiplash')%}   
+            <h3 class="govuk-heading-s govuk-!-margin-top-7">Injuries suffered</h3>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Injury
+              </dt>
+              <dd class="govuk-summary-list__value">
+              Whiplash
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="#">
+                  Change<span class="govuk-visually-hidden"> date</span>
+                </a>
+              </dd>
+            </div>
+            {% endif %}
+
      {% if checked('injury','Physical injury other than whiplash')%}       
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
@@ -246,6 +279,39 @@ Register a claim with the Compensation Recovery Unit
               </dd>
             </div>
             {% endif %}
+
+            {% if checked('injury','Phychological')%}   
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Phychological
+              </dt>
+              <dd class="govuk-summary-list__value">
+              {{ data['psychological']}} {{ data['more-detail-psychological']}}
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="#">
+                  Change<span class="govuk-visually-hidden"> date</span>
+                </a>
+              </dd>
+            </div>   
+            {% endif %}
+
+
+            {% if checked('injury','Neurological')%}   
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Neurological
+              </dt>
+              <dd class="govuk-summary-list__value">
+              {{ data['neurological']}} {{ data['more-detail-neurological']}}
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="#">
+                  Change<span class="govuk-visually-hidden"> date</span>
+                </a>
+              </dd>
+            </div>  
+            {% endif %} 
           </dl>
 
           <h2 class="govuk-heading-m">Compensator</h2>

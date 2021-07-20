@@ -27,9 +27,9 @@ About the claim and injuries - Please tell us the date of the accident or allege
     {% from "govuk/components/input/macro.njk" import govukInput %}
          {% set injuryHtml %}
         {{ govukTextarea({
-          name: "more-detail-mental",
-          id: "more-detail-mental",
-          value:data['more-detail-mental'],
+          name: "more-detail-psychological",
+          id: "more-detail-psychological",
+          value:data['more-detail-psychological'],
           label: {
             text: "Can you provide more detail?"
           }
@@ -38,8 +38,8 @@ About the claim and injuries - Please tell us the date of the accident or allege
 
     {{ govukCheckboxes({
      classes: "govuk-checkboxes--small",
-     idPrefix: "mental",
-     name: "mental",
+     idPrefix: "psychological",
+     name: "psychological",
      fieldset: {
        legend: {
          text:"What was the psychological injury?",
@@ -51,23 +51,23 @@ About the claim and injuries - Please tell us the date of the accident or allege
      {
        value: "Fear or anxiety",
        text: "Travel anxiety",
-       checked: checked("mental", "Fear or anxiety")
+       checked: checked("psychological", "Fear or anxiety")
      },
      {
        value: "Breathing problems",
        text: "Post-traumatic stress disorder (PTSD)",
-       checked: checked("mental", "Fear or anxiety")
+       checked: checked("psychological", "Fear or anxiety")
      },
      {
        value: "Sleep loss",
        text: "Sleep problems",
-       checked: checked("mental", "Sleep loss")
+       checked: checked("psychological", "Sleep loss")
      },
 
     {
       value: " ",
       text: "Other psychological injury",
-      checked: checked("mental", " "),
+      checked: checked("psychological", " "),
       conditional: {
         html: injuryHtml
       }
@@ -76,7 +76,7 @@ About the claim and injuries - Please tell us the date of the accident or allege
    }) }}
 
 
-    <!-- end Mental or emotional symptoms -->
+    <!-- end psychological or emotional symptoms -->
 
 
 
