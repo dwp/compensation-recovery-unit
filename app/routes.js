@@ -27,6 +27,7 @@ router.use('/', (req, res, next) => {
 
 
   router.use('/current', require('./views/current/_routes'));
+  router.use('/v2-compensators', require('./views/v2-compensators/_routes'));
   router.use('/v1-compensators', require('./views/v1-compensators/_routes'));
   router.use('/v1-staff', require('./views/v1-staff/_routes'));
   router.use('/mvp', require('./views/mvp/_routes'));

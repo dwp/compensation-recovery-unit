@@ -1,0 +1,48 @@
+
+{% extends folder+ "/layout.html" %}
+
+{% block pageTitle %}
+Case -  task
+{% endblock %}
+
+{% block keydetails %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <form class="form" action="confirmation-end" method="post">
+    <div class="govuk-grid-column-two-thirds">
+
+     <a href="javascript: history.go(-1)" class="govuk-back-link  govuk-!-margin-bottom-9">Back</a>   
+    {{ case.task }}
+    {% if checked('taskcompleted', 'Close case on new cru')%} 
+    <h1 class="govuk-heading-xl">
+      Confirm you are closing this case on new cru
+     </h1>
+     <p class="govuk-body">If you are closing this case, it needs to be added to old cru.</p>
+     <a href="case-details-and-tasks-tabs?reference={{case.reference}}" class="govuk-button">
+      Confirm and close case
+     </a>
+     {% else %}
+     <h1 class="govuk-heading-xl">
+      Confirm you are issuing a certificate
+     </h1>
+     <p class="govuk-body">If you are issuing a certificate, you are confirming their are no attributable benefits to recover on this case.</p>
+     <a href="case-details-and-tasks-tabs?reference={{case.reference}}" class="govuk-button">
+      Confirm and issue certificate
+     </a>
+    {% endif %}
+     
+
+
+
+
+
+
+</div>
+    </div>
+    </form>
+</div>
+
+{% endblock %}

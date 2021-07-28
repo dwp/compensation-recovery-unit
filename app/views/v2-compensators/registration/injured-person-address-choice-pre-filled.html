@@ -1,0 +1,61 @@
+
+{% extends folder+ "/layout.html" %}
+
+{% block pageTitle %}
+About the injured person -  Does the injured person have a national insurance number
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <a href="javascript: history.go(-1)" class="govuk-back-link govuk-!-margin-bottom-5">Back</a>   
+
+
+       
+
+    
+        <form class="form" action="task-list-complete" method="post">
+         
+
+
+             <h1 class="govuk-heading-xl">
+              <span class="govuk-caption-xl">The injured person</span>
+              Add the injured person's address
+             </h1>
+       
+   
+         <h2 class="govuk-heading-m">Postcode</h2>
+         <p class="govuk-body">SE23 6FH <a href="injured-person-address.html">Change postcode</a></p>
+   
+   <div class="govuk-form-group">
+     <label class="govuk-label" for="sort">
+       Choose address
+     </label>
+     <select class="govuk-select" id="sort" name="sort">
+       <option value="published">3 addresses found</option>
+       <option value="44 Crawford Street" selected>72 Guild Steet, Marylebone, London, SE23 6FH </option>
+       <option value="47 Crawford Street">47 Crawford St, Marylebone, London, {{ data['addresspostcode']}}</option>
+       <option value="49 Crawford Street">49 Crawford St, Marylebone, London, {{ data['addresspostcode']}}</option>
+     </select>
+   </div>
+   
+   <div class="govuk-radios__item govuk-visually-hidden">
+    <input class="govuk-radios__input" id="injured-persons-details" name="injured-persons-details" type="radio" value="completed" checked>
+    <label class="govuk-label govuk-radios__label" for="injured-persons-details">
+     hidden radio for logic
+    </label>
+  </div>
+   
+   <button class="govuk-button" data-module="govuk-button">
+    Continue
+   </button>
+   <p class="govuk-body"><a href="#">Enter address manually</a></p>
+      
+
+    </form>
+
+    </div>
+  </div>
+
+{% endblock %}

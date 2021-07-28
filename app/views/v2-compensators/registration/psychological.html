@@ -1,0 +1,102 @@
+
+{% extends folder+ "/layout.html" %}
+
+{% block pageTitle %}
+About the claim and injuries - Please tell us the date of the accident or alleged clinical negligence
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <a href="javascript: history.go(-1)" class="govuk-back-link govuk-!-margin-bottom-5">Back</a>
+        {% if checked('injury','Neurological') %}
+        <form class="form" action="neurological" method="post">
+        {% else %}
+        <form class="form" action="task-list" method="post">
+        {% endif %}
+
+
+
+
+
+
+             {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+             {% from "govuk/components/textarea/macro.njk" import govukTextarea %}
+
+    {% from "govuk/components/input/macro.njk" import govukInput %}
+         {% set injuryHtml %}
+        {{ govukTextarea({
+          name: "more-detail-psychological",
+          id: "more-detail-psychological",
+          value:data['more-detail-psychological'],
+          label: {
+            text: "Can you provide more detail?"
+          }
+        }) }}
+           {% endset -%}
+
+    {{ govukCheckboxes({
+     classes: "govuk-checkboxes--small",
+     idPrefix: "psychological",
+     name: "psychological",
+     fieldset: {
+       legend: {
+         text:"What was the psychological injury?",
+         isPageHeading: true,
+         classes: "govuk-fieldset__legend--l"
+       }
+     },
+     items: [
+     {
+       value: "Travel anxiety",
+       text: "Travel anxiety",
+       checked: checked("psychological", "Fear or anxiety")
+     },
+     {
+       value: "Post-traumatic stress disorder (PTSD)",
+       text: "Post-traumatic stress disorder (PTSD)",
+       checked: checked("psychological", "Post-traumatic stress disorder (PTSD)")
+     },
+     {
+       value: "Sleep problems",
+       text: "Sleep problems",
+       checked: checked("psychological", "Sleep loss")
+     },
+
+    {
+      value: " ",
+      text: "Other psychological injury",
+      checked: checked("psychological", " "),
+      conditional: {
+        html: injuryHtml
+      }
+    }
+  ]
+   }) }}
+
+
+    <!-- end psychological or emotional symptoms -->
+
+
+
+
+
+
+      <div class="govuk-radios__item govuk-visually-hidden">
+        <input class="govuk-radios__input" id="claim-details" name="claim-details" type="radio" value="completed" checked>
+        <label class="govuk-label govuk-radios__label" for="claim-details">
+         hidden radio for logic
+        </label>
+      </div>
+
+      <button class="govuk-button" data-module="govuk-button">
+        Continue
+      </button>
+
+    </form>
+
+    </div>
+  </div>
+
+{% endblock %}

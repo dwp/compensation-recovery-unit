@@ -1,0 +1,25 @@
+
+{% extends folder+ "/layout.html" %}
+
+{% set nav = "Compensator details" %}
+
+{% block pageTitle %}
+  Case details
+{% endblock %}
+
+{% block keydetails %}
+{% include "./_keydetails.html" %}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-quarter">
+      {% include "./_subnav.html" %} 
+    </div>
+    <div class="govuk-grid-column-three-quarters">
+      {% include "./_compenstor-details.html" %} 
+    </div>
+  </div>
+
+{% endblock %}

@@ -1,0 +1,83 @@
+
+{% extends folder+ "/layout.html" %}
+
+{% block pageTitle %}
+About the injured person -  Does the injured person have a national insurance number
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <a href="javascript: history.go(-1)" class="govuk-back-link govuk-!-margin-bottom-5">Back</a>
+       
+       
+       
+        <form action="injury-answer" method="post" class="form"> 
+
+        
+
+
+          {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+
+
+
+          {{ govukCheckboxes({
+            idPrefix: "injury",
+            name: "injury",
+            fieldset: {
+              legend: {
+                text: "What type of injury did the person suffer?",
+                isPageHeading: true,
+                classes: "govuk-fieldset__legend--l"
+              }
+            },
+            hint: {
+              text: "Select all that apply"
+            },
+            items: [
+            {
+              value: "Whiplash",
+              text: "Whiplash",
+              checked: checked("injury", "Whiplash")
+            },
+            {
+                value: "Physical injury other than whiplash",
+                text: "Physical injury other than whiplash",
+                checked: checked("injury","Physical injury other than whiplash")
+              },
+              {
+                value: "Psychological",
+                text: "Psychological",
+                checked: checked("injury","Psychological"),
+                hint: {
+                  text: "For example, travel anxiety"
+                }
+              },
+              {
+                value: "Neurological",
+                text: "Neurological",
+                checked: checked("injury","Neurological"),
+                hint: {
+                  text: "For example, tingling or numbness"
+                }
+              }
+            ]
+          }) }}
+
+
+        
+
+      <button class="govuk-button" data-module="govuk-button">
+        Continue
+      </button>
+
+ 
+
+
+    </form>
+
+    </div>
+  </div>
+
+{% endblock %}
