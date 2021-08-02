@@ -48,7 +48,7 @@ $govuk-assets-path: '/govuk/assets/';
 
 }
 
-.no-border{
+.no-border .govuk-summary-list__key, .no-border .govuk-summary-list__value {
     border-bottom:none;
 }
 

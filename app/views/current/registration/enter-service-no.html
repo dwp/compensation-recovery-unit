@@ -11,21 +11,6 @@ Check if you can use this service
     <div class="govuk-grid-column-two-thirds">
         <a href="javascript: history.go(-1)" class="govuk-back-link govuk-!-margin-bottom-5">Back</a>   
         <form class="form" action="enter-service" method="post">
-      <div class="govuk-notification-banner govuk-notification-banner--success" role="alert" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
-        <div class="govuk-notification-banner__header">
-          <h1 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
-            You can use this service
-          </h1>
-        </div>
-        <div class="govuk-notification-banner__content">
-          <h3 class="govuk-notification-banner__heading">
-            The injured person doesn't have to repay benefits
-          </h3>
-          <p class="govuk-body">Please continue and add the case and download your certificate staight away</p>
-          <p class="govuk-body"><a href="about-the-injured-person">Add a case</a></p>
-        </div>
-      </div>
-
       <div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
         <div class="govuk-notification-banner__header">
           <h1 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
@@ -46,5 +31,19 @@ Check if you can use this service
 
     </div>
   </div>
+
+    <!-- code for demo only-->
+    <style>
+      a.timemachine{
+        position:absolute;
+        top:0px;
+        right:0px;
+        background:black;
+        padding:0.8em;
+        color:white;
+        }
+    </style>
+  
+    <a href ='enter-service-yes' class="timemachine">See alternative view</a>
 
 {% endblock %}

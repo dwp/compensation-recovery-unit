@@ -10,7 +10,8 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
       <h1 class="govuk-heading-xl govuk-!-margin-top-5">
-       Compensation Recovery Service
+      <span class="govuk-caption-xl">Self service website for</span>
+       Esure Insurance Ltd
       </h1>
 
      <!-- <p>Welcome to the Compensation Recovery Unit (CRU) service. </p> -->
@@ -18,10 +19,10 @@
 
         <div class="card ">
           <h2 class="govuk-heading-s">
-            Register a claim</h2>
+            Register or update a claim</h2>
          <div class="card-inner-panel">
-      <form class="form" action="task-list" method="post">
-        <button class="govuk-button govuk-button--secondary">Add a new claim</button>
+      <form class="form" action="about-the-injured-person" method="post">
+        <button class="govuk-button govuk-button--secondary govuk-!-margin-bottom-4">Add a new claim</button>
         <div class="govuk-radios__item govuk-visually-hidden">
           <input class="govuk-radios__input" id="setuser" name="setuser" type="radio" value="compensator" checked>
           <label class="govuk-label govuk-radios__label" for="setuser">
@@ -31,16 +32,45 @@
 
 
         </form>
+        <a href="sign-in" class="govuk-button govuk-button--secondary">Find an existing claim</a>
         </div>
        </div>
 
-      <div class="card">
-          <h2 class="govuk-heading-s">
-     Manage an existing claim</h2>
-     <div class="card-inner-panel">
-          <a href="sign-in" class="govuk-button govuk-button--secondary govuk-!-margin-bottom-4">Sign in to an existing claim</a>
-     </div>
+     
+      <div class="card double">
+      <h2 class="govuk-heading-s">
+       Your companies contact details</h2>
+       <div class="card-inner-panel">
+        <dl class="govuk-summary-list govuk-!-margin-bottom-0">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+             Address
+            </dt>
+            <dd class="govuk-summary-list__value">
+              2 Brigewater Place, Leeds, LS2 4DS
+            </dd>
+           
           </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+             Email
+            </dt>
+            <dd class="govuk-summary-list__value">
+              cru@esureinsurance.so.uk
+            </dd>
+          
+          </div>
+          <div class="govuk-summary-list__row no-border">
+            <dt class="govuk-summary-list__key">
+              Telephone
+            </dt>
+            <dd class="govuk-summary-list__value">
+              <p class="govuk-body">0451 456 6754</p>
+            </dd>
+          </div>
+        </dl>
+       </div>
+            </div>     
 
 
 

@@ -1,0 +1,87 @@
+
+{% extends folder+ "/layout.html" %}
+
+{% block pageTitle %}
+Register a claim with the Compensation Recovery Unit
+{% endblock %}
+
+{% block content %}
+
+
+  <div class="govuk-width-container">
+    <a href="javascript: history.go(-1)" class="govuk-back-link govuk-!-margin-bottom-5">Back</a>
+
+    <main class="govuk-main-wrapper " id="main-content" role="main">
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-three-quarters-from-desktop">
+
+          <h1 class="govuk-heading-xl">Check your answers before continuing</h1>
+
+
+      {% from "govuk/components/inset-text/macro.njk" import govukInsetText %}
+
+      {{ govukInsetText({
+        text: "Please check these details are correct, if the injured person qualifies to use this service, you will not be able to update these details again during the rest of the registration process."
+      }) }}
+
+          <h2 class="govuk-heading-m">The injured person</h2>
+
+          <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Name
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ data['first-name'] | default('Sarah') }}  {{ data['last-name'] | default('Philips') }}
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="about-the-injured-person#first-name">
+                  Change<span class="govuk-visually-hidden"> name</span>
+                </a>
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Date of birth
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ data['date-of-birth-day'] | default("28") }} {{ data['date-of-birth-month'] | default("02") | toMonth }} {{ data['date-of-birth-year'] | default("1978") }}
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="about-the-injured-person#date-of-birth-day">
+                  Change<span class="govuk-visually-hidden"> date of birth</span>
+                </a>
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                National Insurance number
+              </dt>
+              <dd class="govuk-summary-list__value">
+                <p class="govuk-body"> {{ data['ni-number'] | default('AA 11 22 33 B ') }}</p>
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="about-the-injured-person#ni-number">
+                  Change<span class="govuk-visually-hidden"> National insurance number</span>
+                </a>
+              </dd>
+            </div>
+          </dl>
+
+
+          <form action="enter-service-yes" method="post" novalidate>
+
+            <input type="hidden" name="answers-checked" value="true">
+
+            <button class="govuk-button" data-module="govuk-button">
+             Continue
+            </button>
+
+          </form>
+
+        </div>
+      </div>
+    </main>
+  </div>
+
+{% endblock %}
