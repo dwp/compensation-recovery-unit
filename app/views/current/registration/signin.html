@@ -12,7 +12,7 @@ About the injured person - Enter injured person's name and date of birth
         <a href="javascript: history.go(-1)" class="govuk-back-link govuk-!-margin-bottom-5">Back</a>
         <form class="form" action="cru-landing" method="post">
       <h1 class="govuk-heading-xl">
-        <span class="govuk-caption-xl">The injured person</span>
+
         Sign in
       </h1>
 
@@ -28,12 +28,17 @@ About the injured person - Enter injured person's name and date of birth
           Password
         </label>
         <input class="govuk-input govuk-!-width-three-quarters" id="password" name="password" type="text" value="{{data['password']}}">
-        <p class="govuk-body govuk-!-margin-top-2"><a href="" class="govuk-!-margin-top-5">Request a new password</a></p>
+
       </div>
 
       <button class="govuk-button" data-module="govuk-button">
         Continue
       </button>
+      <div class="govuk-inset-text">
+  If you have forgotten your username or password, <a class="govuk-link" href="https://www.gov.uk/government/collections/cru#contact-cru">
+    contact the Compensation Recovery Unit
+  </a>
+</div>
 
     </form>
 

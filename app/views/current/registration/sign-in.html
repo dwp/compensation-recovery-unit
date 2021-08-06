@@ -9,25 +9,28 @@ About the claim and injuries - Please tell us the date of the accident or allege
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-        <a href="javascript: history.go(-1)" class="govuk-back-link govuk-!-margin-bottom-5">Back</a>   
+        <a href="javascript: history.go(-1)" class="govuk-back-link govuk-!-margin-bottom-5">Back</a>
         <form class="form" action="task-list" method="post">
 
           <h1 class="govuk-heading-xl">
-           Sign in to an existing case
+           Enter claim details to sign-in
             </h1>
 
             <div class="govuk-form-group">
               <label class="govuk-label" for="cru-reference">
-                 Enter Compensation recovery reference
+                 Claim reference number
                 </label>
+                <div id="claim-ref-hint" class="govuk-hint">
+                  We sent this to you by email when you registered the claim
+                </div>
               <input class="govuk-input govuk-input--width-10" id="cru-name" name="cru-reference" type="text" value="{{data['cru-reference']}}">
-            </div>  
-    
+            </div>
+
           <div class="govuk-form-group">
             <fieldset class="govuk-fieldset" role="group" aria-describedby="date-of-birth-hint">
               <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
                 <label class="govuk-label">
-                  Enter injured person's date of birth
+                  Injured person's date of birth
                 </label>
               </legend>
               <div id="date-of-birth-hint" class="govuk-hint">
@@ -56,7 +59,7 @@ About the claim and injuries - Please tell us the date of the accident or allege
                     <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="date-of-birth-year" name="date-of-birth-year" type="text" pattern="[0-9]*" inputmode="numeric" value="{{data['date-of-birth-year']}}"></div>
                 </div>
               </div>
-          
+
             </fieldset>
           </div>
 
@@ -70,7 +73,7 @@ About the claim and injuries - Please tell us the date of the accident or allege
       <button class="govuk-button" data-module="govuk-button">
         Sign in
       </button>
-      
+
     </form>
 
     </div>

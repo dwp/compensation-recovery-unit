@@ -92,13 +92,13 @@ Register a claim with the Compensation Recovery Unit
             </div>
 
 
-            
+
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
                 What type of injury did the person suffer?
               </dt>
               <dd class="govuk-summary-list__value">
-                {{ data['injury'] | default("wHIPLASH") }} 
+                {{ data['injury'] | default("wHIPLASH") }}
               </dd>
               <dd class="govuk-summary-list__actions">
                 <a class="govuk-link" href="#">
@@ -106,7 +106,7 @@ Register a claim with the Compensation Recovery Unit
                 </a>
               </dd>
             </div>
-            {% if checked('injury','Whiplash')%}   
+            {% if checked('injury','Whiplash')%}
             <h3 class="govuk-heading-s govuk-!-margin-top-7">Injuries suffered</h3>
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
@@ -123,13 +123,13 @@ Register a claim with the Compensation Recovery Unit
             </div>
             {% endif %}
 
-     {% if checked('injury','Physical injury other than whiplash')%}       
+     {% if checked('injury','Physical injury other than whiplash')%}
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
                 Physical injury other than whiplash
               </dt>
               <dd class="govuk-summary-list__value">
-  
+
 
 
 
@@ -140,8 +140,8 @@ Register a claim with the Compensation Recovery Unit
     {{ data['head']}} {{ data['more-detail-head']}}
     </p>
    {% endif %}
- <!-- End Head -->     
- 
+ <!-- End Head -->
+
     <!-- start Face -->
     {% if checked('where-is-the-injury','Face') %}
     <h3 class="govuk-heading-s govuk-!-margin-bottom-0">Face</h3>
@@ -149,8 +149,8 @@ Register a claim with the Compensation Recovery Unit
      {{ data['face']}} {{ data['more-detail-face']}}
      </p>
     {% endif %}
-  <!-- End face-->   
-  
+  <!-- End face-->
+
      <!-- start ear -->
      {% if checked('where-is-the-injury','Ear') %}
      <h3 class="govuk-heading-s govuk-!-margin-bottom-0">Ear</h3>
@@ -158,8 +158,8 @@ Register a claim with the Compensation Recovery Unit
       {{ data['ear']}} {{ data['more-detail-ear']}}
       </p>
      {% endif %}
-   <!-- End ear--> 
-   
+   <!-- End ear-->
+
        <!-- start Jaw or teeth -->
        {% if checked('where-is-the-injury','Jaw or teeth') %}
        <h3 class="govuk-heading-s govuk-!-margin-bottom-0">Jaw or teeth</h3>
@@ -168,7 +168,7 @@ Register a claim with the Compensation Recovery Unit
        </p>
        {% endif %}
        <!-- End or teeth -->
-   
+
 
 {% if checked('where-is-the-injury','Neck or throat')%}
 <h3 class="govuk-heading-s govuk-!-margin-bottom-0">Neck or throat</h3>
@@ -280,7 +280,7 @@ Register a claim with the Compensation Recovery Unit
             </div>
             {% endif %}
 
-            {% if checked('injury','Psychological')%}   
+            {% if checked('injury','Psychological')%}
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
                 Psychological
@@ -293,11 +293,11 @@ Register a claim with the Compensation Recovery Unit
                   Change<span class="govuk-visually-hidden"> date</span>
                 </a>
               </dd>
-            </div>   
+            </div>
             {% endif %}
 
 
-            {% if checked('injury','Neurological')%}   
+            {% if checked('injury','Neurological')%}
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
                 Neurological
@@ -310,8 +310,8 @@ Register a claim with the Compensation Recovery Unit
                   Change<span class="govuk-visually-hidden"> date</span>
                 </a>
               </dd>
-            </div>  
-            {% endif %} 
+            </div>
+            {% endif %}
           </dl>
 
           <h2 class="govuk-heading-m">Compensator</h2>
