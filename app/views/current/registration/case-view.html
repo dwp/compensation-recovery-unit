@@ -13,8 +13,9 @@ Register a claim with the Compensation Recovery Unit
         <div class="govuk-grid-column-full-from-desktop">
           <a href="javascript: history.go(-1)" class="govuk-back-link govuk-!-margin-bottom-5">Back</a>   
     
-            <h1 class="govuk-panel__title ">
-              Case view
+            <h1 class="govuk-heading-xl">
+              <span class="govuk-caption-xl"> Claim reference</span>
+             CRU123456
             </h1>
 
             <dl class="govuk-summary-list govuk-!-margin-bottom-9">
@@ -42,12 +43,20 @@ Register a claim with the Compensation Recovery Unit
                   72 Guild Street<br>London<br>SE23 6FH
                 </dd>
               </div> -->
-              <div class="govuk-summary-list__row">
+          <!--   <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">
-                  Case reference
+                  Claim reference
                 </dt>
                 <dd class="govuk-summary-list__value">
                  CRU123456
+                </dd>
+              </div> -->
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Date claim registered
+                </dt>
+                <dd class="govuk-summary-list__value">
+                06 August 2021
                 </dd>
               </div>
             </dl>
@@ -57,7 +66,7 @@ Register a claim with the Compensation Recovery Unit
 
 {% set caseActionHtml %}
 <form class="form" action="certificate" method="post">
-<h2 class="govuk-heading-l">Case actions</h2>
+<h2 class="govuk-heading-l">Claim actions</h2>
 
 <div class="govuk-inset-text">
   <h2 class="govuk-heading-s">Amount to pay</h2>
@@ -95,7 +104,7 @@ I'm ready to settle the claim
 {% endset -%}
 
 {% set caseInformationHtml %}
-<h2 class="govuk-heading-l">Case information</h2>
+<h2 class="govuk-heading-l">Claim information</h2>
 
 <h2 class="govuk-heading-m">The injured person</h2>
 
@@ -254,14 +263,14 @@ I'm ready to settle the claim
 {{ govukTabs({
   items: [
     {
-      label: "Case actions",
+      label: "Claim actions",
       id: "case-action",
       panel: {
         html: caseActionHtml
       }
     },
     {
-      label: "Case information",
+      label: "Claim information",
       id: "case-information",
       panel: {
         html: caseInformationHtml

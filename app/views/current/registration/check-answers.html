@@ -95,7 +95,7 @@ Register a claim with the Compensation Recovery Unit
 
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
-                What type of injury did the person suffer?
+                Type of injury
               </dt>
               <dd class="govuk-summary-list__value">
                 {{ data['injury'] | default("Whiplash") }}
@@ -107,7 +107,7 @@ Register a claim with the Compensation Recovery Unit
               </dd>
             </div>
             {% if checked('injury','Whiplash')%}
-            <h3 class="govuk-heading-s govuk-!-margin-top-7">Injuries suffered</h3>
+           <!-- <h3 class="govuk-heading-s govuk-!-margin-top-7">Injuries suffered</h3>
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
                 Injury
@@ -120,7 +120,7 @@ Register a claim with the Compensation Recovery Unit
                   Change<span class="govuk-visually-hidden"> date</span>
                 </a>
               </dd>
-            </div>
+            </div> -->
             {% endif %}
 
      {% if checked('injury','Physical injury other than whiplash')%}
