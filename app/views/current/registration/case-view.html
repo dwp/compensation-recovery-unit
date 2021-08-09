@@ -1,0 +1,295 @@
+
+{% extends folder+ "/layout.html" %}
+
+{% block pageTitle %}
+Register a claim with the Compensation Recovery Unit
+{% endblock %}
+
+{% block content %}
+
+
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-full-from-desktop">
+          <a href="javascript: history.go(-1)" class="govuk-back-link govuk-!-margin-bottom-5">Back</a>   
+    
+            <h1 class="govuk-panel__title ">
+              Case view
+            </h1>
+
+            <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Name
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  Sarah Philips
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Date of birth
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  5 January 1978
+                </dd>
+              </div>
+             <!-- <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Address
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  72 Guild Street<br>London<br>SE23 6FH
+                </dd>
+              </div> -->
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Case reference
+                </dt>
+                <dd class="govuk-summary-list__value">
+                 CRU123456
+                </dd>
+              </div>
+            </dl>
+
+            {% from "govuk/components/tabs/macro.njk" import govukTabs %}
+{% from "govuk/components/table/macro.njk" import govukTable %}
+
+{% set caseActionHtml %}
+<form class="form" action="certificate" method="post">
+<h2 class="govuk-heading-l">Case actions</h2>
+
+<div class="govuk-inset-text">
+  <h2 class="govuk-heading-s">Amount to pay</h2>
+
+    <p class="govuk-body">
+      <span class="govuk-body govuk-!-font-size-48 govuk-!-font-weight-bold govuk-!-display-block">NIL</span>
+      Sarah Phillips has not received any benefit or payments as a result of the injury.
+    </p>
+
+
+
+</div>
+
+<!--<h2 class="govuk-heading-m">What this means</h2>
+
+
+
+
+<p class="govuk-body">The amount shown is what you'll owe if you settle the claim today (5 September 2021) and is based on the information you have given. This amount may change if you settle the claim at a later date.</p>
+
+
+<p class="gov-body">
+<strong>If you settle the claim now </strong>- you'll get a digital statement showing what you owe. This is an official document and replaces the old CRU100 certificate. You can print or save a copy of the statement as proof of our decision.
+</p>
+<p class="gov-body">
+<strong>If you are not ready to settle the claim </strong>- you can return to this service at any time to check the amount to pay, or to settle the claim. You'll need your claim reference number to sign-in.
+</p> -->
+<br>
+<button class="govuk-button govuk-!-margin-bottom-0" data-module="govuk-button">
+I'm ready to settle the claim
+</button>
+
+</form>
+
+{% endset -%}
+
+{% set caseInformationHtml %}
+<h2 class="govuk-heading-l">Case information</h2>
+
+<h2 class="govuk-heading-m">The injured person</h2>
+
+          <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Name
+              </dt>
+              <dd class="govuk-summary-list__value">
+                Sarah Philips
+              </dd>
+              <dd class="govuk-summary-list__actions"></dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Date of birth
+              </dt>
+              <dd class="govuk-summary-list__value">
+                5 January 1978
+              </dd>
+              <dd class="govuk-summary-list__actions"></dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                National Insurance number
+              </dt>
+              <dd class="govuk-summary-list__value">
+                <p class="govuk-body"> JJ 22 33 44 D</p>
+              </dd>
+              <dd class="govuk-summary-list__actions"></dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Address
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ data['choose-ip-address'] | default('4 High Street') }}<br>Thrupp<br>{{ data['addresspostcode'] | default('SW11 4DY') }}
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="#">
+                  Change<span class="govuk-visually-hidden"> address</span>
+                </a>
+              </dd>
+            </div>
+          </dl>
+
+          <h2 class="govuk-heading-m">Injury details</h2>
+
+          <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Date of injury
+              </dt>
+              <dd class="govuk-summary-list__value">
+                20 December 2020
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="#">
+                  Change<span class="govuk-visually-hidden"> date</span>
+                </a>
+              </dd>
+            </div>
+
+
+
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                What type of injury did the person suffer?
+              </dt>
+              <dd class="govuk-summary-list__value">
+                Whiplash
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="#">
+                  Change<span class="govuk-visually-hidden"> date</span>
+                </a>
+              </dd>
+            </div>
+          </dl>
+
+          <h2 class="govuk-heading-m">Injured person's solicitor</h2>
+
+
+          <dl class="govuk-summary-list govuk-!-margin-bottom-0">
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Company name
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ data['represesntative-name'] | default('McAdar Solicitors') }}
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="#">
+                  Change<span class="govuk-visually-hidden">Solictor name</span>
+                </a>
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Email address
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ data['email-solicitor'] | default('claims@mcadarx.co.uk') }}
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="#">
+                  Change<span class="govuk-visually-hidden">email address</span>
+                </a>
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Reference number
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ data['represesntative-reference'] | default('Cr1234567') }}
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="#">
+                  Change<span class="govuk-visually-hidden"> About the accident or incident</span>
+                </a>
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Telephone number
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ data['represesntative-phone-number'] | default('07880109642') }}
+
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="#">
+                  Change<span class="govuk-visually-hidden">telephone</span>
+                </a>
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Address
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ data['solicitor-address'] | default('Ivy House, Ivy Lane') }}<br>Warehorne<br>{{ data['representativepostcode'] | default('TN26 9XE') }}
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="#">
+                  Change<span class="govuk-visually-hidden"> address</span>
+                </a>
+              </dd>
+            </div>
+          </dl>
+
+{% endset -%}
+
+
+{{ govukTabs({
+  items: [
+    {
+      label: "Case actions",
+      id: "case-action",
+      panel: {
+        html: caseActionHtml
+      }
+    },
+    {
+      label: "Case information",
+      id: "case-information",
+      panel: {
+        html: caseInformationHtml
+      }
+    }
+  ]
+}) }}
+
+
+<div>
+  <h2 class="govuk-heading-m">Get help with this claim</h2>
+
+<ul class="govuk-list">
+  <li>Telephone: 0800 15 13196</li>
+  <li>Monday to Friday, 9am to 5pm (except public holidays)</li>
+  <li>Email: <a href="mailto:CRU.Customerfeedback@dwp.gov.uk" class="govuk-link">CRU.Customerfeedback@dwp.gov.uk</a>
+</li></ul>
+
+  </div>
+<br>
+
+
+        <a href="" class="govuk-button govuk-button--secondary">Return to home</a></div>
+      </div>
+        
+
+        </div>
+      </div>
+
+
+{% endblock %}
