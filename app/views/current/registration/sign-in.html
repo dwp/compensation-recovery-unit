@@ -13,8 +13,7 @@ About the claim and injuries - Please tell us the date of the accident or allege
         <form class="form" action="case-view" method="post">
 
           <h1 class="govuk-heading-xl">
-           Enter claim details to sign-in
-            </h1>
+What is the claim reference number?            </h1>
 
             <div class="govuk-form-group">
               <label class="govuk-label" for="cru-reference">
@@ -26,42 +25,8 @@ About the claim and injuries - Please tell us the date of the accident or allege
               <input class="govuk-input govuk-input--width-10" id="cru-name" name="cru-reference" type="text" value="{{data['cru-reference']}}">
             </div>
 
-          <div class="govuk-form-group">
-            <fieldset class="govuk-fieldset" role="group" aria-describedby="date-of-birth-hint">
-              <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
-                <label class="govuk-label">
-                  Injured person's date of birth
-                </label>
-              </legend>
-              <div id="date-of-birth-hint" class="govuk-hint">
-                For example, 12 11  1990
-              </div>
-              <div class="govuk-date-input" id="date-of-birth">
-                <div class="govuk-date-input__item">
-                  <div class="govuk-form-group">
-                    <label class="govuk-label govuk-date-input__label" for="date-of-birth-day">
-                      Day
-                    </label>
-                    <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="date-of-birth-day" name="date-of-birth-day" type="text" pattern="[0-9]*" inputmode="numeric" value="{{data['date-of-birth-day']}}"></div>
-                </div>
-                <div class="govuk-date-input__item">
-                  <div class="govuk-form-group">
-                    <label class="govuk-label govuk-date-input__label" for="date-of-birth-month">
-                      Month
-                    </label>
-                    <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="date-of-birth-month" name="date-of-birth-month" type="text" pattern="[0-9]*" inputmode="numeric" value="{{data['date-of-birth-month']}}"></div>
-                </div>
-                <div class="govuk-date-input__item">
-                  <div class="govuk-form-group">
-                    <label class="govuk-label govuk-date-input__label" for="date-of-birth-year">
-                      Year
-                    </label>
-                    <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="date-of-birth-year" name="date-of-birth-year" type="text" pattern="[0-9]*" inputmode="numeric" value="{{data['date-of-birth-year']}}"></div>
-                </div>
-              </div>
 
-            </fieldset>
-          </div>
+
 
       <div class="govuk-radios__item govuk-visually-hidden">
         <input class="govuk-radios__input" id="" name="" type="radio" value="" checked>
@@ -71,8 +36,13 @@ About the claim and injuries - Please tell us the date of the accident or allege
       </div>
 
       <button class="govuk-button" data-module="govuk-button">
-        Sign in
+        Continue
       </button>
+      <div class="govuk-inset-text">
+  If you do not have the claim reference number, <a class="govuk-link" href="https://www.gov.uk/government/collections/cru#contact-cru">
+    contact the Compensation Recovery Unit
+  </a>
+</div>
 
     </form>
 
