@@ -14,8 +14,12 @@ About the injured person -  Does the injured person have a national insurance nu
 
 
 
+{% if checked('checkanswers','yes')%}
+<form class="form" action="check-answers" method="post">
+{% else %}
+<form class="form" action="task-list" method="post">
+{% endif %}
 
-        <form class="form" action="task-list" method="post">
 
 
 

@@ -10,8 +10,11 @@ About the claim and injuries - Please tell us the date of the accident or allege
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
         <a href="javascript: history.go(-1)" class="govuk-back-link govuk-!-margin-bottom-5">Back</a>
+        {% if checked('checkanswers','yes')%}
+<form class="form" action="check-answers" method="post">
+  {% else %}
         <form class="form" action="task-list" method="post">
-
+  {% endif %}
 
 
 

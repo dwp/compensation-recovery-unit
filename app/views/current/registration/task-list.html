@@ -117,9 +117,17 @@ Register a claim with the Compensation Recovery Unit
                 {% if
                 checked('injured-persons-details','completed') and
                 checked('claim-details','completed') and
-                checked('compensator-details','completed') and
                 checked('representative-details','completed') %}
-                <a href="check-answers">Submit</a>
+                <form class="form" action="check-answers" method="post">
+                <button class="govuk-link govuk-!-font-size-19">Submit</button>
+                <div class="govuk-radios__item govuk-visually-hidden">
+                  <input class="govuk-radios__input" id="checkanswers" name="checkanswers" type="radio" value="yes" checked>
+                  <label class="govuk-label govuk-radios__label" for="checkanswers">
+                   Visually hidded for logic
+                  </label>
+                </div>
+
+              </form>
                 {% else %}
                 Submit
                 {% endif %}
@@ -129,7 +137,6 @@ Register a claim with the Compensation Recovery Unit
                 {% if
                   checked('injured-persons-details','completed') and
                   checked('claim-details','completed') and
-                  checked('compensator-details','completed') and
                   checked('representative-details','completed') %}
                   Not started yet
                   {% else %}

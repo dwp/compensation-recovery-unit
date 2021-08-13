@@ -10,8 +10,14 @@ About the claim and injuries - Please tell us the date of the accident or allege
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
         <a href="javascript: history.go(-1)" class="govuk-back-link govuk-!-margin-bottom-5">Back</a>
-        {% if checked('injury','Neurological') %}
+        
+
+        {% if checked('checkanswerslocal','psychological') %}
+        <form class="form" action="check-answers" method="post">
+        {% elif checked('injury','Neurological') %}
         <form class="form" action="neurological" method="post">
+        {% elif checked('checkanswers','yes')%}
+          <form class="form" action="check-answers" method="post">
         {% else %}
         <form class="form" action="task-list" method="post">
         {% endif %}
@@ -51,7 +57,7 @@ About the claim and injuries - Please tell us the date of the accident or allege
      {
        value: "Travel anxiety",
        text: "Travel anxiety",
-       checked: checked("psychological", "Fear or anxiety")
+       checked: checked("psychological", "Travel anxiety")
      },
      {
        value: "Post-traumatic stress disorder (PTSD)",
@@ -61,7 +67,7 @@ About the claim and injuries - Please tell us the date of the accident or allege
      {
        value: "Sleep problems",
        text: "Sleep problems",
-       checked: checked("psychological", "Sleep loss")
+       checked: checked("psychological", "Sleep problems")
      },
 
     {
@@ -87,6 +93,13 @@ About the claim and injuries - Please tell us the date of the accident or allege
         <input class="govuk-radios__input" id="claim-details" name="claim-details" type="radio" value="completed" checked>
         <label class="govuk-label govuk-radios__label" for="claim-details">
          hidden radio for logic
+        </label>
+      </div>
+
+      <div class="govuk-radios__item govuk-visually-hidden">
+        <input class="govuk-radios__input" id="checkanswerslocal" name="checkanswerslocal" type="radio" value="reset" checked>
+        <label class="govuk-label govuk-radios__label" for="checkanswerslocal">
+         Visually hidded for logic
         </label>
       </div>
 
