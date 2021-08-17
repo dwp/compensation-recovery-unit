@@ -2,7 +2,7 @@
 {% extends folder+ "/layout.html" %}
 
 {% block pageTitle %}
-Register a claim with the Compensation Recovery Unit
+Check your answers before registering the claim
 {% endblock %}
 
 {% block content %}
@@ -28,9 +28,7 @@ Register a claim with the Compensation Recovery Unit
                 {{ data['first-name'] | default('Sarah') }}  {{ data['last-name'] | default('Philips') }}
               </dd>
               <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="#">
-                  Change<span class="govuk-visually-hidden"> name</span>
-                </a>
+          
               </dd>
             </div>
             <div class="govuk-summary-list__row">
@@ -41,9 +39,7 @@ Register a claim with the Compensation Recovery Unit
                 {{ data['date-of-birth-day'] | default("28") }} {{ data['date-of-birth-month'] | default("02") | toMonth }} {{ data['date-of-birth-year'] | default("1978") }}
               </dd>
               <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="#">
-                  Change<span class="govuk-visually-hidden"> date of birth</span>
-                </a>
+               
               </dd>
             </div>
             <div class="govuk-summary-list__row">
@@ -54,9 +50,7 @@ Register a claim with the Compensation Recovery Unit
                 <p class="govuk-body"> {{ data['ni-number'] | default('AA 11 22 33 B ') }}</p>
               </dd>
               <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="#">
-                  Change<span class="govuk-visually-hidden"> National insurance number</span>
-                </a>
+  
               </dd>
             </div>
             <div class="govuk-summary-list__row">
@@ -67,7 +61,7 @@ Register a claim with the Compensation Recovery Unit
                 {{ data['choose-ip-address'] | default('4 High Street') }}<br>Thrupp<br>{{ data['addresspostcode'] | default('SW11 4DY') }}
               </dd>
               <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="#">
+                <a class="govuk-link" href="injured-person-address">
                   Change<span class="govuk-visually-hidden"> address</span>
                 </a>
               </dd>
@@ -85,8 +79,8 @@ Register a claim with the Compensation Recovery Unit
                 {{ data['claim-date-day'] | default("3") }} {{ data['claim-date-month'] | default("03") | toMonth }} {{ data['claim-date-year'] | default("2020") }}
               </dd>
               <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="#">
-                  Change<span class="govuk-visually-hidden"> date</span>
+                <a class="govuk-link" href="date-of-claim">
+                  Change<span class="govuk-visually-hidden"> date of injury</span>
                 </a>
               </dd>
             </div>
@@ -101,7 +95,7 @@ Register a claim with the Compensation Recovery Unit
                 {{ data['injury'] | default("Whiplash") }}
               </dd>
               <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="#">
+                <a class="govuk-link" href="injury-gaurd.html">
                   Change<span class="govuk-visually-hidden"> date</span>
                 </a>
               </dd>
@@ -273,9 +267,16 @@ Register a claim with the Compensation Recovery Unit
 
               </dd>
               <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="#">
-                  Change<span class="govuk-visually-hidden"> About the injury</span>
-                </a>
+                <form class="form" action="where-is-the-injury" method="post">
+                  <button class="govuk-link govuk-!-font-size-19">Change<span class="govuk-visually-hidden">Physical injury</span></button>
+                  <div class="govuk-radios__item govuk-visually-hidden">
+                    <input class="govuk-radios__input" id="checkanswerslocal" name="checkanswerslocal" type="radio" value="physical" checked>
+                    <label class="govuk-label govuk-radios__label" for="checkanswerslocal">
+                     Visually hidded for logic
+                    </label>
+                  </div>
+  
+                </form>
               </dd>
             </div>
             {% endif %}
@@ -289,9 +290,16 @@ Register a claim with the Compensation Recovery Unit
               {{ data['psychological']}} {{ data['more-detail-psychological']}}
               </dd>
               <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="#">
-                  Change<span class="govuk-visually-hidden"> date</span>
-                </a>
+                <form class="form" action="psychological" method="post">
+                  <button class="govuk-link govuk-!-font-size-19">Change<span class="govuk-visually-hidden">Psycholigical injury</span></button>
+                  <div class="govuk-radios__item govuk-visually-hidden">
+                    <input class="govuk-radios__input" id="checkanswerslocal" name="checkanswerslocal" type="radio" value="psychological" checked>
+                    <label class="govuk-label govuk-radios__label" for="checkanswerslocal">
+                     Visually hidded for logic
+                    </label>
+                  </div>
+  
+                </form>
               </dd>
             </div>
             {% endif %}
@@ -306,9 +314,16 @@ Register a claim with the Compensation Recovery Unit
               {{ data['neurological']}} {{ data['more-detail-neurological']}}
               </dd>
               <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="#">
-                  Change<span class="govuk-visually-hidden"> date</span>
-                </a>
+                <form class="form" action="neurological" method="post">
+                  <button class="govuk-link govuk-!-font-size-19">Change<span class="govuk-visually-hidden">Neurological injury</span></button>
+                  <div class="govuk-radios__item govuk-visually-hidden">
+                    <input class="govuk-radios__input" id="checkanswerslocal" name="checkanswerslocal" type="radio" value="neurological" checked>
+                    <label class="govuk-label govuk-radios__label" for="checkanswerslocal">
+                     Visually hidded for logic
+                    </label>
+                  </div>
+  
+                </form>
               </dd>
             </div>
             {% endif %}

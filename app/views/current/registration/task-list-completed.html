@@ -52,7 +52,7 @@ Register a claim with the Compensation Recovery Unit
           </ul>
         </li>
 
-        <li>
+     <!--   <li>
           <h2 class="app-task-list__section">
             <span class="app-task-list__section-number">3. </span> Compensator
           </h2>
@@ -66,7 +66,7 @@ Register a claim with the Compensation Recovery Unit
               <strong class="govuk-tag app-task-list__tag" id="">Completed</strong>
             </li>
           </ul>
-        </li>
+        </li> -->
 
         <li>
           <h2 class="app-task-list__section">
@@ -90,7 +90,18 @@ Register a claim with the Compensation Recovery Unit
           <ul class="app-task-list__items">
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
-                <a href="check-answers">Submit</a>
+             
+                  <form class="form" action="check-answers" method="post">
+                  <button class="govuk-link govuk-!-font-size-19">Submit</button>
+                  <div class="govuk-radios__item govuk-visually-hidden">
+                    <input class="govuk-radios__input" id="checkanswers" name="checkanswers" type="radio" value="yes" checked>
+                    <label class="govuk-label govuk-radios__label" for="checkanswers">
+                     Visually hidded for logic
+                    </label>
+                  </div>
+  
+                </form>
+              
               </span>
               <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="financial-evidence-status">
                   Not started yet

@@ -85,25 +85,37 @@ router.get('/*', function (req, res, next) {
   // However in JavaScript we can't use hyphens in variable names
 
   const injury = req.session.data['injury']
+  const checkanswers = req.session.data['checkanswers']
 
- if (injury == 'Physical') {
+if (injury == 'Physical injury other than whiplash') {
     res.redirect('./where-is-the-injury')
   }
-  else if (injury == 'Phychological') {
+
+ if (injury == 'Psychological') {
     res.redirect('./psychological')
   }
-  else if (injury == 'Neurological') {
+ if (injury == 'Neurological') {
     res.redirect('./neurological')
   }
+
+   
+  if (checkanswers == 'yes' && injury=='Whiplash'){
+    res.redirect('./check-answers')
+  }
+
 
   if (injury == 'Whiplash') {
     res.redirect('./task-list')
   }
 
-
-  else if (injury == 'Physical','Whiplash') {
+  else if (injury == 'Whiplash','Physical injury other than whiplash') {
     res.redirect('./where-is-the-injury')
   }
+
+
+
+
+
 })
          
          

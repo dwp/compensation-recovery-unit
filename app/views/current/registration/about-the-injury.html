@@ -10,7 +10,15 @@ About the claim and injuries - Please tell us the date of the accident or allege
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
         <a href="javascript: history.go(-1)" class="govuk-back-link govuk-!-margin-bottom-5">Back</a>
-        {% if checked('injury','Psychological') %}
+        
+        {% if checked('checkanswerslocal','physical') %}
+        <form class="form" action="check-answers" method="post">
+        {% elif checked('injury','Psychological') and checked('checkanswers','yes') %}
+        <form class="form" action="psychological" method="post">
+        {% elif checked('checkanswers','yes') and data['injury'] !=='Psychological' %}
+       
+        <form class="form" action="check-answers" method="post">
+        {% elif checked('injury','Psychological') %}
         <form class="form" action="psychological" method="post">
         {% else %}
         <form class="form" action="task-list" method="post">
@@ -999,6 +1007,13 @@ checked: checked("face", "Full or partial loss of sight")
         <input class="govuk-radios__input" id="claim-details" name="claim-details" type="radio" value="completed" checked>
         <label class="govuk-label govuk-radios__label" for="claim-details">
          hidden radio for logic
+        </label>
+      </div>
+
+      <div class="govuk-radios__item govuk-visually-hidden">
+        <input class="govuk-radios__input" id="checkanswerslocal" name="checkanswerslocal" type="radio" value="reset" checked>
+        <label class="govuk-label govuk-radios__label" for="checkanswerslocal">
+         Visually hidded for logic
         </label>
       </div>
 

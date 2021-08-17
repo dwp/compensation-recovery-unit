@@ -38,7 +38,7 @@ Register a claim with the Compensation Recovery Unit
       Name of injured person
     </dt>
     <dd class="govuk-summary-list__value">
-      Sarah Phillips
+      {{ data['first-name'] | default('Sarah') }}  {{ data['last-name'] | default('Philips') }}
     </dd>
   </div>
   <div class="govuk-summary-list__row">
@@ -71,7 +71,7 @@ Register a claim with the Compensation Recovery Unit
           Name of compensator
         </dt>
         <dd class="govuk-summary-list__value">
-          Made up insurance company
+          Esure insurance ltd
         </dd>
       </div>
       <div class="govuk-summary-list__row">
@@ -79,7 +79,7 @@ Register a claim with the Compensation Recovery Unit
           Compensator reference
         </dt>
         <dd class="govuk-summary-list__value">
-          MADE12345UP
+          {{ data['compensator-rep-reference'] | default('DI345567Y') }}
         </dd>
       </div>
     </dl>
