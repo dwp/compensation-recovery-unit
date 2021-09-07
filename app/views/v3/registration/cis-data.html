@@ -1,0 +1,115 @@
+
+{% extends folder+ "/layout.html" %}
+
+{% block pageTitle %}
+Check if you can use this service
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <a href="javascript: history.go(-1)" class="govuk-back-link govuk-!-margin-bottom-5">Back</a>   
+        <form class="form" action="enter-service" method="post">
+      <h1 class="govuk-heading-xl">
+        Check if you can use this service
+      </h1>
+
+      <h2 class="govuk-heading-l">Injured person</h2>
+
+      <div class="govuk-form-group">
+        <label class="govuk-label govuk-label--s" for="ni-number">
+        National Insurance number
+        </label>
+        <input class="govuk-input govuk-!-width-one-half" id="ni-by-text" name="ni-number" type="text" spellcheck="false" value="{{ data['ni-number']}}">
+
+    </div>
+
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" role="group" aria-describedby="date-of-birth-hint">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+            <label class="govuk-fieldset__heading">
+              Date of birth
+            </label>
+          </legend>
+          <div id="date-of-birth-hint" class="govuk-hint">
+            For example, 12 11  1990
+          </div>
+          <div class="govuk-date-input" id="date-of-birth">
+            <div class="govuk-date-input__item">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="date-of-birth-day">
+                  Day
+                </label>
+                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="date-of-birth-day" name="date-of-birth-day" type="text" pattern="[0-9]*" inputmode="numeric" value="{{data['date-of-birth-day']}}"></div>
+            </div>
+            <div class="govuk-date-input__item">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="date-of-birth-month">
+                  Month
+                </label>
+                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="date-of-birth-month" name="date-of-birth-month" type="text" pattern="[0-9]*" inputmode="numeric" value="{{data['date-of-birth-month']}}"></div>
+            </div>
+            <div class="govuk-date-input__item">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="date-of-birth-year">
+                  Year
+                </label>
+                <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="date-of-birth-year" name="date-of-birth-year" type="text" pattern="[0-9]*" inputmode="numeric" value="{{data['date-of-birth-year']}}"></div>
+            </div>
+          </div>
+      
+        </fieldset>
+      </div>
+
+      <h2 class="govuk-heading-l govuk-!-margin-top-7">Injury</h2>
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" role="group" aria-describedby="claim-date-hint">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+            <label class="govuk-fieldset__heading">
+              Date of injury
+            </label>
+          </legend>
+          <div id="claim-date-hint" class="govuk-hint">
+            For example, 12 11 2007
+          </div>
+          <div class="govuk-date-input" id="claim-date">
+            <div class="govuk-date-input__item">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="claim-date-day">
+                  Day
+                </label>
+                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="claim-date-day" name="claim-date-day" type="text" pattern="[0-9]*" inputmode="numeric" value="{{data['claim-date-day']}}"></div>
+            </div>
+            <div class="govuk-date-input__item">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="claim-date-month">
+                  Month
+                </label>
+                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="claim-date-month" name="claim-date-month" type="text" pattern="[0-9]*" inputmode="numeric" value="{{data['claim-date-month']}}"></div>
+            </div>
+            <div class="govuk-date-input__item">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="claim-date-year">
+                  Year
+                </label>
+                <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="claim-date-year" name="claim-date-year" type="text" pattern="[0-9]*" inputmode="numeric" value="{{data['claim-date-year']}}"></div>
+            </div>
+          </div>
+      
+        </fieldset>
+      </div>
+
+
+      <button class="govuk-button" data-module="govuk-button">
+        Continue
+      </button>
+      
+    </form>
+
+    </div>
+  </div>
+
+{% endblock %}

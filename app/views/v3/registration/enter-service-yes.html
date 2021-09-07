@@ -1,0 +1,47 @@
+
+{% extends folder+ "/layout.html" %}
+
+{% block pageTitle %}
+Check if you can use this service
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <a href="javascript: history.go(-1)" class="govuk-back-link govuk-!-margin-bottom-5">Back</a>
+        <form class="form" action="enter-service" method="post">
+      <div class="govuk-notification-banner govuk-notification-banner--success" role="alert" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+        <div class="govuk-notification-banner__header">
+          <h1 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+            You can use this service
+          </h1>
+        </div>
+        <div class="govuk-notification-banner__content">
+          <h3 class="govuk-notification-banner__heading">
+            The injured person has not received any benefit or payment as a result of their injury.
+          </h3>
+          <a href="injured-person-address" class="govuk-button">Continue registration</a>
+        </div>
+      </div>
+    </form>
+
+    </div>
+  </div>
+
+  <!-- code for demo only-->
+  <style>
+    a.timemachine{
+      position:absolute;
+      top:0px;
+      right:0px;
+      background:black;
+      padding:0.8em;
+      color:white;
+      }
+  </style>
+
+  <a href ='enter-service-no' class="timemachine">See alternative view</a>
+
+
+{% endblock %}

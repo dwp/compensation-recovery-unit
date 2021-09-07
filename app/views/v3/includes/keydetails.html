@@ -1,0 +1,81 @@
+
+<section class="key-details-bar govuk-!-margin-bottom-5" role="contentinfo" aria-label="Key details">
+  <dl class="key-details-bar__key-details">
+    <div class="key-details-bar__top-block">
+      <dt class="govuk-visually-hidden">Name:</dt>
+      <dd class="key-details-bar__name">{{case.firstname | default('Sarah') }} {{case.lastname | default('Henderson') }}</dd>
+
+      <dt class="govuk-visually-hidden">National Insurance number:</dt>
+      <dd class="key-details-bar__nino">  {{case.nino | default('FD 22 33 44 D') }}</dd>
+
+      <dt class="govuk-visually-hidden">Case status:</dt>
+      <dd class="key-details-bar__status govuk-!-margin-right-0"><span class="govuk-tag">
+        {% if case.task == 'completed-closed' %}
+        Closed
+        {% elif case.task == 'completed-open' %}
+        Certificate issued
+        {% else %}
+        {{case.status | default('Certificate issued') }}
+        {% endif %}
+      
+      </span></dd>
+    </div>
+
+    <div class="key-details-bar__bottom-block">
+      <dt>Date of birth:</dt>
+      <dd>{{case.dob | default('09 September 1978') }}</dd>
+
+      <dt>Postcode:</dt>
+      <dd>{{case.postcode | default('SW11 1JU') }}</dd>
+
+      <dt>Interests:</dt>
+      <dd>{% if case.status == 'Certificate issued'%} none {% else %}UC {% endif %}</dd>
+      <dt>Reference:</dt>
+      <dd>{{case.reference | default('SW11 1JU') }}</dd>
+      <dt>Due:</dt>
+      <dd>{{ case.due }}</dd>
+    </div>
+  </dl>
+</section>
+
+
+
+
+
+<!--<div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+  <div class="govuk-notification-banner__header">
+    <h2 class="govuk-notification-banner__title " id="govuk-notification-banner-title">
+      Task to do
+    </h2>
+  </div>
+  <div class="govuk-notification-banner__content">
+    <p class="">
+      Check if any benefit has been paid because of the injury
+      <a class="govuk-notification-banner__link" href="#">Update case</a>.
+    </p>
+    
+  </div>
+</div> -->
+<!--<div class="govuk-inset-text blue govuk-!-margin-top-5 govuk-!-margin-bottom-5">
+  <h3 class="govuk-heading-m govuk-!-margin-bottom-4">Status: {{case.status}}</h3>
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-third">
+      <ul class="govuk-list">
+        <li>Interests: UC</li>
+        <li>Reference: {{case.reference | default('CRU123') }}</li>
+        <li>Due: <span class="">27</span> Days</li>
+        </ul>
+    </div>
+    <div class="govuk-grid-column-one-third">
+      <ul class="govuk-list">
+        <li>Type: Injury </li>
+        <li>Injury: Whiplash</li>
+        <li>Injury date: 20 december 2020</li>
+      </ul>
+    </div>
+    <div class="govuk-grid-column-one-third">    <ul class="govuk-list">
+      <li>Insurance company: Insure co</li>
+      <li>Solicitor: Crowleys</li>
+    </ul></div>
+  </div>
+</div> -->

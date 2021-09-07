@@ -1,0 +1,117 @@
+
+{% extends folder+ "/layout.html" %}
+
+{% block pageTitle %}
+Register a claim with the Compensation Recovery Unit
+{% endblock %}
+
+{% block content %}
+
+
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds-from-desktop">
+          {% if data['setuser'] =='staff' %}
+          <div class="govuk-panel govuk-panel--confirmation govuk-!-margin-top-5">
+            <h1 class="govuk-panel__title ">
+              Registration complete
+            </h1>
+            <div class="govuk-panel__body">
+              Claim reference number<br><strong>CRU12345</strong>
+            </div>
+          </div>
+
+          <div class="govuk-inset-text">
+            <h2 class="govuk-heading-s">Amount to be paid</h2>
+
+              <p class="govuk-body">
+                <span  class="govuk-body govuk-!-font-size-48 govuk-!-font-weight-bold govuk-!-display-block">£0.00</span>
+                The injured person has not been paid any benefit due to the injury. The certificate has been issued to the compensator.
+              </p>
+
+              <a href="">Return to home</a>
+
+          </div>
+          {% else %}
+          <div class="govuk-panel govuk-panel--confirmation govuk-!-margin-top-5">
+            <h1 class="govuk-panel__title ">
+              Registration complete
+            </h1>
+            <div class="govuk-panel__body">
+              Your claim reference number<br><strong>CRU12345</strong>
+            </div>
+          </div>
+
+          <div class="govuk-inset-text">
+            <h2 class="govuk-heading-s">Amount to pay</h2>
+
+              <p class="govuk-body">
+                <span class="govuk-body govuk-!-font-size-48 govuk-!-font-weight-bold govuk-!-display-block">NIL</span>
+                Sarah Phillips has not received any benefit or payments as a result of the injury.
+              </p>
+
+
+
+          </div>
+
+
+<div>
+  <h2 class="govuk-heading-m">What this means</h2>
+
+
+
+
+<p class="govuk-body">The amount shown is what you'll owe if you settle the claim now and is based on the information you have given. This amount may change if you settle the claim at a later date.</p>
+
+
+<p class="gov-body">
+    <strong>If you settle the claim now </strong>- you'll get a digital statement showing what you owe. This is an official document and replaces the old CRU100 certificate. You can print or save a copy of the statement as proof of our decision.
+  </p>
+  <p class="gov-body">
+    <strong>If you are not ready to settle the claim </strong>- you can return to this service at any time to check the amount to pay, or to settle the claim. You'll need your claim reference number to sign-in.
+  </p>
+<br>
+<form class="form" action="certificate" method="post">
+  <button class="govuk-button" data-module="govuk-button">
+  I'm ready to settle the claim
+</button>
+</form
+
+  </div>
+
+<div>
+  <h2 class="govuk-heading-m">Get help with this claim</h2>
+
+<ul class="govuk-list">
+  <li>Telephone: 0800 15 13196</li>
+  <li>Monday to Friday, 9am to 5pm (except public holidays)</li>
+  <li>Email: <a href="mailto:CRU.Customerfeedback@dwp.gov.uk" class="govuk-link">CRU.Customerfeedback@dwp.gov.uk</a>
+</li></ul>
+
+  </div>
+<br>
+
+
+        <a href="" class="govuk-button govuk-button--secondary">Return to home</a></div>
+      </div>
+          {% endif %}
+
+        </div>
+      </div>
+
+      <!-- code for demo only-->
+  <style>
+    a.timemachine{
+      position:absolute;
+      top:0px;
+      right:0px;
+      background:black;
+      padding:0.8em;
+      color:white;
+      }
+  </style>
+
+  <a href ='completed-benefit-interest' class="timemachine">Forward</a>
+
+
+{% endblock %}

@@ -1,0 +1,116 @@
+
+{% extends folder+ "/layout.html" %}
+
+{% block pageTitle %}
+Register a claim with the Compensation Recovery Unit
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds govuk-!-margin-top-5">
+      <h1 class="govuk-heading-xl">
+        Add a new case
+      </h1>
+
+      <h2 class="govuk-heading-s govuk-!-margin-bottom-2">Application incomplete</h2>
+      <p class="govuk-body govuk-!-margin-bottom-7">You have completed 4 of 5 sections.</p>
+
+      <ol class="app-task-list">
+        <li>
+          <h2 class="app-task-list__section">
+            <span class="app-task-list__section-number">1. </span> The injured person
+          </h2>
+          <ul class="app-task-list__items">
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="about-the-injured-person" aria-describedby="">
+                  Tell us who was injured
+                </a>
+              </span>
+              <strong class="govuk-tag app-task-list__tag" id="">Completed</strong>
+            </li>
+          </ul>
+        </li>
+
+        <li>
+          <h2 class="app-task-list__section">
+            <span class="app-task-list__section-number">2. </span>  Injury details
+          </h2>
+          <ul class="app-task-list__items">
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="date-of-claim" aria-describedby="">
+                  Tell us about the injury
+                </a>
+              </span>
+
+              <strong class="govuk-tag app-task-list__tag" id="">Completed</strong>
+            </li>
+
+
+          </ul>
+        </li>
+
+     <!--   <li>
+          <h2 class="app-task-list__section">
+            <span class="app-task-list__section-number">3. </span> Compensator
+          </h2>
+          <ul class="app-task-list__items">
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="about-the-compensator" aria-describedby="list-convictions-status">
+                  Provide compensator details
+                </a>
+              </span>
+              <strong class="govuk-tag app-task-list__tag" id="">Completed</strong>
+            </li>
+          </ul>
+        </li> -->
+
+        <li>
+          <h2 class="app-task-list__section">
+            <span class="app-task-list__section-number">4. </span> Injured persons solicitor
+          </h2>
+          <ul class="app-task-list__items">
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="about-the-injured-persons-rep" aria-describedby="list-convictions-status">
+                  Provide solicitor details
+                </a>
+              </span>
+              <strong class="govuk-tag app-task-list__tag" id="">Completed</strong>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <h2 class="app-task-list__section">
+            <span class="app-task-list__section-number">5. </span> Submit your case
+          </h2>
+          <ul class="app-task-list__items">
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+             
+                  <form class="form" action="check-answers" method="post">
+                  <button class="govuk-link govuk-!-font-size-19">Submit</button>
+                  <div class="govuk-radios__item govuk-visually-hidden">
+                    <input class="govuk-radios__input" id="checkanswers" name="checkanswers" type="radio" value="yes" checked>
+                    <label class="govuk-label govuk-radios__label" for="checkanswers">
+                     Visually hidded for logic
+                    </label>
+                  </div>
+  
+                </form>
+              
+              </span>
+              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="financial-evidence-status">
+                  Not started yet
+                </strong>
+            </li>
+          </ul>
+        </li>
+      </ol>
+    </div>
+  </div>
+
+{% endblock %}

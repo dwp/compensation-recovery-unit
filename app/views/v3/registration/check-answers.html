@@ -89,19 +89,45 @@ Check your answers before registering the claim
 
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
+                Type of injury
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ data['injury'] | default("Whiplash") }}
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="injury-gaurd.html">
+                  Change<span class="govuk-visually-hidden"> date</span>
+                </a>
+              </dd>
+            </div>
+            {% if checked('injury','Whiplash')%}
+           <!-- <h3 class="govuk-heading-s govuk-!-margin-top-7">Injuries suffered</h3>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
                 Injury
               </dt>
-               <!-- start Whiplash -->
               <dd class="govuk-summary-list__value">
-                {% if checked('injury','Whiplash')%}
-                <h3 class="govuk-heading-s govuk-!-margin-bottom-0">Neck shoulders and arms</h3>
-                <p>
-                 Whiplash
-                 </p>
-                {% endif %}
-                 <!-- End whiplash -->
-{% if checked('injury','Physical injury other than whiplash')%}
-                  <!-- start Shoulder or Head -->
+              Whiplash
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="#">
+                  Change<span class="govuk-visually-hidden"> date</span>
+                </a>
+              </dd>
+            </div> -->
+            {% endif %}
+
+     {% if checked('injury','Physical injury other than whiplash')%}
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Physical injury other than whiplash
+              </dt>
+              <dd class="govuk-summary-list__value">
+
+
+
+
+   <!-- start Shoulder or Head -->
    {% if checked('where-is-the-injury','Head') %}
    <h3 class="govuk-heading-s govuk-!-margin-bottom-0">Head</h3>
    <p>
@@ -237,34 +263,70 @@ Check your answers before registering the claim
     </p>
     {% endif %}
     <!-- end Foot or toe-->
-{% endif %}
-
-    {% if checked('injury','Psychological')%}
-    <h3 class="govuk-heading-s govuk-!-margin-bottom-0">Psychological</h3>
-    <p>
-      {{ data['psychological']}} {{ data['more-detail-psychological']}}
-    </p>
-    {% endif %}
-
-
-
-
-    {% if checked('injury','Neurological')%}
-
-    <h3 class="govuk-heading-s govuk-!-margin-bottom-0">Neurological</h3>
-    <p>
-      {{ data['neurological']}} {{ data['more-detail-neurological']}}
-    </p>
-    {% endif %}
 
 
               </dd>
               <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="injury-gaurd.html">
-                  Change<span class="govuk-visually-hidden">Injury details</span>
-                </a>
+                <form class="form" action="where-is-the-injury" method="post">
+                  <button class="govuk-link govuk-!-font-size-19">Change<span class="govuk-visually-hidden">Physical injury</span></button>
+                  <div class="govuk-radios__item govuk-visually-hidden">
+                    <input class="govuk-radios__input" id="checkanswerslocal" name="checkanswerslocal" type="radio" value="physical" checked>
+                    <label class="govuk-label govuk-radios__label" for="checkanswerslocal">
+                     Visually hidded for logic
+                    </label>
+                  </div>
+  
+                </form>
               </dd>
             </div>
+            {% endif %}
+
+            {% if checked('injury','Psychological')%}
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Psychological
+              </dt>
+              <dd class="govuk-summary-list__value">
+              {{ data['psychological']}} {{ data['more-detail-psychological']}}
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <form class="form" action="psychological" method="post">
+                  <button class="govuk-link govuk-!-font-size-19">Change<span class="govuk-visually-hidden">Psycholigical injury</span></button>
+                  <div class="govuk-radios__item govuk-visually-hidden">
+                    <input class="govuk-radios__input" id="checkanswerslocal" name="checkanswerslocal" type="radio" value="psychological" checked>
+                    <label class="govuk-label govuk-radios__label" for="checkanswerslocal">
+                     Visually hidded for logic
+                    </label>
+                  </div>
+  
+                </form>
+              </dd>
+            </div>
+            {% endif %}
+
+
+            {% if checked('injury','Neurological')%}
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Neurological
+              </dt>
+              <dd class="govuk-summary-list__value">
+              {{ data['neurological']}} {{ data['more-detail-neurological']}}
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <form class="form" action="neurological" method="post">
+                  <button class="govuk-link govuk-!-font-size-19">Change<span class="govuk-visually-hidden">Neurological injury</span></button>
+                  <div class="govuk-radios__item govuk-visually-hidden">
+                    <input class="govuk-radios__input" id="checkanswerslocal" name="checkanswerslocal" type="radio" value="neurological" checked>
+                    <label class="govuk-label govuk-radios__label" for="checkanswerslocal">
+                     Visually hidded for logic
+                    </label>
+                  </div>
+  
+                </form>
+              </dd>
+            </div>
+            {% endif %}
           </dl>
 <!--
           <h2 class="govuk-heading-m">Compensator</h2>

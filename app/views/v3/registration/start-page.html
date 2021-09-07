@@ -1,0 +1,95 @@
+{% extends folder+ "/layout.html" %}
+
+{% block pageTitle %}
+Insurance company -  Who is the insurance company paying the compensation?
+{% endblock %}
+
+
+{% block globalnav %}
+<div class="govuk-breadcrumbs">
+    <ol class="govuk-breadcrumbs__list">
+      <li class="govuk-breadcrumbs__list-item">
+        <a class="govuk-breadcrumbs__link" href="#">Home</a>
+      </li>
+      <li class="govuk-breadcrumbs__list-item">
+        <a class="govuk-breadcrumbs__link" href="#">Section</a>
+      </li>
+      <li class="govuk-breadcrumbs__list-item" aria-current="page">Subsection</li>
+    </ol>
+  </div>
+{% endblock %}
+
+{% block content %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-l">Register a compensation recovery claim</h1>
+      <p class="govuk-body">Use this service to:</p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>register a new road traffic accident claim</li>
+        <li>view an existing road traffic accident claim to check what you may owe</li>
+        <li>settle a road traffic accident claim</li>
+      </ul>
+
+<p class="govuk-body">Compensators who receive a claim for compensation must register the claim within 14 days.</p>
+
+<p class="govuk-body"> Registering the claim does not mean that you have accepted liability for the accident or injury.
+
+
+      <p class="govuk-body">Registering takes around 5 minutes.</p>
+<p class="govuk-body">To view or settle an existing claim you'll need:</p>
+<ul class="govuk-list govuk-list--bullet">
+  <li>the claim reference number</li>
+  <li>the injured person's date of birth</li>
+
+</ul>
+<div class="govuk-inset-text">
+  This service is only available to pre-registered organisations while we test how it works. You'll need the username and password you were given to sign in.
+</div>
+      {{ govukButton({
+        text: "Start now",
+        href: "signin",
+        classes: "govuk-!-margin-top-2 govuk-!-margin-bottom-8",
+        isStartButton: true
+      }) }}
+
+      <h2 class="govuk-heading-m">Before you start</h2>
+
+      <p class="govuk-body">You can also <a class="govuk-link" href="https://www.gov.uk/government/publications/compensation-recovery-unit-forms">register by post</a>.</p>
+
+  <p class="govuk-body">You can only use this service to register road traffic accident claims (also known as motor liability). To register any other claim including public liability, employer liability and clinical negligence, you must <a href="https://www.gov.uk/government/publications/compensation-recovery-unit-forms">complete a CRU1 form</a> instead.</p>
+
+      <p class="govuk-body">You cannot use this service unless you were given a username and password.</p>
+    </div>
+
+    <div class="govuk-grid-column-one-third">
+
+      <!-- The Related items component is not part of GOV.UK Frontend but will be styled if used in the Prototype Kit -->
+
+      <aside class="app-related-items" role="complementary">
+        <h2 class="govuk-heading-m" id="subsection-title">
+          Related content
+        </h2>
+        <nav role="navigation" aria-labelledby="subsection-title">
+          <ul class="govuk-list govuk-!-font-size-16">
+            <li>
+              <a class="govuk-link" href="https://www.gov.uk/government/publications/compensation-and-repaying-dwp-if-you-think-our-decision-is-wrong">
+                Compensation and repaying DWP: if you think our decision is wrong
+              </a>
+            </li>
+            <li>
+              <a class="govuk-link" href="https://www.gov.uk/government/collections/cru#contact-cru">
+                Contact the Compensation Recovery Unit
+              </a>
+            </li>
+
+          </ul>
+        </nav>
+      </aside>
+
+    </div>
+  </div>
+{% endblock %}

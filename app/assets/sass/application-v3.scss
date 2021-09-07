@@ -57,20 +57,3 @@ $govuk-assets-path: '/govuk/assets/';
     margin-bottom:1em;
     padding:0 0 1em 0;
 }
-
-button.govuk-link
-{
-    border:none;
-    color:$govuk-link-colour;
-    text-decoration:underline;
-    background:transparent;
-    padding:0;
-
-    &:hover{
-        color:$govuk-link-hover-colour;
-    }
-
-    &:visited{
-        color:$govuk-link-visited-colour;
-    }
-}
