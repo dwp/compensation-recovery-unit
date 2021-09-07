@@ -1,0 +1,36 @@
+
+{% extends folder+ "/layout.html" %}
+
+{% block pageTitle %}
+Injury details -  What type of injury did the person suffer
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <a href="javascript: history.go(-1)" class="govuk-back-link govuk-!-margin-bottom-5">Back</a>
+
+  
+        <form action="injury-answer" method="post" class="form"> 
+    
+          <h1 class="govuk-heading-xl">Tell us about the injuries</h1>
+
+          <button class="govuk-button govuk-button-secondary" data-module="govuk-button">
+            Add injury
+          </button>
+        
+
+      <button class="govuk-button" data-module="govuk-button">
+        Continue
+      </button>
+
+ 
+
+
+    </form>
+
+    </div>
+  </div>
+
+{% endblock %}
