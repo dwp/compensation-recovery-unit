@@ -1,0 +1,84 @@
+
+{% extends folder+ "/layout.html" %}
+
+{% block pageTitle %}
+Add settlement date
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <a href="javascript: history.go(-1)" class="govuk-back-link govuk-!-margin-bottom-5">Back</a>
+      <form class="form" action="settlement-confirm" method="post">
+
+
+
+
+      {% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+{{ govukRadios({
+  idPrefix: "type-of-settlement",
+  name: "type-of-settlement",
+  fieldset: {
+    legend: {
+      text: "What type of settlement was it?",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--l"
+    }
+  },
+  items: [
+    {
+      value: "Final payment",
+      text: "Final payment"
+    },
+    {
+      value: "Payment into court - accepted within 21 days",
+      text: "Payment into court - accepted within 21 days"
+    },
+    {
+      value: "Payment into court - accepted outside 21 days",
+      text: "Payment into court - accepted outside 21 days"
+    },
+    {
+      value: "Interim compensation",
+      text: "Interim compensation"
+    }
+    ,
+    {
+      value: "Interim payment has become final",
+      text: "Interim payment has become final"
+    } ,
+    {
+      value: "Structured settlement",
+      text: "Structured settlement"
+    } ,
+    {
+      value: "Provisional damages",
+      text: "Provisional damages"
+    } ,
+    {
+      value: "Claim withdrawn or unsuccessful",
+      text: "Claim withdrawn or unsuccessful"
+    } ,
+    {
+      value: "Claim repudiated or statute barred",
+      text: "Claim repudiated or statute barred"
+    } ,
+    {
+      value: "Claim settled or statute barred",
+      text: "Claim settled or statute barred"
+    }
+  ]
+}) }}
+
+      <button class="govuk-button" data-module="govuk-button">
+        Continue
+      </button>
+
+    </form>
+
+    </div>
+  </div>
+
+{% endblock %}

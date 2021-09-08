@@ -25,8 +25,8 @@ Register a claim with the Compensation Recovery Unit
           <ul class="app-task-list__items">
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
-                <a href="about-the-injured-person" aria-describedby="">
-                  Tell us who was injured
+                <a href="injured-person-address.html" aria-describedby="">
+                  Tell us the injured persons address
                 </a>
               </span>
               {% if checked('injured-persons-details','completed') %}
@@ -63,28 +63,6 @@ Register a claim with the Compensation Recovery Unit
 
           </ul>
         </li>
-
-        <li>
-          <h2 class="app-task-list__section">
-            <span class="app-task-list__section-number">3. </span> Your companies reference number
-          </h2>
-          <ul class="app-task-list__items">
-            <li class="app-task-list__item">
-              <span class="app-task-list__task-name">
-                <a href="compensator-reference" aria-describedby="list-convictions-status">
-                  Provide your companies reference number
-                </a>
-              </span>
-              {% if checked('compensator-details','completed') %}
-              <strong class="govuk-tag app-task-list__tag countcompleted" id="">Completed</strong>
-              {% elif checked('compensator-details','started') %}
-              <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="contact-details-status">In progress</strong>
-              {% else %}
-              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="financial-evidence-status">Not started yet</strong>
-              {% endif %}
-            </li>
-          </ul>
-        </li> 
         <li>
           <h2 class="app-task-list__section">
             <span class="app-task-list__section-number">3. </span> Injured person's representative
@@ -107,8 +85,30 @@ Register a claim with the Compensation Recovery Unit
           </ul>
         </li>
         <li>
+
+          <li>
+            <h2 class="app-task-list__section">
+              <span class="app-task-list__section-number">4. </span> Your companies reference number
+            </h2>
+            <ul class="app-task-list__items">
+              <li class="app-task-list__item">
+                <span class="app-task-list__task-name">
+                  <a href="compensator-reference" aria-describedby="list-convictions-status">
+                    Provide your companies reference number
+                  </a>
+                </span>
+                {% if checked('compensator-details','completed') %}
+                <strong class="govuk-tag app-task-list__tag countcompleted" id="">Completed</strong>
+                {% elif checked('compensator-details','started') %}
+                <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="contact-details-status">In progress</strong>
+                {% else %}
+                <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="financial-evidence-status">Not started yet</strong>
+                {% endif %}
+              </li>
+            </ul>
+          </li> 
           <h2 class="app-task-list__section">
-            <span class="app-task-list__section-number">4. </span> Submit claim
+            <span class="app-task-list__section-number">5. </span> Submit claim
           </h2>
           <ul class="app-task-list__items">
             <li class="app-task-list__item">

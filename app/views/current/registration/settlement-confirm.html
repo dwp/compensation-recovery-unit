@@ -1,0 +1,40 @@
+
+{% extends folder+ "/layout.html" %}
+
+{% block pageTitle %}
+Comfirm settlement date and reason
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <a href="javascript: history.go(-1)" class="govuk-back-link govuk-!-margin-bottom-5">Back</a>
+      <form class="form" action="case-view" method="post">
+
+        <h1 class="govuk-heading-l">Comfirm settlement date and reason</h1>
+
+<ul class="govuk-list">
+  <li>Settlement date: <strong>{{ data['settlement-date-day']}} {{ data['settlement-date-month']}} {{ data['settlement-date-year']}}</strong></li>
+  <li>Settlement type: <strong>{{ data['type-of-settlement']}}</strong></li>
+</ul>
+
+
+<div class="govuk-radios__item govuk-visually-hidden">
+  <input class="govuk-radios__input" id="case-settled" name="case-settled" type="radio" value="yes" checked>
+  <label class="govuk-label govuk-radios__label" for="case-settled">
+   hidden radio for logic
+  </label>
+</div>
+
+
+      <button class="govuk-button" data-module="govuk-button">
+        Confirm
+      </button>
+
+    </form>
+
+    </div>
+  </div>
+
+{% endblock %}
