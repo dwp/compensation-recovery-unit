@@ -14,9 +14,12 @@ Insurance company -  Who is the insurance company paying the compensation?
         <form class="form" action="task-list" method="post">
           <div class="govuk-form-group">
             <h1 class="govuk-label-wrapper"><label class="govuk-label govuk-label--l" for="compensator-reference">
-              Provide your companies reference number (optional)
+              What is your reference number for this claim?
               </label>
             </h1>
+            <label class="govuk-label govuk-date-input__label" for="dob-month">
+                      (Optional)
+                    </label>
             <input class="govuk-input govuk-input--width-10" id="compensator-reference" name="compensator-reference" type="text" value="{{data['compensator-reference']}}">
           </div>
 
