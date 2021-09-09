@@ -15,7 +15,7 @@ Register a claim with the Compensation Recovery Unit
       </h1>
 
       <h2 class="govuk-heading-s govuk-!-margin-bottom-2">Registration incomplete</h2>
-      <p class="govuk-body govuk-!-margin-bottom-7">You have completed <span class="numcompleted"></span> of 4 sections.</p>
+      <p class="govuk-body govuk-!-margin-bottom-7">You have completed <span class="numcompleted"></span> of 5 sections.</p>
 
       <ol class="app-task-list">
         <li>
@@ -26,7 +26,7 @@ Register a claim with the Compensation Recovery Unit
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
                 <a href="injured-person-address.html" aria-describedby="">
-                  Tell us the injured persons address
+                  Provide their address
                 </a>
               </span>
               {% if checked('injured-persons-details','completed') %}
@@ -88,13 +88,13 @@ Register a claim with the Compensation Recovery Unit
 
           <li>
             <h2 class="app-task-list__section">
-              <span class="app-task-list__section-number">4. </span> Your companies reference number
+              <span class="app-task-list__section-number">4. </span> Your company details
             </h2>
             <ul class="app-task-list__items">
               <li class="app-task-list__item">
                 <span class="app-task-list__task-name">
                   <a href="compensator-reference" aria-describedby="list-convictions-status">
-                    Provide your companies reference number
+                    Provide reference number
                   </a>
                 </span>
                 {% if checked('compensator-details','completed') %}
@@ -106,7 +106,7 @@ Register a claim with the Compensation Recovery Unit
                 {% endif %}
               </li>
             </ul>
-          </li> 
+          </li>
           <h2 class="app-task-list__section">
             <span class="app-task-list__section-number">5. </span> Submit claim
           </h2>
