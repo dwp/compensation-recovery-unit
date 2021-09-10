@@ -2,7 +2,7 @@
 {% extends folder+ "/layout.html" %}
 
 {% block pageTitle %}
-About the injured person -  Does the injured person have a national insurance number
+Injury details -  What type of injury did the person suffer
 {% endblock %}
 
 {% block content %}
@@ -12,58 +12,39 @@ About the injured person -  Does the injured person have a national insurance nu
         <a href="javascript: history.go(-1)" class="govuk-back-link govuk-!-margin-bottom-5">Back</a>
 
   
-        <form action="injury-answer" method="post" class="form"> 
+        <form action="other-injuries" method="post" class="form"> 
     
-
-        
-
-
-          {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
-
-
-
-          {{ govukCheckboxes({
-            idPrefix: "injury",
-            name: "injury",
-            fieldset: {
-              legend: {
-                text: "What type of injury did the person suffer?",
-                isPageHeading: true,
-                classes: "govuk-fieldset__legend--l"
-              }
-            },
-            hint: {
-              text: "Select all that apply"
-            },
-            items: [
-            {
-              value: "Whiplash",
-              text: "Whiplash",
-              checked: checked("injury", "Whiplash")
-            },
-            {
-                value: "Physical injury other than whiplash",
-                text: "Physical injury other than whiplash",
-                checked: checked("injury","Physical injury other than whiplash")
-              },
-              {
-                value: "Psychological",
-                text: "Psychological",
-                checked: checked("injury","Psychological"),
-                hint: {
-                  text: "For example, travel anxiety"
-                }
-              },
-              {
-                value: "Neurological",
-                text: "Neurological",
-                checked: checked("injury","Neurological"),
-                hint: {
-                  text: "For example, tingling or numbness"
-                }
-              }
-            ]
-          }) }}
+              <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset" aria-describedby="other-injuries-hint">
+                  <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                    <h1 class="govuk-fieldset__heading">
+                      <span class="govuk-caption-xl">Injury details
+                      </span>
+                      Did the person suffer other injury?
+                    </h1>
+                  </legend>
+                  <div class="govuk-hint">
+                    Includes physical, psychological or neurological injuries
+                  </div>
+                  <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="other-injuries" name="other-injuries" type="radio" value="Yes" {{ checked("other-injuries", "Yes") }}>
+                      <label class="govuk-label govuk-radios__label" for="other-injuries">
+                       Yes
+                      </label>
+                    </div>
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="other-injuries" name="other-injuries" type="radio" value="No~task-list" {{ checked("other-injuries", "No") }}>
+                      <label class="govuk-label govuk-radios__label" for="other-injuries">
+                       No
+                      </label>
+                    </div>
+                  </div>
+              
+                </fieldset>
+    
+                
+              </div>
 
 
         

@@ -84,22 +84,42 @@ Check your answers before registering the claim
                 </a>
               </dd>
             </div>
+         
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Whiplash
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  {% if checked('whiplash','No') %} 
+                  No
+                  {% else %}
+                  Yes
+                  {% endif %}
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link" href="whiplash-gaurd">
+                    Change<span class="govuk-visually-hidden"> whiplash</span>
+                  </a>
+                </dd>
+              </div>
+              
+
+    
 
 
 
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
-                Injury
+                Other injuries
               </dt>
-               <!-- start Whiplash -->
+
+           
               <dd class="govuk-summary-list__value">
-                {% if checked('injury','Whiplash')%}
-                <h3 class="govuk-heading-s govuk-!-margin-bottom-0">Neck shoulders and arms</h3>
-                <p>
-                 Whiplash
-                 </p>
-                {% endif %}
-                 <!-- End whiplash -->
+
+                {% if checked('other-injuries','No')%}
+                No
+                {% else %}
+           
 {% if checked('injury','Physical injury other than whiplash')%}
                   <!-- start Shoulder or Head -->
    {% if checked('where-is-the-injury','Head') %}
@@ -111,8 +131,8 @@ Check your answers before registering the claim
  <!-- End Head -->
 
     <!-- start Face -->
-    {% if checked('where-is-the-injury','Face') %}
-    <h3 class="govuk-heading-s govuk-!-margin-bottom-0">Face</h3>
+    {% if checked('where-is-the-injury','Face, cheekbones or jaw') %}
+    <h3 class="govuk-heading-s govuk-!-margin-bottom-0">Face, cheekbones or jaw</h3>
     <p>
      {{ data['face']}} {{ data['more-detail-face']}}
      </p>
@@ -129,8 +149,8 @@ Check your answers before registering the claim
    <!-- End ear-->
 
        <!-- start Jaw or teeth -->
-       {% if checked('where-is-the-injury','Jaw or teeth') %}
-       <h3 class="govuk-heading-s govuk-!-margin-bottom-0">Jaw or teeth</h3>
+       {% if checked('where-is-the-injury','Teeth') %}
+       <h3 class="govuk-heading-s govuk-!-margin-bottom-0">Teeth</h3>
        <p>
          {{ data['jaw-teeth']}} {{ data['more-detail-jaw-teeth']}}
        </p>
@@ -153,6 +173,16 @@ Check your answers before registering the claim
   </p>
  {% endif %}
   <!-- end Shoulder or collarbone-->
+
+   <!-- start Back-->
+{% if checked('where-is-the-injury','Back or spine') %}
+<h3 class="govuk-heading-s govuk-!-margin-bottom-0">Back or spine</h3>
+<p>
+  {{ data['back']}} {{ data['more-detail-back']}}
+  </p>
+{% endif %}
+
+ <!-- End Back-->
 
    <!-- start Shoulder or arm -->
    {% if checked('where-is-the-injury','Arm or wrist') %}
@@ -181,15 +211,7 @@ Check your answers before registering the claim
   {% endif %}
  <!-- end Chest -->
 
- <!-- start Back-->
-{% if checked('where-is-the-injury','Back or spine') %}
-<h3 class="govuk-heading-s govuk-!-margin-bottom-0">Back or spine</h3>
-<p>
-  {{ data['back']}} {{ data['more-detail-back']}}
-  </p>
-{% endif %}
 
- <!-- End Back-->
 
   <!-- start Abdomen-->
 {% if checked('where-is-the-injury','Abdomen') %}
@@ -256,13 +278,20 @@ Check your answers before registering the claim
       {{ data['neurological']}} {{ data['more-detail-neurological']}}
     </p>
     {% endif %}
-
+    {% endif %}
 
               </dd>
               <dd class="govuk-summary-list__actions">
+                {% if checked('other-injuries','No')%}
                 <a class="govuk-link" href="injury-gaurd.html">
                   Change<span class="govuk-visually-hidden">Injury details</span>
                 </a>
+                {% else %}
+                <a class="govuk-link" href="other-injuries.html">
+                  Change<span class="govuk-visually-hidden">Injury details</span>
+                </a>
+                {% endif %}
+               
               </dd>
             </div>
           </dl>
