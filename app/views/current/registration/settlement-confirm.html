@@ -12,12 +12,38 @@ Comfirm settlement date and reason
         <a href="javascript: history.go(-1)" class="govuk-back-link govuk-!-margin-bottom-5">Back</a>
       <form class="form" action="case-view" method="post">
 
-        <h1 class="govuk-heading-l">Comfirm settlement date and reason</h1>
+        <h1 class="govuk-heading-l">Check your answers before submitting</h1>
 
-<ul class="govuk-list">
-  <li>Settlement date: <strong>{{ data['settlement-date-day']}} {{ data['settlement-date-month']}} {{ data['settlement-date-year']}}</strong></li>
-  <li>Settlement type: <strong>{{ data['type-of-settlement']}}</strong></li>
-</ul>
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Date of settlement
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['settlement-date-day']}} {{ data['settlement-date-month']}} {{ data['settlement-date-year']}}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="settlement-date">
+                Change<span class="govuk-visually-hidden"> date</span>
+              </a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Type of settlement
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['type-of-settlement']}}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="settlement-type">
+                Change<span class="govuk-visually-hidden"> type of settlement</span>
+              </a>
+            </dd>
+          </div>
+        </dl>
+
+
 
 
 <div class="govuk-radios__item govuk-visually-hidden">
@@ -29,7 +55,7 @@ Comfirm settlement date and reason
 
 
       <button class="govuk-button" data-module="govuk-button">
-        Confirm
+        Submit
       </button>
 
     </form>

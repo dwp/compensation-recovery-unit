@@ -30,7 +30,7 @@ Register a claim with the Compensation Recovery Unit
       Claim reference
     </dt>
     <dd class="govuk-summary-list__value">
-      UTS-12345
+      CRU12345
     </dd>
   </div>
   <div class="govuk-summary-list__row">
@@ -38,7 +38,7 @@ Register a claim with the Compensation Recovery Unit
       Name of injured person
     </dt>
     <dd class="govuk-summary-list__value">
-      {{ data['first-name'] | default('Sarah') }}  {{ data['last-name'] | default('Philips') }}
+      {{ data['first-name'] | default('Bojen') }}  {{ data['last-name'] | default('Westoros') }}
     </dd>
   </div>
   <div class="govuk-summary-list__row">
@@ -46,7 +46,8 @@ Register a claim with the Compensation Recovery Unit
       National Insurance number of injured person
     </dt>
     <dd class="govuk-summary-list__value">
-      <p class="govuk-body">NI123456A</p>
+      {{ data['ni-number'] | default('QQ123456C') }}
+      <p class="govuk-body"></p>
     </dd>
   </div>
   <div class="govuk-summary-list__row">
@@ -54,7 +55,7 @@ Register a claim with the Compensation Recovery Unit
       Date
     </dt>
     <dd class="govuk-summary-list__value">
-      <p class="govuk-body">11 August 2021</p>
+      <p class="govuk-body">14 September 2021</p>
     </dd>
   </div>
 
@@ -71,7 +72,7 @@ Register a claim with the Compensation Recovery Unit
           Name of compensator
         </dt>
         <dd class="govuk-summary-list__value">
-          Esure insurance ltd
+          Compensator Ltd
         </dd>
       </div>
       <div class="govuk-summary-list__row">
@@ -88,7 +89,7 @@ Register a claim with the Compensation Recovery Unit
   <p class="govuk-body">We check our records to see if the person who was injured received a benefit or payment from DWP as a resut of their injury.</p><p class="govuk-body"> If a benefit or payment was made, the compensator will need to pay this amount of any settlement claim back to us, rather than directly to the injured person.</p>
 
   <h2 class="govuk-heading-m">How long this statement is valid for</h2>
-    <p class="govuk-body">This statement is only valid on <strong>11 August 2021</strong>.</p>
+    <p class="govuk-body">This statement is only valid on <strong>14 September 2021</strong>.</p>
 
     <h2 class="govuk-heading-m">Tell us about a change</h2>
       <p class="govuk-body">You must let us know if there is any change to this claim. The easiest way to do this by signing in to your online portal and selecting 'Find an existing claim'. <strong>You'll need the claim reference number shown on this statement.</strong> </p>

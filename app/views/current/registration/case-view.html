@@ -15,16 +15,16 @@ Register a claim with the Compensation Recovery Unit
 
             <h1 class="govuk-heading-xl">
               <span class="govuk-caption-xl"> Claim reference</span>
-             CRU123456
+             CRU12345
             </h1>
             {% if checked('case-settled','yes') %}
             {% from "govuk/components/notification-banner/macro.njk" import govukNotificationBanner %}
 
 {% set html %}
   <h3 class="govuk-notification-banner__heading">
-    You have settled this case
+    This case is settled
   </h3>
-  <p class="govuk-body">Contact <a class="govuk-notification-banner__link" href="#">example@department.gov.uk</a> if you think there's a problem.</p>
+  <p class="govuk-body">Contact <a href="mailto:CRU.Customerfeedback@dwp.gov.uk" class="govuk-link">CRU.Customerfeedback@dwp.gov.uk</a> if you think there's a problem.</p>
 {% endset %}
 
 {{ govukNotificationBanner({
@@ -37,10 +37,10 @@ Register a claim with the Compensation Recovery Unit
             <dl class="govuk-summary-list govuk-!-margin-bottom-9">
               <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">
-                  Name
+                  Name of injured person
                 </dt>
                 <dd class="govuk-summary-list__value">
-                  Sarah Philips
+                  {{ data['first-name'] | default('Bojen') }}  {{ data['last-name'] | default('Westoros') }}
                 </dd>
               </div>
               <div class="govuk-summary-list__row">
@@ -48,7 +48,7 @@ Register a claim with the Compensation Recovery Unit
                   Date of birth
                 </dt>
                 <dd class="govuk-summary-list__value">
-                  5 January 1978
+                  9 April 1966
                 </dd>
               </div>
              <!-- <div class="govuk-summary-list__row">
@@ -107,7 +107,7 @@ Register a claim with the Compensation Recovery Unit
 
     <p class="govuk-body">
       <span class="govuk-body govuk-!-font-size-48 govuk-!-font-weight-bold govuk-!-display-block">NIL</span>
-      Sarah Phillips has not received any benefit or payments as a result of the injury.
+      Bojen Westoros has not received any benefit or payments as a result of the injury.
     </p>
 
 
@@ -156,7 +156,7 @@ Register a claim with the Compensation Recovery Unit
                 Name
               </dt>
               <dd class="govuk-summary-list__value">
-                Sarah Philips
+                Bojen Westoros
               </dd>
               <dd class="govuk-summary-list__actions"></dd>
             </div>
@@ -165,7 +165,7 @@ Register a claim with the Compensation Recovery Unit
                 Date of birth
               </dt>
               <dd class="govuk-summary-list__value">
-                5 January 1978
+                9 April 1966
               </dd>
               <dd class="govuk-summary-list__actions"></dd>
             </div>
@@ -174,7 +174,7 @@ Register a claim with the Compensation Recovery Unit
                 National Insurance number
               </dt>
               <dd class="govuk-summary-list__value">
-                <p class="govuk-body"> JJ 22 33 44 D</p>
+                <p class="govuk-body"> NY 57 63 36 A</p>
               </dd>
               <dd class="govuk-summary-list__actions"></dd>
             </div>
@@ -201,7 +201,7 @@ Register a claim with the Compensation Recovery Unit
                 Date of injury
               </dt>
               <dd class="govuk-summary-list__value">
-                20 December 2020
+                17 July 2021
               </dd>
               <dd class="govuk-summary-list__actions">
                 <a class="govuk-link" href="#">
