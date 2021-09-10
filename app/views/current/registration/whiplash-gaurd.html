@@ -1,0 +1,59 @@
+
+{% extends folder+ "/layout.html" %}
+
+{% block pageTitle %}
+About the injured person -  Does the injured person have a national insurance number
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <a href="javascript: history.go(-1)" class="govuk-back-link govuk-!-margin-bottom-5">Back</a>   
+        {% if checked('checkanswers','yes')%}
+        <form class="form" action="check-answers" method="post">
+          {% else %}
+                <form class="form" action="injury-gaurd" method="post">
+          {% endif %}
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset" aria-describedby="whiplash-hint">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                <h1 class="govuk-fieldset__heading">
+                  <span class="govuk-caption-xl">Injury details
+                  </span>
+                  Did the person suffer whiplash?
+                </h1>
+              </legend>
+              <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="whiplash" name="whiplash" type="radio" value="Yes" {{ checked("whiplash", "Yes") }}>
+                  <label class="govuk-label govuk-radios__label" for="whiplash">
+                   Yes
+                  </label>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="whiplash" name="whiplash" type="radio" value="No" {{ checked("whiplash", "No") }}>
+                  <label class="govuk-label govuk-radios__label" for="whiplash">
+                   No
+                  </label>
+                </div>
+              </div>
+          
+            </fieldset>
+
+            
+          </div>
+
+
+  
+
+      <button class="govuk-button" data-module="govuk-button">
+        Continue
+      </button>
+      
+    </form>
+
+    </div>
+  </div>
+
+{% endblock %}

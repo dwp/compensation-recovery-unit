@@ -51,7 +51,7 @@ Register a claim with the Compensation Recovery Unit
                   Tell us about the injury
                 </a>
               </span>
-              {% if checked('claim-details','completed') %}
+              {% if checked('claim-details','completed') or checked('whiplash','Yes')%}
               <strong class="govuk-tag app-task-list__tag countcompleted" id="">Completed</strong>
               {% elif checked('claim-details','started') %}
               <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="contact-details-status">In progress</strong>
