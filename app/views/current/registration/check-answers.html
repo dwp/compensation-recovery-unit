@@ -266,114 +266,8 @@ Check your answers before registering the claim
               </dd>
             </div>
           </dl>
-<!--
-          <h2 class="govuk-heading-m">Compensator</h2>
-          <dl class="govuk-summary-list govuk-!-margin-bottom-9">
-            <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key">
-                Company name
-              </dt>
-              <dd class="govuk-summary-list__value">
-                {{ data['compensator-name'] | default('Direct insurance') }}
-              </dd>
-              <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="#">
-                  Change<span class="govuk-visually-hidden"> date</span>
-                </a>
-              </dd>
-            </div>
-            <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key">
-                Is there a representative?
-              </dt>
-              <dd class="govuk-summary-list__value">
-                {{ data['rep-compensator'] | default('No') }}
-              </dd>
-              <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="#">
-                  Change<span class="govuk-visually-hidden"> date</span>
-                </a>
-              </dd>
-            </div>
-            {% if checked('rep-compensator','Yes')%}
-          </dl>
-          <h2 class="govuk-heading-m">Compensator's representative</h2>
-          <dl class="govuk-summary-list govuk-!-margin-bottom-9">
-            <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key">
-                Company name
-              </dt>
-              <dd class="govuk-summary-list__value">
-                {{ data['compensator-rep-name'] | default('Ashville solicitors') }}
-              </dd>
-              <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="#">
-                  Change<span class="govuk-visually-hidden"> date</span>
-                </a>
-              </dd>
-            </div>
-            {% endif %}
-              <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-                  Email address
-                </dt>
-                <dd class="govuk-summary-list__value">
-                  {{ data['compensator-rep-email'] | default('paul.husdoon@asc.co.uk') }}
-                </dd>
-                <dd class="govuk-summary-list__actions">
-                  <a class="govuk-link" href="#">
-                    Change<span class="govuk-visually-hidden">email address</span>
-                  </a>
-                </dd>
-              </div>
-            <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key">
-                Reference number
-              </dt>
-              <dd class="govuk-summary-list__value">
-                {{ data['compensator-rep-reference'] | default('DI345567Y') }}
-              </dd>
-              <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="#">
-                  Change<span class="govuk-visually-hidden"> reference</span>
-                </a>
-              </dd>
-            </div>
-            <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key">
-                Telephone number
-              </dt>
-              <dd class="govuk-summary-list__value">
-                {{ data['compensator-rep-phone-number'] | default('0800 897 654') }}
-              </dd>
-              <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="#">
-                  Change<span class="govuk-visually-hidden">telephone number</span>
-                </a>
-              </dd>
-            </div>
-            <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key">
-                Address
-              </dt>
-              <dd class="govuk-summary-list__value">
-                {% if checked("choose-participent", "3") %}
-                {{ data['comp-address'] | default('Sabre House, 150 South Street,') }}<br>Dorking<br>Surrey<br>{{ data['compensatorpostcode'] | default('SW1H 9AJ') }}
-                {% elif checked("choose-participent", "2")%}
-                {{ data['comp-address'] | default('Enbrook Park') }}<br> Sandgate <br>Folkestone<br>Kent<br>{{ data['compensatorpostcode'] | default('CT20 3S') }}
-                {% else %}
-                {{ data['comp-address'] | default('104 Petty France') }}<br>London<br>{{ data['compensatorpostcode'] | default('SW1H 9AJ') }}
-                {% endif %}
-              </dd>
-              <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="#">
-                  Change<span class="govuk-visually-hidden"> address</span>
-                </a>
-              </dd>
-            </div>
-          </dl> -->
 
-          <h2 class="govuk-heading-m">Injured person's solicitor</h2>
+          <h2 class="govuk-heading-m">Injured person's representative</h2>
 
 
           <dl class="govuk-summary-list govuk-!-margin-bottom-9">
@@ -440,6 +334,24 @@ Check your answers before registering the claim
               <dd class="govuk-summary-list__actions">
                 <a class="govuk-link" href="#">
                   Change<span class="govuk-visually-hidden"> address</span>
+                </a>
+              </dd>
+            </div>
+</dl>
+    
+       
+          <h2 class="govuk-heading-m">Your company details</h2>
+          <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Reference number
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ data['compensator-reference'] | default('DI345567Y') }}
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="#">
+                  Change<span class="govuk-visually-hidden"> reference</span>
                 </a>
               </dd>
             </div>
