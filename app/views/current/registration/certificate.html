@@ -13,14 +13,14 @@ Register a claim with the Compensation Recovery Unit
         <div class="govuk-grid-column-full">
 
 
-  <img src="/public/images/dwp-logo.png" class="dwp-logo">
+  <img src="/public/images/dwp-logo.png" alt="Department for Work and Pensions logo">
 
 
           <h1 class="govuk-heading-xl" style="margin-top:50px">
-            Compensation recovery statement
+            Compensation recovery certificate
           </h1>
           <h2 class="govuk-heading-m">
-            This is an official document. Please keep this for your records.
+            You do not owe any recoverable benefit payments for this claim.
           </h2>
 
           <dl class="govuk-summary-list govuk-summary-list--no-border">
@@ -33,6 +33,7 @@ Register a claim with the Compensation Recovery Unit
       CRU12345
     </dd>
   </div>
+
   <div class="govuk-summary-list__row">
     <dt class="govuk-summary-list__key">
       Name of injured person
@@ -43,7 +44,7 @@ Register a claim with the Compensation Recovery Unit
   </div>
   <div class="govuk-summary-list__row">
     <dt class="govuk-summary-list__key">
-      National Insurance number of injured person
+      National Insurance number
     </dt>
     <dd class="govuk-summary-list__value">
       {{ data['ni-number'] | default('QQ123456C') }}
@@ -52,19 +53,19 @@ Register a claim with the Compensation Recovery Unit
   </div>
   <div class="govuk-summary-list__row">
     <dt class="govuk-summary-list__key">
-      Date
+      Amount to pay
     </dt>
     <dd class="govuk-summary-list__value">
-      <p class="govuk-body">14 September 2021</p>
+      <p class="govuk-body">NIL</p>
     </dd>
   </div>
 
 </dl>
-  <p class="govuk-body">The amount to pay for this claim is NIL.</p>
+  <p class="govuk-body"><strong>This certificate is only valid on 14 September 2021.</strong></p>
 <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
 
   <h2 class="govuk-heading-m">What this means<h2>
-    <p class="govuk-body">This statement shows the amount to pay the Department for Work and Pensions (DWP) for this claim.</p><p class="govuk-body"> The amount is equal to any benefits or payments the injured person received as a direct result of the injury reported in this claim.</p><p class="govuk-body"> This amount must be paid by the compensator named on this statement.</p>
+    <p class="govuk-body">This certificate shows the amount to pay the Department for Work and Pensions (DWP) for this claim.</p><p class="govuk-body"> The amount is equal to any benefits or payments the injured person received in connection with the injuries reported in this claim.</p><p class="govuk-body"> This amount must be paid by the compensator named on this certificate.</p>
     <dl class="govuk-summary-list govuk-summary-list--no-border">
 
       <div class="govuk-summary-list__row">
@@ -80,19 +81,19 @@ Register a claim with the Compensation Recovery Unit
           Compensator reference
         </dt>
         <dd class="govuk-summary-list__value">
-          {{ data['compensator-rep-reference'] | default('DI345567Y') }}
+          {{ data['compensator-rep-reference'] | default('123456') }}
         </dd>
       </div>
     </dl>
 
 <h2 class="govuk-heading-m">How we calculate the amount to pay<h2>
-  <p class="govuk-body">We check our records to see if the person who was injured received a benefit or payment from DWP as a resut of their injury.</p><p class="govuk-body"> If a benefit or payment was made, the compensator will need to pay this amount of any settlement claim back to us, rather than directly to the injured person.</p>
+  <p class="govuk-body">We check our records to see if the person who was injured received a benefit or payment from DWP in connection with their injury.</p><p class="govuk-body"> If a benefit or payment was made, the compensator will need to pay this amount of any settlement claim back to us, rather than directly to the injured person.</p>
 
   <h2 class="govuk-heading-m">How long this statement is valid for</h2>
     <p class="govuk-body">This statement is only valid on <strong>14 September 2021</strong>.</p>
 
     <h2 class="govuk-heading-m">Tell us about a change</h2>
-      <p class="govuk-body">You must let us know if there is any change to this claim. The easiest way to do this by signing in to your online portal and selecting 'Find an existing claim'. <strong>You'll need the claim reference number shown on this statement.</strong> </p>
+      <p class="govuk-body">You must let us know if there is any change to this claim. The easiest way to do this by signing in to your online portal and selecting 'Find an existing claim'. <strong>You'll need the claim reference number shown on this certificate.</strong> </p>
   <p class="govuk-body">You can also tell us about a change by calling us on 0800 15 13196.</p>
   <h2 class="govuk-heading-m">If you think we've made an error</h2>
     <p class="govuk-body">Call us straight away on 0800 15 13196. We will review the claim details based on the information you have given us.</p>
