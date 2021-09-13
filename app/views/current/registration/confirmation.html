@@ -48,7 +48,7 @@ Register a claim with the Compensation Recovery Unit
 
               <p class="govuk-body">
                 <span class="govuk-body govuk-!-font-size-48 govuk-!-font-weight-bold govuk-!-display-block">NIL</span>
-                Sarah Phillips has not received any benefit or payments as a result of the injury.
+                {{ data['first-name'] | default('Bojen') }}  {{ data['last-name'] | default('Westoros') }} has not received any benefit or payments as a result of the injury.
               </p>
 
 
