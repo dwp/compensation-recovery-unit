@@ -1,0 +1,66 @@
+
+{% extends folder+ "/layout.html" %}
+
+{% block pageTitle %}
+About the injured person - Enter injured person's name and date of birth
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <a href="javascript: history.go(-1)" class="govuk-back-link govuk-!-margin-bottom-5">Back</a>
+        <form class="form" action="representative-address" method="post">
+      <h1 class="govuk-heading-xl">
+        <span class="govuk-caption-xl">Injured person's representative</span>
+        Add the representative's details
+      </h1>
+
+      <div class="govuk-form-group">
+        <label class="govuk-label" for="represesntative-name">
+            Name of company or person
+          </label>
+        <input class="govuk-input" id="represesntative-name" name="represesntative-name" type="text" value="{{data['represesntative-name']}}">
+      </div>
+
+      <div class="govuk-form-group">
+        <label class="govuk-label" for="email-solicitor">
+         Email address
+        </label>
+        <div id="email-solicitor-hint" class="govuk-hint">
+          We’ll use this to send information about the claim
+        </div>
+        <input class="govuk-input" id="email-solicitor" name="email-solicitor" type="email-solicitor" spellcheck="false" aria-describedby="email-solicitor-hint" autocomplete="email-solicitor">
+      </div>
+
+      <div class="govuk-form-group">
+        <label class="govuk-label" for="represesntative-phone-number">
+          Telephone number
+          </label>
+        <input class="govuk-input govuk-input--width-10" id="represesntative-name" name="represesntative-phone-number" type="text" value="{{data['represesntative-phone-number']}}">
+      </div>
+
+      <div class="govuk-form-group">
+        <label class="govuk-label" for="represesntative-reference">
+          Reference number (optional)
+          </label>
+        <input class="govuk-input govuk-input--width-10" id="represesntative-name" name="represesntative-reference" type="text" value="{{data['represesntative-reference']}}">
+      </div>
+
+      <div class="govuk-radios__item govuk-visually-hidden">
+        <input class="govuk-radios__input" id="injured-persons-details" name="represesntative-details" type="radio" value="started" checked>
+        <label class="govuk-label govuk-radios__label" for="injured-persons-details">
+         hidden radio for logic
+        </label>
+      </div>
+
+      <button class="govuk-button" data-module="govuk-button">
+        Continue
+      </button>
+
+    </form>
+
+    </div>
+  </div>
+
+{% endblock %}

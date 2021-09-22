@@ -1,0 +1,144 @@
+
+{% extends folder+ "/layout.html" %}
+
+{% block pageTitle %}
+About the claim and injuries - Please tell us the date of the accident or alleged clinical negligence
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <a href="javascript: history.go(-1)" class="govuk-back-link govuk-!-margin-bottom-5">Back</a>
+        <form class="form" action="about-the-injury" method="post">
+          <h1 class="govuk-heading-l"><span class="govuk-caption-l">Injury details</span>Physical injury other than whiplash</h1>
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                <h2 class="govuk-fieldset__heading">
+                  Which part of the body was injured?
+                  </label>
+                </h2>
+              </legend>
+              <div id="body-hint" class="govuk-hint">
+                Select all that apply
+              </div>
+              <div class="govuk-checkboxes govuk-checkboxes--small">
+
+
+
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="where-is-the-injury" name="where-is-the-injury" type="checkbox" value="Head"}} {{ checked('where-is-the-injury','Head')}}>
+                  <label class="govuk-label govuk-checkboxes__label" for="where-is-the-injury">
+                    Head
+                  </label>
+                </div>
+
+
+
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="where-is-the-injury-4" name="where-is-the-injury" type="checkbox" value="Face, cheekbones or jaw" {{ checked('where-is-the-injury','Face, cheekbones or jaw')}}>
+                  <label class="govuk-label govuk-checkboxes__label" for="where-is-the-injury-4">
+                    Face, cheekbones or jaw
+                  </label>
+                </div>
+
+
+
+
+
+
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="where-is-the-injury-4" name="where-is-the-injury" type="checkbox" value="Ear" {{ checked('where-is-the-injury','Ear')}}>
+                  <label class="govuk-label govuk-checkboxes__label" for="where-is-the-injury-4">
+                    Ear
+                  </label>
+                </div>
+
+
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="where-is-the-injury-2" name="where-is-the-injury" type="checkbox" value="Teeth" {{ checked('where-is-the-injury','Teeth')}}>
+                  <label class="govuk-label govuk-checkboxes__label" for="where-is-the-injury-2">
+                    Teeth
+                  </label>
+                </div>
+
+
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="where-is-the-injury" name="where-is-the-injury" type="checkbox" value="Neck or throat" {{ checked('where-is-the-injury','Neck or throat')}}>
+                  <label class="govuk-label govuk-checkboxes__label" for="where-is-the-injury">
+                    Neck or throat
+                  </label>
+                </div>
+
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="where-is-the-injury-2" name="where-is-the-injury" type="checkbox" value="Shoulder or collarbone" {{ checked('where-is-the-injury','Shoulder or collarbone')}}>
+                  <label class="govuk-label govuk-checkboxes__label" for="where-is-the-injury-2">
+                    Shoulder or collarbone
+                  </label>
+                </div>
+
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="where-is-the-injury-3" name="where-is-the-injury" type="checkbox" value="Back or spine" {{ checked('where-is-the-injury','Back or spine')}}>
+                  <label class="govuk-label govuk-checkboxes__label" for="where-is-the-injury-3">
+                    Back or spine
+                  </label>
+                </div>
+
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="where-is-the-injury-4" name="where-is-the-injury" type="checkbox" value="Ribs, chest or torso" {{ checked('where-is-the-injury','Ribs, chest or torso')}}>
+                  <label class="govuk-label govuk-checkboxes__label" for="where-is-the-injury-4">
+                    Ribs, chest or torso
+                  </label>
+                </div>
+
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="where-is-the-injury-4" name="where-is-the-injury" type="checkbox" value="Arm or wrist" {{ checked('where-is-the-injury','Arm or wrist')}}>
+                  <label class="govuk-label govuk-checkboxes__label" for="where-is-the-injury-4">
+                   Arm or wrist
+                  </label>
+                </div>
+
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="where-is-the-injury-4" name="where-is-the-injury" type="checkbox" value="Hand or finger" {{ checked('where-is-the-injury','Hand or finger')}}>
+                  <label class="govuk-label govuk-checkboxes__label" for="where-is-the-injury-4">
+                    Hand or finger
+                  </label>
+                </div>
+
+
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="where-is-the-injury-4" name="where-is-the-injury" type="checkbox" value="Hip, pelvis or genitals" {{ checked('where-is-the-injury','Hip, pelvis or genitals')}}>
+                  <label class="govuk-label govuk-checkboxes__label" for="where-is-the-injury-4">
+                    Hip, pelvis or genitals
+                  </label>
+                </div>
+
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="where-is-the-injury-4" name="where-is-the-injury" type="checkbox" value="Leg, knee or ankle" {{ checked('where-is-the-injury','Leg, knee or ankle')}}>
+                  <label class="govuk-label govuk-checkboxes__label" for="where-is-the-injury-4">
+                    Leg, knee or ankle
+                  </label>
+                </div>
+
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="where-is-the-injury-4" name="where-is-the-injury" type="checkbox" value="Foot or toe" {{ checked('where-is-the-injury','Foot or toe')}}>
+                  <label class="govuk-label govuk-checkboxes__label" for="where-is-the-injury-4">
+                    Foot or toe
+                  </label>
+                </div>
+              </div>
+
+            </fieldset>
+          </div>
+
+      <button class="govuk-button" data-module="govuk-button">
+        Continue
+      </button>
+
+    </form>
+
+    </div>
+  </div>
+
+{% endblock %}

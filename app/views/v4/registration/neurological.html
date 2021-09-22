@@ -1,0 +1,110 @@
+
+{% extends folder+ "/layout.html" %}
+
+{% block pageTitle %}
+About the claim and injuries - Please tell us the date of the accident or alleged clinical negligence
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <a href="javascript: history.go(-1)" class="govuk-back-link govuk-!-margin-bottom-5">Back</a>
+        {% if checked('checkanswers','yes')%}
+<form class="form" action="check-answers" method="post">
+  {% else %}
+        <form class="form" action="task-list" method="post">
+  {% endif %}
+
+
+
+
+
+             {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+             {% from "govuk/components/textarea/macro.njk" import govukTextarea %}
+
+             {% from "govuk/components/input/macro.njk" import govukInput %}
+             {% set injuryHtml %}
+            {{ govukTextarea({
+              name: "more-detail-neurological",
+              id: "more-detail-neurological",
+              value:data['more-detail-neurological'],
+              label: {
+                text: "Can you provide more detail?"
+              }
+            }) }}
+               {% endset -%}
+
+        {{ govukCheckboxes({
+         classes: "govuk-checkboxes--small",
+         idPrefix: "neurological",
+         name: "neurological",
+         fieldset: {
+           legend: {
+             text: "What was the neurological injury?",
+             isPageHeading: true,
+             classes: "govuk-fieldset__legend--l"
+           }
+         },
+         items: [
+         {
+           value: "Tingling or numbness",
+           text: "Tingling or numbness",
+           checked: checked("neurological", "Tingling or numbness")
+         },
+         {
+          value: "Change to senses",
+          text: "Change to senses",
+          checked: checked("neurological", "Change to senses")
+        },
+         {
+           value: "Nausea",
+           text: "Nausea",
+           checked: checked("neurological", "Nausea")
+         },
+         {
+          value: "Balance loss",
+          text: "Balance loss",
+          checked: checked("neurological", "Balance loss")
+        },
+        {
+          value: "Memory loss",
+          text: "Memory loss",
+          checked: checked("neurological", "Memory loss")
+        },
+        {
+          value: " ",
+          text: "Other neurological injury",
+          checked: checked("neurological", " "),
+          conditional: {
+            html: injuryHtml
+          }
+        }
+      ]
+       }) }}
+
+
+
+
+
+
+
+
+
+      <div class="govuk-radios__item govuk-visually-hidden">
+        <input class="govuk-radios__input" id="claim-details" name="claim-details" type="radio" value="completed" checked>
+        <label class="govuk-label govuk-radios__label" for="claim-details">
+         hidden radio for logic
+        </label>
+      </div>
+
+      <button class="govuk-button" data-module="govuk-button">
+        Continue
+      </button>
+
+    </form>
+
+    </div>
+  </div>
+
+{% endblock %}

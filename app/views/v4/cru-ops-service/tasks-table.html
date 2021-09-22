@@ -1,0 +1,115 @@
+
+{% extends folder+ "/layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% set nav = "Tasks" %}
+
+{% block content %}
+
+
+{% set totcases = 0 %}
+{% set nilcases = 0 %}
+{% set intcases = 0 %}
+{% set intcasestasks = 0 %}
+
+
+
+	{% for case in cases %}
+
+<!-- BASE VALUES -->
+
+
+  {% if case %}
+   {% set totcases = totcases + 1 %}
+   {% endif %}
+
+    {% if case.interest === "no"  %}
+     {% set nilcases = nilcases + 1 %}
+    {% endif %}
+
+  {% if case.interest === "yes" %}
+     {% set intcases = intcases + 1 %}
+    {% endif %}
+
+    {% if case.task === "yes" %}
+    {% set intcasestasks = intcasestasks + 1 %}
+   {% endif %}
+
+{% endfor %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      {% include "./_globalnav.html" %} 
+      <h1 class="govuk-heading-l">
+      Tasks ({{intcasestasks}})
+      </h1>
+     
+
+      <form class="form" action="" method="post">
+      <div class="govuk-grid-row">
+   
+        <div class="govuk-grid-column-full">
+          <table class="govuk-table">
+            <caption class="govuk-table__caption govuk-table__caption--l govuk-visually-hidden">Tasks</caption>
+            <thead class="govuk-table__head">
+
+              
+              <tr class="govuk-table__row">
+                <th scope="col" class="govuk-table__header">Name</th>
+                <th scope="col" class="govuk-table__header">National insurance number</th>
+                <th scope="col" class="govuk-table__header">Task</th>
+                <th scope="col" class="govuk-table__header">Due</th>
+              </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+
+              {% for case in cases %}
+              {% if case.task === "yes" %}
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header"><a href="../case/case-details-and-tasks-accordion?reference={{case.reference}}" class="govuk-body govuk-link  govuk-!-display-block govuk-!-margin-bottom-0">{{case.firstname}} {{case.lastname}}</a></th>
+                <td class="govuk-table__cell">{{ case.nino }}</td>
+                <td class="govuk-table__cell">Benefit interest identified, add to old cru</td>
+                <td class="govuk-table__cell">28 Days</td>
+              </tr>
+
+              <div class="govuk-radios__item  govuk-visually-hidden">
+                <input class="govuk-radios__input" id="case-links" name="case-link" type="radio" value="hide~../case/case-details-and-tasks-accordion?reference={{case.reference}}" checked>
+                <label class="govuk-label govuk-radios__label" for="case-links">
+                  selected radio for logic
+                </label>
+              </div>
+
+              {% endif %}
+
+           
+             {% endfor %} 
+            </tbody>
+          </table>
+      </div>
+      </div>
+
+    
+
+      </form>
+     
+    
+
+
+
+    
+
+  
+
+
+    
+
+
+
+
+    </div>
+  </div>
+
+{% endblock %}

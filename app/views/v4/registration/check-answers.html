@@ -1,0 +1,407 @@
+
+{% extends folder+ "/layout.html" %}
+
+{% block pageTitle %}
+Check your answers before registering the claim
+{% endblock %}
+
+{% block content %}
+
+
+  <div class="govuk-width-container">
+    <a href="javascript: history.go(-1)" class="govuk-back-link govuk-!-margin-bottom-5">Back</a>
+
+    <main class="govuk-main-wrapper " id="main-content" role="main">
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-three-quarters-from-desktop">
+
+          <h1 class="govuk-heading-xl">Check your answers before registering the claim</h1>
+
+          <h2 class="govuk-heading-m">The injured person</h2>
+
+          <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Name
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ data['first-name'] | default('Sarah') }}  {{ data['last-name'] | default('Philips') }}
+              </dd>
+              <dd class="govuk-summary-list__actions">
+          
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Date of birth
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ data['date-of-birth-day'] | default("28") }} {{ data['date-of-birth-month'] | default("02") | toMonth }} {{ data['date-of-birth-year'] | default("1978") }}
+              </dd>
+              <dd class="govuk-summary-list__actions">
+               
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                National Insurance number
+              </dt>
+              <dd class="govuk-summary-list__value">
+                <p class="govuk-body"> {{ data['ni-number'] | default('AA 11 22 33 B ') }}</p>
+              </dd>
+              <dd class="govuk-summary-list__actions">
+  
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Address
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ data['choose-ip-address'] | default('4 High Street') }}<br>Thrupp<br>{{ data['addresspostcode'] | default('SW11 4DY') }}
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="injured-person-address">
+                  Change<span class="govuk-visually-hidden"> address</span>
+                </a>
+              </dd>
+            </div>
+          </dl>
+
+          <h2 class="govuk-heading-m">Injury details</h2>
+
+          <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Date of injury
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ data['claim-date-day'] | default("3") }} {{ data['claim-date-month'] | default("03") | toMonth }} {{ data['claim-date-year'] | default("2020") }}
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="date-of-claim">
+                  Change<span class="govuk-visually-hidden"> date of injury</span>
+                </a>
+              </dd>
+            </div>
+         
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Whiplash
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  {% if checked('whiplash','No') %} 
+                  No
+                  {% else %}
+                  Yes
+                  {% endif %}
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link" href="whiplash-gaurd">
+                    Change<span class="govuk-visually-hidden"> whiplash</span>
+                  </a>
+                </dd>
+              </div>
+              
+
+    
+
+
+
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Other injuries
+              </dt>
+
+           
+              <dd class="govuk-summary-list__value">
+
+                {% if checked('other-injuries','No')%}
+                No
+                {% else %}
+           
+{% if checked('injury','Physical injury other than whiplash')%}
+                  <!-- start Shoulder or Head -->
+   {% if checked('where-is-the-injury','Head') %}
+   <h3 class="govuk-heading-s govuk-!-margin-bottom-0">Head</h3>
+   <p>
+    {{ data['head']}} {{ data['more-detail-head']}}
+    </p>
+   {% endif %}
+ <!-- End Head -->
+
+    <!-- start Face -->
+    {% if checked('where-is-the-injury','Face, cheekbones or jaw') %}
+    <h3 class="govuk-heading-s govuk-!-margin-bottom-0">Face, cheekbones or jaw</h3>
+    <p>
+     {{ data['face']}} {{ data['more-detail-face']}}
+     </p>
+    {% endif %}
+  <!-- End face-->
+
+     <!-- start ear -->
+     {% if checked('where-is-the-injury','Ear') %}
+     <h3 class="govuk-heading-s govuk-!-margin-bottom-0">Ear</h3>
+     <p>
+      {{ data['ear']}} {{ data['more-detail-ear']}}
+      </p>
+     {% endif %}
+   <!-- End ear-->
+
+       <!-- start Jaw or teeth -->
+       {% if checked('where-is-the-injury','Teeth') %}
+       <h3 class="govuk-heading-s govuk-!-margin-bottom-0">Teeth</h3>
+       <p>
+         {{ data['jaw-teeth']}} {{ data['more-detail-jaw-teeth']}}
+       </p>
+       {% endif %}
+       <!-- End or teeth -->
+
+
+{% if checked('where-is-the-injury','Neck or throat')%}
+<h3 class="govuk-heading-s govuk-!-margin-bottom-0">Neck or throat</h3>
+<p>
+{{ data['neck']}} {{ data['more-detail-neck']}}</p>
+
+{% endif %}
+<!-- End Neck-->
+ <!-- start Shoulder or collarbone-->
+ {% if checked('where-is-the-injury','Shoulder or collarbone') %}
+ <h3 class="govuk-heading-s govuk-!-margin-bottom-0">Shoulder or collarbone</h3>
+ <p>
+  {{ data['shoulder-collarbone']}} {{ data['more-detail-shoulder-collarbone']}}
+  </p>
+ {% endif %}
+  <!-- end Shoulder or collarbone-->
+
+   <!-- start Back-->
+{% if checked('where-is-the-injury','Back or spine') %}
+<h3 class="govuk-heading-s govuk-!-margin-bottom-0">Back or spine</h3>
+<p>
+  {{ data['back']}} {{ data['more-detail-back']}}
+  </p>
+{% endif %}
+
+ <!-- End Back-->
+
+   <!-- start Shoulder or arm -->
+   {% if checked('where-is-the-injury','Arm or wrist') %}
+   <h3 class="govuk-heading-s govuk-!-margin-bottom-0">Arm or wrist</h3>
+   <p>
+    {{ data['arm']}} {{ data['more-detail-arm']}}
+    </p>
+   {% endif %}
+ <!-- End arm -->
+
+    <!-- start Shoulder or hand -->
+    {% if checked('where-is-the-injury','Hand or finger') %}
+    <h3 class="govuk-heading-s govuk-!-margin-bottom-0">Hand or finger</h3>
+    <p>
+     {{ data['hand']}} {{ data['more-detail-hand']}}
+     </p>
+    {% endif %}
+  <!-- End hand -->
+
+  <!-- start Chest -->
+  {% if checked('where-is-the-injury','Chest') %}
+  <h3 class="govuk-heading-s govuk-!-margin-bottom-0">Chest</h3>
+  <p>
+    {{ data['chest-torso']}} {{ data['more-detail-chest-torso']}}
+    </p>
+  {% endif %}
+ <!-- end Chest -->
+
+
+
+  <!-- start Abdomen-->
+{% if checked('where-is-the-injury','Abdomen') %}
+<h3 class="govuk-heading-s govuk-!-margin-bottom-0">Abdomen</h3>
+<p>
+  {{ data['abdomen']}} {{ data['more-detail-abdomen']}}
+  </p>
+{% endif %}
+
+ <!-- End Back-->
+
+  <!-- start Arm, wrist, hand or finger -->
+  {% if checked('where-is-the-injury','Arm, wrist, hand or finger') %}
+  <h3 class="govuk-heading-s govuk-!-margin-bottom-0">Arm, wrist, hand or finger</h3>
+  <p>
+    {{ data['arm']}} {{ data['more-detail-arm']}}
+    </p>
+  {% endif %}
+ <!-- end Arm, wrist, hand or finger -->
+
+
+    <!-- start Hip or pelvis -->
+    {% if checked('where-is-the-injury','Hip or pelvis') %}
+    <h3 class="govuk-heading-s govuk-!-margin-bottom-0">Hip or pelvis</h3>
+    <p>
+      {{ data['hip-pelvis']}} {{ data['more-detail-hip-pelvis']}}
+    </p>
+    {% endif %}
+    <!-- end or pelvis -->
+
+      <!-- start Leg, knee or ankle -->
+  {% if checked('where-is-the-injury','Leg, knee or ankle') %}
+  <h3 class="govuk-heading-s govuk-!-margin-bottom-0">Leg, knee or ankle</h3>
+  <p>
+    {{ data['leg']}} {{ data['more-detail-leg']}}
+  </p>
+  {% endif %}
+  <!-- end Leg, knee, ankle or foot -->
+
+    <!-- start Foot or toe -->
+    {% if checked('where-is-the-injury','Foot or toe') %}
+    <h3 class="govuk-heading-s govuk-!-margin-bottom-0">Foot or toe</h3>
+    <p>
+      {{ data['foot']}} {{ data['more-detail-foot']}}
+    </p>
+    {% endif %}
+    <!-- end Foot or toe-->
+{% endif %}
+
+    {% if checked('injury','Psychological')%}
+    <h3 class="govuk-heading-s govuk-!-margin-bottom-0">Psychological</h3>
+    <p>
+      {{ data['psychological']}} {{ data['more-detail-psychological']}}
+    </p>
+    {% endif %}
+
+
+
+
+    {% if checked('injury','Neurological')%}
+
+    <h3 class="govuk-heading-s govuk-!-margin-bottom-0">Neurological</h3>
+    <p>
+      {{ data['neurological']}} {{ data['more-detail-neurological']}}
+    </p>
+    {% endif %}
+    {% endif %}
+
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                {% if checked('other-injuries','No')%}
+                <a class="govuk-link" href="injury-gaurd.html">
+                  Change<span class="govuk-visually-hidden">Injury details</span>
+                </a>
+                {% else %}
+                <a class="govuk-link" href="other-injuries.html">
+                  Change<span class="govuk-visually-hidden">Injury details</span>
+                </a>
+                {% endif %}
+               
+              </dd>
+            </div>
+          </dl>
+
+          <h2 class="govuk-heading-m">Injured person's representative</h2>
+
+
+          <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Company name
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ data['represesntative-name'] | default('McAdar Solicitors') }}
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="#">
+                  Change<span class="govuk-visually-hidden">Solictor name</span>
+                </a>
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Email address
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ data['email-solicitor'] | default('claims@mcadarx.co.uk') }}
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="#">
+                  Change<span class="govuk-visually-hidden">email address</span>
+                </a>
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Reference number
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ data['represesntative-reference'] | default('Cr1234567') }}
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="#">
+                  Change<span class="govuk-visually-hidden"> About the accident or incident</span>
+                </a>
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Telephone number
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ data['represesntative-phone-number'] | default('07880109642') }}
+
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="#">
+                  Change<span class="govuk-visually-hidden">telephone</span>
+                </a>
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Address
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ data['solicitor-address'] | default('Ivy House, Ivy Lane') }}<br>Warehorne<br>{{ data['representativepostcode'] | default('TN26 9XE') }}
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="#">
+                  Change<span class="govuk-visually-hidden"> address</span>
+                </a>
+              </dd>
+            </div>
+</dl>
+    
+       
+          <h2 class="govuk-heading-m">Your company details</h2>
+          <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Reference number
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ data['compensator-reference'] | default('DI345567Y') }}
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="#">
+                  Change<span class="govuk-visually-hidden"> reference</span>
+                </a>
+              </dd>
+            </div>
+          </dl>
+          {% if data['setuser'] =='compensator' %}
+          <p class="govuk-body">By submitting this claim you are confirming that, to the best of your knowledge, the details you are providing are correct.</p>
+          {% endif %}
+
+          <form action="confirmation" method="post" novalidate>
+
+            <input type="hidden" name="answers-checked" value="true">
+
+            <button class="govuk-button" data-module="govuk-button">
+              Register claim
+            </button>
+
+          </form>
+
+        </div>
+      </div>
+    </main>
+  </div>
+
+{% endblock %}

@@ -1,0 +1,47 @@
+
+{% extends folder+ "/layout.html" %}
+
+{% block pageTitle %}
+About the injured person -  Does the injured person have a national insurance number
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <a href="javascript: history.go(-1)" class="govuk-back-link govuk-!-margin-bottom-5">Back</a>
+
+
+
+
+
+        <form class="form" action="injured-person-address-choice" method="post">
+
+
+
+             <h1 class="govuk-heading-xl">
+              <span class="govuk-caption-xl">The injured person</span>
+              What is their home address?
+             </h1>
+
+        <div class="govuk-form-group">
+
+           <label class="govuk-label govuk-!-font-weight-bold" for="addresspostcode">
+             Postcode
+           </label>
+              <input class="govuk-input govuk-input--width-10" id="addresspostcode" name="addresspostcode" type="text" value="{{ data['addresspostcode']}}">
+         </div>
+
+
+       <button class="govuk-button" data-module="govuk-button">
+         Find address
+       </button>
+       <p class="govuk-body"><a href="address-manual">They live outside the UK</a></p>
+
+
+    </form>
+
+    </div>
+  </div>
+
+{% endblock %}

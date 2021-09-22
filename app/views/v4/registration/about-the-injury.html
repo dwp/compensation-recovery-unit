@@ -1,0 +1,964 @@
+
+{% extends folder+ "/layout.html" %}
+
+{% block pageTitle %}
+About the claim and injuries - Please tell us the date of the accident or alleged clinical negligence
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <a href="javascript: history.go(-1)" class="govuk-back-link govuk-!-margin-bottom-5">Back</a>
+        
+        {% if checked('checkanswerslocal','physical') %}
+        <form class="form" action="check-answers" method="post">
+        {% elif checked('injury','Psychological') and checked('checkanswers','yes') %}
+        <form class="form" action="psychological" method="post">
+        {% elif checked('checkanswers','yes') and data['injury'] !=='Psychological' %}
+       
+        <form class="form" action="check-answers" method="post">
+        {% elif checked('injury','Psychological') %}
+        <form class="form" action="psychological" method="post">
+        {% else %}
+        <form class="form" action="task-list" method="post">
+        {% endif %}
+          <h1 class="govuk-heading-l">
+            <span class="govuk-caption-xl">Injury details</span>
+            What was the physical injury other than whiplash?
+             </h1>
+
+
+
+
+             {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+             {% from "govuk/components/textarea/macro.njk" import govukTextarea %}
+
+
+
+
+
+   <!-- start Shoulder or Head -->
+   {% if checked('where-is-the-injury','Head') %}
+   {% from "govuk/components/input/macro.njk" import govukInput %}
+        {% set injuryHtml %}
+        {{ govukTextarea({
+          name: "more-detail-head",
+          id: "more-detail-head",
+          value:data['more-detail-head'],
+          label: {
+            text: "Can you provide more detail?"
+          }
+        }) }}
+          {% endset -%}
+
+   {{ govukCheckboxes({
+    classes: "govuk-checkboxes--small",
+    idPrefix: "head",
+    name: "head",
+    fieldset: {
+      legend: {
+        text: "Select head injuries",
+        isPageHeading: false,
+        classes: "govuk-fieldset__legend--m"
+      }
+    },
+    items: [
+    {
+      value: "Soft tissue injury (for example, bruise, strain or tear)",
+      text: " Soft tissue injury (for example, bruise, strain or tear)",
+      checked: checked("head", "Soft tissue injury (for example, bruise, strain or tear)")
+    },
+    {
+      value: "Pain or discomfort",
+      text: "Pain or discomfort",
+      checked: checked("head", "Pain or discomfort")
+    },
+    {
+      value: "Cuts or scarring",
+      text: "Cuts or scarring",
+      checked: checked("head", "Cuts or scarring")
+    },
+   {
+     value: "Fracture",
+     text: " Fracture",
+     checked: checked("head", "Fracture")
+   },
+   {
+     value: "Burns",
+     text: "Burns",
+     checked: checked("head", "Burns")
+   },
+   {
+    value: "Concussion",
+    text: "Concussion",
+    checked: checked("head", "Concussion")
+  },
+  {
+    value: "Headache",
+    text: "Headache",
+    checked: checked("head", "Headache")
+  },
+  {
+    value: "Bleed on the brain",
+    text: "Bleed on the brain",
+    checked: checked("head", "Bleed on the brain")
+  },
+   {
+     value: " ",
+     text: "Other head injury",
+     checked: checked("head", " "),
+     conditional: {
+       html: injuryHtml
+     }
+   }
+ ]
+  }) }}
+
+   {% endif %}
+
+
+ <!-- End Head -->             
+
+
+
+<!-- Start Face -->
+{% if checked('where-is-the-injury','Face, cheekbones or jaw') %}
+{% from "govuk/components/input/macro.njk" import govukInput %}
+     {% set injuryHtml %}
+    {{ govukTextarea({
+      name: "more-detail-face",
+      id: "more-detail-face",
+      value:data['more-detail-face'],
+      label: {
+        text: "Can you provide more detail?"
+      }
+    }) }}
+       {% endset -%}
+
+{{ govukCheckboxes({
+ classes: "govuk-checkboxes--small",
+ idPrefix: "face",
+ name: "face",
+ fieldset: {
+   legend: {
+     text: "Select face, cheekbones or jaw injuries",
+     isPageHeading: false,
+     classes: "govuk-fieldset__legend--m"
+   }
+ },
+ items: [
+{
+  value: "Soft tissue injury (for example, bruise, strain or tear)",
+  text: " Soft tissue injury (for example, bruise, strain or tear)",
+  checked: checked("face", "Soft tissue injury (for example, bruise, strain or tear)")
+},
+{
+  value: "Pain or discomfort",
+  text: "Pain or discomfort",
+  checked: checked("face", "Pain or discomfort")
+},
+{
+  value: "Cuts or scarring",
+  text: "Cuts or scarring",
+  checked: checked("face", "Cuts or scarring")
+},
+{
+ value: "Fracture",
+ text: " Fracture",
+ checked: checked("face", "Fracture")
+},
+{
+ value: "Burns",
+ text: "Burns",
+ checked: checked("face", "Burns")
+},
+{
+value: "Broken nose",
+text: "Broken nose",
+checked: checked("face", "Broken nose")
+},
+{
+value: "Nose bleed",
+text: "Nose bleed",
+checked: checked("face", "Nose bleed")
+},
+{
+value: "Full or partial loss of sight",
+text: "Full or partial loss of sight",
+checked: checked("face", "Full or partial loss of sight")
+},
+{
+ value: " ",
+ text: "Other face injury",
+ checked: checked("face", " "),
+ conditional: {
+   html: injuryHtml
+ }
+}
+]
+}) }}
+
+{% endif %}
+<!-- End Face -->
+
+    <!-- start Ears -->
+    {% if checked('where-is-the-injury','Ear') %}
+    {% from "govuk/components/input/macro.njk" import govukInput %}
+         {% set injuryHtml %}
+        {{ govukTextarea({
+          name: "more-detail-ear",
+          id: "more-detail-ear",
+          value:data['more-detail-ear'],
+          label: {
+            text: "Can you provide more detail?"
+          }
+        }) }}
+           {% endset -%}
+
+    {{ govukCheckboxes({
+     classes: "govuk-checkboxes--small",
+     idPrefix: "ear",
+     name: "ear",
+     fieldset: {
+       legend: {
+         text: "Select ear injuries",
+         isPageHeading: false,
+         classes: "govuk-fieldset__legend--m"
+       }
+     },
+     items: [
+    {
+      value: "Soft tissue injury (for example, bruise, strain or tear)",
+      text: " Soft tissue injury (for example, bruise, strain or tear)",
+      checked: checked("ears", "Soft tissue injury (for example, bruise, strain or tear)")
+    },
+    {
+      value: "Pain or discomfort",
+      text: "Pain or discomfort",
+      checked: checked("ears", "Pain or discomfort")
+    },
+    {
+      value: "Cuts or scarring",
+      text: "Cuts or scarring",
+      checked: checked("ears", "Cuts or scarring")
+    },
+   {
+     value: "Burns",
+     text: "Burns",
+     checked: checked("ears", "Burns")
+   },
+  {
+    value: "Ringing in ears",
+    text: "Ringing in ears",
+    checked: checked("ears", "Ringing in ears")
+  },
+   {
+     value: " ",
+     text: "Other ear injury",
+     checked: checked("ears", " "),
+     conditional: {
+       html: injuryHtml
+     }
+   }
+ ]
+   }) }}
+
+    {% endif %}
+    <!-- end ear -->
+
+     <!-- start Jaw or teeth -->
+     {% if checked('where-is-the-injury','Teeth') %}
+     {% from "govuk/components/input/macro.njk" import govukInput %}
+          {% set injuryHtml %}
+         {{ govukTextarea({
+           name: "more-detail-teeth",
+           id: "more-detail-teeth",
+           value:data['more-detail-teeth'],
+           label: {
+             text: "Can you provide more detail?"
+           }
+         }) }}
+            {% endset -%}
+ 
+     {{ govukCheckboxes({
+      classes: "govuk-checkboxes--small",
+      idPrefix: "jaw-teeth",
+      name: "jaw-teeth",
+      fieldset: {
+        legend: {
+          text: "Select teeth injuries",
+          isPageHeading: false,
+          classes: "govuk-fieldset__legend--m"
+        }
+      },
+      items: [
+     {
+       value: "Soft tissue injury (for example, bruise, strain or tear)",
+       text: " Soft tissue injury (for example, bruise, strain or tear)",
+       checked: checked("jaw-teeth", "Soft tissue injury (for example, bruise, strain or tear)")
+     },
+     {
+       value: "Pain or discomfort",
+       text: "Pain or discomfort",
+       checked: checked("jaw-teeth", "Pain or discomfort")
+     },
+     {
+       value: "Cuts or scarring",
+       text: "Cuts or scarring",
+       checked: checked("jaw-teeth", "Cuts or scarring")
+     },
+    {
+      value: "Fracture",
+      text: " Fracture",
+      checked: checked("jaw-teeth", "Fracture")
+    },
+    {
+      value: "Burns",
+      text: "Burns",
+      checked: checked("jaw-teeth", "Fracture")
+    },
+    {
+     value: "Tooth loss",
+     text: "Tooth loss",
+     checked: checked("jaw-teeth", "Tooth loss")
+   },
+    {
+      value: " ",
+      text: "Other teeth injury",
+      checked: checked("jaw-teeth", " "),
+      conditional: {
+        html: injuryHtml
+      }
+    }
+  ]
+    }) }}
+ 
+     {% endif %}
+     <!-- End or teeth -->
+
+
+<!-- start Neck-->
+
+{% if checked('where-is-the-injury','Neck or throat') %}
+{% from "govuk/components/input/macro.njk" import govukInput %}
+     {% set injuryHtml %}
+    {{ govukTextarea({
+      name: "more-detail-neck",
+      id: "more-detail-neck",
+      value:data['more-detail-neck'],
+      label: {
+        text: "Can you provide more detail?"
+      }
+    }) }}
+       {% endset -%}
+
+{{ govukCheckboxes({
+ classes: "govuk-checkboxes--small",
+ idPrefix: "neck",
+ name: "neck",
+ fieldset: {
+   legend: {
+     text: "Select neck or thoat injuries",
+     isPageHeading: false,
+     classes: "govuk-fieldset__legend--m"
+   }
+ },
+ items: [
+    {
+      value: "Soft tissue injury (for example, bruise, strain or tear)",
+      text: " Soft tissue injury (for example, bruise, strain or tear)",
+      checked: checked("neck", "Soft tissue injury (for example, bruise, strain or tear)")
+    },
+    {
+      value: "Pain or discomfort",
+      text: "Pain or discomfort",
+      checked: checked("neck", "Pain or discomfor")
+    },
+    {
+      value: "Cuts or scarring",
+      text: "Cuts or scarring",
+      checked: checked("neck", "Cuts or scarring")
+    },
+   {
+     value: "Fracture",
+     text: " Fracture",
+     checked: checked("neck", "Fracture")
+   },
+   {
+     value: "Burns",
+     text: "Burns",
+     checked: checked("neck", "Burns")
+   },
+   {
+     value: " ",
+     text: "Other neck injury",
+     checked: checked("neck", " "),
+
+
+     conditional: {
+       html: injuryHtml
+     }
+   }
+ ]
+}) }}
+
+{% endif %}
+
+<!-- End Neck-->
+
+ <!-- start Shoulder or collarbone-->
+ {% if checked('where-is-the-injury','Shoulder or collarbone') %}
+ {% from "govuk/components/input/macro.njk" import govukInput %}
+      {% set injuryHtml %}
+      {{ govukTextarea({
+        name: "more-detail-shoulder-collarbone",
+        id: "more-detail-shoulder-collarbone",
+        value:data['more-detail-shoulder-collarbone'],
+        label: {
+          text: "Can you provide more detail?"
+        }
+      }) }}
+        {% endset -%}
+
+ {{ govukCheckboxes({
+  classes: "govuk-checkboxes--small",
+  idPrefix: "shoulder-collarbone",
+  name: "shoulder-collarbone",
+  fieldset: {
+    legend: {
+      text: "Select shoulder or collarbone injuries",
+      isPageHeading: false,
+      classes: "govuk-fieldset__legend--m"
+    }
+  },
+  items: [
+    {
+      value: "Soft tissue injury (for example, bruise, strain or tear)",
+      text: " Soft tissue injury (for example, bruise, strain or tear)",
+      checked: checked("shoulder-collarbone", "Soft tissue injury (for example, bruise, strain or tear)")
+    },
+    {
+      value: "Pain or discomfort",
+      text: "Pain or discomfort",
+      checked: checked("shoulder-collarbone", "Pain or discomfort")
+    },
+    {
+      value: "Cuts or scarring",
+      text: "Cuts or scarring",
+      checked: checked("shoulder-collarbone", "Cuts or scarring")
+    },
+   {
+     value: "Fracture",
+     text: " Fracture",
+     checked: checked("shoulder-collarbone", "Frature")
+   },
+   {
+     value: "Burns",
+     text: "Burns",
+     checked: checked("shoulder-collarbone", "Burns")
+   },
+   {
+     value: " ",
+     text: "Other shoulder or collarbone injury",
+     checked: checked("shoulder-collarbone", " "),
+     conditional: {
+       html: injuryHtml
+     }
+   }
+ ]
+}) }}
+
+ {% endif %}
+  <!-- end Shoulder or collarbone-->
+
+
+<!-- start Back or spine-->
+{% if checked('where-is-the-injury','Back or spine') %}
+{% from "govuk/components/input/macro.njk" import govukInput %}
+     {% set injuryHtml %}
+    {{ govukTextarea({
+      name: "more-detail-back",
+      id: "more-detail-back",
+      value:data['more-detail-back'],
+      label: {
+        text: "Can you provide more detail?"
+      }
+    }) }}
+       {% endset -%}
+
+{{ govukCheckboxes({
+ classes: "govuk-checkboxes--small",
+ idPrefix: "back",
+ name: "back",
+ fieldset: {
+   legend: {
+     text: "Select back or spine injuries",
+     isPageHeading: false,
+     classes: "govuk-fieldset__legend--m"
+   }
+ },
+ items: [
+    {
+      value: "Soft tissue injury (for example, bruise, strain or tear)",
+      text: " Soft tissue injury (for example, bruise, strain or tear)",
+      checked: checked("back", "Soft tissue injury (for example, bruise, strain or tear)")
+    },
+    {
+      value: "Pain or discomfort",
+      text: "Pain or discomfort",
+      checked: checked("back", "Pain or discomfort")
+    },
+    {
+      value: "Cuts or scarring",
+      text: "Cuts or scarring",
+      checked: checked("back", "Cuts or scarring")
+    },
+   {
+     value: "Fracture",
+     text: " Fracture",
+     checked: checked("back", "Fracture")
+   },
+   {
+     value: "Burns",
+     text: "Burns",
+     checked: checked("back", "Burns")
+   },
+   {
+     value: " ",
+     text: "Other back or spine injury",
+     checked: checked("back", " "),
+     conditional: {
+       html: injuryHtml
+     }
+   }
+ ]
+}) }}
+
+{% endif %}
+
+ <!-- End Back-->
+
+     <!-- start Chest -->
+     {% if checked('where-is-the-injury','Ribs, chest or torso') %}
+     {% from "govuk/components/input/macro.njk" import govukInput %}
+          {% set injuryHtml %}
+         {{ govukTextarea({
+           name: "more-detail-chest-torso",
+           id: "more-detail-chest-torso",
+           value:data['more-detail-chest-torso'],
+           label: {
+             text: "Can you provide more detail?"
+           }
+         }) }}
+            {% endset -%}
+   
+     {{ govukCheckboxes({
+      classes: "govuk-checkboxes--small",
+      idPrefix: "chest-torso",
+      name: "chest-torso",
+      fieldset: {
+        legend: {
+          text: "Select ribs, chest or torso injuries",
+          isPageHeading: false,
+          classes: "govuk-fieldset__legend--m"
+        }
+      },
+      items: [
+      {
+        value: "Soft tissue injury (for example, bruise, strain or tear)",
+        text: " Soft tissue injury (for example, bruise, strain or tear)",
+        checked: checked("chest-torso", "Soft tissue injury (for example, bruise, strain or tear)")
+      },
+      {
+        value: "Pain or discomfort",
+        text: "Pain or discomfort",
+        checked: checked("chest-torso", "Pain or discomfort")
+      },
+      {
+        value: "Cuts or scarring",
+        text: "Cuts or scarring",
+        checked: checked("chest-torso", "Cuts or scarring")
+      },
+     {
+       value: "Fracture",
+       text: " Fracture",
+       checked: checked("chest-torso", "Fracture")
+     },
+     {
+       value: "Burns",
+       text: "Burns",
+       checked: checked("chest-torso", "Burns")
+     },
+     {
+       value: "Breathing problems",
+       text: "Breathing problems",
+       checked: checked("chest-torso", "Breathing problems")
+     },
+     {
+       value: " ",
+       text: "Other chest injury",
+       checked: checked("chest-torso", " "),
+       conditional: {
+         html: injuryHtml
+       }
+     }
+   ]
+    }) }}
+   
+     {% endif %}
+    <!-- end Chest -->
+
+  <!-- start Arm or wrist -->
+  {% if checked('where-is-the-injury','Arm or wrist') %}
+  {% from "govuk/components/input/macro.njk" import govukInput %}
+       {% set injuryHtml %}
+      {{ govukTextarea({
+        name: "more-detail-arm",
+        id: "more-detail-arm",
+        value:data['more-detail-arm'],
+        label: {
+          text: "Can you provide more detail?"
+        }
+      }) }}
+         {% endset -%}
+
+  {{ govukCheckboxes({
+   classes: "govuk-checkboxes--small",
+   idPrefix: "arm",
+   name: "arm",
+   fieldset: {
+     legend: {
+       text: "Select arm or wrist injuries",
+       isPageHeading: false,
+       classes: "govuk-fieldset__legend--m"
+     }
+   },
+   items: [
+   {
+     value: "Soft tissue injury (for example, bruise, strain or tear)",
+     text: " Soft tissue injury (for example, bruise, strain or tear)",
+     checked: checked("arm", "Soft tissue injury (for example, bruise, strain or tear)")
+   },
+   {
+     value: "Pain or discomfort",
+     text: "Pain or discomfort",
+     checked: checked("arm", "Pain or discomfort")
+   },
+   {
+     value: "Cuts or scarring",
+     text: "Cuts or scarring",
+     checked: checked("arm", "Cuts or scarring")
+   },
+  {
+    value: "Fracture",
+    text: " Fracture",
+    checked: checked("arm", "Fracture")
+  },
+  {
+    value: "Burns",
+    text: "Burns",
+    checked: checked("arm", "Burns")
+  },
+  {
+    value: " ",
+    text: "Other arm or wrist injuries",
+    checked: checked("arm", " "),
+    conditional: {
+      html: injuryHtml
+    }
+  }
+]
+ }) }}
+
+  {% endif %}
+ <!-- end Arm or wrist -->
+
+   <!-- start Hand or finger -->
+   {% if checked('where-is-the-injury','Hand or finger') %}
+   {% from "govuk/components/input/macro.njk" import govukInput %}
+        {% set injuryHtml %}
+       {{ govukTextarea({
+         name: "more-detail-hand",
+         id: "more-detail-hand",
+         value:data['more-detail-hand'],
+         label: {
+           text: "Can you provide more detail?"
+         }
+       }) }}
+          {% endset -%}
+ 
+   {{ govukCheckboxes({
+    classes: "govuk-checkboxes--small",
+    idPrefix: "hand",
+    name: "hand",
+    fieldset: {
+      legend: {
+        text: "Select hand or finger injuries",
+        isPageHeading: false,
+        classes: "govuk-fieldset__legend--m"
+      }
+    },
+    items: [
+    {
+      value: "Soft tissue injury (for example, bruise, strain or tear)",
+      text: " Soft tissue injury (for example, bruise, strain or tear)",
+      checked: checked("hand", "Soft tissue injury (for example, bruise, strain or tear)")
+    },
+    {
+      value: "Pain or discomfort",
+      text: "Pain or discomfort",
+      checked: checked("hand", "Pain or discomfort")
+    },
+    {
+      value: "Cuts or scarring",
+      text: "Cuts or scarring",
+      checked: checked("hand", "Cuts or scarring")
+    },
+   {
+     value: "Fracture",
+     text: " Fracture",
+     checked: checked("hand", "Fracture")
+   },
+   {
+     value: "Burns",
+     text: "Burns",
+     checked: checked("hand", "Burns")
+   },
+   {
+     value: " ",
+     text: "Other hand or finger injury",
+     checked: checked("hand", " "),
+     conditional: {
+       html: injuryHtml
+     }
+   }
+ ]
+  }) }}
+ 
+   {% endif %}
+  <!-- end Hand or finger -->
+
+
+
+   <!-- start Hip or pelvis -->
+   {% if checked('where-is-the-injury','Hip, pelvis or genitals') %}
+   {% from "govuk/components/input/macro.njk" import govukInput %}
+        {% set injuryHtml %}
+       {{ govukTextarea({
+         name: "more-detail-hip-pelvis",
+         id: "more-detail-hip-pelvis",
+         value:data['more-detail-hip-pelvis'],
+         label: {
+           text: "Can you provide more detail?"
+         }
+       }) }}
+          {% endset -%}
+
+   {{ govukCheckboxes({
+    classes: "govuk-checkboxes--small",
+    idPrefix: "hip-pelvis",
+    name: "hip-pelvis",
+    fieldset: {
+      legend: {
+        text: "Select hip, pelvis or genitals injuries",
+        isPageHeading: false,
+        classes: "govuk-fieldset__legend--m"
+      }
+    },
+    items: [
+   {
+     value: "Soft tissue injury (for example, bruise, strain or tear)",
+     text: " Soft tissue injury (for example, bruise, strain or tear)",
+     checked: checked("hip-pelvis", "Soft tissue injury (for example, bruise, strain or tear)")
+   },
+   {
+     value: "Pain or discomfort",
+     text: "Pain or discomfort",
+     checked: checked("hip-pelvis","Pain or discomfort")
+   },
+   {
+     value: "Cuts or scarring",
+     text: "Cuts or scarring",
+     checked: checked("hip-pelvis", "Cuts or scarring")
+   },
+  {
+    value: "Fracture",
+    text: " Fracture",
+    checked: checked("hip-pelvis", "Fracture")
+  },
+  {
+    value: "Burns",
+    text: "Burns",
+    checked: checked("hip-pelvis", "Burns")
+  },
+  {
+    value: " ",
+    text: "Other hip or pelvis injury",
+    checked: checked("hip-pelvis", " "),
+    conditional: {
+      html: injuryHtml
+    }
+  }
+]
+  }) }}
+
+   {% endif %}
+   <!-- end or pelvis -->
+
+
+
+  <!-- start Leg, knee or ankle -->
+  {% if checked('where-is-the-injury','Leg, knee or ankle') %}
+  {% from "govuk/components/input/macro.njk" import govukInput %}
+       {% set injuryHtml %}
+      {{ govukTextarea({
+        name: "more-detail-leg",
+        id: "more-detail-leg",
+        value:data['more-detail-leg'],
+        label: {
+          text: "Can you provide more detail?"
+        }
+      }) }}
+         {% endset -%}
+
+  {{ govukCheckboxes({
+   classes: "govuk-checkboxes--small",
+   idPrefix: "leg",
+   name: "leg",
+   fieldset: {
+     legend: {
+       text: "Select leg, knee or ankle injuries",
+       isPageHeading: false,
+       classes: "govuk-fieldset__legend--m"
+     }
+   },
+   items: [
+    {
+      value: "Soft tissue injury (for example, bruise, strain or tear)",
+      text: " Soft tissue injury (for example, bruise, strain or tear)",
+      checked: checked("leg", "Soft tissue injury (for example, bruise, strain or tear)")
+    },
+    {
+      value: "Pain or discomfort",
+      text: "Pain or discomfort",
+      checked: checked("leg", "Pain or discomfort")
+    },
+    {
+      value: "Cuts or scarring",
+      text: "Cuts or scarring",
+      checked: checked("leg", "Cuts or scarring")
+    },
+   {
+     value: "Fracture",
+     text: " Fracture",
+     checked: checked("leg", "Fracture")
+   },
+   {
+     value: "Burns",
+     text: "Burns",
+     checked: checked("leg", "Burns")
+   },
+   {
+     value: " ",
+     text: "Other leg, knee or ankle injury",
+     checked: checked("leg", " "),
+     conditional: {
+       html: injuryHtml
+     }
+   }
+ ]
+ }) }}
+
+  {% endif %}
+  <!-- end Leg, knee, ankle or foot -->
+
+  <!-- Start foot or toe -->
+  {% if checked('where-is-the-injury','Foot or toe') %}
+  {% from "govuk/components/input/macro.njk" import govukInput %}
+       {% set injuryHtml %}
+      {{ govukTextarea({
+        name: "more-detail-foot",
+        id: "more-detail-foot",
+        value:data['more-detail-foot'],
+        label: {
+          text: "Can you provide more detail?"
+        }
+      }) }}
+         {% endset -%}
+
+  {{ govukCheckboxes({
+   classes: "govuk-checkboxes--small",
+   idPrefix: "foot",
+   name: "foot",
+   fieldset: {
+     legend: {
+       text: "Select foot or toe injuries",
+       isPageHeading: false,
+       classes: "govuk-fieldset__legend--m"
+     }
+   },
+   items: [
+    {
+      value: "Soft tissue injury (for example, bruise, strain or tear)",
+      text: " Soft tissue injury (for example, bruise, strain or tear)",
+      checked: checked("foot", "Soft tissue injury (for example, bruise, strain or tear)")
+    },
+    {
+      value: "Pain or discomfort",
+      text: "Pain or discomfort",
+      checked: checked("foot", "Pain or discomfort")
+    },
+    {
+      value: "Cuts or scarring",
+      text: "Cuts or scarring",
+      checked: checked("foot", "Cuts or scarring")
+    },
+   {
+     value: "Fracture",
+     text: " Fracture",
+     checked: checked("foot", "Fracture")
+   },
+   {
+     value: "Burns",
+     text: "Burns",
+     checked: checked("foot", "Burns")
+   },
+   {
+     value: " ",
+     text: "Other foot or toe injury",
+     checked: checked("foot", " "),
+     conditional: {
+       html: injuryHtml
+     }
+   }
+ ]
+ }) }}
+
+  {% endif %}
+    <!-- End foot or toe -->
+
+      <div class="govuk-radios__item govuk-visually-hidden">
+        <input class="govuk-radios__input" id="claim-details" name="claim-details" type="radio" value="completed" checked>
+        <label class="govuk-label govuk-radios__label" for="claim-details">
+         hidden radio for logic
+        </label>
+      </div>
+
+      <div class="govuk-radios__item govuk-visually-hidden">
+        <input class="govuk-radios__input" id="checkanswerslocal" name="checkanswerslocal" type="radio" value="reset" checked>
+        <label class="govuk-label govuk-radios__label" for="checkanswerslocal">
+         Visually hidded for logic
+        </label>
+      </div>
+
+      <button class="govuk-button" data-module="govuk-button">
+        Continue
+      </button>
+
+    </form>
+
+    </div>
+  </div>
+
+{% endblock %}

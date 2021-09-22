@@ -1,0 +1,346 @@
+
+{% extends folder+ "/layout.html" %}
+
+{% block pageTitle %}
+Register a claim with the Compensation Recovery Unit
+{% endblock %}
+
+{% block content %}
+
+
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-full-from-desktop">
+          <a href="javascript: history.go(-1)" class="govuk-back-link govuk-!-margin-bottom-5">Back</a>
+
+            <h1 class="govuk-heading-xl">
+              <span class="govuk-caption-xl"> Claim reference</span>
+             CRU12345
+            </h1>
+            {% if checked('case-settled','yes') %}
+            {% from "govuk/components/notification-banner/macro.njk" import govukNotificationBanner %}
+
+{% set html %}
+  <h3 class="govuk-notification-banner__heading">
+    This case is settled
+  </h3>
+  <p class="govuk-body">Contact <a href="mailto:CRU.Customerfeedback@dwp.gov.uk" class="govuk-link">CRU.Customerfeedback@dwp.gov.uk</a> if you think there's a problem.</p>
+{% endset %}
+
+{{ govukNotificationBanner({
+  html: html,
+  type: 'success'
+}) }}
+
+{% endif %}
+
+            <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Name of injured person
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  {{ data['first-name'] | default('Bojen') }}  {{ data['last-name'] | default('Westoros') }}
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Date of birth
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  9 April 1966
+                </dd>
+              </div>
+             <!-- <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Address
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  72 Guild Street<br>London<br>SE23 6FH
+                </dd>
+              </div> -->
+          <!--   <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Claim reference
+                </dt>
+                <dd class="govuk-summary-list__value">
+                 CRU123456
+                </dd>
+              </div> -->
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Date claim registered
+                </dt>
+                <dd class="govuk-summary-list__value">
+                6 August 2021
+                </dd>
+              </div>
+              {% if checked('case-settled','yes') %}
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Date claim settled
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  {{ data['settlement-date-day']}} {{ data['settlement-date-month']}} {{ data['settlement-date-year']}}
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Type of settlement
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  {{ data['type-of-settlement']}}
+                </dd>
+              </div>
+              {% endif %}
+            </dl>
+
+            {% from "govuk/components/tabs/macro.njk" import govukTabs %}
+{% from "govuk/components/table/macro.njk" import govukTable %}
+
+{% set caseActionHtml %}
+<form class="form" action="certificate" method="post">
+<h2 class="govuk-heading-l">Claim actions</h2>
+
+<div class="govuk-inset-text">
+  <h2 class="govuk-heading-s">Amount to pay</h2>
+
+    <p class="govuk-body">
+      <span class="govuk-body govuk-!-font-size-48 govuk-!-font-weight-bold govuk-!-display-block">NIL</span>
+      Bojen Westoros has not received any benefit or payments as a result of the injury.
+    </p>
+
+
+
+</div>
+
+<!--<h2 class="govuk-heading-m">What this means</h2>
+
+
+
+
+<p class="govuk-body">The amount shown is what you'll owe if you settle the claim today (5 September 2021) and is based on the information you have given. This amount may change if you settle the claim at a later date.</p>
+
+
+<p class="gov-body">
+<strong>If you settle the claim now </strong>- you'll get a digital statement showing what you owe. This is an official document and replaces the old CRU100 certificate. You can print or save a copy of the statement as proof of our decision.
+</p>
+<p class="gov-body">
+<strong>If you are not ready to settle the claim </strong>- you can return to this service at any time to check the amount to pay, or to settle the claim. You'll need your claim reference number to sign-in.
+</p> -->
+
+{% if checked('case-settled','yes') %}
+{% else %}
+<a href="settlement-date" class="govuk-button  govuk-!-margin-right-3 govuk-!-margin-bottom-0">
+  Settle the claim
+</a>
+{% endif %}
+
+<a href="certificate" class="govuk-button govuk-button--secondary govuk-!-margin-bottom-0">
+  Download certificate
+</a>
+
+
+</form>
+
+{% endset -%}
+
+{% set caseInformationHtml %}
+<h2 class="govuk-heading-l">Claim details</h2>
+
+<h2 class="govuk-heading-m">The injured person</h2>
+
+          <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Name
+              </dt>
+              <dd class="govuk-summary-list__value">
+                Bojen Westoros
+              </dd>
+              <dd class="govuk-summary-list__actions"></dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Date of birth
+              </dt>
+              <dd class="govuk-summary-list__value">
+                9 April 1966
+              </dd>
+              <dd class="govuk-summary-list__actions"></dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                National Insurance number
+              </dt>
+              <dd class="govuk-summary-list__value">
+                <p class="govuk-body"> NY 57 63 36 A</p>
+              </dd>
+              <dd class="govuk-summary-list__actions"></dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Address
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ data['choose-ip-address'] | default('4 High Street') }}<br>Thrupp<br>{{ data['addresspostcode'] | default('SW11 4DY') }}
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="#">
+                  Change<span class="govuk-visually-hidden"> address</span>
+                </a>
+              </dd>
+            </div>
+          </dl>
+
+          <h2 class="govuk-heading-m">Injury details</h2>
+
+          <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Date of injury
+              </dt>
+              <dd class="govuk-summary-list__value">
+                17 July 2021
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="#">
+                  Change<span class="govuk-visually-hidden"> date</span>
+                </a>
+              </dd>
+            </div>
+
+
+
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                What type of injury did the person suffer?
+              </dt>
+              <dd class="govuk-summary-list__value">
+                Whiplash
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="#">
+                  Change<span class="govuk-visually-hidden"> date</span>
+                </a>
+              </dd>
+            </div>
+          </dl>
+
+          <h2 class="govuk-heading-m">Injured person's solicitor</h2>
+
+
+          <dl class="govuk-summary-list govuk-!-margin-bottom-0">
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Company name
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ data['represesntative-name'] | default('McAdar Solicitors') }}
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="#">
+                  Change<span class="govuk-visually-hidden">Solictor name</span>
+                </a>
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Email address
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ data['email-solicitor'] | default('claims@mcadarx.co.uk') }}
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="#">
+                  Change<span class="govuk-visually-hidden">email address</span>
+                </a>
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Reference number
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ data['represesntative-reference'] | default('Cr1234567') }}
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="#">
+                  Change<span class="govuk-visually-hidden"> About the accident or incident</span>
+                </a>
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Telephone number
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ data['represesntative-phone-number'] | default('07880109642') }}
+
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="#">
+                  Change<span class="govuk-visually-hidden">telephone</span>
+                </a>
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Address
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ data['solicitor-address'] | default('Ivy House, Ivy Lane') }}<br>Warehorne<br>{{ data['representativepostcode'] | default('TN26 9XE') }}
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="#">
+                  Change<span class="govuk-visually-hidden"> address</span>
+                </a>
+              </dd>
+            </div>
+          </dl>
+
+{% endset -%}
+
+
+{{ govukTabs({
+  items: [
+    {
+      label: "Claim actions",
+      id: "case-action",
+      panel: {
+        html: caseActionHtml
+      }
+    },
+    {
+      label: "Claim details",
+      id: "case-information",
+      panel: {
+        html: caseInformationHtml
+      }
+    }
+  ]
+}) }}
+
+
+<div>
+  <h2 class="govuk-heading-m">Get help with this claim</h2>
+
+<ul class="govuk-list">
+  <li>Telephone: 0800 15 13196</li>
+  <li>Monday to Friday, 9am to 5pm (except public holidays)</li>
+  <li>Email: <a href="mailto:CRU.Customerfeedback@dwp.gov.uk" class="govuk-link">CRU.Customerfeedback@dwp.gov.uk</a>
+</li></ul>
+
+  </div>
+<br>
+
+
+        <a href="cru-landing" class="govuk-button govuk-button--secondary">Return to home</a></div>
+      </div>
+
+
+        </div>
+      </div>
+
+
+{% endblock %}

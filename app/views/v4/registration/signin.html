@@ -1,0 +1,48 @@
+
+{% extends folder+ "/layout.html" %}
+
+{% block pageTitle %}
+About the injured person - Enter injured person's name and date of birth
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <a href="javascript: history.go(-1)" class="govuk-back-link govuk-!-margin-bottom-5">Back</a>
+        <form class="form" action="cru-landing" method="post">
+      <h1 class="govuk-heading-xl">
+
+        Sign in
+      </h1>
+
+      <div class="govuk-form-group">
+        <label class="govuk-label govuk-label--s" for="username">
+            Username
+          </label>
+        <input class="govuk-input govuk-!-width-three-quarters" id="username" name="username" type="text" value="{{data['username']}}">
+      </div>
+
+      <div class="govuk-form-group">
+        <label class="govuk-label govuk-label--s" for="password">
+          Password
+        </label>
+        <input class="govuk-input govuk-!-width-three-quarters" id="password" name="password" type="text" value="{{data['password']}}">
+
+      </div>
+
+      <button class="govuk-button" data-module="govuk-button">
+        Continue
+      </button>
+      <div class="govuk-inset-text">
+  If you have forgotten your username or password, <a class="govuk-link" href="https://www.gov.uk/government/collections/cru#contact-cru">
+    contact the Compensation Recovery Unit
+  </a>
+</div>
+
+    </form>
+
+    </div>
+  </div>
+
+{% endblock %}

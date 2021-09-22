@@ -1,0 +1,76 @@
+// global styles for <a> and <p> tags
+$govuk-global-styles: true;
+
+// We can't mount GOV.UK Frontend's assets at root as it's done automatically by the extensions framework.
+$govuk-assets-path: '/govuk/assets/';
+
+// Import GOV.UK Frontend and any extension styles if extensions have been configured
+@import "lib/extensions/extensions";
+
+// Patterns that aren't in Frontend
+@import "patterns/step-by-step-header";
+@import "patterns/step-by-step-nav";
+@import "patterns/step-by-step-related";
+@import "patterns/task-list";
+@import "patterns/related-items";
+
+// Add extra styles here, or re-organise the Sass files in whichever way makes most sense to you
+
+// custom pattern - card pattern currently is not in the govuk design system
+@import "patterns/card";
+// custom pattern - subnavigation currently is not in the govuk design system
+@import "patterns/subnavigation";
+
+// custom pattern - timeline currently is not in the govuk design system (This is a dwp pattern)
+@import "patterns/timeline";
+
+
+// custom pattern - subnavigation currently is not in the govuk design system (This is a dwp pattern)
+@import "patterns/subnav";
+
+// custom pattern - subnavigation currently is not in the govuk design system (This is a dwp pattern)
+@import "patterns/keydetails";
+
+
+
+.govuk-inset-text{
+
+&.green {
+    background:rgba(0, 112, 60, 0.05);
+    border-left-color:$govuk-success-colour;
+}
+
+&.blue {
+    background:rgba(0, 112, 60, 0.05);
+    border-left-color:$govuk-brand-colour;
+}
+
+
+}
+
+.no-border .govuk-summary-list__key, .no-border .govuk-summary-list__value {
+    border-bottom:none;
+}
+
+.border-bottom li {
+    border-bottom:1px solid $govuk-border-colour;
+    margin-bottom:1em;
+    padding:0 0 1em 0;
+}
+
+button.govuk-link
+{
+    border:none;
+    color:$govuk-link-colour;
+    text-decoration:underline;
+    background:transparent;
+    padding:0;
+
+    &:hover{
+        color:$govuk-link-hover-colour;
+    }
+
+    &:visited{
+        color:$govuk-link-visited-colour;
+    }
+}

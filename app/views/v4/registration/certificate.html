@@ -1,0 +1,127 @@
+
+{% extends folder+ "/layout_unbranded.html" %}
+
+{% block pageTitle %}
+Register a claim with the Compensation Recovery Unit
+{% endblock %}
+
+{% block content %}
+
+
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-full">
+
+
+  <img src="/public/images/dwp-logo.png" class="dwp-logo">
+
+
+          <h1 class="govuk-heading-xl" style="margin-top:50px">
+            Compensation recovery statement
+          </h1>
+          <h2 class="govuk-heading-m">
+            This is an official document. Please keep this for your records.
+          </h2>
+
+          <dl class="govuk-summary-list govuk-summary-list--no-border">
+
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Claim reference
+    </dt>
+    <dd class="govuk-summary-list__value">
+      CRU12345
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Name of injured person
+    </dt>
+    <dd class="govuk-summary-list__value">
+      {{ data['first-name'] | default('Bojen') }}  {{ data['last-name'] | default('Westoros') }}
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      National Insurance number of injured person
+    </dt>
+    <dd class="govuk-summary-list__value">
+      {{ data['ni-number'] | default('QQ123456C') }}
+      <p class="govuk-body"></p>
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Date
+    </dt>
+    <dd class="govuk-summary-list__value">
+      <p class="govuk-body">14 September 2021</p>
+    </dd>
+  </div>
+
+</dl>
+  <p class="govuk-body">The amount to pay for this claim is NIL.</p>
+<hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+  <h2 class="govuk-heading-m">What this means<h2>
+    <p class="govuk-body">This statement shows the amount to pay the Department for Work and Pensions (DWP) for this claim.</p><p class="govuk-body"> The amount is equal to any benefits or payments the injured person received as a direct result of the injury reported in this claim.</p><p class="govuk-body"> This amount must be paid by the compensator named on this statement.</p>
+    <dl class="govuk-summary-list govuk-summary-list--no-border">
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Name of compensator
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Compensator Ltd
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Compensator reference
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data['compensator-rep-reference'] | default('DI345567Y') }}
+        </dd>
+      </div>
+    </dl>
+
+<h2 class="govuk-heading-m">How we calculate the amount to pay<h2>
+  <p class="govuk-body">We check our records to see if the person who was injured received a benefit or payment from DWP as a resut of their injury.</p><p class="govuk-body"> If a benefit or payment was made, the compensator will need to pay this amount of any settlement claim back to us, rather than directly to the injured person.</p>
+
+  <h2 class="govuk-heading-m">How long this statement is valid for</h2>
+    <p class="govuk-body">This statement is only valid on <strong>14 September 2021</strong>.</p>
+
+    <h2 class="govuk-heading-m">Tell us about a change</h2>
+      <p class="govuk-body">You must let us know if there is any change to this claim. The easiest way to do this by signing in to your online portal and selecting 'Find an existing claim'. <strong>You'll need the claim reference number shown on this statement.</strong> </p>
+  <p class="govuk-body">You can also tell us about a change by calling us on 0800 15 13196.</p>
+  <h2 class="govuk-heading-m">If you think we've made an error</h2>
+    <p class="govuk-body">Call us straight away on 0800 15 13196. We will review the claim details based on the information you have given us.</p>
+
+  <h2 class="govuk-heading-m">Get help with this claim</h2>
+
+<ul class="govuk-list">
+  <li>Telephone: 0800 15 13196</li>
+  <li>Monday to Friday, 9am to 5pm (except public holidays)</li>
+  <li>Email: <a href="mailto:CRU.Customerfeedback@dwp.gov.uk" class="govuk-link">CRU.Customerfeedback@dwp.gov.uk</a>
+</li></ul>
+<br>
+
+<button class="govuk-button govuk-button--secondary govuk-!-margin-right-3" data-module="govuk-button" onclick="window.print()">
+  Print certificate
+</button>
+
+
+<button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+  Download certificate
+</button>
+
+  </div>
+
+
+
+  </div>
+
+</div>
+
+
+{% endblock %}

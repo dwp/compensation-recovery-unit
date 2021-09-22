@@ -1,0 +1,52 @@
+
+{% extends folder+ "/layout.html" %}
+
+{% block pageTitle %}
+About the claim and injuries - Please tell us the date of the accident or alleged clinical negligence
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <a href="javascript: history.go(-1)" class="govuk-back-link govuk-!-margin-bottom-5">Back</a>
+        <form class="form" action="case-view" method="post">
+
+          <h1 class="govuk-heading-xl">
+What is the claim reference number?            </h1>
+
+            <div class="govuk-form-group">
+              <label class="govuk-label" for="cru-reference">
+                 Claim reference number
+                </label>
+                <div id="claim-ref-hint" class="govuk-hint">
+                  We sent this to you by email when you registered the claim
+                </div>
+              <input class="govuk-input govuk-input--width-10" id="cru-name" name="cru-reference" type="text" value="{{data['cru-reference']}}">
+            </div>
+
+
+
+
+      <div class="govuk-radios__item govuk-visually-hidden">
+        <input class="govuk-radios__input" id="" name="" type="radio" value="" checked>
+        <label class="govuk-label govuk-radios__label" for="">
+         hidden radio for logic
+        </label>
+      </div>
+
+      <button class="govuk-button" data-module="govuk-button">
+        Continue
+      </button>
+      <div class="govuk-inset-text">
+  If you do not have the claim reference number, <a class="govuk-link" href="https://www.gov.uk/government/collections/cru#contact-cru">
+    contact the Compensation Recovery Unit
+  </a>
+</div>
+
+    </form>
+
+    </div>
+  </div>
+
+{% endblock %}

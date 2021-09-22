@@ -1,0 +1,67 @@
+
+{% extends folder+ "/layout.html" %}
+
+{% block pageTitle %}
+Case -  task
+{% endblock %}
+
+{% block keydetails %}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <a href="javascript: history.go(-1)" class="govuk-back-link govuk-!-margin-bottom-9">Back</a> 
+         <form class="form" action="case-details-and-tasks-tabs" method="post">
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset" aria-describedby="taskcompleted-hint">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+                <h1 class="govuk-fieldset__heading">
+                  What do you want to do with this case?
+                </h1>
+              </legend>
+              <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="taskcompleted" name="taskcompleted" type="radio" value="Close case on new cru~task-confirm?reference={{case.reference}}" {{ checked("taskcompleted", "Close case on new cru") }}>
+                  <label class="govuk-label govuk-radios__label" for="taskcompleted">
+                   Close case on new cru
+                  </label>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="taskcompleted" name="taskcompleted" type="radio" value="Issue certificate~task-confirm?reference={{case.reference}}" {{ checked("taskcompleted", "Issue certificate") }}>
+                  <label class="govuk-label govuk-radios__label" for="taskcompleted">
+                  Issue certificate
+                  </label>
+                </div>
+               <!-- <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="taskcompleted" name="taskcompleted" type="radio" value="Not yet Known" {{ checked("taskcompleted", "Not yet Known") }}>
+                  <label class="govuk-label govuk-radios__label" for="taskcompleted">
+                   Not yet known
+                  </label>
+                </div> -->
+              </div>
+          
+            </fieldset>
+          </div>
+
+          <div class="govuk-radios__item govuk-visually-hidden">
+            <input class="govuk-radios__input" id="nhs-details" name="nhs-details" type="radio" value="started" checked>
+            <label class="govuk-label govuk-radios__label" for="nhs-details">
+             hidden radio for logic
+            </label>
+          </div>
+  
+
+
+      <button class="govuk-button" data-module="govuk-button">
+        Continue
+      </button>
+      
+    </form>
+
+    </div>
+  </div>
+
+{% endblock %}

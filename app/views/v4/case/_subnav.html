@@ -1,0 +1,62 @@
+<nav class="app-subnav"> 
+    <ul class="app-subnav__section">
+      {% if nav  == 'case details' %}
+      <li class="app-subnav__section-item app-subnav__section-item--current">
+        {% else %}
+        <li class="app-subnav__section-item">
+          {% endif %}
+        <a class="app-subnav__link govuk-link govuk-link--no-visited-state" href="case-details-and-tasks">Your tasks</a>
+      {% if nav  == 'Personal details' %}
+      <li class="app-subnav__section-item app-subnav__section-item--current">
+        {% else %}
+        <li class="app-subnav__section-item">
+          {% endif %}
+        <a class="app-subnav__link govuk-link govuk-link--no-visited-state" href="personal-details">The injured person</a>
+        
+      </li>
+
+      {% if nav  == 'Injury' %}
+      <li class="app-subnav__section-item app-subnav__section-item--current">
+        {% else %}
+        <li class="app-subnav__section-item">
+          {% endif %}
+        <a class="app-subnav__link govuk-link govuk-link--no-visited-state" href="injury-details">Injury, illness, or accident 
+        </a>
+        
+      </li>
+    
+      {% if nav  == 'Compensator details' %}
+      <li class="app-subnav__section-item app-subnav__section-item--current">
+        {% else %}
+        <li class="app-subnav__section-item">
+          {% endif %}
+        <a class="app-subnav__link govuk-link govuk-link--no-visited-state" href="compensator-details">Insurance company</a>
+        
+      </li>
+    
+      {% if nav  == 'Representative details' %}
+      <li class="app-subnav__section-item app-subnav__section-item--current">
+        {% else %}
+        <li class="app-subnav__section-item">
+          {% endif %}
+        <a class="app-subnav__link govuk-link govuk-link--no-visited-state" href="representative-details">Solicitor</a>
+        
+      </li>     
+
+      {% if nav  == 'Hospital' %}
+      <li class="app-subnav__section-item app-subnav__section-item--current">
+        {% else %}
+        <li class="app-subnav__section-item">
+          {% endif %}
+        <a class="app-subnav__link govuk-link govuk-link--no-visited-state" href="hospital-medical-centre">Hospital or medical centre 
+        </a>
+      {% if nav  == 'History' %}
+      <li class="app-subnav__section-item app-subnav__section-item--current">
+        {% else %}
+        <li class="app-subnav__section-item">
+          {% endif %}
+        <a class="app-subnav__link govuk-link govuk-link--no-visited-state" href="history-notes">History and notes</a>
+      
+    </li>  
+    </ul>
+</nav>

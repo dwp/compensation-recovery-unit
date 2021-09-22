@@ -1,0 +1,85 @@
+
+{% extends folder+ "/layout.html" %}
+
+{% block pageTitle %}
+About the injured person -  Does the injured person have a national insurance number
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <a href="javascript: history.go(-1)" class="govuk-back-link govuk-!-margin-bottom-5">Back</a>   
+        <form class="form" action="task-list-complete" method="post">
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset" aria-describedby="liability-hint">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                <h1 class="govuk-fieldset__heading">
+                  <span class="govuk-caption-xl">Injury, illness, or accident</span>
+                  What type of liability is this claim?
+                </h1>
+              </legend>
+              <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="liability" name="liability" type="radio" value="Employer" {{ checked("liability", "Employer") }}>
+                  <label class="govuk-label govuk-radios__label" for="liability">
+                   Employer
+                  </label>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="liability" name="liability" type="radio" value="Clinical negligence" {{ checked("liability", "Clinical negligence") }}>
+                  <label class="govuk-label govuk-radios__label" for="liability">
+                   Clinical negligence
+                  </label>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="liability" name="liability" type="radio" value="Public" {{ checked("liability", "Public") }}>
+                  <label class="govuk-label govuk-radios__label" for="liability">
+                   Public
+                  </label>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="liability" name="liability" type="radio" value="Motor" {{ checked("liability", "Motor") }}>
+                  <label class="govuk-label govuk-radios__label" for="liability">
+                  Motor
+                  </label>
+                </div>
+    
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="liability-2" name="liability" type="radio" value="Other" data-aria-controls="conditional-liability-2" {{ checked("liability", "Other") }}>
+                  <label class="govuk-label govuk-radios__label" for="liability-2">
+                  Other
+                  </label>
+                </div>
+                <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-liability-2">
+                  <div class="govuk-form-group">
+                    <label class="govuk-label" for="other-liability">
+                      Enter type of liability 
+                    </label>
+                    <input class="govuk-input govuk-!-width-one-half" id="ni-by-text" name="other-liability" type="text" spellcheck="false" value="{{ data['other-liability']}}"></div>
+          
+                </div>
+              </div>
+          
+            </fieldset>
+          </div>
+
+          <div class="govuk-radios__item govuk-visually-hidden">
+            <input class="govuk-radios__input" id="claim-details" name="claim-details" type="radio" value="completed" checked>
+            <label class="govuk-label govuk-radios__label" for="claim-details">
+             hidden radio for logic
+            </label>
+          </div>
+  
+
+
+      <button class="govuk-button" data-module="govuk-button">
+        Continue
+      </button>
+      
+    </form>
+
+    </div>
+  </div>
+
+{% endblock %}

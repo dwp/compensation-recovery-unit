@@ -1,0 +1,111 @@
+
+{% extends folder+ "/layout.html" %}
+
+{% block pageTitle %}
+Register a claim with the Compensation Recovery Unit
+{% endblock %}
+
+{% block content %}
+
+
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds-from-desktop">
+          {% if data['setuser'] =='staff' %}
+          <div class="govuk-panel govuk-panel--confirmation govuk-!-margin-top-5">
+            <h1 class="govuk-panel__title ">
+              Registration complete
+            </h1>
+            <div class="govuk-panel__body">
+              Claim reference number<br><strong>CRU12345</strong>
+            </div>
+          </div>
+
+          <div class="govuk-inset-text">
+            <h2 class="govuk-heading-s">Amount to be paid</h2>
+
+              <p class="govuk-body">
+                <span  class="govuk-body govuk-!-font-size-48 govuk-!-font-weight-bold govuk-!-display-block">£0.00</span>
+                The injured person has not been paid any benefit due to the injury. The certificate has been issued to the compensator.
+              </p>
+
+              <a href="">Return to home</a>
+
+          </div>
+          {% else %}
+          <div class="govuk-panel govuk-panel--confirmation govuk-!-margin-top-5">
+            <h1 class="govuk-panel__title ">
+              Registration complete
+            </h1>
+            <div class="govuk-panel__body">
+              Your claim reference number<br><strong>CRU12345</strong>
+            </div>
+          </div>
+          <p class="govuk-body">We have sent you a confirmation email.</p>
+
+          <div class="govuk-inset-text">
+            <h2 class="govuk-heading-s">Amount to pay</h2>
+
+              <p class="govuk-body">
+                <span class="govuk-body govuk-!-font-size-48 govuk-!-font-weight-bold govuk-!-display-block">NIL</span>
+                Sarah Phillips has not received any benefit or payments as a result of the injury.
+              </p>
+
+
+
+          </div>
+
+
+<div>
+  <h2 class="govuk-heading-m">What this means</h2>
+
+
+
+
+<p class="govuk-body">The amount shown is what you'll owe if you settle the claim now and is based on the information you have given. This amount may change if you settle the claim at a later date.</p>
+
+<h2 class="govuk-heading-m">What happens next</h2>
+
+
+
+
+<p class="govuk-body">You can <a href="certificate" class="govuk-link">download a certificate</a> now if you need one.</p>
+  <p class="gov-body"><strong>Certificates are valid for 1 day</strong>, but you can download a new one whenever you need it.</p>
+
+
+  <p class="gov-body">To download a certificate later, or to settle this claim, go to <a href="sign-in" class="govuk-link">Find an existing claim</a>. You'll need the claim reference number.
+  </p>
+  <p class="gov-body">
+
+  </p>
+<br>
+
+  </div>
+
+
+<br>
+
+
+        <a href="cru-landing" class="govuk-button govuk-button--secondary">Return to home</a></div>
+      </div>
+          {% endif %}
+
+        </div>
+      </div>
+
+      <!-- code for demo only-->
+  <style>
+    a.timemachine{
+      position:absolute;
+      top:0px;
+      right:0px;
+      background:black;
+      padding:0.8em;
+      color:white;
+      }
+  </style>
+
+  <a href ='completed-benefit-interest' class="timemachine">Forward</a>
+
+
+{% endblock %}

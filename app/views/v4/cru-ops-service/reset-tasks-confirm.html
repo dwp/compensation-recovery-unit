@@ -1,0 +1,75 @@
+
+{% extends folder+ "/layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+{% set totcases = 0 %}
+{% set nilcases = 0 %}
+{% set intcases = 0 %}
+{% set intcasestasks = 0 %}
+
+
+
+	{% for case in cases %}
+
+<!-- BASE VALUES -->
+
+
+  {% if case %}
+   {% set totcases = totcases + 1 %}
+   {% endif %}
+
+    {% if case.interest === "no"  %}
+     {% set nilcases = nilcases + 1 %}
+    {% endif %}
+
+  {% if case.interest === "yes" %}
+     {% set intcases = intcases + 1 %}
+    {% endif %}
+
+    {% if case.task === "yes" %}
+    {% set intcasestasks = intcasestasks + 1 %}
+   {% endif %}
+
+{% endfor %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      {% include "./_globalnav.html" %} 
+      <h1 class="govuk-heading-l">
+     Tasks reset  ({{intcasestasks}})
+      </h1>
+     
+
+      <form class="form" action="" method="post">
+      <div class="govuk-grid-row">
+   
+        <div class="govuk-grid-column-full">
+          </form>
+         
+        
+         <button class="govuk-button">Reset tasks</button>
+      </div>
+      </div>
+      
+ 
+
+
+    
+
+  
+
+
+    
+
+
+
+
+    </div>
+  </div>
+
+{% endblock %}

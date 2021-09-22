@@ -1,0 +1,93 @@
+
+{% extends folder+ "/layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% set nav = "Find" %}
+
+{% block content %}
+
+
+{% set totcases = 0 %}
+{% set nilcases = 0 %}
+{% set intcases = 0 %}
+{% set intcasestasks = 0 %}
+
+
+
+	{% for case in cases %}
+
+<!-- BASE VALUES -->
+
+
+  {% if case %}
+   {% set totcases = totcases + 1 %}
+   {% endif %}
+
+    {% if case.interest === "no"  %}
+     {% set nilcases = nilcases + 1 %}
+    {% endif %}
+
+  {% if case.interest === "yes" %}
+     {% set intcases = intcases + 1 %}
+    {% endif %}
+
+    {% if case.task === "yes" %}
+    {% set intcasestasks = intcasestasks + 1 %}
+   {% endif %}
+
+{% endfor %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      {% include "./_globalnav.html" %} 
+    
+
+      <form class="form" action="" method="post">
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="find-case">
+            Find case
+          </label>
+          <div id="find-case-hint" class="govuk-hint">
+            You can find a case using the CRU reference or national insurance number
+          </div>
+          <input class="govuk-input govuk-input--width-10" id="find-case" name="find-case" type="text" spellcheck="false" aria-describedby="find-case-hint" value="{{data['find-case']}}">
+          <button class="govuk-button govuk-!-margin-bottom-0">Find case</button>
+        </div>
+      </form>
+ 
+     
+
+      <ul class="govuk-list">
+      {% for case in cases %} 
+      {% if case.reference == data['find-case'] or case.nino == data['find-case'] %}
+      <li>
+        <div class="card full">
+          <h2 class="govuk-heading-s">
+            <a href="../case/case-details-and-tasks-accordion?reference={{case.reference}}" class="govuk-body govuk-link  govuk-!-display-block govuk-!-margin-bottom-0">{{case.firstname}} {{case.lastname}}</a>
+          </h2>
+          <div class="card-inner-panel">
+            <ul class="govuk-list govuk-!-margin-bottom-0 govuk-!-margin-top-0">
+              <li>Reference: {{case.reference}}</li>
+              <li>National insurance number: {{case.nino}}</li>
+              <li>Date of birth: {{case.dob}}</li>
+              <li>First line of address: {{case.address}} </li>
+              <li>Postcode: {{case.postcode}} </li>
+            </ul>
+          </div>
+      </li>
+      {% endif %}
+        {% endfor %}
+</ul>
+
+  
+
+
+
+
+    </div>
+  </div>
+
+{% endblock %}

@@ -1,0 +1,40 @@
+
+{% extends folder+ "/layout.html" %}
+
+{% block pageTitle %}
+Add settlement date
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <a href="javascript: history.go(-1)" class="govuk-back-link govuk-!-margin-bottom-5">Back</a>
+      <form class="form" action="settlement-type" method="post">
+
+
+      {{ govukDateInput({
+        id: "settlement-date",
+        namePrefix: "settlement-date",
+        fieldset: {
+          legend: {
+            text: "When was the case settled?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--l"
+          }
+        },
+        hint: {
+          text: "For example, 12 11 2020"
+        }
+      }) }}
+
+      <button class="govuk-button" data-module="govuk-button">
+        Continue
+      </button>
+
+    </form>
+
+    </div>
+  </div>
+
+{% endblock %}

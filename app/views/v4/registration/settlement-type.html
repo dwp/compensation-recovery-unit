@@ -1,0 +1,55 @@
+
+{% extends folder+ "/layout.html" %}
+
+{% block pageTitle %}
+Add settlement date
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <a href="javascript: history.go(-1)" class="govuk-back-link govuk-!-margin-bottom-5">Back</a>
+      <form class="form" action="settlement-confirm" method="post">
+
+
+
+
+      {% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+{{ govukRadios({
+  idPrefix: "type-of-settlement",
+  name: "type-of-settlement",
+  fieldset: {
+    legend: {
+      text: "What type of settlement was it?",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--l"
+    }
+  },
+  items: [
+    {
+      value: "Final payment",
+      text: "Final payment"
+    },
+    {
+      value: "Interim payment",
+      text: "Interim payment"
+    } ,
+    {
+      value: "Claim withdrawn or unsuccessful",
+      text: "Claim withdrawn or unsuccessful"
+    } 
+  ]
+}) }}
+
+      <button class="govuk-button" data-module="govuk-button">
+        Continue
+      </button>
+
+    </form>
+
+    </div>
+  </div>
+
+{% endblock %}
