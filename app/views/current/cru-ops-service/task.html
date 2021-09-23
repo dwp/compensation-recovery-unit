@@ -14,7 +14,7 @@ Case -  task
     <div class="govuk-grid-column-two-thirds">
 
       <a href="javascript: history.go(-1)" class="govuk-back-link govuk-!-margin-bottom-9">Back</a> 
-         <form class="form" action="case-details-and-tasks-tabs" method="post">
+         <form class="form" action="case-view-benefits" method="post">
           <div class="govuk-form-group">
             <fieldset class="govuk-fieldset" aria-describedby="taskcompleted-hint">
               <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
@@ -24,23 +24,17 @@ Case -  task
               </legend>
               <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
                 <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="taskcompleted" name="taskcompleted" type="radio" value="Close case on new cru~task-confirm?reference={{case.reference}}" {{ checked("taskcompleted", "Close case on new cru") }}>
+                  <input class="govuk-radios__input" id="taskcompleted" name="taskcompleted" type="radio" value="Close case on new cru" {{ checked("taskcompleted", "Close case on new cru") }}>
                   <label class="govuk-label govuk-radios__label" for="taskcompleted">
                    Close case on new cru
                   </label>
                 </div>
                 <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="taskcompleted" name="taskcompleted" type="radio" value="Issue certificate~task-confirm?reference={{case.reference}}" {{ checked("taskcompleted", "Issue certificate") }}>
+                  <input class="govuk-radios__input" id="taskcompleted" name="taskcompleted" type="radio" value="Issue certificate" {{ checked("taskcompleted", "Issue certificate") }}>
                   <label class="govuk-label govuk-radios__label" for="taskcompleted">
                   Issue certificate
                   </label>
                 </div>
-               <!-- <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="taskcompleted" name="taskcompleted" type="radio" value="Not yet Known" {{ checked("taskcompleted", "Not yet Known") }}>
-                  <label class="govuk-label govuk-radios__label" for="taskcompleted">
-                   Not yet known
-                  </label>
-                </div> -->
               </div>
           
             </fieldset>

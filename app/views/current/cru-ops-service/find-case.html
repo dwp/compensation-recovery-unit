@@ -56,30 +56,34 @@
           <input class="govuk-input govuk-input--width-10" id="find-case" name="find-case" type="text" spellcheck="false" aria-describedby="find-case-hint" value="{{data['find-case']}}">
           <button class="govuk-button govuk-!-margin-bottom-0">Find case</button>
         </div>
+        <div class="govuk-radios__item govuk-visually-hidden">
+          <input class="govuk-radios__input" id="findcase" name="findcase" type="radio" value="yes" checked>
+          <label class="govuk-label govuk-radios__label" for="findcase">
+           Visually hidded for logic
+          </label>
+        </div>
       </form>
  
      
-
+      {% if checked('findcase','yes')%}
       <ul class="govuk-list">
-      {% for case in cases %} 
-      {% if case.reference == data['find-case'] or case.nino == data['find-case'] %}
       <li>
         <div class="card full">
           <h2 class="govuk-heading-s">
-            <a href="../case/case-details-and-tasks-accordion?reference={{case.reference}}" class="govuk-body govuk-link  govuk-!-display-block govuk-!-margin-bottom-0">{{case.firstname}} {{case.lastname}}</a>
+            <a href="case-view" class="govuk-body govuk-link  govuk-!-display-block govuk-!-margin-bottom-0">Bojen Westoros</a>
           </h2>
           <div class="card-inner-panel">
             <ul class="govuk-list govuk-!-margin-bottom-0 govuk-!-margin-top-0">
-              <li>Reference: {{case.reference}}</li>
-              <li>National insurance number: {{case.nino}}</li>
+              <li>Reference:CRU12345</li>
+              <li>National insurance number: NY 57 63 36 A</li>
               <li>Date of birth: {{case.dob}}</li>
-              <li>First line of address: {{case.address}} </li>
-              <li>Postcode: {{case.postcode}} </li>
+              <li>First line of address:4 High Street</li>
+              <li>Postcode: SW11 4DY </li>
             </ul>
           </div>
       </li>
       {% endif %}
-        {% endfor %}
+    
 </ul>
 
   
